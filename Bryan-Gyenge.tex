@@ -1,0 +1,221 @@
+\documentclass{article}
+
+\title{$G$-fixed Hilbert schemes on $K3$ surfaces and modular forms.}
+\author{Jim Bryan and \'{A}d\'{a}m~Gyenge} 
+\date{\today}
+
+%\address{
+%Department of Mathematics\\
+%University of British Columbia \\
+%Room 121, 1984 Mathematics Road  \\
+%Vancouver, B.C., Canada V6T 1Z2  
+%}
+
+%\usepackage{diagrams}
+
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{longtable}
+%\usepackage{amstex}
+
+
+\newtheorem{theorem}{Theorem}%[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{convention}{Convention}[theorem]
+
+\theoremstyle{definition}
+
+\newtheorem{def-theorem}[theorem]{Definition-Theorem}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\CC} {{\mathbb C}}          % complex numbers
+\newcommand{\NN} {{\mathbb N}}		% natural numbers
+\newcommand{\RR} {{\mathbb R}}		% real numbers
+\newcommand{\ZZ} {{\mathbb Z}}		% integers
+\newcommand{\QQ} {{\mathbb Q}}		% rationals
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\LL}{\mathbb{L}}
+\renewcommand{\O}{\mathcal{O}}
+
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Tr}{\operatorname{tr}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Coker}{\operatorname{Coker}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\Hilb}{\operatorname{Hilb}}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{abstract}
+Let $X$ be a complex $K3$ surface with an effective action of a group
+$G$ which preserves the holomorphic symplectic form. Let 
+\[
+Z_{X,G}(q) = \sum_{n=0}^{\infty} e(\Hilb^{n}(X)^{G})q^{n-1}
+\]
+be the generating function for the Euler characteristics of Hilbert
+scheme of $G$-invariant length $n$ subschemes. We show that its
+reciprocal, $Z_{X,G}(q)^{-1}$ is the Fourier expansion of a modular
+cusp form of weight $\half e(X/G)$ and index $|G|$. We give an
+explicit formula for $Z_{X,G}$ in terms of the Dedekind eta function
+for all 82 possible $(X,G)$. 
+\end{abstract}
+
+
+
+%\markboth{???}  {???}
+
+
+
+%\tableofcontents
+%\pagebreak
+
+
+\section{Introduction}
+
+Let $X$ be a complex $K3$ surface with an effective action of a group
+$G$ which preserves the holomorphic symplectic form. Mukai showed that
+such $G$ are precisely the subgroups of the Mathieu group
+$M_{23}\subset M_{24}$ such that the induced action on the set
+$\{1,\dots ,24 \}$ has at least five orbits
+\cite{Mukai-Inventiones88}. Xiao classified all possible actions into
+82 possible topological types of the quotient $X/G$ \cite{Xiao}.
+
+The \emph{$G$-fixed Hilbert scheme} of $X$ parameterizes
+$G$-invariant length $n$ subschemes $Z\subset X$. It can be
+identified with the $G$-fixed point locus in the Hilbert scheme of
+points: 
+\[
+\Hilb^{n}(X)^{G} \subset \Hilb^{n}(X)
+\]
+
+We define the corresponding \emph{$G$-fixed partition function} of
+$X$ by
+\[
+Z_{X,G}(q) = \sum_{n=0}^{\infty} e(\Hilb^{n}(X)^{G}) q^{n-1} 
+\]
+where $e(-)$ is topological Euler characteristic.
+
+Throughout this paper we set
+\[
+q=\exp\left(2\pi i \tau  \right)
+\]
+so that we may regard $Z_{X,G}$ as a function of $\tau \in \HH$ where
+$\HH$ is the upper half-plane.
+
+Our main result is the following:
+
+\begin{theorem}
+The function $Z_{X,G}(q)^{-1}$ is a modular cusp form\footnote{See
+section \S~\ref{} for notation and defintions regarding modular
+forms.} of weight $\half e(X/G)$ for the congruence subgroup
+$\Gamma_{0}(|G|)$.
+\end{theorem}
+   
+
+Our theorem specializes in the case where $G$ is the trivial group to
+a famous result of G\"ottsche \cite{Gottsche}. The case where $G$ is a
+cyclic group was proved in \cite{Bryan-Oberdieck}. One can interpret
+our result as an instance of the Vafa-Witten S-duality conjecture for
+the orbifold $[X/G]$ (see Remark~???). The partition function
+$Z_{X,G}(q)$ also has an interpretation in enumerative geometry: its
+coefficients count $G$-invariant rational curves on $X$ (see
+Remark~???).
+
+We also give an explicit formula for $Z_{X,G}(q)$ in terms of the
+Dedekind eta function
+\[
+\eta (\tau ) = q^{\frac{1}{24}}\prod_{n=1}^{\infty} (1-q^{n})
+\]
+as follows. Let $p_{1},\dots ,p_{r}$ be the singular points of $X/G$
+and let $G_{1},\dots ,G_{r}$ be the corresponding stabilizer subgroups
+of $G$. The singular points are necessarily of ADE type: they are
+locally given by $\CC^{2}/G_{i}$ where $G_{i}\subset SU(2)$. Finite
+subgroups of $SU(2)$ have an ADE classification and we let
+$\Delta_{1},\dots ,\Delta_{r}$ denote the corresponding ADE root
+systems.
+
+For any finite subgroup $G_{\Delta}\subset SU(2)$ with associated root
+system $\Delta$ we define the \emph{local $G_{\Delta }$-fixed
+partition function} by
+\[
+Z_{\Delta} (q) = \sum_{n=0}^{\infty}
+e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) \, q^{n-\frac{1}{24}} .
+\]
+We will prove in Theorem~\ref{} that
+\[
+Z_{\Delta}(q) =\frac{\theta_{\Delta}(\tau)}{\eta (k\tau )^{N+1}}
+\]
+where $\theta_{\Delta}(\tau )$ is a certain theta function associated
+to the root system of $\Delta$, $N$ is the rank of the root system,
+and $k=|G_{\Delta}|$. 
+
+
+
+
+The 82 possible collections of ADE root systems $\Delta_{1},\dots
+,\Delta_{r}$ associated to $(X,G)$ a $K3$ surface with a symplectic
+$G$ action, are given in table~??? and we note that $\Delta_{i}\in
+\{A_{1},\dots ,A_{7},D_{4},D_{5},D_{6},E_{6} \}$. We let $k=|G|$,
+$k_{i}=|G_{i}|$, and
+\[
+a=\frac{24}{k}-\sum_{i=1}^{r} \frac{1}{k_{i}} = e(X/G) - r.
+\]
+\begin{theorem}\label{thm: eta product formula for Z}
+With the above notation we have
+\[
+Z_{X,G}(q) = \eta^{-a}(k\tau )\prod_{i=1}^{r}
+Z_{\Delta_{i}}\left(\frac{k\tau}{k_{i}} \right)
+\]
+where 
+\begin{align*}
+Z_{A_{n}} (\tau ) &=\frac{1}{\eta (\tau )}, \quad n\geq 1\\
+Z_{D_{n}} (\tau ) &=\frac{\eta^{2}(2\tau )\eta((4n-8)\tau )}{\eta (\tau )\eta (4\tau )\eta^{2}((2n-4)\tau )}, \quad 4\leq n\leq 6\\
+Z_{E_{6}} (\tau ) &=\frac{\eta^{2}(2\tau )\eta(24\tau )}{\eta (\tau
+)\eta^{2} (8\tau )\eta(12\tau )}
+\end{align*}
+\end{theorem}
+We conjecture in \ref{} that the formula for $Z_{D_{n}}$ holds for all $n\geq 4$
+and we provide explicit conjectural formulas for $Z_{E_{7}}$ and
+$Z_{E_{8}}$. In table~\ref{table: list of eta products}  we have listed explictly the eta product
+of the modular form $(Z_{X,G})^{-1}$ for all 82 possible cases of $(X,G)$.
+
+
+\subsection{Examples.}
+
+
+\subsection{Interpretation of results.}
+
+\subsection{Structure of the paper}
+
+
+\pagebreak
+
+
+\appendix
+\section{Table of eta products}
+\renewcommand{\arraystretch}{1.5}
+
+\input{K3-table-copy.tex}
+
+\bibliography{mainbiblio}
+\bibliographystyle{plain}
+
+\end{document}
+

@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: k3hilb.aux
+The style file: amsplain.bst
+Database file #1: k3hilb.bib
+Repeated entry---line 108 of file k3hilb.bib
+ : @article{gottsche1990betti
+ :                           ,
+I'm skipping whatever remains of this entry
+Warning--missing pages in bryan2018chl
+Warning--can't use both volume and number if series info is missing
+in BibTeX entry type `inproceedings'
+You've used 23 entries,
+            2213 wiz_defined-function locations,
+            647 strings with 7247 characters,
+and the built_in function-call counts, 7258 in all, are:
+= -- 677
+> -- 243
+< -- 5
++ -- 98
+- -- 74
+* -- 552
+:= -- 1128
+add.period$ -- 23
+call.type$ -- 23
+change.case$ -- 106
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 327
+empty$ -- 678
+format.name$ -- 74
+if$ -- 1563
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 52
+newline$ -- 79
+num.names$ -- 46
+pop$ -- 143
+preamble$ -- 1
+purify$ -- 83
+quote$ -- 0
+skip$ -- 217
+stack$ -- 0
+substring$ -- 531
+swap$ -- 71
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 81
+warning$ -- 2
+while$ -- 84
+width$ -- 25
+write$ -- 219
+(There was 1 error message)

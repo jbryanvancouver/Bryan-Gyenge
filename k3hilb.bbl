@@ -1,0 +1,112 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{10}
+
+\bibitem{bourbaki2002lie}
+Nicolas Bourbaki, \emph{{Lie groups and Lie algebras. Chapters 4--6}}, Elements
+  of Mathematics, Springer-Verlag, Berlin, 2002.
+
+\bibitem{bryan2018chl}
+Jim Bryan and Georg Oberdieck, \emph{Chl calabi-yau threefolds: Curve counting,
+  mathieu moonshine and siegel modular forms}, arXiv preprint arXiv:1811.06102
+  (2018).
+
+\bibitem{cartan1957quotient}
+H.~Cartan, \emph{{Quotient d'un espace analytique par un groupe
+  d'automorphismes}}, Algebraic geometry and topology: a symposium in honor of
+  S. Lefschetz, Princeton University Press, Princeton, NJ, 1957, pp.~90--102.
+
+\bibitem{cohen2017modular}
+Henri Cohen and Fredrik Str{\"o}mberg, \emph{Modular forms}, vol. 179, American
+  Mathematical Soc., 2017.
+
+\bibitem{diamond2005first}
+Fred Diamond and Jerry Shurman, \emph{{A first course in modular forms}}, vol.
+  228, Springer, 2005.
+
+\bibitem{freudenthal1969linear}
+H~Freudenthal and H~de~Vries, \emph{{Linear Lie groups}}, Academic Press, 1969.
+
+\bibitem{fujii2017combinatorial}
+S~Fujii and S~Minabe, \emph{A combinatorial study on quiver varieties},
+  Symmetry, Integrability and Geometry: Methods and Applications (SIGMA)
+  \textbf{13} (2017), 052--052.
+
+\bibitem{gordon1993multiplicative}
+Basil Gordon and Kim Hughes, \emph{{Multiplicative properties of
+  $\eta$-products II}}, Contemporary Mathematics \textbf{143} (1993), 415--415.
+
+\bibitem{gordon1989multiplicative}
+Basil Gordon and Dale Sinor, \emph{{Multiplicative properties of
+  $\eta$-products}}, Number theory, Madras 1987, Springer, 1989, pp.~173--200.
+
+\bibitem{gottsche1990betti}
+Lothar G{\"o}ttsche, \emph{{The Betti numbers of the Hilbert scheme of points
+  on a smooth projective surface}}, Mathematische Annalen \textbf{286} (1990),
+  no.~1, 193--207.
+
+\bibitem{gusein2010generating}
+S.~M. Gusein-Zade, I.~Luengo, and A.~Melle-Hern{\'a}ndez, \emph{{On generating
+  series of classes of equivariant Hilbert schemes of fat points}}, Mosc. Math.
+  J. \textbf{10} (2010), no.~3, 593--602.
+
+\bibitem{gusein2004power}
+Sabir~M Gusein-Zade, Ignacio Luengo, and Alejandro Melle-Hern{\'a}ndez,
+  \emph{{A power structure over the Grothendieck ring of varieties}},
+  Mathematical Research Letters \textbf{11} (2004), no.~1, 49--58.
+
+\bibitem{gyenge2017enumeration}
+{\'A}d{\'a}m Gyenge, \emph{{Enumeration of diagonally colored Young diagrams}},
+  Monatshefte f{\"u}r Mathematik \textbf{183} (2017), no.~1, 143--157.
+
+\bibitem{kac1994infinite}
+Victor~G Kac, \emph{{Infinite-dimensional Lie algebras}}, vol.~44, Cambridge
+  University Press, 1994.
+
+\bibitem{kohler2011eta}
+G{\"u}nter K{\"o}hler, \emph{Eta products and theta series identities},
+  Springer Science \& Business Media, 2011.
+
+\bibitem{kumar2014note}
+Narasimha Kumar and Soma Purkait, \emph{{A note on the Fourier coefficients of
+  half-integral weight modular forms}}, Archiv der Mathematik \textbf{102}
+  (2014), no.~4, 369--378.
+
+\bibitem{mukai1988finite}
+Shigeru Mukai, \emph{{Finite groups of automorphisms of K3 surfaces and the
+  Mathieu group}}, Inventiones mathematicae \textbf{94} (1988), no.~1,
+  183--221.
+
+\bibitem{nakajima2002geometric}
+H.~Nakajima, \emph{{Geometric construction of representations of affine
+  algebras}}, Proceedings of the International Congress of Mathematicians
+  (Beijing, 2002), vol.~1, IMU, Higher Ed, 2002, pp.~423--438.
+
+\bibitem{newman1959construction}
+Morris Newman, \emph{{Construction and application of a class of modular
+  functions II}}, Proceedings of the London Mathematical Society \textbf{3}
+  (1959), no.~3, 373--387.
+
+\bibitem{serre1977modular}
+Jean-Pierre Serre and Harold~M Stark, \emph{Modular forms of weight 1/2},
+  Modular functions of one variable VI, Springer, 1977, pp.~27--67.
+
+\bibitem{sturm1987congruence}
+Jacob Sturm, \emph{On the congruence of modular forms}, Number theory,
+  Springer, 1987, pp.~275--280.
+
+\bibitem{xiao1996galois}
+Gang Xiao, \emph{{Galois covers between K3 surfaces}}, Annales de l'institut
+  Fourier, vol.~46, Chartres: L'Institut, 1950-, 1996, pp.~73--88.
+
+\bibitem{young2010generating}
+B.~Young and J.~Bryan, \emph{{Generating functions for colored 3D Young
+  diagrams and the Donaldson-Thomas invariants of orbifolds}}, Duke Math. J.
+  \textbf{152} (2010), no.~1, 115--153.
+
+\end{thebibliography}
