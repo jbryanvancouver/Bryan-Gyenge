@@ -469,18 +469,19 @@ where $(a_1,\dots,a_n)=(kC_\Delta)^{-1} \cdot \theta$.
 Finally, we introduce the notation
 \[ \Theta_{\Delta}(\tau)=\Theta_{\mathbf{a}}(\tau). \]
 
+The next statement follows immediately from Corollary \ref{cor:mult3}.
 \begin{corollary}
 	\label{cor:thetazetamult} 
-	The function $\Theta_{\Delta}(\tau)$ is a modular form of weight $n/2$ for $\Gamma(km,k)$ with the multiplier system
-	\[ \vartheta(A)=\left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n. \]
+	The function $\Theta_{\Delta}(\tau)$ is a modular form of weight $n/2$ for $\Gamma(km,k)$ with a multiplier system $\vartheta$ such that
+	\[ \vartheta(A)=\left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n, \]
+	when $c\neq 0$ and $d$ is odd.
 	
 	
 	%	For $A \in \Gamma_0(2km) \cap \Gamma(km)$ the multiplier system of the functions $\Theta_{\Lambda_0,\zeta/k,k}(\tau)$ is
 	%\[ \theta_{\zeta/k}(A)=e^{- 2 \pi i a b \frac{(n+1)k-1}{24} }\left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\overline{\epsilon}_d \left(\frac{2c}{d}\right)\right)^n. \]
 \end{corollary}
-\begin{proof}
-Follows from Corollary \ref{cor:mult3}.
-\end{proof}
+%\begin{proof}
+%\end{proof}
 
 
 %\begin{lemma}[{\cite[Remark after Theorem 3]{gordon1993multiplicative}}]
@@ -645,24 +646,23 @@ Specializing to $\alpha=0$ we obtain that
 %Hence, the substitution $q=\mathrm{e}^{2 \pi i \tau}=e^{-\delta}$ corresponds to $e^{\alpha_i}=\mathrm{e}^{- \frac{2 \pi i \tau}{h}}=q^{-\frac{1}{h}}$, where 
 %Let $h=\sum_{i=0}^n \mathrm{dim} \rho_i$ be the (dual) Coxeter number.
 Let
-\begin{equation}\mathbf{\zeta}= \sum_{i=1}^n (\mathrm{dim} \rho_i) \omega_i=\sum_{i=1}^n b_i \alpha_i, 
+\begin{equation}\mathbf{\zeta}= k\mathbf{a}=\sum_{i=1}^n (\mathrm{dim} \rho_i) \omega_i=\sum_{i=1}^n b_i \alpha_i,
 \label{eq:zetasub}
 \end{equation}
-where $\mathbf{b}=(b_1,\dots,b_n)=(C_\Delta)^{-1} \cdot \theta$ with $\theta=( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n)$.
-Let moreover 
-\begin{equation}\mathbf{\beta}= \frac{\zeta}{k}. 
-\label{eq:betasub}
-\end{equation}
-
+where $(b_1,\dots,b_n)=(C_\Delta)^{-1} \cdot \theta$.
+%Let moreover 
+%\begin{equation*}\mathbf{\beta}= \frac{\zeta}{k}. 
+%\label{eq:betasub}
+%\end{equation*}
 Then
-\[ \frac{k}{2}\left(\beta^\top \cdot C_\Delta \cdot \beta\right)=  \frac{\zeta^\top \cdot C_\Delta \cdot \zeta}{2k}. \]
-Substituting \eqref{eq:betasub} and $k=|G_\Delta|$ into \eqref{eq:thetadef} yields
-\begin{gather*}\Theta_{ \Delta }(\tau ) = \Theta_{ \zeta/k ,k}(\tau )  \\ 
-= q^{\frac{\zeta^\top \cdot C_\Delta \cdot \zeta}{2k}}\sum_{ \mathbf{m}=(m_1,\dots,m_n) \in \SZ^n } q^{\mathbf{m}^\top \cdot ( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n) } (q^{k/2})^{\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}}\Big|_{q=\mathrm{e}^{2 \pi i \tau}}. 
+\[ Q(\mathbf{a})=\frac{k}{2}\left(\mathbf{a}^\top \cdot C_\Delta \cdot \mathbf{a}\right)=  \frac{\zeta^\top \cdot C_\Delta \cdot \zeta}{2k}. \]
+Substituting this into the equation in Lemma \ref{lem:thetadef2} yields
+\begin{equation*} 
+\Theta_{ \Delta }(\tau )= q^{\frac{\zeta^\top \cdot C_\Delta \cdot \zeta}{2k}}\sum_{ \mathbf{m}=(m_1,\dots,m_n) \in \SZ^n } q^{\mathbf{m}^\top \cdot ( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n) } (q^{k/2})^{\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}}\Big|_{q=\mathrm{e}^{2 \pi i \tau}}. 
 %= \sum_{ \mathbf{m}=(m_1,\dots,m_n) \in \SZ^n } \mathrm{e}^{ -\sum_{i=1}^n m_i  \alpha_i } (q^{1/2})^{\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}}\\
 %= \sum_{ \mathbf{m}=(m_1,\dots,m_n) \in \SZ^n } (q^{1/h})^{ \sum_{i=1}^n m_i} (q^{1/2})^{\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}}.
-\end{gather*}
-Up to the factor $q^{ \frac{\zeta^\top \cdot C_\Delta \cdot \zeta}{2k}}$ this is exactly the numerator of $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$ appearing in Theorem \ref{thm:genfunct} when we substitute $q_i=q^{\mathrm{dim} \rho_i}$, $0 \leq i \leq n$. In the denominator of $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$, after the same substitution, $n+1$ terms of 
+\end{equation*}
+Up to the factor $q^{ \frac{\zeta^\top \cdot C_\Delta \cdot \zeta}{2k}}$ this is exactly the numerator of $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$ appearing in Theorem \ref{thm:genfunct} when we substitute $q_i=q^{\mathrm{dim} \rho_i}$, $0 \leq i \leq n$. In the denominator of $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$, after the same substitution, a product of $n+1$ terms of 
 \[\prod_{m=1}^{\infty}(1-q^{km})\] 
 appears. As a consequence,
 %\begin{gather*} \Theta_{\Delta}\left (h \tau, -  \sum_{i=1}^n \alpha_i\right ) \\ 
@@ -677,7 +677,7 @@ By Lemma \ref{lem:betalength} below,
 \[ \frac{k(n+1)}{24} - \frac{\zeta^\top \cdot C_\Delta \cdot \zeta}{2k}=\frac{1}{24}. \]
 Hence,
 \[ Z_{\Delta}(\tau)=q^{-\frac{1}{24}}Z_{[\SC^2/G_\Delta]}(q)\Big|_{q=\mathrm{e}^{2 \pi i \tau}} \]
-is the quotient of two holomorphic modular forms. It transforms as a modular form for $\Gamma(km)\cap \Gamma(k)=\Gamma(km)$ with weight 
+is the quotient of two holomorphic modular forms. It transforms as a modular form for $\Gamma(km,k)\cap \Gamma(k)=\Gamma(km,k)=\Gamma(N,k)$ with weight 
 \[ \frac{n+1}{2}-\frac{n}{2}=\frac{1}{2}. \]
 \end{proof}
 \begin{lemma} Let $\Delta$ be a simply laced root system, and let $\zeta$ be defined as in \eqref{eq:zetasub}. Then
