@@ -154,20 +154,36 @@ We will call $\Delta$ simply laced if it is any  of types $A_n$ for $n \geq 1$, 
 Suppose that in \eqref{eq:singsurface} the singular point $P_i$ is of type $\Delta_i$, $1 \leq i \leq n$. Then the local terms in \eqref{eq:singsurface} can be expressed as
 \begin{equation} Z^{(P_i, X)}(q) = Z_{[\SC^2/G_{\Delta_i}]}(q). \label{eq:localterms} \end{equation}
 
-In our discussion we will need to work with modular forms of half-integer weight. Fix a subgroup $\Gamma$ of finite index in $\mathrm{SL_2}(\SZ)$, a function $\chi \colon \Gamma \to \SC^{\ast}$ with $|\chi(A)|=1$ for $A \in \Gamma$, and a half-integer $k$. Then a holomorphic function $f \colon \mathbb{H} \to \SC$ is said to transform as a modular form of weight $k$ with the multiplier system $\chi$ for $\Gamma$ if
-\[ f\left( \frac{a\tau+b}{c\tau+d}\right)=\chi(A)(c\tau+d)^k f(\tau) \quad \textrm{ for all } A=\begin{pmatrix}
+In our discussion we will need to work with modular forms of half-integer weight. Fix a subgroup $\Gamma$ of finite index in $\mathrm{SL_2}(\SZ)$, a function $\vartheta \colon \Gamma \to \SC^{\ast}$ with $|\vartheta(A)|=1$ for $A \in \Gamma$, and a half-integer $k$. Then a holomorphic function $f \colon \mathbb{H} \to \SC$ is said to transform as a modular form of weight $k$ with the multiplier system $\vartheta$ for $\Gamma$ if
+\[ f\left( \frac{a\tau+b}{c\tau+d}\right)=\vartheta(A)(c\tau+d)^k f(\tau) \quad \textrm{ for all } A=\begin{pmatrix}
 a & b \\ c & d
 \end{pmatrix} \in \Gamma. \]
-When $k$ is not an integer, $(c\tau+d)^k$ is understood to be a principal value. If moreover $f$ is holomorphic at all the cusps of $\Gamma$ on $\SQ \cup \{i \infty\}$, then $f$ is said to be a modular form. We will denote the space of modular forms of weight $k$ and multiplier systems $\chi$ for $\Gamma$ by $M_k(\Gamma, \chi)$.
+When $k$ is not an integer, $(c\tau+d)^k$ is understood to be a principal value. If moreover $f$ is holomorphic at all the cusps of $\Gamma$ on $\SQ \cup \{i \infty\}$, then $f$ is said to be a modular form. We will denote the space of modular forms of weight $k$ and multiplier systems $\chi$ for $\Gamma$ by $M_k(\Gamma, \vartheta)$.
 
-We will work with the following congruence subgroups:
+We will need the following congruence subgroups:
 \[  \Gamma_0(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL_2}(\SZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv \begin{pmatrix} \ast & \ast \\ 0 & \ast \end{pmatrix} \;(\mathrm{mod}\;N) \right\}; \]
 \[  \Gamma_1(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL_2}(\SZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv \begin{pmatrix} 1 & \ast \\ 0 & 1 \end{pmatrix} \;(\mathrm{mod}\;N) \right\}; \]
 \[  \Gamma^0(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL_2}(\SZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv \begin{pmatrix} \ast & 0 \\ \ast & \ast \end{pmatrix} \;(\mathrm{mod}\;N) \right\}. \]
-It is automatic, that there is the following containment between these:
+It is automatic, that there is the following containment of subgroups:
 \[ \Gamma(N) \subset \Gamma_1(N) \subset \Gamma_0(N). \]
+
+Moreover, for a divisor $m|N$ let us introduce the following subset of $\mathrm{SL_2}(\SZ)$:
+\[  \Gamma(N,m) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix}: a \equiv \pm 1 \;(\mathrm{mod}\;N/m), b \equiv 0 \;(\mathrm{mod}\;N/m), c \equiv 0 \;(\mathrm{mod}\;N) \right\}. \]
+\begin{lemma} $\Gamma(N,m)$ is a congruence subgroup of $\mathrm{SL_2}(\SZ)$.
+\end{lemma}
+\begin{proof}
+Since $ad-bc=1$ and $c\equiv 0  \;(\mathrm{mod}\;N/m)$, we have that $ad\equiv 1  \;(\mathrm{mod}\;N/m)$. This and $a \equiv \pm 1 \;(\mathrm{mod}\;N/m)$ implies that $a\equiv d  \;(\mathrm{mod}\;N/m)$. Hence the inverse
+\[\begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \textrm{ of } \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \Gamma(N,m)\]
+belongs to $\Gamma(N,m)$ as well. Similarly, the product
+\[ 
+\begin{pmatrix} a_1a_2+b_1c_2 & a_1b_2+b_1d_2 \\ a_2c_1+c_2d_1 & b_2c_1+d_1d_2 \end{pmatrix}
+\]
+\textrm{ of two matrices }
+\[\begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix}, \begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix} \in \Gamma(N,m) \]
+is contained in $\Gamma(N,m)$. Finally, it follows from the definition of $\Gamma(N,m)$ that it contains $\Gamma(N)$.
+\end{proof}
 For a congruence subgroup $\Gamma$ we will denote by $ M_k(\Gamma, \vartheta)$ the space of modular forms with respect to the multiplier system $\vartheta$. It is known that the space $M_k(\Gamma_1(N), 1)$ of modular forms with the \emph{trivial} multiplier system for $\Gamma_1(N)$ decomposes as
-\[ M_k(\Gamma_1(N), 1)= \bigoplus_{\chi} M_k(\Gamma_0(N), \chi), \]
+\[ M_k(\Gamma_1(N), 1)= \bigoplus_{\vartheta} M_k(\Gamma_0(N), \vartheta), \]
 where the direct sum is taken over all (even) Dirichlet characters of modulus $N$ \cite{serre1977modular}.
 
 
@@ -187,7 +203,10 @@ where the direct sum is taken over all (even) Dirichlet characters of modulus $N
 %The following is our first main observation about the local contributions of simple singularities.
 \begin{proposition}
 \label{prop:locmod}
- Let $[\SC^2/G_\Delta]$ be a simple singularity orbifold and let $k=\sum_{i=0}^n (\mathrm{dim} \rho_i)^2=|G_\Delta|$. Then $q^{\frac{1}{24}}(Z_{[\SC^2/G_\Delta]}(q))^{-1}$ with the substitution $q=\mathrm{e}^{2 \pi i \tau}$ is a (possibly meromorphic) modular form of weight $1/2$ in the variable $\tau$ for the congruence subgroup $\Gamma_0(km)$, where  $m$ is as in Table \ref{table:congorder}.
+ Let $[\SC^2/G_\Delta]$ be a simple singularity orbifold and let 
+ \[N=\left(\sum_{i=0}^n (\mathrm{dim} \rho_i)^2\right)m=|G_\Delta|m,\]
+ where  $m$ is as in Table \ref{table:congorder}. 
+ Then $q^{\frac{1}{24}}(Z_{[\SC^2/G_\Delta]}(q))^{-1}$ with the substitution $q=\mathrm{e}^{2 \pi i \tau}$ is a (possibly meromorphic) modular form of weight $1/2$ in the variable $\tau$ for the congruence subgroup $\Gamma(N,m)$.
 \end{proposition}
 
 
@@ -211,7 +230,9 @@ where the direct sum is taken over all (even) Dirichlet characters of modulus $N
 	\label{table:congorder}
 \end{table}
 
-To prove the proposition we will make a digression to the orbifold viewpoint of $\mathrm{Hilb}(X)^G$. In the context of orbifolds or stacks this moduli space is also denoted as $\mathrm{Hilb}([X/G])$, because it is associated with the quotient stack $[X/G]$. Moreover, it decomposes also as
+\subsection{Orbifold Hilbert schemes}
+
+To prove Proposition \ref{prop:locmod} we will make a digression to the orbifold viewpoint of $\mathrm{Hilb}(X)^G$. In the context of orbifolds or stacks this moduli space is also denoted as $\mathrm{Hilb}([X/G])$, because it is associated with the quotient stack $[X/G]$. Moreover, it decomposes also as
 \[ \mathrm{Hilb}([X/G])=\bigsqcup_{\rho \in {\mathop{\rm Rep}}(G)}\mathrm{Hilb}^{\rho}([X/G]),\]
 where
 \[\mathrm{Hilb}^{\rho}([X/G])=  \{ I \in \mathrm{Hilb}(X)^G \colon H^0(\mathcal{O}_{\SC^2}/I) \simeq_G \rho \}\]
@@ -243,47 +264,39 @@ where $\mathbf{q}=\prod_{i=0}^n q_i^{d_i}$ with $d_i=\dim\rho_i$,
 and $C_\Delta$ is the finite type Cartan matrix corresponding to $\Delta$.
 \end{theorem}
 
-It turns out that the function that appears in the numerator of Theorem \ref{thm:genfunct} is a theta function associated with a shift of the root lattice of the corresponding finite Lie algebra. For theta functions we will refer to
-\cite{cohen2017modular}. %\cite{iwaniec1997topics}. Occasionally, we will also need some results from \cite[Chapter 13]{kac1994infinite}.
+
 
 %The general treatment of theta functions at this generality can be found in \cite[Chapter 13]{kac1994infinite}, with which we will match our formulas. We will also need some results from \cite{iwaniec1997topics}.
 
-Let $\Delta$ be a root system of finite type, and let $M$ be its root lattice. %Consider the fundamental weight $\Lambda_0$ of the corresponding affine Lie algebra. %This root has the property that its projection $\overline{\Lambda_0}$ onto the weight lattice of the finite type Lie algebra is zero. 
-Let $\beta=(\beta_1,\dots,\beta_n)$ be a vector of real numbers which we identify with the linear combination $\sum_{i=1}^n \beta_i \alpha_i$ of the $n$ simple positive roots of the finite Lie algebra. That is, $\beta \in M\otimes \SR$. The theta function of degree $k$
-associated with the root lattice of $\Delta$ and 
-%associated with $\Lambda_0$ and 
-shifted by the vector $\mathbf{\beta}$ is defined as
-\begin{equation}
-\Theta_{\beta,k}(\tau)= \sum_{m \in M+\beta} (q^{k/2})^{(\mathbf{m} | \mathbf{m})} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}.
-\label{eq:thetadef},
-\end{equation}
-where $(|)$ is the standard invariant form of the finite type Lie algebra.
-When considered as a function on the weight lattice of the corresponding affine Lie algebra, $q=e^{2 \pi i \tau}$ is also equal to $ e^{-\delta}$ with $\delta$ the basic imaginary root. 
-\begin{lemma}
-\[
-\Theta_{\beta,k}(\tau)= (q^{k/2})^{\beta^\top \cdot C_\Delta \cdot \beta} \cdot \sum_{ \mathbf{m}=(m_1,\dots,m_n) \in \SZ^n } q^{ k(\mathbf{m}^\top \cdot \mathbf{\beta}) } (q^{k/2})^{\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}.\]
-\label{lem:thetadef2}
-\end{lemma}
-\begin{proof}
-Since $M \cong \SZ^n $, one can rewrite \eqref{eq:thetadef}
-as
-\[ \sum_{\mathbf{m} \in \SZ^n} (q^{k/2})^{(\mathbf{m+\beta} | \mathbf{m+\beta})} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}=
-\sum_{\mathbf{m} \in \SZ^n} (q^{k/2})^{(\mathbf{m}| \mathbf{m})+2(\mathbf{m}|\beta)+(\beta|\beta)} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}
-.\]
-The standard invariant form in this basis is given by the Cartan matrix:
-\[ (\mathbf{m} | \mathbf{m})=\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}.\]
-Moreover, $(\mathbf{m}|\beta)=\sum_{i=1}^n \beta_i m_i = \mathbf{m}^\top \cdot \mathbf{\beta}$.
-\end{proof}
 
-\begin{remark} In \cite[Chapter 14]{cohen2017modular} a much more general class of theta functions is introduced. We will use the conventions of \cite[Example 14.2.5 and Definition 14.3.3]{cohen2017modular}. In our case the spherical polynomial $P(X)$ which appears in \cite[14.2.5]{cohen2017modular} is equal to the constant function 1.
-%\begin{enumerate}
-%    \item This definition of a theta function is a special case of  \cite[(13.2.5)]{kac1994infinite} with $\lambda=\Lambda_0$, the fundamental weigh of the corresponding affine Lie algebra, $z= \tau \mathbf{\beta}$ and $u=-\frac{1}{2}\tau (\mathbf{\beta}^\top \cdot C_\Delta \cdot \mathbf{\beta})$. Equivalently, the definition is a special case of \cite[(13.6.1) and (13.6.2)]{kac1994infinite} when $\alpha=0$, since $\overline{\Lambda_0}$, the projection of the fundamental weight $\Lambda_0$ onto the weight lattice of the finite type Lie algebra is 0.
-%    \item Many sources including \cite{bourbaki2002lie} prefer the notation
-%\end{enumerate}
+
+\subsection{Theta functions of lattices}
+
+It turns out that the function appearing in the numerator of Theorem \ref{thm:genfunct} is a theta function associated with a shift of the root lattice of the corresponding finite Lie algebra. For theta functions and their modularity properties we will refer to
+\cite[Chapter 14]{cohen2017modular}. %\cite{iwaniec1997topics}. Occasionally, we will also need some results from \cite[Chapter 13]{kac1994infinite}.
+
+Let $L\cong \SZ^n$ be an $n$ dimensional lattice equipped with a real quadratic form $Q$, which we suppose to be integral and positive definite. That is $Q(L) \in \SZ^+$. %Consider the fundamental weight $\Lambda_0$ of the corresponding affine Lie algebra. %This root has the property that its projection $\overline{\Lambda_0}$ onto the weight lattice of the finite type Lie algebra is zero.
+The associated symmetric bilinear form is obtained as
+\[ B(\mathbf{a},\mathbf{b})= Q(\mathbf{a}+\mathbf{b})-Q(\mathbf{a})-Q(\mathbf{b}). \]
+Then
+\[ Q(\mathbf{a})=\frac{1}{2}B(\mathbf{a},\mathbf{a}). \]
+Let moreover 
+\[ L^{\ast} = \{ \mathbf{b}\in \SR^n : B(\mathbf{a},\mathbf{b}) \in \SZ \textrm{ for all } \mathbf{a} \in L \}\] be the dual lattice to $L$ in $L\otimes \SR \cong \SR^n$ with respect to $Q$.
+ 
+Let $\mathbf{a} \in L^{\ast}$. The theta function associated with the lattice $L$ and 
+%associated with $\Lambda_0$ and 
+shifted by $\mathbf{a}$ is defined as
+\begin{equation}
+\Theta_{\mathbf{a}}(\tau)= \sum_{m \in L+\mathbf{a}} q^{Q(\mathbf{m})} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}.
+\label{eq:thetadef}
+\end{equation}
+\begin{remark} In \cite[Definition 14.3.3]{cohen2017modular} a much more general class of theta functions is introduced. We will use the conventions of \cite[Example 14.2.5]{cohen2017modular}. In our case the spherical polynomial $P(X)$ which appears in \cite[14.2.5]{cohen2017modular} is equal to the constant function 1. Moreover, the number $k$ appearing in  \cite[Example 14.2.5 and Definition 14.3.3]{cohen2017modular} is equal to $n$ in our case. In particular, $k \equiv n \;(\mathrm{mod}\;2)$.
+	%\begin{enumerate}
+	%    \item This definition of a theta function is a special case of  \cite[(13.2.5)]{kac1994infinite} with $\lambda=\Lambda_0$, the fundamental weigh of the corresponding affine Lie algebra, $z= \tau \mathbf{\beta}$ and $u=-\frac{1}{2}\tau (\mathbf{\beta}^\top \cdot C_\Delta \cdot \mathbf{\beta})$. Equivalently, the definition is a special case of \cite[(13.6.1) and (13.6.2)]{kac1994infinite} when $\alpha=0$, since $\overline{\Lambda_0}$, the projection of the fundamental weight $\Lambda_0$ onto the weight lattice of the finite type Lie algebra is 0.
+	%    \item Many sources including \cite{bourbaki2002lie} prefer the notation
+	%\end{enumerate}
 \end{remark}
 
-
-%Transformation properties of $\Theta_{\beta,1}(\tau)$ under the action of a congruence group are related to the determinant $|C_{\Delta}|$ of $C_{\Delta}$.  %and replaces $\Gamma_0(m)$ with $\Gamma_0(km)$.
 We introduce the symbol 
 \begin{equation}
 \label{eq:epsilondef}
@@ -292,110 +305,192 @@ We introduce the symbol
 i \quad \textrm{if } d\equiv -1 \; (\textrm{mod } 4). \\
 \end{cases}
 \end{equation}
-Let $M^{\ast}$ be the dual lattice to $M$ with respect to the standard invariant form. Then $M \subset M^{\ast}$ always, and there is a smallest positive integer $m$ for which  $mM^{\ast} \subset M$ and 
-\[m(\mathbf{v} | \mathbf{v}) \in \SZ \textrm{ for all } \mathbf{v} \in M^{\ast}.\]
-For the irreducible root systems of finite type these numbers are listed in Table \ref{table:congorder} \cite[page 261]{kac1994infinite}. The function $\Theta_{\beta,k}(\tau)$ in fact depend only on the class $\beta \in M^{\ast} / M$.
+Recall that $L^{\ast}$ is the dual lattice to $L$ with respect to $B$. Then $L \subset L^{\ast}$ always, and there is a smallest positive integer $N$ for which   
+\begin{equation} 
+\label{eq:Ndef}
+NL^{\ast} \subset L \textrm{ and }NQ(\mathbf{a}) \in \SZ \textrm{ for all } \mathbf{a} \in L^{\ast}.\end{equation} 
+This number $N$ is called the level in \cite[Definition 14.3.15]{cohen2017modular}.
 
-Elements of matrix $A \in \mathrm{SL}_2(\SZ)$ will be denoted as follows:
+
+Elements of a matrix $A \in \mathrm{SL}_2(\SZ)$ will be denoted as follows:
 \begin{equation}
 \label{eq:matrix}
 A=\begin{pmatrix}
-	a & b \\ c & d
-	\end{pmatrix}.\end{equation}
-Then $A \in \Gamma_0(m)$ if and only if
-\[  cM^{\ast} \subset M \textrm{ and } c(\mathbf{v} | \mathbf{v}) \in \SZ \textrm{ for all } \mathbf{v} \in M^{\ast}. \]
+a & b \\ c & d
+\end{pmatrix}.\end{equation}
+Then $A \in \Gamma_0(N)$ if and only if
+\[  cL^{\ast} \subset L \textrm{ and } cQ(\mathbf{a}) \in \SZ \textrm{ for all } \mathbf{a} \in L^{\ast}. \]
 
-\begin{theorem} Let $A=\Gamma_0(m)$.
-%Define $\varepsilon_M(0,1)=1, \varepsilon_M(0,-1)=(-i)^{p-q}$ and for $c\neq0$ set
-%\[ \varepsilon_L(c,d)=(d,(-1)^qD)_{\infty \varepsilon_d^{-n} \left(\frac{2c}{d})^n\right)\left(\frac{D}{d})\right) } \]
-%if $d$ is odd and $\varepsilon_L(c,d)=\varepsilon_L(c,d-c)$ if $d$ is even. %Here $\varepsilon_d=1$ if $d\cong 1 \; \mathrm(mod 4)$ and  
-Then
-\[ \Theta_{\beta,1}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{a\beta,1}(\tau), \]
-where
-\[ \vartheta(A)=e^{2 \pi i ab (\beta | \beta)} \left(\frac{|C_{\Delta}|}{d}\right)\left(\overline{\epsilon}_d \left(\frac{2c}{d}\right)\right)^n. \]
-\end{theorem}
-\begin{proof}
-This follows from Corollary 14.3.8, Theorem 14.3.11 and the considerations on page 572-573 of \cite{cohen2017modular}.
-\end{proof}
-\begin{corollary} Let $A \in \Gamma_0(km)$. %, or equivalently, let $A$
-%	satisfy the following:
-%	\[ (c/k) M^{\ast} \subset M \textrm{ and } ck(\mathbf{m} | \mathbf{m}) \in \SZ \textrm{ for all } \mathbf{m} \in M^{\ast}\]
+\begin{theorem} 
+\label{thm:modthm}
+	Let $A \in \Gamma_0(N)$ and  $D = \mathrm{det}(Q)$.
 	%Define $\varepsilon_M(0,1)=1, \varepsilon_M(0,-1)=(-i)^{p-q}$ and for $c\neq0$ set
 	%\[ \varepsilon_L(c,d)=(d,(-1)^qD)_{\infty \varepsilon_d^{-n} \left(\frac{2c}{d})^n\right)\left(\frac{D}{d})\right) } \]
 	%if $d$ is odd and $\varepsilon_L(c,d)=\varepsilon_L(c,d-c)$ if $d$ is even. %Here $\varepsilon_d=1$ if $d\cong 1 \; \mathrm(mod 4)$ and  
 	Then
-	\[ \Theta_{\beta,k}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{a\beta,k}(\tau), \]
-	where
-	\[ \vartheta(A)=e^{2 \pi i abk (\beta | \beta)} \left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\overline{\epsilon}_d \left(\frac{2c}{d}\right)\right)^n. \]
-\end{corollary}
-\begin{proof} Replacing $C_{\Delta}$ with $kC_{\Delta}$, that is, going from degree 1 to degree $k$, multiplies the determinant by $k^n$ and replaces $\Gamma_0(m)$ with $\Gamma_0(km)$. \end{proof}
+	\[ \Theta_{\mathbf{a}}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{a\mathbf{a}}(\tau) \]
+	for a multiplier system $\vartheta$ such that
+	\[ \vartheta(A)=e^{2 \pi i ab Q(\mathbf{a})} \left(\frac{D}{d}\right)\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n, \]
+	when $c \neq 0$ and $d$ is odd.
+\end{theorem}
+\begin{proof}
+	Corollary 14.3.8 and Theorem 14.3.11 from \cite{cohen2017modular} implies that
+	\[ \Theta_{\mathbf{a}}(A\tau)= (d,-1^{q}D)_{\infty}\vartheta(A)(c\tau+d)^{n/2} \Theta_{a\mathbf{a}}(\tau), \]
+	where $q$ is the number of negative eigenvalues of $Q$, $(d,(-1)^{q}D)_{\infty}= -1$ if $d<0$ and $(-1)^{q}D < 0$, and $(d,(-1)^{q}D)_{\infty}= 1$ otherwise. The form $Q$ is positive definite. Hence $q=0$ and $D>0$. In turn $(d,(-1)^{q}D)_{\infty}= 1$ always.
+	
+	%considerations on page 572-573 of .
+\end{proof}
 
+
+Let $s$ be the smallest integer, such $s\mathbf{a} \in L$. This is, in general, not the same as $N$, but $s|N$ always. 
 \begin{corollary}
-\label{cor:mult} Let $s$ be an integer, such $s\beta \in M$, the root lattice of $\Delta$.
-Suppose that in \eqref{eq:matrix} the element $a \equiv \pm 1 \; \mathrm(mod\; s)$.
-Then 
-\[ \Theta_{\beta,k}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{\beta,k}(\tau) \]
+	\label{cor:mult} 
+	Suppose that in \eqref{eq:matrix} the element $a \equiv \pm 1 \; \mathrm(mod\; s)$.
+	Then 
+	\[ \Theta_{\mathbf{a}}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{\mathbf{a}}(\tau), \]
+	where $\vartheta$ is as in Theorem \ref{thm:modthm}.
 \end{corollary}
 \begin{proof}
-Since $a \equiv \pm 1 \; \mathrm(mod\; s)$, $a \beta \equiv \beta \; \mathrm(mod\; M)$.
+	Since $a \equiv \pm 1 \; \mathrm(mod\; s)$, $a \mathbf{a} \equiv \pm\mathbf{a} \; \mathrm(mod\; L)$. It follows from the definition \eqref{eq:thetadef} that $\Theta_{\mathbf{a}}(\tau)$ depends only on the class of $\mathbf{a}$ modulo $L$. Furthermore, since
+	\[ Q(\mathbf{m}-\mathbf{a})=Q(-\mathbf{m}+\mathbf{a}), \]
+	$\Theta_{-\mathbf{a}}(\tau)= \Theta_{\mathbf{a}}(\tau)$.
 \end{proof}
 \begin{lemma} 
-\label{lem:mult2}
-Let $\Gamma \subset \Gamma_0(km)$ be a subgroup such that $a \equiv \pm 1 \; \mathrm(mod\; s)$ for all $A \in \Gamma$. Then, $\Theta_{\beta,k}(\tau) \in M_{k/2}(\Gamma, \vartheta)$.
+	\label{lem:mult2}
+	Let $\Gamma \subset \Gamma_0(N)$ be a subgroup such that $a \equiv \pm 1 \; \mathrm(mod\; s)$ for all $A \in \Gamma$. Then $\Theta_{\mathbf{a}}(\tau) \in M_{n/2}(\Gamma, \vartheta)$, where $\vartheta$ is as in Theorem \ref{thm:modthm}.
+%	In particular, $\Theta_{\mathbf{a}}(\tau) \in M_{n/2}(\Gamma(N,s), \vartheta)$.
 \end{lemma}
-\begin{proof} Due to Corollary \ref{cor:mult}, $\Theta_{\beta,k}(\tau)$ transforms as a modular form with the multiplier system $\vartheta$ for the elements of $\Gamma$. 
-
-Showing that it is holomorphic at the cusps is analogous to the proof of \cite[Corollary 14.3.16]{cohen2017modular}. By \cite[Theorem 14.3.7]{cohen2017modular} when an element $A \in \textrm{SL}_2(\SZ)$ acts on the upper half plane, $\Theta_{\beta,k}(A\tau)$ decomposes into a finite linear combination:
-\[ \Theta_{\beta,k}(A\tau)=\sum_{\beta' \in M^{\ast}/M}c_{\beta'}(c\tau+d)^{n/2}\Theta_{\beta',k}(\tau). \]
-It is known that the group $\textrm{SL}_2(\SZ)$ acts transitively on the cusps of $\Gamma$.  Hence, to prove that $\Theta_{\beta,k}(\tau)$ is holomorphic at all the cusps of $\Gamma$ it is enough to show that $\Theta_{\beta',k}(\tau)$ is holomorphic as $\tau \to i\infty$ for any $\beta' \in M^{\ast}/M$. Since the bilinear form is positive definite, $(\mathbf{v}|\mathbf{v})>0$ for any $\mathbf{v} \neq 0$. Therefore the only term in
-\[\Theta_{\beta',k}(\tau)= \sum_{m \in M+\beta'} e^{\pi i \tau k (\mathbf{m} | \mathbf{m})}\]
-which could not tend to 0  as $\tau \to i\infty$ is the one with $X=-\beta'$. This term exists only if $\beta' \in M$, and in this case the limit is 1. The theorem follows.
+\begin{proof} Due to Corollary \ref{cor:mult}, $\Theta_{\mathbf{a}}(\tau)$ transforms as a modular form with the multiplier system $\vartheta$ for the elements of $\Gamma$. 
+	
+	Showing that it is holomorphic at the cusps is analogous to the proof of \cite[Corollary 14.3.16]{cohen2017modular}. By \cite[Theorem 14.3.7]{cohen2017modular} when an element $A \in \textrm{SL}_2(\SZ)$ acts on the upper half plane, $\Theta_{\mathbf{a}}(A\tau)$ decomposes into a finite linear combination:
+	\[ \Theta_{\mathbf{a}}(A\tau)=\sum_{\mathbf{b} \in L^{\ast}/L}c_{\mathbf{b}}(c\tau+d)^{n/2}\Theta_{\mathbf{b},k}(\tau). \]
+	It is known that the group $\textrm{SL}_2(\SZ)$ acts transitively on the cusps of $\Gamma$.  Hence, to prove that $\Theta_{\mathbf{a}}(\tau)$ is holomorphic at all the cusps of $\Gamma$ it is enough to show that $\Theta_{\mathbf{b}}(\tau)$ is holomorphic as $\tau \to i\infty$ for any $\mathbf{b} \in L^{\ast}/L$. Since the bilinear form is positive definite, $Q(\mathbf{b})>0$ for any $\mathbf{b} \neq 0$. Therefore the only term in
+	\[\Theta_{\mathbf{b}}(\tau)= \sum_{\mathbf{m} \in L+\mathbf{b}} e^{\pi i \tau k Q(\mathbf{m})}\]
+	which could not tend to 0  as $\tau \to i\infty$ is the one with $\mathbf{m}=-\mathbf{b}$. This term exists only if $\mathbf{b} \in L$, and in this case the limit is 1. The theorem follows.
 \end{proof}
+
+\begin{corollary}
+		\label{cor:mult3} 
+$\Theta_{\mathbf{a}}(\tau) \in M_{n/2}(\Gamma(N,s), \vartheta)$
+for a multiplier system $\vartheta$ such that
+\[ \vartheta(A)= \left(\frac{D}{d}\right)\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n, \]
+when $c \neq 0$ and $d$ is odd.
+\end{corollary}
+\begin{proof}
+For the elements of $\Gamma(N,s)$, $a \equiv \pm 1 \; \mathrm(mod\; s)$. Thus the conditions of Lemma \ref{lem:mult2} are satisfied. Moreover, since $b \equiv 0 \; \mathrm(mod\; s)$, $ab Q(\mathbf{a})$ is an integer. This implies that the term 
+\[ e^{2 \pi i ab Q(\mathbf{a})} \]
+in Theorem \ref{thm:modthm} is equal to 1.
+\end{proof}
+
+
+\subsection{Theta functions of root systems}
+
+Let $\Delta$  be a root system of finite type, and let $L$ be its root lattice. 
+
+If $\Delta$ is an irreducible root system of finite type and $B=(|)$, the standard invariant form, then the level $N$ of the root lattice $L$ defined in in \eqref{eq:Ndef} is equal to the number $m$ listed in Table \ref{table:congorder} \cite[page 261]{kac1994infinite}. In the standard basis  $L\cong \SZ^n$
+\[ B(\mathbf{a},\mathbf{b})=\mathbf{a}\cdot C_{\Delta} \cdot \mathbf{b}^{\top}, \quad Q(\mathbf{a})=\frac{1}{2}\mathbf{a}\cdot C_{\Delta} \cdot \mathbf{a}^{\top}, \]
+and $D=\det(Q)=|C_{\Delta}|$.
+
+
+We now set instead $B=k(|)$, where $k=|G_{\Delta}|$. In this case the level $N$ of $L$ is $km$,
+\[ B(\mathbf{a},\mathbf{b})=\mathbf{a}\cdot kC_{\Delta} \cdot \mathbf{b}^{\top}, \quad Q(\mathbf{a})=\frac{1}{2}\mathbf{a}\cdot kC_{\Delta} \cdot \mathbf{a}^{\top}, \]
+and $D=\det(Q)=k^n|C_{\Delta}|$.
+
+
+
+
+
+%The function $\Theta_{\beta,k}(\tau)$ in fact depend only on the class $\beta \in M^{\ast} / M$.
+
+%\begin{equation}
+%\Theta_{\beta,k}(\tau)= \sum_{m \in M+\beta} (q^{k/2})^{(\mathbf{m} | \mathbf{m})} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}.
+%\label{eq:thetadef},
+%\end{equation}
+
+
+%\begin{corollary} Let $A \in \Gamma_0(km)$. %, or equivalently, let $A$
+	%	satisfy the following:
+	%	\[ (c/k) M^{\ast} \subset M \textrm{ and } ck(\mathbf{m} | \mathbf{m}) \in \SZ \textrm{ for all } \mathbf{m} \in M^{\ast}\]
+	%Define $\varepsilon_M(0,1)=1, \varepsilon_M(0,-1)=(-i)^{p-q}$ and for $c\neq0$ set
+	%\[ \varepsilon_L(c,d)=(d,(-1)^qD)_{\infty \varepsilon_d^{-n} \left(\frac{2c}{d})^n\right)\left(\frac{D}{d})\right) } \]
+	%if $d$ is odd and $\varepsilon_L(c,d)=\varepsilon_L(c,d-c)$ if $d$ is even. %Here $\varepsilon_d=1$ if $d\cong 1 \; \mathrm(mod 4)$ and  
+%	Then
+%	\[ \Theta_{\beta,k}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{a\beta,k}(\tau), \]
+%	where
+%	\[ \vartheta(A)=e^{2 \pi i abk (\beta | \beta)} \left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n. \]
+%\end{corollary}
+%\begin{proof} Replacing $C_{\Delta}$ with $kC_{\Delta}$, that is, going from degree 1 to degree $k$, multiplies the determinant by $k^n$ and replaces $\Gamma_0(m)$ with $\Gamma_0(km)$. \end{proof}
+
+
+%Let $\mathbf{a}=(a_1,\dots,a_n)$ be a vector of real numbers which we identify with the linear combination $\sum_{i=1}^n \beta_i \alpha_i$ of the $n$ simple positive roots of the finite Lie algebra. That is, $\beta \in M\otimes \SR$.
+
+%The theta function of degree $k$
+%associated with the root lattice of $\Delta$ and 
+%%associated with $\Lambda_0$ and 
+%shifted by the vector $\mathbf{\beta}$ is defined as
+%\begin{equation}
+%\Theta_{\beta,k}(\tau)= \sum_{m \in M+\beta} (q^{k/2})^{(\mathbf{m} | \mathbf{m})} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}.
+%\label{eq:thetadef},
+%\end{equation}
+%where $(|)$ is the standard invariant form of the finite type Lie algebra.
+%When considered as a function on the weight lattice of the corresponding affine Lie algebra, $q=e^{2 \pi i \tau}$ is also %equal to $ e^{-\delta}$ with $\delta$ the basic imaginary root. 
+\begin{lemma} Let $\mathbf{a} \in L^{\ast}$. Then
+\[
+\Theta_{\mathbf{a}}(\tau)= (q^{k/2})^{\mathbf{a}^\top \cdot C_\Delta \cdot \mathbf{a}} \cdot \sum_{ \mathbf{m}=(m_1,\dots,m_n) \in \SZ^n } q^{ k(\mathbf{m}^\top \cdot \mathbf{a}) } (q^{k/2})^{\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}.\]
+\label{lem:thetadef2}
+\end{lemma}
+\begin{proof}
+Since $L \cong \SZ^n $, one can rewrite \eqref{eq:thetadef}
+as
+\[ \sum_{\mathbf{m} \in \SZ^n} (q^{k/2})^{(\mathbf{m+\mathbf{a}} | \mathbf{m+\mathbf{a}})} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}=
+\sum_{\mathbf{m} \in \SZ^n} (q^{k/2})^{(\mathbf{m}| \mathbf{m})+2(\mathbf{m}|\mathbf{a})+(\mathbf{a}|\mathbf{a})} \Big|_{q=\mathrm{e}^{2 \pi i \tau}}
+.\]
+%The standard invariant form in this basis is given by the Cartan matrix:
+%\[ (\mathbf{m} | \mathbf{m})=\mathbf{m}^\top \cdot C_\Delta \cdot \mathbf{m}.\]
+The pairing between $\mathbf{a} \in L^{\ast}$ and $\mathbf{m} \in L$ is just \[(\mathbf{m}|\mathbf{a})=\sum_{i=1}^n a_i m_i = \mathbf{m}^\top \cdot \mathbf{a}.\]
+\end{proof}
+
+
+
+
+%Transformation properties of $\Theta_{\beta,1}(\tau)$ under the action of a congruence group are related to the determinant $|C_{\Delta}|$ of $C_{\Delta}$.  %and replaces $\Gamma_0(m)$ with $\Gamma_0(km)$.
+
 	%Let $s$ be an integer as in Lemma \ref{lem:thetamod}. 
 
 
-We now fix a particular shift vector $\beta$. Let
-\begin{equation}\mathbf{\zeta}= \sum_{i=1}^n (\mathrm{dim} \rho_i) \omega_i=\sum_{i=1}^n b_i \alpha_i, 
+We now fix a particular shift vector $\mathbf{a}$. Let us denote the standard basis of $L$ by $\{\alpha_1, \dots, \alpha_n\}$ and the corresponding dual basis of $L^{\ast}$ by $\{\omega_1, \dots, \omega_n\}$.
+Let
+\[ \theta=( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n) = \sum_{i=1}^n (\mathrm{dim} \rho_i) \alpha_i \in L.\]
+Our $\mathbf{a} \in L^{\ast}$ will be the dual of $\theta$ with respect to $k(|)$. Explicitely, this means that
+\begin{equation}\mathbf{a}= \frac{1}{k}\sum_{i=1}^n (\mathrm{dim} \rho_i) \omega_i=\sum_{i=1}^n a_i \alpha_i, 
 \label{eq:zetasub}
 \end{equation}
-where $\mathbf{b}=(b_1,\dots,b_n)=(C_\Delta)^{-1} \cdot \theta$ with $\theta=( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n)$.
-Let moreover 
-\begin{equation}\mathbf{\beta}= \frac{\zeta}{k}. 
-\label{eq:betasub}
-\end{equation}
-Finally, let
-\[ \Theta_{\Delta}(\tau)=\Theta_{\zeta/k,k}(\tau). \]
+where $(a_1,\dots,a_n)=(kC_\Delta)^{-1} \cdot \theta$.
+Finally, we introduce the notation
+\[ \Theta_{\Delta}(\tau)=\Theta_{\mathbf{a}}(\tau). \]
 
 \begin{corollary}
 	\label{cor:thetazetamult} 
-	The function $\Theta_{\Delta}(\tau)$ is a modular form of weight $n/2$ for $\Gamma=\Gamma_0(km)\cap \Gamma^0(k)$ with the multiplier system
-	\[ \vartheta(A)=\left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\overline{\epsilon}_d \left(\frac{2c}{d}\right)\right)^n. \]
+	The function $\Theta_{\Delta}(\tau)$ is a modular form of weight $n/2$ for $\Gamma(km,k)$ with the multiplier system
+	\[ \vartheta(A)=\left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n. \]
 	
 	
 	%	For $A \in \Gamma_0(2km) \cap \Gamma(km)$ the multiplier system of the functions $\Theta_{\Lambda_0,\zeta/k,k}(\tau)$ is
 	%\[ \theta_{\zeta/k}(A)=e^{- 2 \pi i a b \frac{(n+1)k-1}{24} }\left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\overline{\epsilon}_d \left(\frac{2c}{d}\right)\right)^n. \]
 \end{corollary}
 \begin{proof}
-	With $s=k$, $s\beta \in M$. %Since $c \equiv 0 \; (\textrm{mod } km)$,  
-	%\[(c/k) M^{\ast} \subset M \textrm{ and } ck(\mathbf{m} | \mathbf{m}) \in \SZ \textrm{ for all } \mathbf{m} \in M^{\ast}.\]
-	Since $c \equiv 0 \; (\textrm{mod } k)$ and $ad-bc=1$, $ad \equiv 1 \; (\textrm{mod } k)$. Hence, the condition 
-	$a \equiv \pm 1 \; (\textrm{mod } s)$ of  Lemma \ref{lem:mult2} is satisfied because $s=k$. 
-	Substituting $\beta=\zeta/k$ we obtain for the multiplier system
-	\[ \vartheta_{\zeta/k}(A)=e^{2 \pi i  a b (\zeta|\zeta)/k }\left(\frac{k^n|C_{\Delta}|}{d}\right)\left(\overline{\epsilon}_d \left(\frac{2c}{d}\right)\right)^n. \]
-	Since  $b \equiv 0 \; (\textrm{mod } k)$, $b (\zeta|\zeta)/k$ is an (even) integer.
-	%Then apply Lemma \ref{lem:betalength}.
-	%We know that $ab=1-cd$, $c \equiv 0 \textrm{ mod } km$ and $d \equiv 1 \textrm{ mod } km$. Hence $ab \equiv -c  \textrm{ mod } k^2m^2$.
-	
-	%The function $\Theta_{\Delta}(\tau)$ is holomorphic at the cusp at $i\infty$.
+Follows from Corollary \ref{cor:mult3}.
 \end{proof}
-\begin{lemma}[{\cite[Remark after Theorem 3]{gordon1993multiplicative}}]
-	The map 
-	\[ M_{n/2}(\Gamma_0(N_1) \cap \Gamma^0(N_2), \vartheta) \to M_{n/2}(N_1N_2, \vartheta), \quad f(\tau) \mapsto f(N_2 \tau)\]
-	is a bijection.
-\end{lemma}
 
-\begin{corollary} $\Theta_{\Delta}(k\tau) \in M_{n/2}(k^2m, \vartheta)$.
-\end{corollary}
+
+%\begin{lemma}[{\cite[Remark after Theorem 3]{gordon1993multiplicative}}]
+%	The map 
+%	\[ M_{n/2}(\Gamma_0(N_1) \cap \Gamma^0(N_2), \vartheta) \to M_{n/2}(N_1N_2, \vartheta), \quad f(\tau) \mapsto f(N_2 \tau)\]
+%	is a bijection.
+%\end{lemma}
+
+%\begin{corollary} $\Theta_{\Delta}(k\tau) \in M_{n/2}(k^2m, \vartheta)$.
+%\end{corollary}
 
 
 
