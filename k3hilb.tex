@@ -166,14 +166,17 @@ We will need the following congruence subgroups:
 \[  \Gamma_0(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL_2}(\SZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv \begin{pmatrix} \ast & \ast \\ 0 & \ast \end{pmatrix} \;(\mathrm{mod}\;N) \right\}; \]
 \[  \Gamma_1(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL_2}(\SZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv \begin{pmatrix} 1 & \ast \\ 0 & 1 \end{pmatrix} \;(\mathrm{mod}\;N) \right\}; \]
 \[  \Gamma^0(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL_2}(\SZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv \begin{pmatrix} \ast & 0 \\ \ast & \ast \end{pmatrix} \;(\mathrm{mod}\;N) \right\}. \]
-It is automatic, that there is the following containment of subgroups:
-\[ \Gamma(N) \subset \Gamma_1(N) \subset \Gamma_0(N). \]
-
+%It is automatic, that there is the following containment of subgroups:
+%\[ \Gamma(N) \subset \Gamma_1(N) \subset \Gamma_0(N). \]
 Moreover, for a divisor $m|N$ let us introduce the following subset of $\mathrm{SL_2}(\SZ)$:
 \[  \Gamma(N,m) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix}: a \equiv \pm 1 \;(\mathrm{mod}\;N/m), b \equiv 0 \;(\mathrm{mod}\;N/m), c \equiv 0 \;(\mathrm{mod}\;N) \right\}. \]
+%Finally, let 
+%\[  \Gamma^{\pm}(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix}: a \equiv \pm 1 \;(\mathrm{mod}\;N), b \equiv 0 %\;(\mathrm{mod}\;N), c \equiv 0 \;(\mathrm{mod}\;N) \right\}. \]
+%It follows from the definitions that 
+%\[ \Gamma(N/m) \subset \Gamma^{\pm}(N/m)\subset  \Gamma(N,m) \subset \Gamma_0(N)\]
 \begin{lemma} $\Gamma(N,m)$ is a congruence subgroup of $\mathrm{SL_2}(\SZ)$.
 \end{lemma}
-\begin{proof}
+\begin{proof} The two calculations are very similar; we just do it for $\Gamma(N,m)$.
 Since $ad-bc=1$ and $c\equiv 0  \;(\mathrm{mod}\;N/m)$, we have that $ad\equiv 1  \;(\mathrm{mod}\;N/m)$. This and $a \equiv \pm 1 \;(\mathrm{mod}\;N/m)$ implies that $a\equiv d  \;(\mathrm{mod}\;N/m)$. Hence the inverse
 \[\begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \textrm{ of } \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \Gamma(N,m)\]
 belongs to $\Gamma(N,m)$ as well. Similarly, the product
@@ -184,6 +187,7 @@ belongs to $\Gamma(N,m)$ as well. Similarly, the product
 \[\begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix}, \begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix} \in \Gamma(N,m) \]
 is contained in $\Gamma(N,m)$. Finally, it follows from the definition of $\Gamma(N,m)$ that it contains $\Gamma(N)$.
 \end{proof}
+
 For a congruence subgroup $\Gamma$ we will denote by $ M_k(\Gamma, \vartheta)$ the space of modular forms with respect to the multiplier system $\vartheta$. It is known that the space $M_k(\Gamma_1(N), 1)$ of modular forms with the \emph{trivial} multiplier system for $\Gamma_1(N)$ decomposes as
 \[ M_k(\Gamma_1(N), 1)= \bigoplus_{\vartheta} M_k(\Gamma_0(N), \vartheta), \]
 where the direct sum is taken over all (even) Dirichlet characters of modulus $N$ \cite{serre1977modular}.
@@ -1037,12 +1041,12 @@ If $\Delta$ is a simply laced root system of rank $n$ with $|G_{\Delta}|=k$, the
 \[ e=\frac{24}{gcd(24, k(n+\frac{5}{2})-1)}; \quad e_0=1; \quad s=2k^{n+1}|C_{\Delta}|; \quad N=k. \]
 \end{lemma}
 \begin{proof} For $\eta_{A_1}(\frac{k}{2}\tau)=\eta^2(k\tau)\eta^{-1}(\frac{k}{2}\tau)$, $\sum_{m \mid N} ma_m=\frac{3k}{2}$ and $\prod_{m \mid N} m^{a_m}=2k$. \end{proof}
-\begin{corollary}  Let $\Delta$ be a simply laced root system not of type $A$. 
+\begin{corollary}  Let $\Delta$ be a simply laced root system. 
 \begin{enumerate}
 \item If $n$ is even, let $e$ be as Lemma \ref{lem:ee0s}. Then the function $\eta_{\Delta}(\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
 \[ \gamma(A)=\left( \frac{(-1)^{n/2}k^n|C_{\Delta}|}{d} \right). \]
 %\[ \gamma(A)=\left( \frac{k^n|C_{\Delta}|}{d} \right) \left( \overline{\epsilon}_d \left(\frac{2c}{d}\right) \right)^n. \]
-\item If $n$ is odd, let $e$ be as Lemma \ref{lem:ee0sa1}. Then the function $\eta_{\Delta}(e\tau) \cdot \eta_{A_1}(e\tau) $ if a modular form of weight $\frac{n+1}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
+\item If $n$ is odd, let $e$ be as Lemma \ref{lem:ee0sa1}. Then the function $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau)$ if a modular form of weight $\frac{n+1}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
 \[ \gamma(A)=\left( \frac{(-1)^{(n+1)/2}4k^n|C_{\Delta}|}{d} \right). \]
 \end{enumerate}
 %The function $\eta_{\Delta}(e\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(ke)$ with the multiplier system defined by
@@ -1053,28 +1057,41 @@ If $\Delta$ is a simply laced root system of rank $n$ with $|G_{\Delta}|=k$, the
 \end{proof}
 
 
-\begin{lemma}Let $\Delta$ be a simply laced root system of rank $n$ with $|G_{\Delta}|=k$. Let $e$ be as in Corollary \ref{cor:etamultsyscalc}. Then $e|k$. As a consequence $\Gamma(km,k) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,k)$.
+\begin{lemma} 
+\label{lem:grpint}
+Let $\Delta$ be a simply laced root system. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
+\begin{enumerate}
+\item If $\Delta$ is either of type D and even rank or of type E, then $e|k$. As a consequence, $\Gamma(km,k) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,k)$.
+\item If $\Delta$ is of type D and odd rank, then $e|2k$. As a consequence, $\Gamma(km,k) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,2k)$.
+\end{enumerate}
 \end{lemma}
 \begin{proof}
-In type $E$ this is automatic, since $e|24$ and $24|k$. The same is
+We will show that $\Gamma(km,k)$ (resp. $\Gamma(km,2k)$) is contained in $\Gamma_0(k) \cap \Gamma^0(e)$. For this we only need that $e|k$ (resp. $e|2k$). In the type $E$ case this is automatic, since $e|24$ always and $24|k$ in all three cases.
+
+Let $\Delta$ be of type $D$ whose rank $n$ is even. Then $k(n+1)-1=(4n-8)(n+1)-1=4n^2-4n-9$, which is always an odd number. The divisors of 24 are 2 and 3. So the only possibilities for $e$ are 8 and 24 depending on whether $4n^2-4n-9$ is divisible by 3 or not. Now $4n^2-4n-9=4n(n-1)-9$, so it is not divisible by 3 if and only if $n \equiv -1 (\; \mathrm{mod}\; 3)$. Hence $e=24$ if and only if $n=6l+2$ for some integer $l$. But this means that $k=4n-8=4(6l+2)-8=24l$, so $24|k$. In the cases when $n=6l$ (resp. $n=6l+4$) the order $k=24l-8$ (resp. $k=24l+8$). So in both cases $8|k$. 
+
+Suppose now that $\Delta$ is of type $D$ whose rank $n$ is odd. Then $k(n+\frac{5}{2})-1)=(4n-8)(n+\frac{5}{2})-1=4n^2+2n-21$, which is again always an odd number. Similarly as above, it is not divisible by 3 if and only if $n \equiv -1 (\; \mathrm{mod}\; 3)$.
+If this is the case, then $e=24$ and $n=6l+5$ for some integer $l$. Then, $k=4n-8=4(6l+5)-8=24l-12$, so $e|2k$.
+The other case is when $e=8$ . Then either $n=6l+1$ for some integer $l$ and hence $k=4n-8=4(6l+1)-8=24l-4$, or $n=6l+3$ and hence $k=4n-8=4(6l+3)-8=24l-12$. In both cases $e|2k$.
 \end{proof}
 
-\begin{corollary} Let $\Delta$ be a simply laced root system of rank $n$ with $|G_{\Delta}|=k$. Let $e$ be as in Corollary \ref{cor:etamultsyscalc}, $N=lcm(ke,k^2m)$, and 
-%\begin{cases}
-%lcm(ke,k^2m), \textrm{ if }n \textrm{ is even};\\
-%lcm(ke,2k^2m), \textrm{ if }n \textrm{ is odd}.
-%Let moreover
-$h=lcm(k,e)$.  
+\begin{corollary} Let $\Delta$ be a simply laced root system of rank $n$. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
+Let \[\Gamma=\begin{cases}
+\Gamma(km,k), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is even, or } \Delta \textrm{ is of type E} \\
+\Gamma(km,2k), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is odd}.
+\end{cases}\]
 Then both
-\begin{enumerate}
-\item  $\eta_{\Delta}(h\tau)$  and $\Theta_{\Delta}(h\tau)$, if $n$  is even,
-\item $\eta_{\Delta}(h\tau) \cdot \eta_{A_1}(h\tau)$ and $\Theta_{\Delta}(h\tau) \cdot \Theta_{A_1}(h\tau)$,  if $n$ is odd,
-\end{enumerate}
-are modular forms for $\Gamma_0(N)$ and they have the same multiplier system.
+\[
+\begin{cases}
+\eta_{\Delta}(\tau) \textrm{ and }\Theta_{\Delta}(\tau), \textrm{ if } n \textrm{ is even}, \\
+\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau) \textrm{ and }\Theta_{\Delta}(h\tau) \cdot \Theta_{A_1}(\frac{k}{2}\tau), \textrm{ if } n \textrm{ is odd},
+\end{cases}
+\]
+are modular forms for $\Gamma$ of the same weight and they have the same multiplier system.
 \label{cor:etathetamod}
 \end{corollary}
 \begin{proof}
-Compare Corollary \ref{cor:thetazetamult} with Corollary \ref{cor:etamultsyscalc}.
+Follows from Corollary \ref{cor:thetazetamult}, Corollary \ref{cor:etamultsyscalc} and Lemma \ref{lem:grpint}.
 \end{proof}
 
 
@@ -1087,7 +1104,7 @@ Compare Corollary \ref{cor:thetazetamult} with Corollary \ref{cor:etamultsyscalc
 
 
 %In each cases of Conjecture \ref{conj:zloceta}, $Z_{\Delta}^{-1}(\tau)$ transforms as a weight $1/2$-modular form, and they are automatically holomorphic on $\mathbb{H}$.
-The next result gives a limit up to which the vanishing of the Fourier coefficients of a modular form guarantees the vanishing of the modular form. It is known as the Sturm bound. %We have not found this formulation of the Lemma \ref{lem:sturmbound} in the literature, only an analogous one where $\Gamma(N)$ is replaced with $\Gamma_0(N)$ \cite[Lemma 3.1]{kumar2014note}.
+The next result gives a limit up to which the vanishing of the Fourier coefficients of a modular form guarantees the vanishing of the modular form. It is generally known as the Sturm bound. %We have not found this formulation of the Lemma \ref{lem:sturmbound} in the literature, only an analogous one where $\Gamma(N)$ is replaced with $\Gamma_0(N)$ \cite[Lemma 3.1]{kumar2014note}.
 \begin{theorem}[{\cite[Theorem 1]{sturm1987congruence},\cite[Lemma 3.1]{kumar2014note}}]
 \label{thm:sturmbound}
 Let $n$, $N$ be positive integers such that $4|N$, and let $\chi$ be an even Dirichlet character of modulus $N$. Let $f=\sum_{m=0}^{\infty} a(m)q^n \in M_{n/2}(N,\chi)$. If $a(m)=0$ for all $m \leq \frac{n}{24} [\mathrm{SL}_2(\SZ) \, : \, \Gamma_0(N) ]$, then $f=0$.
@@ -1126,13 +1143,17 @@ Conjecture \ref{conj:zloceta} is true in the cases when $\Delta=A_n$, $n\geq 1$,
 \begin{proof}[{Proof of Proposition \ref{prop:zlocetacheck}}]
 The case $\Delta=A_n$ is explained in Example \ref{ex:anlocaleta} above. 
 
-We know the following indices \cite[Section 1.2]{diamond2005first}:
+The following indices are known \cite[Section 1.2]{diamond2005first}:
 \[ [\mathrm{SL}_2(\SZ) \, : \, \Gamma(N) ]= N^3 \prod_{p \mid N}\left(1-\frac{1}{p^2} \right), \]
 \[ [\Gamma_0(N) \, : \, \Gamma_1(N) ]= \phi(N), \quad [\Gamma_1(N) \, : \, \Gamma(N) ]= N. \]
+The second of these comes is because of the following. Due to $c \equiv 0 \;( \mathrm{mod}\;N)$ we must have $ad\equiv 1 \;( \mathrm{mod}\;N)$. This equation has $\phi(N)$ solutions, but we only allow one of these in $\Gamma_1(N)$: the one with $a\equiv d\equiv 1 \;(\mathrm{mod}\;N)$. In the case of the subgroup $\Gamma(N,m)$ the condition $a \equiv \pm 1 \;( \mathrm{mod}\;N/m)$ allows $2m$ out of the solutions.
 It follows that
 \[  [\mathrm{SL}_2(\SZ) \, : \, \Gamma_0(N) ]=\frac{N^2}{\phi(N)}\prod_{p \mid N}\left(1-\frac{1}{p^2} \right)=N\prod_{p \mid  N}\left(1+\frac{1}{p} \right), \]
 where we have used the following expression for the $\phi$ function:
 \[ \phi(N)=N \prod_{p \mid  N}\left(1-\frac{1}{p} \right). \]
+
+
+
 The common levels $N$ and the corresponding Sturm bounds provided by Theorem \ref{thm:sturmbound} are calculated in Table \ref{table:sturm}. We performed a computer check in each case and found that the Fourier coefficients agree at least up to the corresponding bound.
 \begin{table}
 	\begin{tabular}{ |c|c|c|c|c|c|c|c| }
