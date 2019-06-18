@@ -113,6 +113,7 @@ The structure of the paper is the following. In Section 2 we summarize the neces
 \section{Generating series and modular forms}
 \label{sec:genseries}
 
+\subsection{Generating series of Hilbert schemes of points}
 Throughout the paper we work over the complex field $\SC$. For a projective variety $X$ let $\mathrm{Hilb}^m(X)$ denote the Hilbert scheme of $m$ points on $X$, the projective scheme parametrizing $0$-dimensional subschemes of $X$ of length~$m$. When $X$ is equipped with the action of a finite group $G$, let $\mathrm{Hilb}^m(X)^G \subset \mathrm{Hilb}^m(X)$ be the orbifold Hilbert scheme consisting of the subschemes fixed by $G$.
 %
 %The space $\mathrm{Hilb}(X)$ decomposes as
@@ -154,6 +155,7 @@ We will call $\Delta$ simply laced if it is any  of types $A_n$ for $n \geq 1$, 
 Suppose that in \eqref{eq:singsurface} the singular point $P_i$ is of type $\Delta_i$, $1 \leq i \leq n$. Then the local terms in \eqref{eq:singsurface} can be expressed as
 \begin{equation} Z^{(P_i, X)}(q) = Z_{[\SC^2/G_{\Delta_i}]}(q). \label{eq:localterms} \end{equation}
 
+\subsection{Some notions of modular forms}
 In our discussion we will need to work with modular forms of half-integer weight. Fix a subgroup $\Gamma$ of finite index in $\mathrm{SL_2}(\SZ)$, a function $\vartheta \colon \Gamma \to \SC^{\ast}$ with $|\vartheta(A)|=1$ for $A \in \Gamma$, and a half-integer $k$. Then a holomorphic function $f \colon \mathbb{H} \to \SC$ is said to transform as a modular form of weight $k$ with the multiplier system $\vartheta$ for $\Gamma$ if
 \[ f\left( \frac{a\tau+b}{c\tau+d}\right)=\vartheta(A)(c\tau+d)^k f(\tau) \quad \textrm{ for all } A=\begin{pmatrix}
 a & b \\ c & d
@@ -382,6 +384,10 @@ For the elements of $\Gamma(N,s)$, $a \equiv \pm 1 \; \mathrm(mod\; s)$. Thus th
 in Theorem \ref{thm:modthm} is equal to 1.
 \end{proof}
 
+\begin{remark} Suppose that the rank $n$ of the lattice $L$ is even. Then then the multiplier system in Corollary \ref{cor:mult3} simplifies as
+	\[ \vartheta(A)= \left( \frac{(-1)^{n/2} D}{d} \right), \]
+because	$\epsilon_d^{-2}=-1$ and $\left( \frac{2c}{d}\right)^2=1$.
+\end{remark}
 
 \subsection{Theta functions of root systems}
 
@@ -460,7 +466,9 @@ The pairing between $\mathbf{a} \in L^{\ast}$ and $\mathbf{m} \in L$ is just \[(
 
 We now fix a particular shift vector $\mathbf{a}$. Let us denote the standard basis of $L$ by $\{\alpha_1, \dots, \alpha_n\}$ and the corresponding dual basis of $L^{\ast}$ by $\{\omega_1, \dots, \omega_n\}$.
 Let
-\[ \theta=( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n) = \sum_{i=1}^n (\mathrm{dim} \rho_i) \alpha_i \in L.\]
+\begin{equation} 
+\label{eq:thetadef}
+\theta=( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n) = \sum_{i=1}^n (\mathrm{dim} \rho_i) \alpha_i \in L.\end{equation}
 Our $\mathbf{a} \in L^{\ast}$ will be the dual of $\theta$ with respect to $k(|)$. Explicitely, this means that
 \begin{equation}\mathbf{a}= \frac{1}{k}\sum_{i=1}^n (\mathrm{dim} \rho_i) \omega_i=\sum_{i=1}^n a_i \alpha_i, 
 \label{eq:zetasub}
@@ -729,27 +737,45 @@ In both cases $\vartheta$ is as in Corollary \ref{cor:thetazetamult}.
 \end{corollary}
 \end{comment}
 
-\begin{lemma} 
-\begin{enumerate}
-\item 
-Let $\Delta_1,\Delta_2$ be two root systems. Then
-\[ \Theta_{\Delta_1 \oplus \Delta_2}(\tau)=\Theta_{\Delta_1}(\tau)\cdot \Theta_{\Delta_2}(\tau). \]
-\item If the rank of $\Delta$ is even, then
-\[ \vartheta(A)= \left( \frac{(-1)^{n/2} k^n |C_{\Delta}|}{d} \right). \]
-\item If the rank of $\Delta$ is odd, then for $\Delta \oplus A_1$ the multiplier system is
-\[ \vartheta(A)= \left( \frac{(-1)^{(n+1)/2} 4k^n|C_{\Delta}|}{d} \right). \]
-\end{enumerate}
+
+
+
+ 
+ Let $\Delta_1$ (resp. $\Delta_2$) be a root system of rank $n_1$ (resp. $n_2$). Denote by $G_{\Delta_1}$ $(resp. G_{\Delta_2})$ the corresponding finite group, whose order is $k_1=|G_{\Delta_1}|$ (resp. $k_2=|G_{\Delta_2}|$). Let 
+$\theta_1$ (resp. $\theta_2$) be as in \eqref{eq:thetadef}.
+ Let
+ $\mathbf{a}_1$ (resp.  $\mathbf{a}_2$) be the vector dual to $\theta_1$ (resp. $\theta_2$) with respect to the form
+ $k_1(|)_1$ (resp. $k_2(|)_2$). We define
+ \[ \Theta_{\Delta_1 \oplus \Delta_2}(\tau)=\Theta_{\mathbf{a}_1 \oplus \mathbf{a}_2}(\tau),\]
+where the right side is the theta function of the lattice $L_1 \oplus L_2$ equipped with the form $k_1(|)_1 \oplus k_2(|)_2$. The next statement is a straightforward calculation.
+
+\begin{lemma}
+\[ \Theta_{\Delta_1 \oplus \Delta_2}(\tau)=\Theta_{\Delta_1}(\tau)\cdot \Theta_{\Delta_2}(\tau).\]
 \end{lemma}
-\begin{proof} Part (1) is a straightforward calculation.
-
-Part (2) follows from the facts that $\epsilon_d^2=-1$ and $\left( \frac{2c}{d}\right)^2=1$.
-
-Part (3) follows from part (2), and the from the fact that $2|C_{A_1}|=4$.
+ 
+\begin{corollary} Let $\Delta$ be an irreducible, finite type root system.
+\begin{enumerate}
+	\item If the rank of $\Delta$ is even, then $\Theta_{\Delta}(\tau) \in M_{n/2}(\Gamma(N,k), \vartheta)$, where $N=km$, and 
+	\[ \vartheta(A)= \left( \frac{(-1)^{n/2} k^n |C_{\Delta}|}{d} \right). \]
+	\item If the rank of $\Delta$ is odd and $\Delta$ is not of type A, then $\Theta_{\Delta\oplus A_1}(\tau) \in M_{(n+1)/2}(\Gamma(N,k), \vartheta)$, where $N=km$, and 
+	the multiplier system is
+	\[ \vartheta(A)= \left( \frac{(-1)^{(n+1)/2} 4k^n|C_{\Delta}|}{d} \right). \]
+	\end{enumerate}
+\end{corollary}
+\begin{proof} Part (1) follows from Corollary \ref{cor:thetazetamult} 
+	
+	If $\Delta$ is not of type $A$, then $2|k$ and $8|km$. By Corollary \ref{cor:thetazetamult}, $\Theta_{\Delta}(\tau) $ is a modular form for $\Gamma(km,k)$, and  $\Theta_{A_1}(\tau)$ is a modular form for $\Gamma(8,2)$. Hence, their product is a modular form for $\Gamma(km,k)$. The formula of the multiplier system follows from Part (1) and from that $2|C_{A_1}|=4$.
 \end{proof}
+
+\begin{remark}
+In the actual computer calculations we work with $\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}(\frac{k}{2}\tau)$. With the same reasoning as above, $\Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(4k,k)$. Since in all non-type A, odd rank cases $4|m$, we have that $\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(km,k)$. Moreover, the multiplier system is
+\[ \vartheta(A)= \left( \frac{(-1)^{(n+1)/2} 2k^{n+1}|C_{\Delta}|}{d} \right). \]
+\end{remark}
 
 \section{The local contributions as eta products}
 \label{sec:locetaprod}
 
+\subsection{Eta products}
 An eta products is a finite product
 \begin{equation} f(\tau)=\prod_m \eta(m \tau )^{a_m} 
 \label{eq:etaproddef}
@@ -798,6 +824,8 @@ formula of Theorem \ref{thm:genfunct}. The first term is the generating series o
 %\begin{example} For $\Delta=D_n$, $n \geq 1$ the series $Z_{[\SC^2/G_\Delta]}(q)$ enumerates the Young walls of type $D_n$ CITE.
 %\end{example}
 
+\subsection{The local Hilbert series and their numerators as eta products}
+
 Based on numerical calculations and Example \ref{ex:anlocaleta} we pose the following conjecture.
 \begin{conjecture}
 	\label{conj:zloceta}
@@ -835,23 +863,35 @@ We will denote the eta products on the right hand sides of Conjecture \ref{conj:
 %A weight $k$ weakly holomorphic modular form is a function on $\mathbb{H}$ that obeys the weight $k$
 %modular transformation law for $\Gamma_0(N)$, is holomorphic on $\mathbb{H}$, but may possess poles at the
 %cusps. 
-For a general eta quotient $f(\tau)$ as in \eqref{eq:etaproddef}, let $k=\sum_m{a_m}$. The expression $f(\tau)(\mathrm{d}\tau)^{k/2}$ transforms as a $k/2$-differential due to the transformation law of the Dedekind eta function. Since $\eta(\tau)$ is nonzero on $\mathbb{H}$, an eta quotient never has finite poles. The only issue for an eta product to be a (possibly half-integral weight) modular form is whether the numerator vanishes to at least the same order as the denominator at each cusp.
+
+\subsection{A general procedure for proving Conjecture \ref{conj:zloceta}}
+To compare the eta products of Conjecture \ref{conj:zloceta} with the theta functions of Section \ref{sec:loccontr} we want to show that they are modular forms and also obtain their multiplier systems.
+
+For a general eta quotient $f(\tau)$ as in \eqref{eq:etaproddef}, let $k=\sum_m{a_m}$. The expression $f(\tau)(\mathrm{d}\tau)^{k/2}$ transforms as a $k/2$-differential due to the transformation law of the Dedekind eta function. Since $\eta(\tau)$ is nonzero on $\mathbb{H}$, (quotients of) eta products never has finite poles. The only issue for an eta product to be a (possibly half-integral weight) modular form is whether the numerator vanishes to at least the same order as the denominator at each cusp. 
 
 \begin{theorem}[{\cite[Theorem 3]{gordon1993multiplicative}}] 
 \label{thm:etaprodmodeven}	
-	Let $f$ be an eta product as in \eqref{eq:etaproddef} such that $n=\sum_{m \mid N} a_m$ is even. Let $s=\prod_{m \mid N} m^{a_m}$,  $\frac{1}{24}\sum_{m \mid N} ma_m=c/e$ and $\frac{1}{24}\sum_{m \mid N} \frac{N}{m}a_m=c_0/e_0$, both in lowest terms. Then:
-\begin{enumerate}
-	\item $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
+	Let $f$ be an eta product as in \eqref{eq:etaproddef} such that $n=\sum_{m \mid N} a_m$ is even. Let $s=\prod_{m \mid N} m^{a_m}$,  $\frac{1}{24}\sum_{m \mid N} ma_m=c/e$ and $\frac{1}{24}\sum_{m \mid N} \frac{N}{m}a_m=c_0/e_0$, both in lowest terms. Then $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
 	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
 	for $a>0$, $gcd(a,6)=1$.
-	\item $F(\tau)=f(e\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0e)$ with a multiplier system defined by the Dirichlet character (mod $Ne_0e$) $\gamma(A)$ as in (1).
-\end{enumerate}
+%Then:
+%\begin{enumerate}
+%	\item $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
+%	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
+%	for $a>0$, $gcd(a,6)=1$.
+%	\item $F(\tau)=f(e\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0e)$ with a multiplier system defined by the Dirichlet character (mod $Ne_0e$) $\gamma(A)$ as in (1).
+%\end{enumerate}
 \end{theorem}
 \begin{remark}
 	\label{rem:multsyst}
 \begin{enumerate}
 \item The fact that the $\gamma(A)$ values for $a>0$, $gcd(a,6)=1$ are enough to define a multiplier system follows from \cite[Lemma 3]{newman1959construction}, and the multiplier system was calculated originally in \cite[Theorem 1]{newman1959construction}.
-\item\label{it:multsyst2} Since $N  \mid c$ and $ad-bc=1$, we have that $ad \equiv 1  \;(\textrm{mod }N)$. Thus, $a \equiv \pm 1  \;(\textrm{mod }N)$. In particular, $m \nmid a$ for all $m \mid N$. So the value of the multiplier system has indeed absolute value 1.
+\item\label{it:multsyst2} Since $N|c$ and $ad-bc=1$, we have that $ad \equiv 1  \;(\textrm{mod }m)$ for all $m|N$. This means that
+\[ \left(\frac{a}{m}\right)=\left(\frac{d}{m}\right),\]
+or equivalently, that 
+\[ \left(\frac{m}{a}\right)=\left(\frac{m}{d}\right).\]
+Hence, the multiplier system in Theorem \ref{thm:etaprodmodeven} can also be written as 
+\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{d} \right). \]
 \end{enumerate}
 \end{remark}
 
@@ -980,8 +1020,8 @@ The appropriate scaling of an eta product with odd $n$ is a modular form of half
 In this way we obtain an eta product of weight $\frac{n+1}{2}$, and we can apply Theorem \ref{thm:etaprodmod} directly. Note as well that since $5\cdot 2 - 2 -2\cdot 4$ and $\frac{5}{2}-2-\frac{2}{4}$ are both zero, multiplying an eta product with $\theta(\tau)$ does not change the numbers $c/e$ and $c_0/e_0$ in Theorem \ref{thm:etaprodmod}.
 \end{comment}
 
-As mentioned above, for Conjecture \ref{conj:zloceta} we need to show that $\Theta_{\Delta}(\tau)=\eta_{\Delta}(\tau)$. Theorem \ref{thm:etaprodmodeven} provides the multiplier system of $\eta_{\Delta}(\tau)$ only for root systems of even rank. It is possible to obtain an analog of Theorem \ref{thm:etaprodmodeven} for root systems of odd rank as well. Since these calculations would be too circuitous, we instead reduce to the case of root systems of even rank by taking a direct sum with $A_1$. The identity $\Theta_{A_1}(\tau)=\eta_{A_1}(\tau)$ is known by Example \ref{ex:anlocaleta}. Therefore in the odd rank cases it is enough to check that 
-\[\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}(\tau)=\eta_{\Delta}(\tau)\cdot \eta_{A_1}(\tau).\]	
+To prove Conjecture \ref{conj:zloceta} we need to show that $\Theta_{\Delta}(\tau)=\eta_{\Delta}(\tau)$. Theorem \ref{thm:etaprodmodeven} provides the multiplier system of $\eta_{\Delta}(\tau)$ only for root systems of even rank. It is possible to obtain an analog of Theorem \ref{thm:etaprodmodeven} for root systems of odd rank as well. Since these calculations would be too circuitous, we instead reduce to the case of root systems of even rank by taking a direct sum with $A_1$, for which the identity $\Theta_{A_1}(\tau)=\eta_{A_1}(\tau)$ is known by Example \ref{ex:anlocaleta}. More precisely, for computational reasons in the odd rank cases we will show that
+\[\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}\left(\frac{k}{2}\tau\right)=\eta_{\Delta}(\tau)\cdot \eta_{A_1}\left(\frac{k}{2}\tau\right).\]	
 %For $n$ odd we will in fact show that 
 %\[ \Theta_{\Delta}(\tau)\theta(\tau)=\eta_{\Delta}(\tau)\frac{\eta^5(2\tau)}{\eta^2(\tau)\eta^2(4\tau)}.\]
 \begin{lemma}
@@ -993,16 +1033,16 @@ If $\Delta$ is a simply laced root system of rank $n$ with $|G_{\Delta}|=k$, the
 \end{proof}
 \begin{lemma}
 \label{lem:ee0sa1}
- If $\Delta$ is a simply laced root system of odd rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven} are as follows:
-\[ e=\frac{24}{gcd(24, k(n+1)+2)}; \quad e_0=1; \quad s=4k^n|C_{\Delta}|; \quad N=k. \]
+ If $\Delta$ is a simply laced root system of odd rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven} are as follows:
+\[ e=\frac{24}{gcd(24, k(n+\frac{5}{2})-1)}; \quad e_0=1; \quad s=2k^{n+1}|C_{\Delta}|; \quad N=k. \]
 \end{lemma}
-\begin{proof} For $A_1$, $\sum_{m \mid N} ma_m=k(n+1)-1=3$ and $s=4$. \end{proof}
+\begin{proof} For $\eta_{A_1}(\frac{k}{2}\tau)=\eta^2(k\tau)\eta^{-1}(\frac{k}{2}\tau)$, $\sum_{m \mid N} ma_m=\frac{3k}{2}$ and $\prod_{m \mid N} m^{a_m}=2k$. \end{proof}
 \begin{corollary}  Let $\Delta$ be a simply laced root system not of type $A$. 
 \begin{enumerate}
-\item If $n$ is even, let $e$ be as Lemma \ref{lem:ee0s}. Then the function $\eta_{\Delta}(e\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(ke)$ with the multiplier system defined by
+\item If $n$ is even, let $e$ be as Lemma \ref{lem:ee0s}. Then the function $\eta_{\Delta}(\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
 \[ \gamma(A)=\left( \frac{(-1)^{n/2}k^n|C_{\Delta}|}{d} \right). \]
 %\[ \gamma(A)=\left( \frac{k^n|C_{\Delta}|}{d} \right) \left( \overline{\epsilon}_d \left(\frac{2c}{d}\right) \right)^n. \]
-\item If $n$ is odd, let $e$ be as Lemma \ref{lem:ee0sa1}. Then the function $\eta_{\Delta}(e\tau) \cdot \eta_{A_1}(e\tau) $ if a modular form of weight $\frac{n+1}{2}$ for $\Gamma_0(ke)$ with the multiplier system defined by
+\item If $n$ is odd, let $e$ be as Lemma \ref{lem:ee0sa1}. Then the function $\eta_{\Delta}(e\tau) \cdot \eta_{A_1}(e\tau) $ if a modular form of weight $\frac{n+1}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
 \[ \gamma(A)=\left( \frac{(-1)^{(n+1)/2}4k^n|C_{\Delta}|}{d} \right). \]
 \end{enumerate}
 %The function $\eta_{\Delta}(e\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(ke)$ with the multiplier system defined by
@@ -1011,6 +1051,14 @@ If $\Delta$ is a simply laced root system of rank $n$ with $|G_{\Delta}|=k$, the
 \end{corollary}
 \begin{proof} Follows from Theorem \ref{thm:etaprodmodeven}.
 \end{proof}
+
+
+\begin{lemma}Let $\Delta$ be a simply laced root system of rank $n$ with $|G_{\Delta}|=k$. Let $e$ be as in Corollary \ref{cor:etamultsyscalc}. Then $e|k$. As a consequence $\Gamma(km,k) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,k)$.
+\end{lemma}
+\begin{proof}
+In type $E$ this is automatic, since $e|24$ and $24|k$. The same is
+\end{proof}
+
 \begin{corollary} Let $\Delta$ be a simply laced root system of rank $n$ with $|G_{\Delta}|=k$. Let $e$ be as in Corollary \ref{cor:etamultsyscalc}, $N=lcm(ke,k^2m)$, and 
 %\begin{cases}
 %lcm(ke,k^2m), \textrm{ if }n \textrm{ is even};\\
@@ -1069,6 +1117,7 @@ one only has to check whether the $q$-expansions agree at least up to order $\fr
 \end{proof}
 
 
+\subsection{Proof of Conjecture \ref{conj:zloceta} in certain cases}
 \begin{proposition}
 \label{prop:zlocetacheck}
 Conjecture \ref{conj:zloceta} is true in the cases when $\Delta=A_n$, $n\geq 1$, $D_4, D_5, D_6$ or $E_6$.
