@@ -187,10 +187,22 @@ belongs to $\Gamma(N,m)$ as well. Similarly, the product
 \[\begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix}, \begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix} \in \Gamma(N,m) \]
 is contained in $\Gamma(N,m)$. Finally, it follows from the definition of $\Gamma(N,m)$ that it contains $\Gamma(N)$.
 \end{proof}
+\begin{lemma}
+\label{lem:indgNmsl2}
+The index of $\Gamma(N,m)$ inside $\mathrm{SL}_2(\SZ)$ is
+\begin{equation*} [\mathrm{SL}_2(\SZ) \, : \, \Gamma(N,m) ] = \begin{cases} 
+2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right),\textrm{ if } N/m =2 \\
+2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right) \prod_{p \mid N/m }\left(\frac{p}{p-1} \right),\textrm{ if } N/m >2.
+\end{cases}
+\end{equation*}
+\end{lemma}
+The proof of this statement will be given in Appendix \ref{sec:app0}.
 
-For a congruence subgroup $\Gamma$ we will denote by $ M_k(\Gamma, \vartheta)$ the space of modular forms with respect to the multiplier system $\vartheta$. It is known that the space $M_k(\Gamma_1(N), 1)$ of modular forms with the \emph{trivial} multiplier system for $\Gamma_1(N)$ decomposes as
-\[ M_k(\Gamma_1(N), 1)= \bigoplus_{\vartheta} M_k(\Gamma_0(N), \vartheta), \]
-where the direct sum is taken over all (even) Dirichlet characters of modulus $N$ \cite{serre1977modular}.
+For a congruence subgroup $\Gamma$ we will denote by $ M_k(\Gamma, \vartheta)$ the space of modular forms with respect to the multiplier system $\vartheta$. 
+
+%It is known that the space $M_k(\Gamma_1(N), 1)$ of modular forms with the \emph{trivial} multiplier system for $\Gamma_1(N)$ decomposes as
+%\[ M_k(\Gamma_1(N), 1)= \bigoplus_{\vartheta} M_k(\Gamma_0(N), \vartheta), \]
+%where the direct sum is taken over all (even) Dirichlet characters of modulus $N$ \cite{serre1977modular}.
 
 
 %The following facts are known \cite{serre1977modular}.
@@ -772,7 +784,7 @@ where the right side is the theta function of the lattice $L_1 \oplus L_2$ equip
 \end{proof}
 
 \begin{remark}
-In the actual computer calculations we work with $\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}(\frac{k}{2}\tau)$. With the same reasoning as above, $\Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(4k,k)$. Since in all non-type A, odd rank cases $4|m$, we have that $\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(km,k)$. Moreover, the multiplier system is
+In Section \ref{sec:locetaprod} below we perform computer calculations. In the odd rank cases we found it better to work with $\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}(\frac{k}{2}\tau)$. With the same reasoning as above, $\Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(4k,k)$. Since in all non-type A, odd rank cases $4|m$, we have that $\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(km,k)$. Moreover, as the determinant of $kC_{\Delta} \oplus k C_{A_1}$ is $2k^{n+1}|C_{\Delta}|$, the multiplier system is
 \[ \vartheta(A)= \left( \frac{(-1)^{(n+1)/2} 2k^{n+1}|C_{\Delta}|}{d} \right). \]
 \end{remark}
 
@@ -787,6 +799,44 @@ An eta products is a finite product
 where $m$ runs through a finite set of positive integers and the exponents
 $a_m$ may take values from $\SZ$. The least common multiple of all $m$ such that $a_m\neq 0$ will be denoted by $N$; it is called the minimum level of $f(\tau)$.
 
+For a general eta quotient $f(\tau)$ as in \eqref{eq:etaproddef}, let $k=\sum_m{a_m}$. The expression $f(\tau)(\mathrm{d}\tau)^{k/2}$ transforms as a $k/2$-differential due to the transformation law of the Dedekind eta function. Since $\eta(\tau)$ is nonzero on $\mathbb{H}$, (quotients of) eta products never has finite poles. The only issue for an eta product to be a (possibly half-integral weight) modular form is whether the numerator vanishes to at least the same order as the denominator at each cusp. 
+
+\begin{theorem}[{\cite[Theorem 3]{gordon1993multiplicative}}] 
+	\label{thm:etaprodmodeven}	
+	Let $f$ be an eta product as in \eqref{eq:etaproddef} such that $n=\sum_{m \mid N} a_m$ is even. Let $s=\prod_{m \mid N} m^{a_m}$,  $\frac{1}{24}\sum_{m \mid N} ma_m=c/e$ and $\frac{1}{24}\sum_{m \mid N} \frac{N}{m}a_m=c_0/e_0$, both in lowest terms. Then $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
+	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
+	for $a>0$, $gcd(a,6)=1$.
+	%Then:
+	%\begin{enumerate}
+	%	\item $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
+	%	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
+	%	for $a>0$, $gcd(a,6)=1$.
+	%	\item $F(\tau)=f(e\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0e)$ with a multiplier system defined by the Dirichlet character (mod $Ne_0e$) $\gamma(A)$ as in (1).
+	%\end{enumerate}
+\end{theorem}
+\begin{remark}
+	\label{rem:multsyst}
+	\begin{enumerate}
+		\item The fact that the $\gamma(A)$ values for $a>0$, $gcd(a,6)=1$ are enough to define a multiplier system follows from \cite[Lemma 3]{newman1959construction}, and the multiplier system was calculated originally in \cite[Theorem 1]{newman1959construction}.
+		\item\label{it:multsyst2} Since $N|c$ and $ad-bc=1$, we have that $ad \equiv 1  \;(\textrm{mod }m)$ for all $m|N$. This means that
+		\[ \left(\frac{a}{m}\right)=\left(\frac{d}{m}\right),\]
+		or equivalently, that 
+		\[ \left(\frac{m}{a}\right)=\left(\frac{m}{d}\right).\]
+		Hence, the multiplier system in Theorem \ref{thm:etaprodmodeven} can also be written as 
+		\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{d} \right). \]
+	\end{enumerate}
+\end{remark}
+
+% It was not stated there explicitely but it also assumed in the background of the proof that $gcd(a,m)=1$ for all $m$ with nonzero exponent. But again, due to \cite[Lemma 3]{newman1959construction} this is enough.
+
+The content of Theorem \ref{thm:etaprodmodeven} is explained in \cite[Section 1]{gordon1989multiplicative}. 
+In the case when $\sum_{m \mid N} \frac{N}{m}a_m \equiv 0 \;(\textrm{mod }24)$, $f(\tau)$ has an integral order at 0. If this condition is not satisfied for $N$, it can be guaranteed by replacing $N$ with $Ne_0$. In effect this \emph{widens} the cusp of $\Gamma_0(N)$ at 0 by a factor of $e_0$. Similarly,  $\sum_{m \mid N} ma_m \equiv 0 \;(\textrm{mod }24)$ if and only if $f(\tau)$ has an integral order at the cusp at $i\infty$. If this is not the case, widening the cusp $\Gamma_0(Ne_0)$ at $i\infty$ can be achieved by passing to the subgroup $\Gamma_0^0(Ne_0,e)=\Gamma_0(Ne_0) \cap \Gamma^0(e)$. The numbers $e_0$ and $e$ are called the ramification numbers of $f(\tau)$ at $0$ and $i\infty$ respectively. We will say that $f(\tau)$ is unramified if $e=e_0=1$.
+
+
+
+
+\subsection{The local Hilbert series and their numerators as eta products}
+
 Let $\Delta$ be a simply laced root system. We introduce the notations
 \[ Z_{\Delta}(\tau)=q^{-\frac{1}{24}}Z_{[\SC^2/G_\Delta]}(q)\Big|_{q=\mathrm{e}^{2 \pi i \tau}}  \]
 and 
@@ -797,28 +847,28 @@ where $n$ is the rank of $\Delta$, and $k$ is the order of the corresponding fin
 We will show that in the cases when $\Delta=A_n$, $n\geq 1$, $D_4, D_6, D_7$ or $E_6$ the functions $\Theta_{\Delta}(\tau)$, and hence $Z_{\Delta}(\tau)$, can be expressed as eta products. Conjecturally the same statement holds for all ADE types.
 
 \begin{example} 
-\label{ex:anlocaleta}	
-For $\Delta=A_n$, $n \geq 1$
-\[ Z_{A_n}(\tau)= \frac{1}{\eta(\tau)}.  \]
-This follows from a well-investigated combinatorial argument. The series $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$ in this case enumerates certain combinatorial objects called diagonally colored Young diagrams. For the precise correspondence between these and $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$ see for example \cite{fujii2017combinatorial} or \cite{gyenge2017enumeration}. Here we just summarise the relevant results briefly. Let $C$ be the set of residue classes $\SZ/(n+1)\SZ$. A \emph{coloring} (or \emph{labeling}) of a Young diagram $Y$ with $C$ is a function assigning an element of $C$ to each box of $Y$. The \emph{diagonal coloring} of $Y$ is defined by associating to the $(i,j)$-component $s$ of $Y$ the residue
-\[ \mathrm{res}(s)=j-i+(n+1)\SZ \in C\;.\]
-The \emph{$n$-core} of a diagonally colored Young diagram is the diagonally colored Young diagram obtained by successively removing border strips of length $n$, until this is no longer possible. Here a {\em border strip} is a skew Young diagram which does not contain $2 \times 2$ blocks and 
-which contains exactly one $c$-labelled block for all labels $c \in C$. The removal of border strips from a diagonally colored Young diagram can be traced on another combinatorial object, the \emph{abacus}. The abacus for $n$ colors consists of \emph{rulers} corresponding to the residue classes in $C=\SZ/(n+1)\SZ$.  The $i$-th ruler consists of integers in the $i$-th residue class modulo $n+1$ in increasing order from top to bottom. Several \emph{beads} are placed on these rulers, at most one on each integer. %in the limit upwards each position is filled up with beads, and in the limit downwards there are no beads. 
-In particular, to a Young diagram corresponding to the partition $\lambda=(\lambda_1,\dots,\lambda_k)$ place a bead in position $\lambda_i-i+1$ for all $i$, interpreting $\lambda_i$ as 0 for $i>k$. 
-The removal of a border strip from the Young diagram corresponds to moving a bead up on one of the rulers. It turns out that shifting of beads on different rulers is independent from each other. In this way, the core of a partition corresponds to the bead configuration in which all the beads are shifted up as much as possible. Let us denote by $\mathcal{C}$ the set of $(n+1)$-core partitions. %, and
-It can be shown that the configuration of the beads on a ruler is described by a partition. The collection of these is called the \emph{$(n+1)$-quotient}. Hence, we get a bijection
-\begin{equation}\label{eq:corequot} {\mathcal P} \longleftrightarrow {\mathcal C} \times {\mathcal P}^{n+1}, \end{equation}
- compatible with the diagonal coloring. Furthermore, there is also a correspondence
- \begin{equation*}\label{typeA-cores} 
-{\mathcal C} \longleftrightarrow \SZ^{n}. \end{equation*}
-% Given an $(n+1)$-core, one can read the $n+1$ runners of its abacus representation 
-%separately. The lowest bead on the $i$-th ruler will have the position $j_i$, which is negative if the shift is 
-%toward the negative positions (upwards), and positive otherwise. These numbers have to satisfy 
-%$\sum_{i=0}^{n} j_i=0$. The set $\{j_0,\dots,j_{n}\}$ completely determines the core Young diagram, so we get a bijection
-The decomposition \eqref{eq:corequot} reveals the structure of the
-formula of Theorem \ref{thm:genfunct}. The first term is the generating series of $(n+1)$-tuples of 
-(uncolored) partitions. The second term is the multi variable generating series of the $(n+1)$-core Young diagrams. Applying the substitution $q_i=q$, $0 \leq i \leq n$ corresponds to counting the diagonally colored Young diagrams ``color-blindly''. That is, we just do the usual enumeration of the partitions. Hence,
-\[ Z_{[\SC^2/G_\Delta]}(q)=\prod_{m=1}^{\infty}\frac{1}{1-q^m}.\]
+	\label{ex:anlocaleta}	
+	For $\Delta=A_n$, $n \geq 1$
+	\[ Z_{A_n}(\tau)= \frac{1}{\eta(\tau)}.  \]
+	This follows from a well-investigated combinatorial argument. The series $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$ in this case enumerates certain combinatorial objects called diagonally colored Young diagrams. For the precise correspondence between these and $Z_{[\SC^2/G_\Delta]}(q_0,\dots,q_n)$ see for example \cite{fujii2017combinatorial} or \cite{gyenge2017enumeration}. Here we just summarise the relevant results briefly. Let $C$ be the set of residue classes $\SZ/(n+1)\SZ$. A \emph{coloring} (or \emph{labeling}) of a Young diagram $Y$ with $C$ is a function assigning an element of $C$ to each box of $Y$. The \emph{diagonal coloring} of $Y$ is defined by associating to the $(i,j)$-component $s$ of $Y$ the residue
+	\[ \mathrm{res}(s)=j-i+(n+1)\SZ \in C\;.\]
+	The \emph{$n$-core} of a diagonally colored Young diagram is the diagonally colored Young diagram obtained by successively removing border strips of length $n$, until this is no longer possible. Here a {\em border strip} is a skew Young diagram which does not contain $2 \times 2$ blocks and 
+	which contains exactly one $c$-labelled block for all labels $c \in C$. The removal of border strips from a diagonally colored Young diagram can be traced on another combinatorial object, the \emph{abacus}. The abacus for $n$ colors consists of \emph{rulers} corresponding to the residue classes in $C=\SZ/(n+1)\SZ$.  The $i$-th ruler consists of integers in the $i$-th residue class modulo $n+1$ in increasing order from top to bottom. Several \emph{beads} are placed on these rulers, at most one on each integer. %in the limit upwards each position is filled up with beads, and in the limit downwards there are no beads. 
+	In particular, to a Young diagram corresponding to the partition $\lambda=(\lambda_1,\dots,\lambda_k)$ place a bead in position $\lambda_i-i+1$ for all $i$, interpreting $\lambda_i$ as 0 for $i>k$. 
+	The removal of a border strip from the Young diagram corresponds to moving a bead up on one of the rulers. It turns out that shifting of beads on different rulers is independent from each other. In this way, the core of a partition corresponds to the bead configuration in which all the beads are shifted up as much as possible. Let us denote by $\mathcal{C}$ the set of $(n+1)$-core partitions. %, and
+	It can be shown that the configuration of the beads on a ruler is described by a partition. The collection of these is called the \emph{$(n+1)$-quotient}. Hence, we get a bijection
+	\begin{equation}\label{eq:corequot} {\mathcal P} \longleftrightarrow {\mathcal C} \times {\mathcal P}^{n+1}, \end{equation}
+	compatible with the diagonal coloring. Furthermore, there is also a correspondence
+	\begin{equation*}\label{typeA-cores} 
+	{\mathcal C} \longleftrightarrow \SZ^{n}. \end{equation*}
+	% Given an $(n+1)$-core, one can read the $n+1$ runners of its abacus representation 
+	%separately. The lowest bead on the $i$-th ruler will have the position $j_i$, which is negative if the shift is 
+	%toward the negative positions (upwards), and positive otherwise. These numbers have to satisfy 
+	%$\sum_{i=0}^{n} j_i=0$. The set $\{j_0,\dots,j_{n}\}$ completely determines the core Young diagram, so we get a bijection
+	The decomposition \eqref{eq:corequot} reveals the structure of the
+	formula of Theorem \ref{thm:genfunct}. The first term is the generating series of $(n+1)$-tuples of 
+	(uncolored) partitions. The second term is the multi variable generating series of the $(n+1)$-core Young diagrams. Applying the substitution $q_i=q$, $0 \leq i \leq n$ corresponds to counting the diagonally colored Young diagrams ``color-blindly''. That is, we just do the usual enumeration of the partitions. Hence,
+	\[ Z_{[\SC^2/G_\Delta]}(q)=\prod_{m=1}^{\infty}\frac{1}{1-q^m}.\]
 \end{example}
 %The above considerations lead to a stronger version of the modularity for $\Delta$ of type $A$.
 %\begin{corollary} $Z_{A_n}(\tau)$ is a holomorphic modular for of weight $1/2$ for $\Gamma(1)$. This shows in particular that Proposition \ref{prop:locmod} is not the strongest.
@@ -827,8 +877,6 @@ formula of Theorem \ref{thm:genfunct}. The first term is the generating series o
 
 %\begin{example} For $\Delta=D_n$, $n \geq 1$ the series $Z_{[\SC^2/G_\Delta]}(q)$ enumerates the Young walls of type $D_n$ CITE.
 %\end{example}
-
-\subsection{The local Hilbert series and their numerators as eta products}
 
 Based on numerical calculations and Example \ref{ex:anlocaleta} we pose the following conjecture.
 \begin{conjecture}
@@ -868,41 +916,10 @@ We will denote the eta products on the right hand sides of Conjecture \ref{conj:
 %modular transformation law for $\Gamma_0(N)$, is holomorphic on $\mathbb{H}$, but may possess poles at the
 %cusps. 
 
-\subsection{A general procedure for proving Conjecture \ref{conj:zloceta}}
+\subsection{A procedure for proving Conjecture \ref{conj:zloceta}}
 To compare the eta products of Conjecture \ref{conj:zloceta} with the theta functions of Section \ref{sec:loccontr} we want to show that they are modular forms and also obtain their multiplier systems.
 
-For a general eta quotient $f(\tau)$ as in \eqref{eq:etaproddef}, let $k=\sum_m{a_m}$. The expression $f(\tau)(\mathrm{d}\tau)^{k/2}$ transforms as a $k/2$-differential due to the transformation law of the Dedekind eta function. Since $\eta(\tau)$ is nonzero on $\mathbb{H}$, (quotients of) eta products never has finite poles. The only issue for an eta product to be a (possibly half-integral weight) modular form is whether the numerator vanishes to at least the same order as the denominator at each cusp. 
 
-\begin{theorem}[{\cite[Theorem 3]{gordon1993multiplicative}}] 
-\label{thm:etaprodmodeven}	
-	Let $f$ be an eta product as in \eqref{eq:etaproddef} such that $n=\sum_{m \mid N} a_m$ is even. Let $s=\prod_{m \mid N} m^{a_m}$,  $\frac{1}{24}\sum_{m \mid N} ma_m=c/e$ and $\frac{1}{24}\sum_{m \mid N} \frac{N}{m}a_m=c_0/e_0$, both in lowest terms. Then $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
-	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
-	for $a>0$, $gcd(a,6)=1$.
-%Then:
-%\begin{enumerate}
-%	\item $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
-%	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
-%	for $a>0$, $gcd(a,6)=1$.
-%	\item $F(\tau)=f(e\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0e)$ with a multiplier system defined by the Dirichlet character (mod $Ne_0e$) $\gamma(A)$ as in (1).
-%\end{enumerate}
-\end{theorem}
-\begin{remark}
-	\label{rem:multsyst}
-\begin{enumerate}
-\item The fact that the $\gamma(A)$ values for $a>0$, $gcd(a,6)=1$ are enough to define a multiplier system follows from \cite[Lemma 3]{newman1959construction}, and the multiplier system was calculated originally in \cite[Theorem 1]{newman1959construction}.
-\item\label{it:multsyst2} Since $N|c$ and $ad-bc=1$, we have that $ad \equiv 1  \;(\textrm{mod }m)$ for all $m|N$. This means that
-\[ \left(\frac{a}{m}\right)=\left(\frac{d}{m}\right),\]
-or equivalently, that 
-\[ \left(\frac{m}{a}\right)=\left(\frac{m}{d}\right).\]
-Hence, the multiplier system in Theorem \ref{thm:etaprodmodeven} can also be written as 
-\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{d} \right). \]
-\end{enumerate}
-\end{remark}
-
-% It was not stated there explicitely but it also assumed in the background of the proof that $gcd(a,m)=1$ for all $m$ with nonzero exponent. But again, due to \cite[Lemma 3]{newman1959construction} this is enough.
-
-The content of Theorem \ref{thm:etaprodmodeven} is explained in \cite[Section 1]{gordon1989multiplicative}. 
-In the case when $\sum_{m \mid N} \frac{N}{m}a_m \equiv 0 \;(\textrm{mod }24)$, $f(\tau)$ has an integral order at 0. If this condition is not satisfied for $N$, it can be guaranteed by replacing $N$ with $Ne_0$. In effect this \emph{widens} the cusp of $\Gamma_0(N)$ at 0 by a factor of $e_0$. Similarly,  $\sum_{m \mid N} ma_m \equiv 0 \;(\textrm{mod }24)$ if and only if $f(\tau)$ has an integral order at the cusp at $i\infty$. If this is not the case, widening the cusp $\Gamma_0(Ne_0)$ at $i\infty$ can be achieved by passing to the subgroup $\Gamma_0^0(Ne_0,e)=\Gamma_0(Ne_0) \cap \Gamma^0(e)$. The numbers $e_0$ and $e$ are called the ramification numbers of $f(\tau)$ at $0$ and $i\infty$ respectively. We will say that $f(\tau)$ is unramified if $e=e_0=1$.
 
 
 \begin{comment}
@@ -1030,14 +1047,14 @@ To prove Conjecture \ref{conj:zloceta} we need to show that $\Theta_{\Delta}(\ta
 %\[ \Theta_{\Delta}(\tau)\theta(\tau)=\eta_{\Delta}(\tau)\frac{\eta^5(2\tau)}{\eta^2(\tau)\eta^2(4\tau)}.\]
 \begin{lemma}
 \label{lem:ee0s}
-If $\Delta$ is a simply laced root system of rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven}	 are as follows:
+If $\Delta$ is an irreducible simply laced root system of rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven}	 are as follows:
 \[ e=\frac{24}{gcd(24, k(n+1)-1)}; \quad e_0=1; \quad s=k^n|C_{\Delta}|; \quad N=k. \]
 \end{lemma}
 \begin{proof} Direct calculation shows that in each case $\sum_{m \mid N} ma_m=k(n+1)-1$, and $\sum_{m \mid N} \frac{N}{m}a_m=0$. The third identity is also straightforward.
 \end{proof}
 \begin{lemma}
 \label{lem:ee0sa1}
- If $\Delta$ is a simply laced root system of odd rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven} are as follows:
+ If $\Delta$ is an irreducible simply laced root system of odd rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven} are as follows:
 \[ e=\frac{24}{gcd(24, k(n+\frac{5}{2})-1)}; \quad e_0=1; \quad s=2k^{n+1}|C_{\Delta}|; \quad N=k. \]
 \end{lemma}
 \begin{proof} For $\eta_{A_1}(\frac{k}{2}\tau)=\eta^2(k\tau)\eta^{-1}(\frac{k}{2}\tau)$, $\sum_{m \mid N} ma_m=\frac{3k}{2}$ and $\prod_{m \mid N} m^{a_m}=2k$. \end{proof}
@@ -1047,7 +1064,7 @@ If $\Delta$ is a simply laced root system of rank $n$ with $|G_{\Delta}|=k$, the
 \[ \gamma(A)=\left( \frac{(-1)^{n/2}k^n|C_{\Delta}|}{d} \right). \]
 %\[ \gamma(A)=\left( \frac{k^n|C_{\Delta}|}{d} \right) \left( \overline{\epsilon}_d \left(\frac{2c}{d}\right) \right)^n. \]
 \item If $n$ is odd, let $e$ be as Lemma \ref{lem:ee0sa1}. Then the function $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau)$ if a modular form of weight $\frac{n+1}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
-\[ \gamma(A)=\left( \frac{(-1)^{(n+1)/2}4k^n|C_{\Delta}|}{d} \right). \]
+\[ \gamma(A)=\left( \frac{(-1)^{(n+1)/2}2k^{n+1}|C_{\Delta}|}{d} \right). \]
 \end{enumerate}
 %The function $\eta_{\Delta}(e\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(ke)$ with the multiplier system defined by
 %\[ \gamma(A)=\left( \frac{k^n|C_{\Delta}|}{d} \right) \left( \overline{\epsilon}_d \left(\frac{2c}{d}\right) \right)^n. \]
@@ -1059,14 +1076,14 @@ If $\Delta$ is a simply laced root system of rank $n$ with $|G_{\Delta}|=k$, the
 
 \begin{lemma} 
 \label{lem:grpint}
-Let $\Delta$ be a simply laced root system. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
+Let $\Delta$ be an irreducible simply laced root system. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
 \begin{enumerate}
-\item If $\Delta$ is either of type D and even rank or of type E, then $e|k$. As a consequence, $\Gamma(km,k) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,k)$.
-\item If $\Delta$ is of type D and odd rank, then $e|2k$. As a consequence, $\Gamma(km,k) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,2k)$.
+\item If $\Delta$ is either of type D and even rank or of type E, then $e|k$. As a consequence, $\Gamma(km,m) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,m)$.
+\item If $\Delta$ is of type D and odd rank, then $e|2k$. As a consequence, $\Gamma(km,m) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,m/2)$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-We will show that $\Gamma(km,k)$ (resp. $\Gamma(km,2k)$) is contained in $\Gamma_0(k) \cap \Gamma^0(e)$. For this we only need that $e|k$ (resp. $e|2k$). In the type $E$ case this is automatic, since $e|24$ always and $24|k$ in all three cases.
+We will show that $\Gamma(km,m)$ (resp. $\Gamma(km,m/2)$) is contained in $\Gamma_0(k) \cap \Gamma^0(e)$. For this we only need that $e|k$ (resp. $e|2k$). In the type $E$ case this is automatic, since $e|24$ always and $24|k$ in all three cases.
 
 Let $\Delta$ be of type $D$ whose rank $n$ is even. Then $k(n+1)-1=(4n-8)(n+1)-1=4n^2-4n-9$, which is always an odd number. The divisors of 24 are 2 and 3. So the only possibilities for $e$ are 8 and 24 depending on whether $4n^2-4n-9$ is divisible by 3 or not. Now $4n^2-4n-9=4n(n-1)-9$, so it is not divisible by 3 if and only if $n \equiv -1 (\; \mathrm{mod}\; 3)$. Hence $e=24$ if and only if $n=6l+2$ for some integer $l$. But this means that $k=4n-8=4(6l+2)-8=24l$, so $24|k$. In the cases when $n=6l$ (resp. $n=6l+4$) the order $k=24l-8$ (resp. $k=24l+8$). So in both cases $8|k$. 
 
@@ -1075,10 +1092,10 @@ If this is the case, then $e=24$ and $n=6l+5$ for some integer $l$. Then, $k=4n-
 The other case is when $e=8$ . Then either $n=6l+1$ for some integer $l$ and hence $k=4n-8=4(6l+1)-8=24l-4$, or $n=6l+3$ and hence $k=4n-8=4(6l+3)-8=24l-12$. In both cases $e|2k$.
 \end{proof}
 
-\begin{corollary} Let $\Delta$ be a simply laced root system of rank $n$. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
+\begin{corollary} Let $\Delta$ be an irreducible simply laced root system of rank $n$. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
 Let \[\Gamma=\begin{cases}
-\Gamma(km,k), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is even, or } \Delta \textrm{ is of type E} \\
-\Gamma(km,2k), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is odd}.
+\Gamma(km,m), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is even, or } \Delta \textrm{ is of type E} \\
+\Gamma(km,m/2), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is odd}.
 \end{cases}\]
 Then both
 \[
@@ -1105,11 +1122,12 @@ Follows from Corollary \ref{cor:thetazetamult}, Corollary \ref{cor:etamultsyscal
 
 %In each cases of Conjecture \ref{conj:zloceta}, $Z_{\Delta}^{-1}(\tau)$ transforms as a weight $1/2$-modular form, and they are automatically holomorphic on $\mathbb{H}$.
 The next result gives a limit up to which the vanishing of the Fourier coefficients of a modular form guarantees the vanishing of the modular form. It is generally known as the Sturm bound. %We have not found this formulation of the Lemma \ref{lem:sturmbound} in the literature, only an analogous one where $\Gamma(N)$ is replaced with $\Gamma_0(N)$ \cite[Lemma 3.1]{kumar2014note}.
-\begin{theorem}[{\cite[Theorem 1]{sturm1987congruence},\cite[Lemma 3.1]{kumar2014note}}]
+\begin{theorem}[{\cite[Theorem 1]{sturm1987congruence}}]
 \label{thm:sturmbound}
-Let $n$, $N$ be positive integers such that $4|N$, and let $\chi$ be an even Dirichlet character of modulus $N$. Let $f=\sum_{m=0}^{\infty} a(m)q^n \in M_{n/2}(N,\chi)$. If $a(m)=0$ for all $m \leq \frac{n}{24} [\mathrm{SL}_2(\SZ) \, : \, \Gamma_0(N) ]$, then $f=0$.
+Let $\Gamma$ be a congruence subgroup of $\mathrm{SL}_2(\SZ)$, $n$ be a positive even integer, and $\vartheta$ be a multiplier system for $\Gamma$. Let $f=\sum_{m=0}^{\infty} a(m)q^m \in M_{n/2}(\Gamma,\vartheta)$. If $a(m)=0$ for all $m \leq \frac{n}{24} [\mathrm{SL}_2(\SZ) \, : \, \Gamma ]$, then $f=0$. As a consequence, if the Fourier coefficients of two modular forms in $M_{n/2}(\Gamma,\vartheta)$ agree at least up to degree $\frac{n}{24} [\mathrm{SL}_2(\SZ) \, : \, \Gamma ]$, then the two modular forms are equal.
 \end{theorem}
 \begin{comment}
+%\cite[Lemma 3.1]{kumar2014note}}
 \begin{proof} If $k$ is even, then the statement follows from the standard version of the Sturm bound \cite[Theorem 1]{sturm1987congruence}.
 	
 Suppose that $k$ is odd and set $B=\frac{k}{24} [\mathrm{SL}_2(\SZ) \, : \, \Gamma(N) ]$. Since $a_f(n)=0$ for $n \leq B$, the Fourier expansion of $f$ at $\infty$ can be written as
@@ -1129,12 +1147,12 @@ For every fixed $\Delta$ Conjecture \ref{conj:zloceta} can be checked numericall
 \end{corollary}
 \begin{proof}
 %One need to check two things about the holomorphic modular form $\Theta_{\Delta}(\tau)$ and the corresponding eta product. First, whether $\Theta_{\Delta}(\tau)$ tranforms accoding to the same Dirichlet character as the eta product. This is true by comparing Corollary \ref{cor:thetazetamult} with Corollary \ref{cor:etaprodmultalt}. Second,
-Because of Corollay \ref{cor:etathetamod} and Theorem \ref{thm:sturmbound}
-one only has to check whether the $q$-expansions agree at least up to order $\frac{n}{24} [\mathrm{SL}_2(\SZ) \, : \, \Gamma_0(N) ]$.
+Because of Theorem \ref{thm:sturmbound}
+one only has to check whether the $q$-expansions of the two functions from Corollay \ref{cor:etathetamod} agree at least up to order $\frac{n}{24} [\mathrm{SL}_2(\SZ) \, : \, \Gamma(N,m) ]$.
 \end{proof}
 
 
-\subsection{Proof of Conjecture \ref{conj:zloceta} in certain cases}
+%\subsection{Proof of Conjecture \ref{conj:zloceta} in certain cases}
 \begin{proposition}
 \label{prop:zlocetacheck}
 Conjecture \ref{conj:zloceta} is true in the cases when $\Delta=A_n$, $n\geq 1$, $D_4, D_5, D_6$ or $E_6$.
@@ -1143,18 +1161,34 @@ Conjecture \ref{conj:zloceta} is true in the cases when $\Delta=A_n$, $n\geq 1$,
 \begin{proof}[{Proof of Proposition \ref{prop:zlocetacheck}}]
 The case $\Delta=A_n$ is explained in Example \ref{ex:anlocaleta} above. 
 
-The following indices are known \cite[Section 1.2]{diamond2005first}:
-\[ [\mathrm{SL}_2(\SZ) \, : \, \Gamma(N) ]= N^3 \prod_{p \mid N}\left(1-\frac{1}{p^2} \right), \]
-\[ [\Gamma_0(N) \, : \, \Gamma_1(N) ]= \phi(N), \quad [\Gamma_1(N) \, : \, \Gamma(N) ]= N. \]
-The second of these comes is because of the following. Due to $c \equiv 0 \;( \mathrm{mod}\;N)$ we must have $ad\equiv 1 \;( \mathrm{mod}\;N)$. This equation has $\phi(N)$ solutions, but we only allow one of these in $\Gamma_1(N)$: the one with $a\equiv d\equiv 1 \;(\mathrm{mod}\;N)$. In the case of the subgroup $\Gamma(N,m)$ the condition $a \equiv \pm 1 \;( \mathrm{mod}\;N/m)$ allows $2m$ out of the solutions.
-It follows that
-\[  [\mathrm{SL}_2(\SZ) \, : \, \Gamma_0(N) ]=\frac{N^2}{\phi(N)}\prod_{p \mid N}\left(1-\frac{1}{p^2} \right)=N\prod_{p \mid  N}\left(1+\frac{1}{p} \right), \]
-where we have used the following expression for the $\phi$ function:
-\[ \phi(N)=N \prod_{p \mid  N}\left(1-\frac{1}{p} \right). \]
 
 
+In all other cases, taking into account the index formula from Lemma \ref{lem:indgNmsl2}, the groups $\Gamma(km,m)$ (resp. $\Gamma(km,m/2)$) and the corresponding Sturm bounds are calculated in Table \ref{table:sturm}. We performed a computer check in each case and found that the Fourier coefficients agree at least up to the appropriate bound.
 
-The common levels $N$ and the corresponding Sturm bounds provided by Theorem \ref{thm:sturmbound} are calculated in Table \ref{table:sturm}. We performed a computer check in each case and found that the Fourier coefficients agree at least up to the corresponding bound.
+\begin{table}
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		$\Delta$ & $k$ & $m$ & $\Gamma$ & $[\mathrm{SL}_2(\SZ) \, : \, \Gamma]$ & Sturm bound \\
+		\hline
+		$D_4$ & 8 & 2 & $\Gamma(16,2)$ & 768 & 128 \\
+		%		$D_5$ & 12 & 24 & 288 & 2034 & 2034 & 960 & 24 \\
+		%		$D_5\oplus A_1$ & 24 & 12 & 288 & 1152 & 1152 & 576 & 24 \\
+		$D_5\oplus A_1$ & 12 & 8 & $\Gamma(96,4)$ & 36864 & 9216 \\
+		$D_6$ & 16 & 4 & $\Gamma(64,4)$ & 12288 & 3072 \\
+		$E_6$ & 24 & 3 & $\Gamma(72,3)$ & 20736 & 5184 \\
+		%		& $n \equiv 2\;\mathrm{mod}\;4$ & 4 \\
+		%		& $n \equiv 0\;\mathrm{mod}\;4$ & 2 \\
+		%		$E_6$ & & 3 \\
+		%		$E_7$ & & 4 \\
+		%		$E_8$ & & 1 \\
+		\hline
+	\end{tabular}
+	\vspace{0.2in}
+	\caption{Sturm bounds}
+	\label{table:sturm}
+\end{table}
+
+\begin{comment}
 \begin{table}
 	\begin{tabular}{ |c|c|c|c|c|c|c|c| }
 		\hline
@@ -1178,7 +1212,6 @@ $D_5\oplus A_1$ & 12 & 12 & 144 & 1152 & 1152 & 576 & 24 \\
 	\label{table:sturm}
 \end{table}
 
-\begin{comment}
 Part (2): For $\Delta=D_n$, $n \geq 1$ the series $Z_{[\SC^2/G_\Delta]}(q)$ enumerates the Young walls of the corresponding type $D_n$ \cite{gyenge2015euler}.
 
 By Lemma \ref{lem:locmod} the series $1/Z_{D_4}(\tau)$, resp.  $1/Z_{D_5}(\tau)$, resp.  $1/Z_{D_6}(\tau)$, resp. $1/Z_{E_6}(\tau)$ is a holomorphic  modular forms of weight $1/2$ for the principal congruence subgroup $\Gamma(16)$, resp. $\Gamma(96)$, resp. $\Gamma(64)$, resp. $\Gamma(72)$.
@@ -1200,13 +1233,13 @@ where
 \section{K3 surfaces}
 \label{sec:k3surf}
 
-A smooth projective surface $X$ is a K3 surface if the canonical line bundle is trivial $\omega_X \cong \CO_X$ and if $h_1(X,\CO_X)=0$. An action of a finite group $G \subset \mathrm{Aut}(X)$ of automorphisms of $X$ is called symplectic, if the action of $G$ on $H^0(\omega_X)$ is trivial, or equivalently, if the resolution of the quotient $X/G$ is also a K3 surface \cite[Page 1]{xiao1996galois}. In this case the stabilizers are generically trivial and the quotient $X/G$ is a surface with at worst simple (Kleinian, rational double point) singularities. Moreover, the projection $ X \to X/G$ is unramified outside these singular points \cite{mukai1988finite}. Therefore the results of Section \ref{sec:genseries} apply.
+A smooth projective surface $X$ is a K3 surface if the canonical line bundle is trivial $\omega_X \cong \CO_X$ and if $h_1(X,\CO_X)=0$. An action of a finite group $G \subset \mathrm{Aut}(X)$ of automorphisms of $X$ is called symplectic, if the action of $G$ on $H^0(\omega_X)$ is trivial, or equivalently, if the resolution of the quotient $X/G$ is also a K3 surface \cite[Page 1]{xiao1996galois}. In this case the stabilizers are generically trivial and the quotient $X/G$ is a surface with at worst simple (Kleinian, rational double point) singularities. Moreover, the projection $ X \to X/G$ is unramified outside these singular points \cite{mukai1988finite}. Therefore the results of the previous sections apply.
 
 \begin{proposition} 
 \label{prop:k3mod}
 If $X$ is a smooth projective K3 surface and $G$ is a finite group acting on it by symplectic automorphisms, then
 \[f_{[X/G]}(\tau)=\frac{q}{Z_{[X/G]}(q)}\Big|_{q=\mathrm{e}^{2 \pi i \tau}}\]
-is an unramified modular form of level $\frac{\chi(X/G)}{2}$ for $\Gamma_0(|G|)$ (with a suitable Dirichlet character).
+is an unramified modular form of level $\frac{\chi(X/G)}{2}$ for $\Gamma_0(|G|)$ (with a multiplier system which is a suitable Dirichlet character).
 \end{proposition}
 
 The complete classification of finite groups admitting a symplectic action on a K3 surface is given in \cite{mukai1988finite}. It turnes out that there are 81 such finite groups. Moreover, a classification of combinatorial types of the actions was also obtained in \cite{xiao1996galois}. This describes the number of fixed points of each type, or, equivalently, the singularities of the quotient. Our proof does not depend on this classification, but for examples we follow \cite[Table 2]{xiao1996galois} for the numbering of the possible types. 
@@ -1324,26 +1357,59 @@ Let $\widetilde{X/G}$ be the minimal resolution of $X/G$. Since $n_i+1$ is the E
 Here we applied that $G$ is symplectic, and hence $\widetilde{X/G}$ is also a K3 surface.
 \end{proof}
 \begin{corollary}
-For $f_{[X/G]}(\tau)$ the numbers appearing in Proposition \ref{prop:etaprodmod} are $e=1$ and $e_0=\frac{k}{h}$. Hence,
-$f_{[X/G]}(\tau)$ is an unramified modular form for $\Gamma_0\left( h \cdot \frac{k}{h} \right)=\Gamma_0(k)$.
+For $f_{[X/G]}(\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven}	are $e=1$ and $e_0=\frac{k}{h}$. Hence, if the weight $\chi(X/G)/2$ is even, then $f_{[X/G]}(\tau)$ is an unramified modular form for $\Gamma_0\left( h \cdot \frac{k}{h} \right)=\Gamma_0(k)$.
 \end{corollary}
 
-\begin{example} Configuration \#12 has two fixed points of type $D_4$ and three of type $A_3$. The group is $Q_8 \cong D_4$. Then $\chi(X^0)=16$. Hence,
-\[\frac{q}{Z_{[X/G]}(q)}\Big|_{q=\mathrm{e}^{2 \pi i \tau}}= \eta(8 \tau)^2 \eta(2 \tau)^3 Z_{D_4}(\tau)^{-2},\]
-which is modular of weight $7/2$ with a suitable Dirichlet character for $\Gamma(16)$. With computer the first few terms turn out to be as follows:
-\[ \frac{q}{Z_{[X/G]}(q)} = q + 2q^2 + 4q^3 + 8q^4 + 20q^5 + 36q^6 + 64q^7 + 112q^8 + 210q^9 + \dots. \]
-\end{example}
+
+%\begin{example} Configuration \#12 has two fixed points of type $D_4$ and three of type $A_3$. The group is $Q_8 \cong %D_4$. Then $\chi(X^0)=16$. Hence,
+%\[\frac{q}{Z_{[X/G]}(q)}\Big|_{q=\mathrm{e}^{2 \pi i \tau}}= \eta(8 \tau)^2 \eta(2 \tau)^3 Z_{D_4}(\tau)^{-2},\]
+%which is modular of weight $7/2$ with a suitable Dirichlet character for $\Gamma(16)$. With computer the first few terms turn out to be as follows:
+%\[ \frac{q}{Z_{[X/G]}(q)} = q + 2q^2 + 4q^3 + 8q^4 + 20q^5 + 36q^6 + 64q^7 + 112q^8 + 210q^9 + \dots. \]
+%\end{example}
 
 %Determining the levels seems to be a slightly more complicated task. We conjecture that when the weight \eqref{eq:weight} is an integer, there is always a level $N$ such that $q(Z_{[X/G]}(q))^{-1}$ is a cusp form for $\Gamma(N)$ for the trivial character. On the examples I have computed so far, $N=k=|G|$.
-\begin{example} Configuration \#3 has 12 fixed points of type $A_1$. The group is $C_2^2$. Hence,
-\[\frac{q}{Z_{[X/G]}(q)}\Big|_{q=\mathrm{e}^{2 \pi i \tau}}=\eta^{12}(2\tau).\]
-This is modular of weight $6$ for $\Gamma_0(2)$ but ramified. On the other hand, it is unramified for $\Gamma_0(4)$.
-\end{example}
+%\begin{example} Configuration \#3 has 12 fixed points of type $A_1$. The group is $C_2^2$. Hence,
+%\[\frac{q}{Z_{[X/G]}(q)}\Big|_{q=\mathrm{e}^{2 \pi i \tau}}=\eta^{12}(2\tau).\]
+%This is modular of weight $6$ for $\Gamma_0(2)$ but ramified. On the other hand, it is unramified for $\Gamma_0(4)$.
+%\end{example}
 
 
 
 \appendix
 \section{Some proofs}
+\subsection{Proof of Lemma \ref{lem:indgNmsl2}}
+\label{sec:app0}
+
+The following indices are known \cite[Section 1.2]{diamond2005first}:
+\begin{gather}
+\label{eq:GGind} [\mathrm{Sl}_2(\SZ) \, : \, \Gamma(N)] = N^3 \prod_{p \mid N}\left(1-\frac{1}{p^2} \right), \\
+\label{eq:G0G1ind} [\Gamma_0(N) \, : \, \Gamma_1(N) ]= \phi(N), \\
+\label{eq:GGind} [\Gamma_1(N) \, : \, \Gamma(N) ]= N.
+\end{gather}
+The index \eqref{eq:G0G1ind} is because of the following. Due to $c \equiv 0 \;( \mathrm{mod}\;N)$ we must have $ad\equiv 1 \;( \mathrm{mod}\;N)$. This equation has $\phi(N)$ solutions, but we only allow one of these in $\Gamma_1(N)$: the one with $a\equiv d\equiv 1 \;(\mathrm{mod}\;N)$. The $\phi(N)$ residue classes modulo $N$ are distributed uniformly into the $\phi(N/m)$ relative prime residue classes modulo $N/m$. Hence, the congruence $a \equiv 1 \;( \mathrm{mod}\;N/m)$ has $\phi(N)/\phi(N/m)$ residue classes as solutions. If $N/m=2$, this is all the solutions of $a \equiv \pm 1 \;( \mathrm{mod}\;N/m)$. If $N/m>2$, then the number of solutions of $a \equiv \pm 1 \;( \mathrm{mod}\;N/m)$ is $2\phi(N)/\phi(N/m)$. As a consequence, the congruence subgroup
+\begin{equation}  \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL}_2(\SZ): a \equiv \pm 1 \;(\mathrm{mod}\;N/m), c \equiv 0 \;(\mathrm{mod}\;N) \right\} 
+\label{eq:auxcong}
+\end{equation}
+in $\Gamma_0(N)$ has index $\phi(N)/\phi(N/m)=\phi(N)$ if $N/m=2$, and $2\phi(N)/\phi(N/m)$ if $N/m>2$.
+
+Second, the index \eqref{eq:GGind} comes from requireing $b \equiv 1 \;( \mathrm{mod}\;N)$. Similarly the index of $\Gamma(N,m)$ inside the group defined in \eqref{eq:auxcong} is $N/m$. Combining all these we obtain that 
+\[ [\Gamma_0(N) \, : \, \Gamma(N,m) ]= \begin{cases}
+2N \phi(N), \textrm{ if } N/m =2 \\
+\frac{2N \phi(N)}{m \phi(N/m)}, \textrm{ if } N/m >2.
+\end{cases} \]
+
+The index of $\Gamma_0(N)$ inside $\mathrm{SL}_2(\SZ)$ turns out to be
+\[  [\mathrm{SL}_2(\SZ) \, : \, \Gamma_0(N) ]=\frac{N^2}{\phi(N)}\prod_{p \mid N}\left(1-\frac{1}{p^2} \right). \]
+Hence,
+\begin{multline*} [\mathrm{SL}_2(\SZ) \, : \, \Gamma(N,m) ] = [\mathrm{SL}_2(\SZ) \, : \, \Gamma_0(N) ] \cdot [\Gamma_0(N) \, : \, \Gamma(N,m) ] \\
+=\begin{cases} 
+2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right),\textrm{ if } N/m =2 \\
+2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right) \prod_{p \mid N/m }\left(\frac{p}{p-1} \right),\textrm{ if } N/m >2,
+\end{cases}
+\end{multline*}
+where we have used the following expression for the $\phi$ function:
+\[ \phi(N)=N \prod_{p \mid  N}\left(1-\frac{1}{p} \right). \]
+
 \subsection{Proof of Lemma \ref{lem:betalength}}
 \label{sec:app1}
 We follow the notations of \cite{bourbaki2002lie}. %Bourbaki Chapter 6, Section 4.
@@ -1411,18 +1477,39 @@ This is equal to
 as claimed.
 \end{proof}
 
-\begin{proof}[Type $E_6$,  $E_7$ and  $E_8$] Computer check.
-	
-\[ \begin{pmatrix}
+\begin{proof}[Type $E_6$]
+
+
+\[
+\frac{1}{2\cdot 24}
+\begin{pmatrix}
+1 \\ 2 \\ 3 \\ 2 \\ 2 \\ 1
+\end{pmatrix}^{\top}
+\cdot
+\begin{pmatrix}
 2 & -1 & 0 & 0 & 0 & 0 \\
 -1 & 2 & -1 & 0 & 0 & 0\\
 0 & -1 & 2 & -1 & -1 & 0 \\
 0 & 0 & -1 & 2 & 0 & 0 \\
 0 & 0 & -1 & 0 & 2 & -1 \\
 0 & 0 & 0 & 0 & -1 & 2
-\end{pmatrix} \]
+\end{pmatrix}^{-1}
+\cdot
+\begin{pmatrix}
+1 \\ 2 \\ 3 \\ 2 \\ 2 \\ 1
+\end{pmatrix}
+=\frac{7\cdot 24-1}{24}.
+\]
+\end{proof}
 
-\[ \begin{pmatrix}
+\begin{proof}[Type $E_7$]
+\[ 
+\frac{1}{2\cdot 48}
+\begin{pmatrix}
+1 \\ 2 \\ 3 \\ 4 \\2  \\ 3 \\ 2
+\end{pmatrix}^{\top}
+\cdot
+\begin{pmatrix}
 2 & -1 & 0 & 0 & 0 & 0 & 0 \\
 -1 & 2 & -1 & 0 & 0 & 0 & 0\\
 0 & -1 & 2 & -1 & 0 & 0 & 0 \\
@@ -1430,9 +1517,23 @@ as claimed.
 0 & 0 & 0 & -1 & 2 & 0 & 0 \\
 0 & 0 & 0 & -1 & 0 & 2 & -1 \\
 0 & 0 & 0 & 0  & 0 & -1 & 2
-\end{pmatrix} \]
+\end{pmatrix}^{-1}
+\cdot
+\begin{pmatrix}
+1 \\ 2 \\ 3 \\ 4 \\2  \\ 3 \\ 2
+\end{pmatrix}
+=\frac{8\cdot 48-1}{24}.
+\]
+\end{proof}
 
-\[ \begin{pmatrix}
+\begin{proof}[Type $E_8$]
+\[ 
+\frac{1}{2\cdot 120}
+\begin{pmatrix}
+2 \\ 3 \\ 4 \\5  \\ 6 \\ 3 \\ 4 \\ 2
+\end{pmatrix}^{\top}
+\cdot
+\begin{pmatrix}
 2 & -1 & 0 & 0 & 0 & 0 & 0 & 0\\
 -1 & 2 & -1 & 0 & 0 & 0 & 0 & 0\\
 0 & -1 & 2 & -1 & 0 & 0 & 0 & 0 \\
@@ -1441,9 +1542,16 @@ as claimed.
 0 & 0 & 0 & 0 & -1 & 2 & 0 & 0 \\
 0 & 0 & 0 & 0  & -1 & 0 & 2 & -1 \\
 0 & 0 & 0 & 0 & 0  & 0 & -1 & 2
-\end{pmatrix} \]
+\end{pmatrix}^{-1} 
+\cdot
+\begin{pmatrix}
+2 \\ 3 \\ 4 \\5  \\ 6 \\ 3 \\ 4 \\ 2
+\end{pmatrix}
+=\frac{9\cdot 120-1}{24}.
+\]
 \end{proof}
 
+\begin{comment}
 \section{Tables}
 
 \subsection{Local series}
@@ -1504,9 +1612,12 @@ as claimed.
 \# & $G$ & $N$ & $qZ^{-1}_{X_{\#}}(q)$ \\
 \hline
 \hline
-
 \end{tabular}
 \end{center}
+
+\end{comment}
+
+
 \bibliographystyle{amsplain}
 \bibliography{k3hilb}
 
