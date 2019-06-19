@@ -14,6 +14,7 @@
 %\usepackage{diagrams}
 
 \usepackage{amsmath}
+\usepackage{bm}
 \usepackage{verbatim}
 \usepackage{amsmath,amsthm,amsfonts}
 \usepackage{amssymb}
@@ -47,6 +48,22 @@
 \newcommand{\HH}{\mathbb{H}}
 \newcommand{\LL}{\mathbb{L}}
 \renewcommand{\O}{\mathcal{O}}
+%\renewcommand{\top}{\mathrm{t}}
+\renewcommand{\top}{\,\mathsf{t}}
+
+
+\newcommand{\mvec}{\bm{m}}
+\newcommand{\zetavec}{\bm{\zeta }}
+\newcommand{\dvec}{\bm{d }}
+\newcommand{\uvec}{\bm{u }}
+\newcommand{\vvec}{\bm{v }}
+
+%\newcommand{\mvec}{\vec{m}}
+%\newcommand{\zetavec}{\vec{\zeta }}
+%\newcommand{\dvec}{\vec{d }}
+%\newcommand{\uvec}{\vec{u }}
+%\newcommand{\vvec}{\vec{v }}
+
 
 \newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\Ker}{\operatorname{Ker}}
@@ -94,8 +111,8 @@ $G$ which preserves the holomorphic symplectic form. Mukai showed that
 such $G$ are precisely the subgroups of the Mathieu group
 $M_{23}\subset M_{24}$ such that the induced action on the set
 $\{1,\dots ,24 \}$ has at least five orbits
-\cite{Mukai-Inventiones88}. Xiao classified all possible actions into
-82 possible topological types of the quotient $X/G$ \cite{Xiao}.
+\cite{mukai1988finite}. Xiao classified all possible actions into
+82 possible topological types of the quotient $X/G$ \cite{xiao1996galois}.
 
 The \emph{$G$-fixed Hilbert scheme} of $X$ parameterizes
 $G$-invariant length $n$ subschemes $Z\subset X$. It can be
@@ -123,15 +140,15 @@ Our main result is the following:
 
 \begin{theorem}
 The function $Z_{X,G}(q)^{-1}$ is a modular cusp form\footnote{See
-section \S~\ref{} for notation and defintions regarding modular
+section \S~\ref{} for notation and definitions regarding modular
 forms.} of weight $\half e(X/G)$ for the congruence subgroup
 $\Gamma_{0}(|G|)$.
 \end{theorem}
    
 
 Our theorem specializes in the case where $G$ is the trivial group to
-a famous result of G\"ottsche \cite{Gottsche}. The case where $G$ is a
-cyclic group was proved in \cite{Bryan-Oberdieck}. One can interpret
+a famous result of G\"ottsche \cite{gottsche1990betti}. The case where $G$ is a
+cyclic group was proved in \cite{bryan2018chl}. One can interpret
 our result as an instance of the Vafa-Witten S-duality conjecture for
 the orbifold $[X/G]$ (see Remark~???). The partition function
 $Z_{X,G}(q)$ also has an interpretation in enumerative geometry: its
@@ -158,24 +175,25 @@ partition function} by
 Z_{\Delta} (q) = \sum_{n=0}^{\infty}
 e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) \, q^{n-\frac{1}{24}} .
 \]
-We will prove in Theorem~\ref{} that
+We will prove in Lemma~\ref{lem: local series as theta/eta}  that
 \[
 Z_{\Delta}(q) =\frac{\theta_{\Delta}(\tau)}{\eta (k\tau )^{N+1}}
 \]
-where $\theta_{\Delta}(\tau )$ is a certain theta function associated
-to the root system of $\Delta$, $N$ is the rank of the root system,
-and $k=|G_{\Delta}|$. 
+where $\theta_{\Delta}(\tau )$ is a shifted theta function for the
+root lattice of $\Delta$, $N$ is the rank of the root system, and
+$k=|G_{\Delta}|$.
 
 
 
 
 The 82 possible collections of ADE root systems $\Delta_{1},\dots
 ,\Delta_{r}$ associated to $(X,G)$ a $K3$ surface with a symplectic
-$G$ action, are given in table~??? and we note that $\Delta_{i}\in
-\{A_{1},\dots ,A_{7},D_{4},D_{5},D_{6},E_{6} \}$. We let $k=|G|$,
-$k_{i}=|G_{i}|$, and
+$G$ action, are given in table~\ref{table: list of eta products} and
+we note that $\Delta_{i}\in \{A_{1},\dots
+,A_{7},D_{4},D_{5},D_{6},E_{6} \}$. We let $k=|G|$, $k_{i}=|G_{i}|$,
+and
 \[
-a=\frac{24}{k}-\sum_{i=1}^{r} \frac{1}{k_{i}} = e(X/G) - r.
+a = e(X/G) - r=\frac{24}{k}-\sum_{i=1}^{r} \frac{1}{k_{i}}.
 \]
 \begin{theorem}\label{thm: eta product formula for Z}
 With the above notation we have
@@ -196,13 +214,347 @@ and we provide explicit conjectural formulas for $Z_{E_{7}}$ and
 $Z_{E_{8}}$. In table~\ref{table: list of eta products}  we have listed explictly the eta product
 of the modular form $(Z_{X,G})^{-1}$ for all 82 possible cases of $(X,G)$.
 
+Having obtained explicit eta product expressions for $Z_{X,G}(q)$ in all 82 possible
+cases allows us to make several observational corollaries:
 
-\subsection{Examples.}
+\begin{corollary}\label{cor: if G is a subgp of E then Zinv is a Hecke
+eigenform}
+If $G$ is a finite subgroup of an elliptic curve $E$, i.e. $G$ is
+isomorphic to a product of one or two cyclic groups, then
+$Z_{X,G}(q)^{-1}$ is a Hecke eigenform. On table~\ref{table: list of
+eta products} these are the 13 cases having Xiao number in the set
+$\{0,1,2,3,4,5,7,8,11,14,15,19,25 \}$. Moreover, in each of these
+cases, the dimension of the Hecke eigenspace is one. 
+\end{corollary}
 
+We remark that in these cases, we may form a Calabi-Yau threefold
+called a CHL model by taking the free group quotient
+\[
+(X\times E)/G
+\]
+Then the partition function $Z_{X,G}(q)$ gives the (modified)
+Donaldson-Thomas invariants of $(X\times E)/G$ in curve classes which
+are degree zero over $X/G$ (see \cite{bryan2018chl}).
+For any eta product expression of a modular form, one may easily compute the
+order of vanishing (or pole) at any of the cusps
+\cite[Cor~2.2]{kohler2011eta}. Performing this computation on the 82
+cases yields the following
 
-\subsection{Interpretation of results.}
+\begin{corollary}\label{cor: vanishing at cusps}
+The modular form $Z_{X,G}(q)^{-1}$ always vanishes at the cusps
+$i\infty$ and $0$. Moreover,
+\begin{itemize}
+\item $Z_{X,G}(q)^{-1}$ vanishes at all cusps except for the eleven
+cases with Xiao number in the set $\{13,20,27,29,37,38,45,53,54,60,69 \}$.
+\item $Z_{X,G}(q)^{-1}$ is holomorphic except for the two cases with
+Xiao number 38 or 69, which have poles at the cusps $1/2$ and $1/8$
+respectively. These are precisely the cases where $X/G$ has two
+singularities of type $E_{6}$.
+\end{itemize}
+\end{corollary}
+
+\subsection{Enumerative applications}\label{subsec: enumerative applications}
+
+We have already mentioned above the enumerative application to the CHL
+Calabi-Yau threefold $(X\times E)/G$ in the case where $G\subset E$ is
+a finite subgroup of an elliptic curve. Another application is the
+following generalization of the Yau-Zaslow formula counting rational
+curves on $X$.
+
+Let $X\subset \PP^{g}$ be an embedding obtained from a $G$-equivariant
+ample line bundle $L$ with $c_{1}(L)$ a primitive class of square
+$2g-2$. Then the coefficient of $q^{g-1}$ in $Z_{X,G}(q)$ is the
+number of hyperplane sections which are $G$-invariant rational curves,
+counted with multiplicity.
+
+\dots add discussion of the above. Formulate as proposition?
+
 
 \subsection{Structure of the paper}
+
+
+\section{The local partition functions}\label{sec: local partition functions}
+
+The classical McKay correspondence associates an ADE root system
+$\Delta$ to any finite subgroup $ G_{\Delta}\subset SL_{2}(\CC)$. Using
+the work of Nakajima \cite{nakajima2002geometric}, the partition function of the
+Euler characteristics of the Hilbert scheme of points on the stack
+quotient $[\CC^{2}/G_{\Delta}]$ was computed explicitly in
+\cite{gyenge2015euler} in terms of the root data of $\Delta$.
+
+The local partition functions $Z_{\Delta}(q)$ considered in this paper
+are obtained from a specialization of the partition functions of the
+stack $[\CC^{2} /G_{\Delta}]$ and in this section, we use this to express
+$Z_{\Delta}(q)$ in terms of a shifted theta function for the root
+lattice of $\Delta$.
+
+A zero-dimensional substack $Z\subset [\CC^{2}/G_{\Delta}]$ may be
+regarded as a $G_{\Delta}$ invariant, zero-dimensional subscheme of
+$\CC^{2}$. Consequently, we may identify the Hilbert scheme of points
+on the stack $[\CC^{2}/G_{\Delta}]$ with the $G_{\Delta}$ fixed locus
+of the Hilbert scheme of points on $\CC^{2}$: 
+\[
+\Hilb \left([\CC^{2}/G_{\Delta}] \right) = \Hilb
+(\CC^{2})^{G_{\Delta}} .
+\]
+
+This Hilbert scheme has components indexed by representations $\rho$
+of $G_{\Delta}$ as follows
+\begin{equation*}
+\Hilb^{\rho} \left([\CC^{2}/G_{\Delta}] \right) = \left\{ Z\subset
+\CC^{2}, \text{ $Z$ is $G_{\Delta}$ invariant and $H^{0}(\O_{Z})\cong
+\rho $} \right\}.
+\end{equation*}
+
+Let $\{\rho_{0},\dotsc ,\rho_{N} \}$ be the irreducible
+representations of $G_{\Delta}$ where $\rho_{0}$ is the trivial
+representation. We note that $N$ is also the rank of $\Delta$. We
+define
+\[
+Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{N}) = \sum_{m_{0},\dotsc
+,m_{N}=0}^{\infty} e\left(\Hilb^{m_{0}\rho_{0}+\dotsb
++m_{N}\rho_{M}}([\CC^{2}/G_{\Delta}]) \right) q_{0}^{m_{0}}\dotsb
+q_{N}^{m_{N}} .
+\]
+
+Recall that our local partition function $Z_{\Delta}(q)$ is defined by
+\[
+Z_{\Delta}(q) = \sum_{n=0}^{\infty}
+e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) q^{n-\frac{1}{24}}. 
+\]
+We then readily see that
+\[
+Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot  Z_{[\CC^{2}/G_{\Delta}]}
+(q_{0},\dotsc ,q_{N})|_{q_{i}=q^{d_{i}}}
+\]
+where
+\[
+d_{i} =\dim \rho_{i}.
+\]
+
+The following theorem is given in \cite[Thm~1.3]{gyenge2015euler}
+where it is attributed to Nakajima \cite{nakajima2002geometric}:
+\begin{theorem} \label{thm: Zorbifold formula}
+Let $C_{\Delta}$ be the Cartan matrix of the root system $\Delta$,
+then 
+\[
+Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{N}) = \prod_{m=1}^{\infty}
+(1-Q^{m})^{-N-1} \cdot \sum_{\mvec \in \ZZ^{N}} q_{1}^{m_{1}}\dotsb
+q_{N}^{m_{N}} \cdot Q^{\half \mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
+\]
+where $Q=q_{0}^{d_{0}}q_{1}^{d_{1}}\dotsb d_{N}^{d_{N}}$.
+\end{theorem}
+We note that under the specialization $q_{i}=q^{d_{i}}$, 
+\[
+Q=q^{d_{0}^{2}+\dotsb +d_{N}^{2}} = q^{k}
+\]
+where $k=|G|$ is the order of the group $G$.
+
+We then obtain
+\[
+Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot
+\prod_{m=1}^{\infty}(1-q^{km})^{-N-1} \cdot \sum_{\mvec \in \ZZ^{N}}
+q^{\mvec^{\top}\cdot \dvec} \cdot q^{\frac{k}{2}\mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
+\]
+where $\dvec =(d_{1},\dotsc ,d_{N})$.
+
+Let $M_{\Delta}$ be the root lattice of $\Delta$ which we identify
+with $\ZZ^{N}$ via the basis given by $\alpha_{1},\dotsc ,\alpha_{N}$,
+the simple positive roots of $\Delta$. Under this identification, the
+standard Weyl invariant bilinear form is given by
+\[
+(\uvec |\vvec ) = \uvec^{\top}\cdot C_{\Delta}\cdot \vvec .
+\]
+We define
+\[
+\zetavec = C_{\Delta}^{-1} \cdot \dvec 
+\]
+so that 
+\[
+\mvec^{\top}\cdot \dvec = \mvec^{\top}\cdot C_{\Delta} \cdot \zetavec
+= (\mvec |\zetavec ).
+\]
+We may then write
+\begin{align*}
+Z_{\Delta}(q)& = q^{\frac{-1}{24}}\cdot
+\prod_{m=1}^{\infty}(1-q^{km})^{-N-1}\cdot \sum _{\mvec \in M_{\Delta}} q^{(\mvec |\zetavec )+\frac{k}{2}(\mvec |\mvec)}\\
+&= q^{A} \cdot \left(q^{\frac{k}{24}}\prod_{m=1}^{\infty}(1-q^{km})
+\right)^{-N-1} \cdot \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}\\
+& = q^{A}\cdot  \eta (k\tau )^{-N-1}\cdot  \theta_{\Delta} (\tau )
+\end{align*}
+where 
+\[
+A \quad = \quad \frac{-1}{24} + \frac{k(N+1)}{24} - \frac{1}{2k}(\zetavec
+|\zetavec ) \quad = \quad \frac{k(N+1)-1}{24} - \frac{1}{2k}\dvec^{\top}\cdot
+C_{\Delta}^{-1} \cdot \dvec 
+\]
+and $\theta_{\Delta}(\tau )$ is the shifted theta function:
+\[
+\theta_{\Delta}(\tau ) = \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}
+\]
+where as throughout this paper we have identified $q=\exp\left(2\pi i\tau  \right)$.
+
+In section~???, lemma~??? we will prove that the identity $A=0$ holds
+for all $\Delta$ and hence we obtain the following:
+\begin{lemma}\label{lem: local series as theta/eta} The local series
+$Z_{\Delta}(q)$ is given by
+\[
+Z_{\Delta}(q) = \frac{\theta_{\Delta}(\tau )}{\eta (k\tau )^{N+1}}. 
+\]
+\end{lemma}
+
+We make the following conjecture which provides explicit eta product
+expressions for the theta function $\theta_{\Delta}(\tau )$.
+
+\begin{conjecture}\label{conj: eta product for theta function}
+$\theta_{\Delta}(\tau )$ is given by
+\begin{align}\label{eqn: theta function eta products}
+\theta_{A_{n}}(\tau ) &= \frac{\eta^{n+1}((n+1)\tau )}{\eta (\tau )} ,\quad n\geq 1\\
+\theta_{D_{n}}(\tau ) &= \frac{\eta^{2}(2\tau )\,  \eta^{n+2}((4n-8)\tau )}{\eta (\tau )\,  \eta (4\tau )\,  \eta^{2}((2n-4)\tau )} ,\quad n\geq 4\\
+\theta_{E_{6}}(\tau ) & = \frac{\eta^{2}(2\tau )\, \eta^{8}(24\tau
+)}{\eta (\tau )\, \eta^{2}(8\tau )\, \eta (12\tau )} ,\\
+\theta_{E_{7}}(\tau ) & = \frac{\eta^{2}(2\tau )\, \eta^{9}(48\tau
+)}{\eta (\tau )\, \eta(12\tau )\, \eta(16\tau )\, \eta (24\tau )} ,\\
+\theta_{E_{8}}(\tau ) & = \frac{\eta^{2}(2\tau )\, \eta^{10}(120\tau
+)}{\eta (\tau )\, \eta(24\tau )\, \eta(40\tau )\, \eta (60\tau )}.
+\end{align}
+\end{conjecture}
+
+Since both sides of the above equations are explicit modular forms of known
+weight and index, any given formula can be proved with a finite number
+of computations. We will give a uniform geometric proof in the $A_{n}$ case for
+all $n$ below, and we will give computational proofs for the cases of
+$D_{4}$, $D_{5}$, $D_{6}$, and $E_{6}$ (Theorem \ref{}). These are the only cases needed
+for our application to K3 surfaces. It would be desirable to have a
+purely root theoretic way of writing the eta products and a pure root
+theoretic proof of the conjecture. 
+
+\begin{theorem}\label{thm: conjecture holds for An}
+Conjecture~\ref{conj: eta product for theta function} holds for the
+case of $A_{n}$. 
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{lem: local series as theta/eta} , the conjecture is
+equivalent to the statment that 
+\[
+Z_{A_{n}}(q) = \frac{1}{\eta (\tau )}
+\]
+which is in turn equivalent to the statement
+\[
+\sum_{n=0}^{\infty} e\left(\Hilb (\CC^{2})^{\ZZ /(n+1)} \right)
+\,q^{n} = \prod_{m=1}^{\infty} (1-q^{m})^{-1}.
+\]
+The action of $\ZZ /(n+1)$ on $\CC^{2}$ commutes with the action of
+$\CC^{*}\times \CC^{*}$ on $\CC^{2}$ and consequently, the Euler
+characteristics on the left hand side may be computed by counting
+the $\CC^{*}\times \CC^{*}$-fixed subschemes, namely those given by
+monomial ideals. Such subschemes of length $n$ have a well known
+bijection with integer partitions of $n$, whose generating function is
+given by the right hand side.
+\end{proof}
+
+
+
+
+\section{The Global series}\label{sec: the global series}
+
+Recall that $p_{1},\dotsc ,p_{r}\in X/G$ are the singular points of
+$X/G$ with corresponding stabilizer subgroups $G_{i}\subset G$ of
+order $k_{i}$ and ADE type $\Delta_{i}$. Let $\{x_{i}^{1},\dotsc
+,x_{i}^{k/k_{i}} \}$ be the orbit of $G$ in $X$ corresponding to the
+point $p_{i}$ (recall that $k=|G|$).  We may stratify $\Hilb (X)^{G}$
+according to the orbit types of subscheme as follows:
+
+Let $Z\subset X$ be a $G$-invariant subscheme of length $nk$ whose
+support lies on free orbits. Then $Z$ determines and is determined by
+a length $n$ subscheme of $X/G-\{p_{1},\dotsc ,p_{r} \}$, i.e. a point
+in $\Hilb^{n}(X/G-\{p_{1},\dotsc ,p_{r} \})$.
+
+On the other hand, suppose $Z\subset X$ is a $G$-invariant subscheme
+of length $\frac{nk}{k_{i}}$ supported on the orbit
+$\{x_{i}^{1},\dotsc ,x_{i}^{k/k_{i}} \}$. Then $Z$ determines and is
+determined by the length $n$ component of $Z$ supported on a formal
+neighborhood of one of the points, say $x_{i}^{1}$. Choosing a
+$G_{i}$-equivariant isomorphism of the formal neighborhood of
+$x_{i}^{1}$ in $S$ with the formal neighborhood of the origin in
+$\CC^{2}$, we see that $Z$ determines and is determined by a point in
+$\Hilb_{0}^{n}(\CC^{2})^{G_{i}}$, where $\Hilb_{0}^{n}(\CC^{2})\subset
+\Hilb^{n}(\CC^{2})$ is the punctual Hilbert scheme parameterizing
+subschemes supported on a formal neighborhood of the origin in
+$\CC^{2}$.
+
+By decomposing an arbitrary $G$-invariant subscheme into components of
+the above types, we obtain a stratification of $\Hilb (X)^{G}$ into
+strata which are given by products of $\Hilb (X/G - \{p_{1},\dotsc
+,p_{r} \})$ and $\Hilb_{0}(\CC^{2})^{G_{1}},\dotsc
+,\Hilb_{0}(\CC^{2})^{G_{r}}$. Then using the fact that Euler
+characteristic is additive under stratifications and multiplicative
+under products, we arrive at the following equation of generating
+functions:
+\begin{align}\label{eqn: stratification formula for sum e(hilb(X)G)}
+ \nonumber \sum_{n=0}^{\infty} e\left(\Hilb^{n}(X)^{G} \right)\, q^{n}
+=&\left(\sum_{n=0}^{\infty} e\left(\Hilb^{n}(X/G-\{p_{1},\dotsc ,p_{r}
+\}) \right)\, q^{kn}  \right)\\
+& \cdot \prod_{i=1}^{r}\left( \sum_{n=0}^{\infty}
+e\left(\Hilb_{0}^{n}(\CC^{2})^{G_{i}} \right) \,
+q^{\frac{nk}{k_{i}}} \right) .
+\end{align}
+
+As in the introduction, let $a = e(X/G-\{p_{1},\dotsc ,p_{r}
+\})$. Then by G\"ottsche's formula \cite{gottsche1990betti},
+\begin{align*}
+\sum_{n=0}^{\infty} e\left(\Hilb^{n}(X)^{G} \right) q^{n} &=
+\prod_{m=1}^{\infty} (1-q^{km})^{-a}\\
+&= q^{\frac{ak}{24}} \eta (k\tau )^{-a}. 
+\end{align*}
+
+We also note that $e\left(\Hilb_{0}^{n}(\CC^{2})^{G_{i}}
+\right)=e\left(\Hilb^{n}(\CC^{2})^{G_{i}} \right)$ since the natural
+$\CC^{*}$ action on both $\Hilb_{0}^{n}(\CC^{2})^{G_{i}}$ and
+$\Hilb^{n}(\CC^{2})^{G_{i}}$ have the same fixed points. Thus we may
+write
+\begin{align*}
+\sum_{n=0}^{\infty} e\left(\Hilb_{0}^{n}(\CC^{2})^{G_{i}} \right) \,
+q^{\frac{nk}{k_{i}}} &= \sum_{n=0}^{\infty} e\left(\Hilb^{n}(\CC^{2})^{G_{i}} \right) \,
+q^{\frac{nk}{k_{i}}}\\
+&= q^{\frac{k}{24k_{i}}} Z_{\Delta_{i}} \left(\frac{k\tau}{k_{i}}
+\right) .
+\end{align*}
+
+Multiplying equation~\eqref{eqn: stratification formula for sum
+e(hilb(X)G)} by $q^{-1}$ and substituting the above formulas, we find
+that
+
+\[
+Z_{X,G}(q) = q^{-1 +\frac{ak}{24} + \sum \frac{k}{24k_{i}} } \cdot 
+\eta (k\tau )^{-a}\cdot 
+\prod_{i=1}^{r}Z_{\Delta_{i}}\left(\frac{k\tau}{k_{i}} \right) .
+\]
+
+The exponent of $q$ in the above equation is zero as is readily seen
+from the following Euler characteristic calculation:
+\begin{align*}
+24 = e(S) &= e\left(S-\cup_{i=1}^{r} \{x_{i}^{1},\dotsc
+,x_{i}^{k/k_{i}} \} \right) + \sum_{i=1}^{r} \frac{k}{k_{i}} \\
+&= k \cdot e\left(S/G - \{p_{1},\dotsc ,p_{r} \} \right) + \sum_{i=1}^{r} \frac{k}{k_{i}} \\
+&= k\cdot a + \sum_{i=1}^{r}\frac{k}{k_{i}} 
+\end{align*}
+
+We have thus proved that the first equation in Theorem~\ref{thm: eta
+product formula for Z} always holds. Then since the only root systems
+which can occur as singularities of $X/G$ are of type $A_{n}$ or
+$D_{4}$, $D_{5}$, $D_{6}$, or $E_{6}$, we use Theorem~\ref{thm:
+conjecture holds for An} and Theorem~\ref{} and we have completed the
+proof of Theorem~\ref{thm: eta product formula for Z}.
+
+\section{Modular forms}\label{sec: modular forms}
+
+\subsection{Modular forms with multiplier systems and congruence subgroups}
+\subsection{Multiplier systems and congruence subgroups of eta products}
+\subsection{Multiplier systems and congruence subgroups of shifted theta functions}
+\subsection{Sturm bounds and the proof of Theorem~???}
+
 
 
 \pagebreak
@@ -212,9 +564,105 @@ of the modular form $(Z_{X,G})^{-1}$ for all 82 possible cases of $(X,G)$.
 \section{Table of eta products}
 \renewcommand{\arraystretch}{1.5}
 
-\input{K3-table-copy.tex}
 
-\bibliography{mainbiblio}
+
+The following table provides the list of the modular forms
+$Z_{X,G}^{-1}$, expressed as eta products, for each of the 82 possible
+symplectic actions of a group $G$ on a $K3$ surface $X$. We follow the
+numbering in Xiao's list \cite{xiao1996galois}.
+\begin{longtable}{|l|l|l|l|l|}
+  \hline
+Xiao $\# $ & $|G|$ & Singularities of $X/G$&  The modular form $Z_{X,G}^{-1}$ & Weight \\ 
+  \hline
+0 & 1 &  & $ \eta \left( \tau \right)   ^{24}$ & 12 \\ 
+  1 & 2 & $8 A_{1}$ & $ \eta \left( 2\tau \right)   ^{8}  \eta \left( \tau \right)   ^{8}$ & 8 \\ 
+  2 & 3 & $6 A_{2}$ & $ \eta \left( 3\tau \right)   ^{6}  \eta \left( \tau \right)   ^{6}$ & 6 \\ 
+  3 & 4 & $12 A_{1}$ & $ \eta \left( 2\tau \right)   ^{12}$ & 6 \\ 
+  4 & 4 & $2 A_{1} + 4 A_{3}$ & $ \eta \left( 4\tau \right)   ^{4}  \eta \left( 2\tau \right)   ^{2}  \eta \left( \tau \right)   ^{4}$ & 5 \\ 
+  5 & 5 & $4 A_{4}$ & $ \eta \left( 5\tau \right)   ^{4}  \eta \left( \tau \right)   ^{4}$ & 4 \\ 
+  6 & 6 & $8 A_{1} + 3 A_{2}$ & ${\frac {  \eta \left( 3\tau \right)   ^{8}  \eta \left( 2\tau \right)   ^{3}}{\eta \left( 6\tau \right) }}$ & 5 \\ 
+  7 & 6 & $2 A_{1} + 2 A_{2} + 2 A_{5}$ & $ \eta \left( 6\tau \right)   ^{2}  \eta \left( 3\tau \right)   ^{2}  \eta \left( 2\tau \right)   ^{2} \mbox{}  \eta \left( \tau \right)   ^{2}$ & 4 \\ 
+  8 & 7 & $3 A_{6}$ & $ \eta \left( 7\tau \right)   ^{3}  \eta \left( \tau \right)   ^{3}$ & 3 \\ 
+  9 & 8 & $14 A_{1}$ & ${\frac {  \eta \left( 4\tau \right)   ^{14}}{  \eta \left( 8\tau \right)   ^{4}}}$ & 5 \\ 
+  10 & 8 & $9 A_{1} + 2 A_{3}$ & ${\frac {  \eta \left( 4\tau \right)   ^{9}  \eta \left( 2\tau \right)   ^{2}}{  \eta \left( 8\tau \right)   ^{2}}}$ & 9/2 \\ 
+  11 & 8 & $4 A_{1} + 4 A_{3}$ & $ \eta \left( 4\tau \right)   ^{4}  \eta \left( 2\tau \right)   ^{4}$ & 4 \\ 
+  12 & 8 & $3 A_{3} + 2 D_{4}$ & ${\frac {  \eta \left( \tau \right)   ^{2}  \eta \left( 4\tau \right)   ^{6}}{\eta \left( 2\tau \right) }}$ & 7/2 \\ 
+  13 & 8 & $ A_{1} + 4 D_{4}$ & ${\frac {  \eta \left( 4\tau \right)   ^{13}  \eta \left( \tau \right)   ^{4}}{  \eta \left( 8\tau \right)   ^{2} \mbox{}  \eta \left( 2\tau \right)   ^{8}}}$ & 7/2 \\ 
+  14 & 8 & $ A_{1} +  A_{3} + 2 A_{7}$ & $ \eta \left( 8\tau \right)   ^{2}\eta \left( 4\tau \right) \eta \left( 2\tau \right)   \eta \left( \tau \right)   ^{2}$ & 3 \\ 
+  15 & 9 & $8 A_{2}$ & $ \eta \left( 3\tau \right)   ^{8}$ & 4 \\ 
+  16 & 10 & $8 A_{1} + 2 A_{4}$ & ${\frac {  \eta \left( 5\tau \right)   ^{8}  \eta \left( 2\tau \right)   ^{2}}{  \eta \left( 10\tau \right)   ^{2}}}$ & 4 \\ 
+  17 & 12 & $4 A_{1} + 6 A_{2}$ & ${\frac {  \eta \left( 6\tau \right)   ^{4}  \eta \left( 4\tau \right)   ^{6}}{  \eta \left( 12\tau \right)   ^{2}}}$ & 4 \\ 
+  18 & 12 & $9 A_{1} +  A_{2} +  A_{5}$ & ${\frac {  \eta \left( 6\tau \right)   ^{9}\eta \left( 4\tau \right) \eta \left( 2\tau \right) }{  \eta \left( 12\tau \right)   ^{3}}}$ & 4 \\ 
+  19 & 12 & $3 A_{1} + 3 A_{5}$ & $ \eta \left( 6\tau \right)   ^{3}  \eta \left( 2\tau \right)   ^{3}$ & 3 \\ 
+  20 & 12 & $ A_{2} + 2 A_{3} + 2 D_{5}$ & ${\frac {  \eta \left( 4\tau \right)   ^{3}  \eta \left( 3\tau \right)   ^{2}  \eta \left( \tau \right)   ^{2} \mbox{}  \eta \left( 6\tau \right)   ^{4}}{\eta \left( 12\tau \right)   \eta \left( 2\tau \right)   ^{4}}}$ & 3 \\ 
+  21 & 16 & $15 A_{1}$ & ${\frac {  \eta \left( 8\tau \right)   ^{15}}{  \eta \left( 16\tau \right)   ^{6}}}$ & 9/2 \\ 
+  22 & 16 & $10 A_{1} + 2 A_{3}$ & ${\frac {  \eta \left( 8\tau \right)   ^{10}  \eta \left( 4\tau \right)   ^{2}}{  \eta \left( 16\tau \right)   ^{4}}}$ & 4 \\ 
+  23 & 16 & $5 A_{1} + 4 A_{3}$ & ${\frac {  \eta \left( 8\tau \right)   ^{5}  \eta \left( 4\tau \right)   ^{4}}{  \eta \left( 16\tau \right)   ^{2}}}$ & 7/2 \\ 
+  24 & 16 & $6 A_{1} +  A_{3} + 2 D_{4}$ & ${\frac {  \eta \left( 8\tau \right)   ^{12}  \eta \left( 2\tau \right)   ^{2}}{  \eta \left( 16\tau \right)   ^{4} \mbox{}  \eta \left( 4\tau \right)   ^{3}}}$ & 7/2 \\ 
+  25 & 16 & $6 A_{3}$ & $ \eta \left( 4\tau \right)   ^{6}$ & 3 \\ 
+  26 & 16 & $4 A_{1} +  A_{3} +  A_{7} +  D_{4}$ & ${\frac {  \eta \left( 8\tau \right)   ^{7}  \eta \left( 2\tau \right)   ^{2}}{  \eta \left( 16\tau \right)   ^{2} \mbox{}\eta \left( 4\tau \right) }}$ & 3 \\ 
+  27 & 16 & $2 A_{1} + 4 D_{4}$ & ${\frac {  \eta \left( 8\tau \right)   ^{14}  \eta \left( 2\tau \right)   ^{4}}{  \eta \left( 4\tau \right)   ^{8} \mbox{}  \eta \left( 16\tau \right)   ^{4}}}$ & 3 \\ 
+  28 & 16 & $2 A_{1} +  A_{3} + 2 A_{7}$ & $ \eta \left( 8\tau \right)   ^{2}\eta \left( 4\tau \right)   \eta \left( 2\tau \right)   ^{2}$ & 5/2 \\ 
+  29 & 16 & $ A_{3} +  D_{4} + 2 D_{6}$ & ${\frac {\eta \left( 4\tau \right)   \eta \left( 8\tau \right)   ^{7}  \eta \left( \tau \right)   ^{2}}{  \eta \left( 16\tau \right)   ^{2} \mbox{}  \eta \left( 2\tau \right)   ^{3}}}$ & 5/2 \\ 
+  30 & 18 & $8 A_{1} + 4 A_{2}$ & ${\frac {  \eta \left( 9\tau \right)   ^{8}  \eta \left( 6\tau \right)   ^{4}}{  \eta \left( 18\tau \right)   ^{4}}}$ & 4 \\ 
+  31 & 18 & $2 A_{1} + 3 A_{2} + 2 A_{5}$ & ${\frac {  \eta \left( 9\tau \right)   ^{2}  \eta \left( 6\tau \right)   ^{3}  \eta \left( 3\tau \right)   ^{2} \mbox{}}{\eta \left( 18\tau \right) }}$ & 3 \\ 
+  32 & 20 & $2 A_{1} + 4 A_{3} +  A_{4}$ & ${\frac {  \eta \left( 10\tau \right)   ^{2}  \eta \left( 5\tau \right)   ^{4}\eta \left( 4\tau \right) }{\eta \left( 20 \mbox{}\tau \right) }}$ & 3 \\ 
+  33 & 21 & $6 A_{2} +  A_{6}$ & ${\frac {  \eta \left( 7\tau \right)   ^{6}\eta \left( 3\tau \right) }{\eta \left( 21\tau \right) }}$ & 3 \\ 
+  34 & 24 & $5 A_{1} + 3 A_{2} + 2 A_{3}$ & ${\frac {  \eta \left( 12\tau \right)   ^{5}  \eta \left( 8\tau \right)   ^{3}  \eta \left( 6\tau \right)   ^{2} \mbox{}}{  \eta \left( 24\tau \right)   ^{3}}}$ & 7/2 \\ 
+  35 & 24 & $4 A_{1} + 2 A_{2} + 2 A_{5}$ & ${\frac {  \eta \left( 12\tau \right)   ^{4}  \eta \left( 8\tau \right)   ^{2}  \eta \left( 4\tau \right)   ^{2} \mbox{}}{  \eta \left( 24\tau \right)   ^{2}}}$ & 3 \\ 
+  36 & 24 & $5 A_{1} +  A_{3} +  A_{5} +  D_{5}$ & ${\frac {  \eta \left( 12\tau \right)   ^{7}\eta \left( 6\tau \right) \eta \left( 2\tau \right) \eta \left( 8\tau \right) }{  \eta \left( 24\tau \right)   ^{3} \mbox{}\eta \left( 4\tau \right) }}$ & 3 \\ 
+  37 & 24 & $2 A_{2} +  A_{5} +  D_{4} +  E_{6}$ & ${\frac {  \eta \left( 8\tau \right)   ^{4}\eta \left( 4\tau \right) \eta \left( 3\tau \right)   \eta \left( 12\tau \right)   ^{4} \mbox{}\eta \left( \tau \right) }{  \eta \left( 6\tau \right)   ^{2}  \eta \left( 24\tau \right)   ^{2}  \eta \left( 2\tau \right)   ^{2}}}$ & 5/2 \\ 
+  38 & 24 & $2 A_{2} +  A_{3} + 2 E_{6}$ & ${\frac {  \eta \left( 8\tau \right)   ^{6}\eta \left( 6\tau \right)   \eta \left( \tau \right)   ^{2}  \eta \left( 12\tau \right)   ^{2} \mbox{}}{  \eta \left( 2\tau \right)   ^{4}  \eta \left( 24\tau \right)   ^{2}}}$ & 5/2 \\ 
+  39 & 32 & $8 A_{1} + 3 A_{3}$ & ${\frac {  \eta \left( 16\tau \right)   ^{8}  \eta \left( 8\tau \right)   ^{3}}{  \eta \left( 32\tau \right)   ^{4}}}$ & 7/2 \\ 
+  40 & 32 & $9 A_{1} + 2 D_{4}$ & ${\frac {  \eta \left( 16\tau \right)   ^{15}  \eta \left( 4\tau \right)   ^{2}}{  \eta \left( 32\tau \right)   ^{6} \mbox{}  \eta \left( 8\tau \right)   ^{4}}}$ & 7/2 \\ 
+  41 & 32 & $3 A_{1} + 5 A_{3}$ & ${\frac {  \eta \left( 16\tau \right)   ^{3}  \eta \left( 8\tau \right)   ^{5}}{  \eta \left( 32\tau \right)   ^{2}}}$ & 3 \\ 
+  42 & 32 & $4 A_{1} + 2 A_{3} + 2 D_{4}$ & ${\frac {  \eta \left( 16\tau \right)   ^{10}  \eta \left( 4\tau \right)   ^{2}}{  \eta \left( 32\tau \right)   ^{4} \mbox{}  \eta \left( 8\tau \right)   ^{2}}}$ & 3 \\ 
+  43 & 32 & $5 A_{1} + 2 A_{7}$ & ${\frac {  \eta \left( 16\tau \right)   ^{5}  \eta \left( 4\tau \right)   ^{2}}{  \eta \left( 32\tau \right)   ^{2}}}$ & 5/2 \\ 
+  44 & 32 & $2 A_{1} + 2 A_{3} +  A_{7} +  D_{4}$ & ${\frac {  \eta \left( 16\tau \right)   ^{5}  \eta \left( 4\tau \right)   ^{2}}{  \eta \left( 32\tau \right)   ^{2}}}$ & 5/2 \\ 
+  45 & 32 & $3 A_{1} +  D_{4} + 2 D_{6}$ & ${\frac {  \eta \left( 16\tau \right)   ^{10}  \eta \left( 2\tau \right)   ^{2}}{  \eta \left( 32\tau \right)   ^{4} \mbox{}  \eta \left( 4\tau \right)   ^{3}}}$ & 5/2 \\ 
+  46 & 36 & $2 A_{1} + 2 A_{2} + 4 A_{3}$ & ${\frac {  \eta \left( 18\tau \right)   ^{2}  \eta \left( 12\tau \right)   ^{2}  \eta \left( 9\tau \right)   ^{4} \mbox{}}{  \eta \left( 36\tau \right)   ^{2}}}$ & 3 \\ 
+  47 & 36 & $ A_{1} + 6 A_{2} +  A_{5}$ & ${\frac {\eta \left( 18\tau \right)   \eta \left( 12\tau \right)   ^{6}\eta \left( 6\tau \right) }{  \eta \left( 36 \mbox{}\tau \right)   ^{2}}}$ & 3 \\ 
+  48 & 36 & $6 A_{1} +  A_{2} + 2 A_{5}$ & ${\frac {  \eta \left( 18\tau \right)   ^{6}\eta \left( 12\tau \right)   \eta \left( 6\tau \right)   ^{2}}{  \eta \left( 36 \mbox{}\tau \right)   ^{3}}}$ & 3 \\ 
+  49 & 48 & $5 A_{1} + 6 A_{2}$ & ${\frac {  \eta \left( 24\tau \right)   ^{5}  \eta \left( 16\tau \right)   ^{6}}{  \eta \left( 48\tau \right)   ^{4}}}$ & 7/2 \\ 
+  50 & 48 & $6 A_{2} + 2 A_{3}$ & ${\frac {  \eta \left( 16\tau \right)   ^{6}  \eta \left( 12\tau \right)   ^{2}}{  \eta \left( 48\tau \right)   ^{2}}}$ & 3 \\ 
+  51 & 48 & $5 A_{1} +  A_{2} + 2 A_{3} +  A_{5}$ & ${\frac {  \eta \left( 24\tau \right)   ^{5}\eta \left( 16\tau \right)   \eta \left( 12\tau \right)   ^{2} \mbox{}\eta \left( 8\tau \right) }{  \eta \left( 48\tau \right)   ^{3}}}$ & 3 \\ 
+  52 & 48 & $4 A_{1} + 3 A_{5}$ & ${\frac {  \eta \left( 24\tau \right)   ^{4}  \eta \left( 8\tau \right)   ^{3}}{  \eta \left( 48\tau \right)   ^{2}}}$ & 5/2 \\ 
+  53 & 48 & $ A_{1} +  A_{2} + 2 A_{3} + 2 D_{5}$ & ${\frac {  \eta \left( 24\tau \right)   ^{5}  \eta \left( 16\tau \right)   ^{3}  \eta \left( 12\tau \right)   ^{2} \mbox{}  \eta \left( 4\tau \right)   ^{2}}{  \eta \left( 48\tau \right)   ^{3}  \eta \left( 8\tau \right)   ^{4}}}$ & 5/2 \\ 
+  54 & 48 & $4 A_{1} +  A_{2} +  A_{7} +  E_{6}$ & ${\frac {  \eta \left( 24\tau \right)   ^{5}  \eta \left( 16\tau \right)   ^{3}\eta \left( 6\tau \right)  \mbox{}\eta \left( 2\tau \right) }{  \eta \left( 48\tau \right)   ^{3}  \eta \left( 4\tau \right)   ^{2}}}$ & 5/2 \\ 
+  55 & 60 & $4 A_{1} + 3 A_{2} + 2 A_{4}$ & ${\frac {  \eta \left( 30\tau \right)   ^{4}  \eta \left( 20\tau \right)   ^{3}  \eta \left( 12\tau \right)   ^{2} \mbox{}}{  \eta \left( 60\tau \right)   ^{3}}}$ & 3 \\ 
+  56 & 64 & $5 A_{1} + 3 A_{3} +  D_{4}$ & ${\frac {  \eta \left( 32\tau \right)   ^{8}\eta \left( 16\tau \right) \eta \left( 8\tau \right) }{  \eta \left( 64 \mbox{}\tau \right)   ^{4}}}$ & 3 \\ 
+  57 & 64 & $6 A_{1} + 3 D_{4}$ & ${\frac {  \eta \left( 32\tau \right)   ^{15}  \eta \left( 8\tau \right)   ^{3}}{  \eta \left( 64\tau \right)   ^{6} \mbox{}  \eta \left( 16\tau \right)   ^{6}}}$ & 3 \\ 
+  58 & 64 & $3 A_{1} + 3 A_{3} +  A_{7}$ & ${\frac {  \eta \left( 32\tau \right)   ^{3}  \eta \left( 16\tau \right)   ^{3}\eta \left( 8\tau \right)  \mbox{}}{  \eta \left( 64\tau \right)   ^{2}}}$ & 5/2 \\ 
+  59 & 64 & $5 A_{3} +  D_{4}$ & ${\frac {  \eta \left( 32\tau \right)   ^{3}  \eta \left( 16\tau \right)   ^{3}\eta \left( 8\tau \right)  \mbox{}}{  \eta \left( 64\tau \right)   ^{2}}}$ & 5/2 \\ 
+  60 & 64 & $4 A_{1} +  A_{3} + 2 D_{6}$ & ${\frac {  \eta \left( 32\tau \right)   ^{8}  \eta \left( 16\tau \right)   ^{3}  \eta \left( 4\tau \right)   ^{2} \mbox{}}{  \eta \left( 64\tau \right)   ^{4}  \eta \left( 8\tau \right)   ^{4}}}$ & 5/2 \\ 
+  61 & 72 & $4 A_{1} + 3 A_{2} +  A_{3} +  D_{5}$ & ${\frac {  \eta \left( 36\tau \right)   ^{6}  \eta \left( 24\tau \right)   ^{4}\eta \left( 18\tau \right)  \mbox{}\eta \left( 6\tau \right) }{  \eta \left( 72\tau \right)   ^{4}  \eta \left( 12\tau \right)   ^{2}}}$ & 3 \\ 
+  62 & 72 & $3 A_{1} + 2 A_{3} + 2 A_{5}$ & ${\frac {  \eta \left( 36\tau \right)   ^{3}  \eta \left( 18\tau \right)   ^{2}  \eta \left( 12\tau \right)   ^{2} \mbox{}}{  \eta \left( 72\tau \right)   ^{2}}}$ & 5/2 \\ 
+  63 & 72 & $ A_{2} + 3 A_{3} + 2 D_{4}$ & ${\frac {\eta \left( 24\tau \right)   \eta \left( 9\tau \right)   ^{2}  \eta \left( 36\tau \right)   ^{6}}{  \eta \left( 72\tau \right)   ^{3} \mbox{}\eta \left( 18\tau \right) }}$ & 5/2 \\ 
+  64 & 80 & $3 A_{1} + 4 A_{4}$ & ${\frac {  \eta \left( 40\tau \right)   ^{3}  \eta \left( 16\tau \right)   ^{4}}{  \eta \left( 80\tau \right)   ^{2}}}$ & 5/2 \\ 
+  65 & 96 & $3 A_{1} + 3 A_{2} + 3 A_{3}$ & ${\frac {  \eta \left( 48\tau \right)   ^{3}  \eta \left( 32\tau \right)   ^{3}  \eta \left( 24\tau \right)   ^{3} \mbox{}}{  \eta \left( 96\tau \right)   ^{3}}}$ & 3 \\ 
+  66 & 96 & $2 A_{1} + 2 A_{2} +  A_{3} + 2 A_{5}$ & ${\frac {  \eta \left( 48\tau \right)   ^{2}  \eta \left( 32\tau \right)   ^{2}\eta \left( 24\tau \right)  \mbox{}  \eta \left( 16\tau \right)   ^{2}}{  \eta \left( 96\tau \right)   ^{2}}}$ & 5/2 \\ 
+  67 & 96 & $2 A_{1} + 3 A_{2} +  A_{7} +  D_{4}$ & ${\frac {  \eta \left( 48\tau \right)   ^{5}  \eta \left( 32\tau \right)   ^{3}  \eta \left( 12\tau \right)   ^{2} \mbox{}}{  \eta \left( 96\tau \right)   ^{3}  \eta \left( 24\tau \right)   ^{2}}}$ & 5/2 \\ 
+  68 & 96 & $3 A_{1} + 2 A_{3} +  A_{5} +  D_{5}$ & ${\frac {  \eta \left( 48\tau \right)   ^{5}  \eta \left( 24\tau \right)   ^{2}\eta \left( 8\tau \right)  \mbox{}\eta \left( 32\tau \right) }{  \eta \left( 96\tau \right)   ^{3}\eta \left( 16\tau \right) }}$ & 5/2 \\ 
+  69 & 96 & $3 A_{1} + 2 A_{2} + 2 E_{6}$ & ${\frac {  \eta \left( 48\tau \right)   ^{5}  \eta \left( 32\tau \right)   ^{6}  \eta \left( 4\tau \right)   ^{2} \mbox{}}{  \eta \left( 96\tau \right)   ^{4}  \eta \left( 8\tau \right)   ^{4}}}$ & 5/2 \\ 
+  70 & 120 & $2 A_{1} +  A_{2} + 2 A_{3} +  A_{4} +  A_{5}$ & ${\frac {  \eta \left( 60\tau \right)   ^{2}\eta \left( 40\tau \right)   \eta \left( 30\tau \right)   ^{2} \mbox{}\eta \left( 24\tau \right) \eta \left( 20\tau \right) }{  \eta \left( 120\tau \right)   ^{2}}}$ & 5/2 \\ 
+  71 & 128 & $3 A_{1} + 2 A_{3} +  D_{4} +  D_{6}$ & ${\frac {  \eta \left( 64\tau \right)   ^{8}\eta \left( 32\tau \right) \eta \left( 8\tau \right) }{  \eta \left( 128\tau \right)   ^{4} \mbox{}\eta \left( 16\tau \right) }}$ & 5/2 \\ 
+  72 & 144 & $ A_{1} + 4 A_{2} + 2 A_{5}$ & ${\frac {\eta \left( 72\tau \right)   \eta \left( 48\tau \right)   ^{4}  \eta \left( 24\tau \right)   ^{2}}{  \eta \left( 144 \mbox{}\tau \right)   ^{2}}}$ & 5/2 \\ 
+  73 & 160 & $2 A_{1} + 3 A_{3} + 2 A_{4}$ & ${\frac {  \eta \left( 80\tau \right)   ^{2}  \eta \left( 40\tau \right)   ^{3}  \eta \left( 32\tau \right)   ^{2} \mbox{}}{  \eta \left( 160\tau \right)   ^{2}}}$ & 5/2 \\ 
+  74 & 168 & $ A_{1} + 3 A_{2} + 2 A_{3} +  A_{6}$ & ${\frac {\eta \left( 84\tau \right)   \eta \left( 56\tau \right)   ^{3}  \eta \left( 42\tau \right)   ^{2} \mbox{}\eta \left( 24\tau \right) }{  \eta \left( 168\tau \right)   ^{2}}}$ & 5/2 \\ 
+  75 & 192 & $2 A_{1} + 6 A_{2} +  D_{4}$ & ${\frac {  \eta \left( 96\tau \right)   ^{5}  \eta \left( 64\tau \right)   ^{6}\eta \left( 24\tau \right)  \mbox{}}{  \eta \left( 192\tau \right)   ^{4}  \eta \left( 48\tau \right)   ^{2}}}$ & 3 \\ 
+  76 & 192 & $2 A_{1} +  A_{2} + 2 A_{3} +  A_{5} +  D_{4}$ & ${\frac {  \eta \left( 96\tau \right)   ^{5}\eta \left( 64\tau \right) \eta \left( 32\tau \right)  \mbox{}\eta \left( 24\tau \right) }{  \eta \left( 192\tau \right)   ^{3}}}$ & 5/2 \\ 
+  77 & 192 & $2 A_{1} +  A_{2} + 3 A_{3} +  E_{6}$ & ${\frac {  \eta \left( 96\tau \right)   ^{3}  \eta \left( 64\tau \right)   ^{3}  \eta \left( 48\tau \right)   ^{3} \mbox{}\eta \left( 8\tau \right) }{  \eta \left( 192\tau \right)   ^{3}  \eta \left( 16\tau \right)   ^{2}}}$ & 5/2 \\ 
+  78 & 288 & $2 A_{1} + 2 A_{2} +  A_{3} + 2 D_{5}$ & ${\frac {  \eta \left( 144\tau \right)   ^{6}  \eta \left( 96\tau \right)   ^{4} \mbox{}\eta \left( 72\tau \right)   \eta \left( 24\tau \right)   ^{2}}{  \eta \left( 288\tau \right)   ^{4}  \eta \left( 48\tau \right)   ^{4}}}$ & 5/2 \\ 
+  79 & 360 & $ A_{1} + 2 A_{2} + 2 A_{3} + 2 A_{4}$ & ${\frac {\eta \left( 180\tau \right)   \eta \left( 120\tau \right)   ^{2}  \eta \left( 90\tau \right)   ^{2} \mbox{}  \eta \left( 72\tau \right)   ^{2}}{  \eta \left( 360\tau \right)   ^{2}}}$ & 5/2 \\ 
+  80 & 384 & $ A_{1} + 3 A_{2} + 2 A_{3} +  D_{6}$ & ${\frac {  \eta \left( 192\tau \right)   ^{3}  \eta \left( 128\tau \right)   ^{3} \mbox{}  \eta \left( 96\tau \right)   ^{3}\eta \left( 24\tau \right) }{  \eta \left( 384\tau \right)   ^{3}  \eta \left( 48\tau \right)   ^{2}}}$ & 5/2 \\ 
+  81 & 960 & $ A_{1} + 3 A_{2} + 2 A_{4} +  D_{4}$ & ${\frac {  \eta \left( 480\tau \right)   ^{4}  \eta \left( 320\tau \right)   ^{3} \mbox{}  \eta \left( 192\tau \right)   ^{2}\eta \left( 120\tau \right) }{  \eta \left( 960\tau \right)   ^{3}  \eta \left( 240\tau \right)   ^{2}}}$ & 5/2 \\ 
+   \hline
+\caption{Table of the modular forms $Z_{X,G}^{-1}$ for all symplectic
+$G$ actions. } \label{table: list of eta products}
+\end{longtable}
+
+
+\bibliography{k3hilb}
 \bibliographystyle{plain}
 
 \end{document}

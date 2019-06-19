@@ -1,3 +1,39 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{bryan2018chl}
+Jim Bryan and Georg Oberdieck.
+\newblock {CHL Calabi-Yau threefolds: Curve counting, Mathieu moonshine and
+  Siegel modular forms}.
+\newblock arXiv:1811.06102.
+
+\bibitem{gottsche1990betti}
+L.~G{\"o}ttsche.
+\newblock {The Betti numbers of the Hilbert scheme of points on a smooth
+  projective surface}.
+\newblock {\em Math. Ann.}, 286(1):193--207, 1990.
+
+\bibitem{gyenge2015euler}
+\'{A}d\'{a}m Gyenge, Andr\'{a}s N\'{e}methi, and Bal\'{a}zs Szendr\H{o}i.
+\newblock Euler characteristics of {H}ilbert schemes of points on simple
+  surface singularities.
+\newblock {\em Eur. J. Math.}, 4(2):439--524, 2018.
+
+\bibitem{mukai1988finite}
+Shigeru Mukai.
+\newblock {Finite groups of automorphisms of K3 surfaces and the Mathieu
+  group}.
+\newblock {\em Inventiones mathematicae}, 94(1):183--221, 1988.
+
+\bibitem{nakajima2002geometric}
+H.~Nakajima.
+\newblock {Geometric construction of representations of affine algebras}.
+\newblock In {\em Proceedings of the International Congress of Mathematicians
+  (Beijing, 2002)}, volume~1, pages 423--438. IMU, Higher Ed, 2002.
+
+\bibitem{xiao1996galois}
+Gang Xiao.
+\newblock {Galois covers between K3 surfaces}.
+\newblock In {\em Annales de l'institut Fourier}, volume~46, pages 73--88.
+  Chartres: L'Institut, 1950-, 1996.
 
 \end{thebibliography}
