@@ -125,7 +125,7 @@ points:
 We define the corresponding \emph{$G$-fixed partition function} of
 $X$ by
 \[
-Z_{X,G}(q) = \sum_{n=0}^{\infty} e(\Hilb^{n}(X)^{G}) q^{n-1} 
+Z_{X,G}(q) = \sum_{n=0}^{\infty} e\left(\Hilb^{n}(X)^{G} \right) q^{n-1} 
 \]
 where $e(-)$ is topological Euler characteristic.
 
@@ -140,20 +140,21 @@ Our main result is the following:
 
 \begin{theorem}
 The function $Z_{X,G}(q)^{-1}$ is a modular cusp form\footnote{See
-section \S~\ref{} for notation and definitions regarding modular
+section \S~\ref{sec: modular forms}  for notation and definitions regarding modular
 forms.} of weight $\half e(X/G)$ for the congruence subgroup
 $\Gamma_{0}(|G|)$.
 \end{theorem}
    
 
 Our theorem specializes in the case where $G$ is the trivial group to
-a famous result of G\"ottsche \cite{gottsche1990betti}. The case where $G$ is a
-cyclic group was proved in \cite{bryan2018chl}. One can interpret
-our result as an instance of the Vafa-Witten S-duality conjecture for
-the orbifold $[X/G]$ (see Remark~???). The partition function
-$Z_{X,G}(q)$ also has an interpretation in enumerative geometry: its
-coefficients count $G$-invariant rational curves on $X$ (see
-Remark~???).
+a famous result of G\"ottsche \cite{gottsche1990betti}. The case where
+$G$ is a cyclic group was proved in \cite{bryan2018chl}. One can
+interpret our result as an instance of the Vafa-Witten S-duality
+conjecture for the orbifold $[X/G]$. The partition function
+$Z_{X,G}(q)$ also has an interpretation in enumerative geometry
+generalizing: its coefficients count $G$-invariant rational curves on
+$X$ (see \S~\ref{subsec: enumerative applications}), generalizing the
+famous Yau-Zaslow formula.
 
 We also give an explicit formula for $Z_{X,G}(q)$ in terms of the
 Dedekind eta function
@@ -209,10 +210,12 @@ Z_{E_{6}} (\tau ) &=\frac{\eta^{2}(2\tau )\eta(24\tau )}{\eta (\tau
 )\eta^{2} (8\tau )\eta(12\tau )}
 \end{align*}
 \end{theorem}
-We conjecture in \ref{} that the formula for $Z_{D_{n}}$ holds for all $n\geq 4$
+We conjecture that the formula for $Z_{D_{n}}$ holds for all $n\geq 4$
 and we provide explicit conjectural formulas for $Z_{E_{7}}$ and
-$Z_{E_{8}}$. In table~\ref{table: list of eta products}  we have listed explictly the eta product
-of the modular form $(Z_{X,G})^{-1}$ for all 82 possible cases of $(X,G)$.
+$Z_{E_{8}}$ (see Conjecture~\ref{conj: eta product for theta
+function}). In table~\ref{table: list of eta products} we have listed
+explictly the eta product of the modular form $(Z_{X,G})^{-1}$ for all
+82 possible cases of $(X,G)$.
 
 Having obtained explicit eta product expressions for $Z_{X,G}(q)$ in all 82 possible
 cases allows us to make several observational corollaries:
@@ -276,7 +279,7 @@ counted with multiplicity.
 \section{The local partition functions}\label{sec: local partition functions}
 
 The classical McKay correspondence associates an ADE root system
-$\Delta$ to any finite subgroup $ G_{\Delta}\subset SL_{2}(\CC)$. Using
+$\Delta$ to any finite subgroup $ G_{\Delta}\subset SU(2)$. Using
 the work of Nakajima \cite{nakajima2002geometric}, the partition function of the
 Euler characteristics of the Hilbert scheme of points on the stack
 quotient $[\CC^{2}/G_{\Delta}]$ was computed explicitly in
@@ -468,8 +471,12 @@ according to the orbit types of subscheme as follows:
 
 Let $Z\subset X$ be a $G$-invariant subscheme of length $nk$ whose
 support lies on free orbits. Then $Z$ determines and is determined by
-a length $n$ subscheme of $X/G-\{p_{1},\dotsc ,p_{r} \}$, i.e. a point
-in $\Hilb^{n}(X/G-\{p_{1},\dotsc ,p_{r} \})$.
+a length $n$ subscheme of 
+\[
+(X/G)^{o}  = X/G\setminus \{p_{1},\dotsc ,p_{r} \},
+\]
+i.e. a point
+in $\Hilb^{n}((X/G)^{o})$.
 
 On the other hand, suppose $Z\subset X$ is a $G$-invariant subscheme
 of length $\frac{nk}{k_{i}}$ supported on the orbit
@@ -477,7 +484,7 @@ $\{x_{i}^{1},\dotsc ,x_{i}^{k/k_{i}} \}$. Then $Z$ determines and is
 determined by the length $n$ component of $Z$ supported on a formal
 neighborhood of one of the points, say $x_{i}^{1}$. Choosing a
 $G_{i}$-equivariant isomorphism of the formal neighborhood of
-$x_{i}^{1}$ in $S$ with the formal neighborhood of the origin in
+$x_{i}^{1}$ in $X$ with the formal neighborhood of the origin in
 $\CC^{2}$, we see that $Z$ determines and is determined by a point in
 $\Hilb_{0}^{n}(\CC^{2})^{G_{i}}$, where $\Hilb_{0}^{n}(\CC^{2})\subset
 \Hilb^{n}(\CC^{2})$ is the punctual Hilbert scheme parameterizing
@@ -486,27 +493,25 @@ $\CC^{2}$.
 
 By decomposing an arbitrary $G$-invariant subscheme into components of
 the above types, we obtain a stratification of $\Hilb (X)^{G}$ into
-strata which are given by products of $\Hilb (X/G - \{p_{1},\dotsc
-,p_{r} \})$ and $\Hilb_{0}(\CC^{2})^{G_{1}},\dotsc
-,\Hilb_{0}(\CC^{2})^{G_{r}}$. Then using the fact that Euler
-characteristic is additive under stratifications and multiplicative
-under products, we arrive at the following equation of generating
-functions:
+strata which are given by products of $\Hilb ((X/G)^{o})$ and
+$\Hilb_{0}(\CC^{2})^{G_{1}},\dotsc ,\Hilb_{0}(\CC^{2})^{G_{r}}$. Then
+using the fact that Euler characteristic is additive under
+stratifications and multiplicative under products, we arrive at the
+following equation of generating functions:
 \begin{align}\label{eqn: stratification formula for sum e(hilb(X)G)}
- \nonumber \sum_{n=0}^{\infty} e\left(\Hilb^{n}(X)^{G} \right)\, q^{n}
-=&\left(\sum_{n=0}^{\infty} e\left(\Hilb^{n}(X/G-\{p_{1},\dotsc ,p_{r}
-\}) \right)\, q^{kn}  \right)\\
+\nonumber\sum_{n=0}^{\infty} e\left(\Hilb^{n}(X)^{G} \right)\, q^{n}
+=&\left(\sum_{n=0}^{\infty} e\left(\Hilb^{n}((X/G)^{o}) \right)\,
+q^{kn} \right)\\
 & \cdot \prod_{i=1}^{r}\left( \sum_{n=0}^{\infty}
-e\left(\Hilb_{0}^{n}(\CC^{2})^{G_{i}} \right) \,
-q^{\frac{nk}{k_{i}}} \right) .
+e\left(\Hilb_{0}^{n}(\CC^{2})^{G_{i}} \right) \, q^{\frac{nk}{k_{i}}}
+\right) .
 \end{align}
 
-As in the introduction, let $a = e(X/G-\{p_{1},\dotsc ,p_{r}
-\})$. Then by G\"ottsche's formula \cite{gottsche1990betti},
+As in the introduction, let $a = e(X/G)-r=e\left((X/G)^{o} \right)$. Then by G\"ottsche's formula \cite{gottsche1990betti},
 \begin{align*}
 \sum_{n=0}^{\infty} e\left(\Hilb^{n}(X)^{G} \right) q^{n} &=
 \prod_{m=1}^{\infty} (1-q^{km})^{-a}\\
-&= q^{\frac{ak}{24}} \eta (k\tau )^{-a}. 
+&= q^{\frac{ak}{24}} \cdot \eta (k\tau )^{-a}. 
 \end{align*}
 
 We also note that $e\left(\Hilb_{0}^{n}(\CC^{2})^{G_{i}}
@@ -518,7 +523,7 @@ write
 \sum_{n=0}^{\infty} e\left(\Hilb_{0}^{n}(\CC^{2})^{G_{i}} \right) \,
 q^{\frac{nk}{k_{i}}} &= \sum_{n=0}^{\infty} e\left(\Hilb^{n}(\CC^{2})^{G_{i}} \right) \,
 q^{\frac{nk}{k_{i}}}\\
-&= q^{\frac{k}{24k_{i}}} Z_{\Delta_{i}} \left(\frac{k\tau}{k_{i}}
+&= q^{\frac{k}{24k_{i}}} \cdot Z_{\Delta_{i}} \left(\frac{k\tau}{k_{i}}
 \right) .
 \end{align*}
 
@@ -535,9 +540,9 @@ Z_{X,G}(q) = q^{-1 +\frac{ak}{24} + \sum \frac{k}{24k_{i}} } \cdot
 The exponent of $q$ in the above equation is zero as is readily seen
 from the following Euler characteristic calculation:
 \begin{align*}
-24 = e(S) &= e\left(S-\cup_{i=1}^{r} \{x_{i}^{1},\dotsc
+24 = e(X) &= e\left(X-\cup_{i=1}^{r} \{x_{i}^{1},\dotsc
 ,x_{i}^{k/k_{i}} \} \right) + \sum_{i=1}^{r} \frac{k}{k_{i}} \\
-&= k \cdot e\left(S/G - \{p_{1},\dotsc ,p_{r} \} \right) + \sum_{i=1}^{r} \frac{k}{k_{i}} \\
+&= k \cdot e\left((X/G)^{o} \right) + \sum_{i=1}^{r} \frac{k}{k_{i}} \\
 &= k\cdot a + \sum_{i=1}^{r}\frac{k}{k_{i}} 
 \end{align*}
 
@@ -546,16 +551,15 @@ product formula for Z} always holds. Then since the only root systems
 which can occur as singularities of $X/G$ are of type $A_{n}$ or
 $D_{4}$, $D_{5}$, $D_{6}$, or $E_{6}$, we use Theorem~\ref{thm:
 conjecture holds for An} and Theorem~\ref{} and we have completed the
-proof of Theorem~\ref{thm: eta product formula for Z}.
+proof of Theorem~\ref{thm: eta product formula for Z}. \qed 
 
 \section{Modular forms}\label{sec: modular forms}
 
 \subsection{Modular forms with multiplier systems and congruence subgroups}
-\subsection{Multiplier systems and congruence subgroups of eta products}
 \subsection{Multiplier systems and congruence subgroups of shifted theta functions}
+\subsection{Multiplier systems and congruence subgroups of eta products}
 \subsection{Sturm bounds and the proof of Theorem~???}
-
-
+\subsection{Miscellany}
 
 \pagebreak
 
@@ -568,8 +572,9 @@ proof of Theorem~\ref{thm: eta product formula for Z}.
 
 The following table provides the list of the modular forms
 $Z_{X,G}^{-1}$, expressed as eta products, for each of the 82 possible
-symplectic actions of a group $G$ on a $K3$ surface $X$. We follow the
-numbering in Xiao's list \cite{xiao1996galois}.
+symplectic actions of a group $G$ on a $K3$ surface $X$. Our numbering
+matches Xiao's \cite{xiao1996galois} whose table we refer to for a
+description of each group.
 \begin{longtable}{|l|l|l|l|l|}
   \hline
 Xiao $\# $ & $|G|$ & Singularities of $X/G$&  The modular form $Z_{X,G}^{-1}$ & Weight \\ 
@@ -658,7 +663,7 @@ Xiao $\# $ & $|G|$ & Singularities of $X/G$&  The modular form $Z_{X,G}^{-1}$ & 
   81 & 960 & $ A_{1} + 3 A_{2} + 2 A_{4} +  D_{4}$ & ${\frac {  \eta \left( 480\tau \right)   ^{4}  \eta \left( 320\tau \right)   ^{3} \mbox{}  \eta \left( 192\tau \right)   ^{2}\eta \left( 120\tau \right) }{  \eta \left( 960\tau \right)   ^{3}  \eta \left( 240\tau \right)   ^{2}}}$ & 5/2 \\ 
    \hline
 \caption{Table of the modular forms $Z_{X,G}^{-1}$ for all symplectic
-$G$ actions. } \label{table: list of eta products}
+$G$ actions.} \label{table: list of eta products}
 \end{longtable}
 
 

@@ -4,45 +4,45 @@ The top-level auxiliary file: Bryan-Gyenge.aux
 The style file: plain.bst
 Database file #1: k3hilb.bib
 Warning--can't use both volume and number fields in xiao1996galois
-You've used 6 entries,
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            538 strings with 4955 characters,
-and the built_in function-call counts, 2067 in all, are:
-= -- 218
-> -- 59
+            543 strings with 5068 characters,
+and the built_in function-call counts, 2282 in all, are:
+= -- 237
+> -- 66
 < -- 4
-+ -- 24
-- -- 18
-* -- 136
-:= -- 323
-add.period$ -- 20
-call.type$ -- 6
-change.case$ -- 27
++ -- 27
+- -- 20
+* -- 144
+:= -- 361
+add.period$ -- 23
+call.type$ -- 7
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 84
-empty$ -- 183
-format.name$ -- 18
-if$ -- 450
+cite$ -- 8
+duplicate$ -- 96
+empty$ -- 205
+format.name$ -- 20
+if$ -- 496
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 5
-newline$ -- 33
-num.names$ -- 12
-pop$ -- 30
+int.to.str$ -- 7
+missing$ -- 7
+newline$ -- 38
+num.names$ -- 14
+pop$ -- 38
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 24
 quote$ -- 0
-skip$ -- 63
+skip$ -- 69
 stack$ -- 0
-substring$ -- 161
-swap$ -- 27
+substring$ -- 166
+swap$ -- 28
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 26
 warning$ -- 1
-while$ -- 24
-width$ -- 7
-write$ -- 71
+while$ -- 26
+width$ -- 8
+write$ -- 81
 (There was 1 warning)
