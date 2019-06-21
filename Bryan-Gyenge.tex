@@ -433,14 +433,26 @@ $\theta_{\Delta}(\tau )$ is given by
 \end{align}
 \end{conjecture}
 
-Since both sides of the above equations are explicit modular forms of known
-weight and index, any given formula can be proved with a finite number
-of computations. We will give a uniform geometric proof in the $A_{n}$ case for
-all $n$ below, and we will give computational proofs for the cases of
-$D_{4}$, $D_{5}$, $D_{6}$, and $E_{6}$ (Theorem \ref{}). These are the only cases needed
-for our application to K3 surfaces. It would be desirable to have a
-purely root theoretic way of writing the eta products and a pure root
-theoretic proof of the conjecture. 
+Since both sides of the above equations are explicit modular forms of
+known weight and index, any given formula can be proved with a finite
+number of computations. We will give a uniform geometric proof in the
+$A_{n}$ case for all $n$ below, and we will give computational proofs
+for the cases of $D_{4}$, $D_{5}$, $D_{6}$, and $E_{6}$ (Theorem
+\ref{}). These are the only cases needed for our application to K3
+surfaces. It would be desirable to have a purely root theoretic way of
+writing the eta products and a pure root theoretic proof of the
+conjecture. \footnote{One uniform way to write the conjecture is as
+follows. Consider $E,F,V,M\in \NN$ where $E$, $F$, and $V$ each divide
+$M$ and satisfy $E+F+V =M+2$. Such tuples $(E,F,V,M)$ can be seen to
+have an $ADE$ classification so that to each $ADE$ root system
+$\Delta$, we have an associated $(E,F,V,M)$ Then our conjecture is
+equivalent to
+\[
+Z_{\Delta}(q) = \frac{\eta^{2}(2\tau )\eta (2M\tau )}{\eta (\tau )\eta
+(2E\tau )\eta (2F\tau )\eta (2V\tau )}. 
+\]   }
+
+
 
 \begin{theorem}\label{thm: conjecture holds for An}
 Conjecture~\ref{conj: eta product for theta function} holds for the
@@ -1353,6 +1365,76 @@ We follow the notations of \cite{bourbaki2002lie}. %Bourbaki Chapter 6, Section 
 	=\frac{9\cdot 120-1}{24}.
 	\]
 \end{proof}
+
+\section{Formulations of the conjecture}
+
+This section is temporary, just to record this somewhere.
+\smallskip
+
+\subsection{Number theoretic formulation}
+
+The natural number solutions $(e,f,v,M)$ to the equation
+\[
+e+f+v=M+2,\quad e,f,v \text{ divide }M
+\]
+have an ADE classification. For a given $ADE$ root system $\Delta $ and
+corresponding solution $ (e,f,v,M)$, our conjecture is then equivalent to
+\[
+Z_{\Delta } = \frac{\eta^{2}(2\tau )}{\eta (\tau )} \cdot \left\{\frac{\eta
+(2M\tau ) }{\eta (2e\tau )\eta (2f\tau )\eta (2v\tau )} \right\} .
+\]
+
+\subsection{Group theoretic formulation}
+
+Solutions to the number theoretic formulation have a group theory
+interpretation: Let $H\subset SO(3)$ be a finite subgroup. Then $H$
+has a presentation of the form
+\[
+H=\{\left\langle \alpha ,\beta ,\gamma \right\rangle :\quad \alpha \beta \gamma =\alpha^{p}=\beta^{q}=\gamma^{r}=1 \}
+\]
+where 
+\[
+\frac{1}{p} + \frac{1}{q} + \frac{1}{r} =1+\frac{2}{M}, \quad p,q,r|
+M 
+\]
+and $M=|H|$.
+
+The above equation is equivalent to the previous formulation with 
+\[
+p\cdot e=q\cdot f= r\cdot v = M.
+\]
+The classification of solutions is given by the following table. 
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Type &	$H$ &	$M$&	$(p,q,r)$ &	$(e,f,v)$\\ \hline \hline 
+$A_{n}$     & cyclic & $n+1$ & $(1,n+1,n+1)$& $(n+1,1,1)$	\\ \hline
+$D_{n}$     & dihedral & $2n-2$ & $(2,2,n-2)$& $(n-1,n-1,2)$	\\ \hline
+$E_{6}$     & tetrahedral & $12$ & $(2,3,3)$& $(6,4,4)$	\\ \hline
+$E_{7}$     & octahedral & $24$ & $(2,3,4)$& $(12,8,6)$	\\ \hline
+$E_{8}$     & icosohedral & $60$ & $(2,3,5)$& $(30,20,12)$	\\ \hline
+\end{tabular}
+\end{center}
+
+
+Note that in $D_{n}$ and $E_{n}$ cases, the numbers $(e,f,v)$ can be
+interpreted as the number of edges, faces, and vertices of the regular
+polyhedron with the corresponding symmetry group. For $E_{n}$ these
+are the platonic solids; for $D_{n}$ these are the degenerate regular
+polyhedrons obtained from gluing two regular $(n-1)$-gons to each
+other.
+
+The groups $H\subset SO(3)$ are closely related to the groups
+$G\subset SU(2)$ also classified by $ADE$ root systems. For the
+$A_{n}$ case, both are isomorphic to $\ZZ_{n+1}$. For the $D_{n}$ and
+$E_{n}$ cases, the group $G$ is the double cover of the group $H$
+induced by the degree 2 map $SU(2)\to SO(3)$. 
+
+
+
+
+
 
 \section{Table of eta products}
 \renewcommand{\arraystretch}{1.5}
