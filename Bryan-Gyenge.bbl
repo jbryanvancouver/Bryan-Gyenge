@@ -1,9 +1,9 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
-\bibitem{bourbaki2002lie}
-Nicolas Bourbaki.
-\newblock {\em {Lie groups and Lie algebras. Chapters 4--6}}.
-\newblock Elements of Mathematics. Springer-Verlag, Berlin, 2002.
+\bibitem{BKR}
+Tom Bridgeland, Alastair King, and Miles Reid.
+\newblock The {M}c{K}ay correspondence as an equivalence of derived categories.
+\newblock {\em J. Amer. Math. Soc.}, 14(3):535--554 (electronic), 2001.
 
 \bibitem{bryan2018chl}
 Jim Bryan and Georg Oberdieck.
@@ -11,58 +11,17 @@ Jim Bryan and Georg Oberdieck.
   Siegel modular forms}.
 \newblock arXiv:1811.06102.
 
-\bibitem{cohen2017modular}
-Henri Cohen and Fredrik Str{\"o}mberg.
-\newblock {\em Modular Forms}, volume 179.
-\newblock American Mathematical Soc., 2017.
-
-\bibitem{diamond2005first}
-Fred Diamond and Jerry Shurman.
-\newblock {\em {A first course in modular forms}}, volume 228.
-\newblock Springer, 2005.
-
-\bibitem{freudenthal1969linear}
-H~Freudenthal and H~de~Vries.
-\newblock {\em {Linear Lie groups}}.
-\newblock Academic Press, 1969.
-
-\bibitem{fujii2017combinatorial}
-S~Fujii and S~Minabe.
-\newblock A combinatorial study on quiver varieties.
-\newblock {\em Symmetry, Integrability and Geometry: Methods and Applications
-  (SIGMA)}, 13:052--052, 2017.
-
-\bibitem{gordon1993multiplicative}
-Basil Gordon and Kim Hughes.
-\newblock {Multiplicative properties of $\eta$-products II}.
-\newblock {\em Contemporary Mathematics}, 143:415--415, 1993.
-
-\bibitem{gordon1989multiplicative}
-Basil Gordon and Dale Sinor.
-\newblock {Multiplicative properties of $\eta$-products}.
-\newblock In {\em Number theory, Madras 1987}, pages 173--200. Springer, 1989.
-
 \bibitem{gottsche1990betti}
 L.~G{\"o}ttsche.
 \newblock {The Betti numbers of the Hilbert scheme of points on a smooth
   projective surface}.
 \newblock {\em Math. Ann.}, 286(1):193--207, 1990.
 
-\bibitem{gyenge2017enumeration}
-{\'A}d{\'a}m Gyenge.
-\newblock {Enumeration of diagonally colored Young diagrams}.
-\newblock {\em Monatshefte f{\"u}r Mathematik}, 183(1):143--157, 2017.
-
 \bibitem{gyenge2015euler}
 \'{A}d\'{a}m Gyenge, Andr\'{a}s N\'{e}methi, and Bal\'{a}zs Szendr\H{o}i.
 \newblock Euler characteristics of {H}ilbert schemes of points on simple
   surface singularities.
 \newblock {\em Eur. J. Math.}, 4(2):439--524, 2018.
-
-\bibitem{kac1994infinite}
-Victor~G Kac.
-\newblock {\em {Infinite-dimensional Lie algebras}}, volume~44.
-\newblock Cambridge University Press, 1994.
 
 \bibitem{kohler2011eta}
 G{\"u}nter K{\"o}hler.
@@ -80,17 +39,6 @@ H.~Nakajima.
 \newblock {Geometric construction of representations of affine algebras}.
 \newblock In {\em Proceedings of the International Congress of Mathematicians
   (Beijing, 2002)}, volume~1, pages 423--438. IMU, Higher Ed, 2002.
-
-\bibitem{newman1959construction}
-Morris Newman.
-\newblock {Construction and application of a class of modular functions II}.
-\newblock {\em Proceedings of the London Mathematical Society}, 3(3):373--387,
-  1959.
-
-\bibitem{sturm1987congruence}
-Jacob Sturm.
-\newblock On the congruence of modular forms.
-\newblock In {\em Number theory}, pages 275--280. Springer, 1987.
 
 \bibitem{xiao1996galois}
 Gang Xiao.
