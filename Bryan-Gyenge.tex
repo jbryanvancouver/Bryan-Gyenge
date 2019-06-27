@@ -95,7 +95,7 @@ eta products}
 Let $X$ be a complex $K3$ surface with an effective action of a group
 $G$ which preserves the holomorphic symplectic form. Let 
 \[
-Z_{X,G}(q) = \sum_{n=0}^{\infty} e(\Hilb^{n}(X)^{G})q^{n-1}
+Z_{X,G}(q) = \sum_{n=0}^{\infty} e(\Hilb^{n}(X)^{G})\, q^{n-1}
 \]
 be the generating function for the Euler characteristics of Hilbert
 scheme of $G$-invariant length $n$ subschemes. We show that its
@@ -188,6 +188,7 @@ partition function} by
 Z_{\Delta} (q) = \sum_{n=0}^{\infty}
 e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) \, q^{n-\frac{1}{24}} .
 \]
+The main geometric result we prove is the following. 
 \begin{theorem}\label{thm: formula for local series (in intro)}
 The local partition function for $\Delta$ of type $A_{n}$ is given by 
 \[
@@ -197,10 +198,11 @@ and for type $D_{n}$ and $E_{n}$ by
 \[
 Z_{\Delta}(q) = \frac{\eta^{2}(2\tau )\eta (4E\tau )}{\eta (\tau )\eta (2E\tau )\eta (2F\tau )\eta (2V\tau )}
 \]
-where $(E,F,V)$ are given as follows\footnote{The group $H = G_{\Delta}/\{\pm
-1 \}\subset SO(3)$ is the symmetry group of a polyhedral decomposition
-of $S^{2}$ into isomorphic regular polygons. Then $E$, $F$, and $V$
-are the number of edges, faces, and vertices of the polyhedron.}:
+where $(E,F,V)$ are given as follows\footnote{For $\Delta$ of type
+$D_{n}$ or $E_{n}$, the group $H = G_{\Delta}/\{\pm 1 \}\subset SO(3)$
+is the symmetry group of a polyhedral decomposition of $S^{2}$ into
+isomorphic regular spherical polygons. Then $E$, $F$, and $V$ are the
+number of edges, faces, and vertices of the polyhedron.}:
 \[
 (E,F,V) = \begin{cases}
 (n-2,2,n-2), & \Delta =D_{n}\\
@@ -210,6 +212,11 @@ are the number of edges, faces, and vertices of the polyhedron.}:
 \end{cases}
 \]
 \end{theorem}
+Our proof of the above Theorem uses a trick exploiting the derived
+McKay correspondence between $\X =[\CC^{2}/\{\pm 1 \}]$ and
+$Y=\operatorname{Tot}(K_{\PP^{1}})$.
+
+
 
 
 We will prove in Lemma~\ref{lem: local series as theta/eta}  that
@@ -231,8 +238,8 @@ Theorem~\ref{thm: formula for local series (in intro)} then yields an
 eta product identity for the theta function $\theta_{\Delta}(\tau )$
 reminiscent of the MacDonald identities, namely
 \begin{theorem}\label{thm: eta product for theta function}
-The shifted theta function $\theta _{\Delta}(\tau )$ is given by an eta
-product as follows:
+The shifted theta function $\theta _{\Delta}(\tau )$ defined above is
+given by an eta product as follows:
 
 For $\Delta$ of type $A_{n}$
 \[
@@ -855,7 +862,6 @@ dimension vector but using different stability conditions. Writing
 these Hilbert schemes as Nakajima quiver varieties is discussed in
 detail in \cite{Kuznetsov}.
 
-One can also directly use the result of 
 
 Every step in the above constructed deformation equivalence is
 compatible with the $H$ action and so the proof of
