@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{BKR}
 Tom Bridgeland, Alastair King, and Miles Reid.
@@ -10,6 +10,16 @@ Jim Bryan and Georg Oberdieck.
 \newblock {CHL Calabi-Yau threefolds: Curve counting, Mathieu moonshine and
   Siegel modular forms}.
 \newblock arXiv:1811.06102.
+
+\bibitem{freudenthal1969linear}
+H~Freudenthal and H~de~Vries.
+\newblock {\em {Linear Lie groups}}.
+\newblock Academic Press, 1969.
+
+\bibitem{Gonzalez-Sprinberg-Verdier}
+G.~Gonzalez-Sprinberg and J.-L. Verdier.
+\newblock Construction g\'eom\'etrique de la correspondance de {M}c{K}ay.
+\newblock {\em Ann. Sci. \'Ecole Norm. Sup. (4)}, 16(3):409--449 (1984), 1983.
 
 \bibitem{gottsche1990betti}
 L.~G{\"o}ttsche.
@@ -23,10 +33,20 @@ L.~G{\"o}ttsche.
   surface singularities.
 \newblock {\em Eur. J. Math.}, 4(2):439--524, 2018.
 
+\bibitem{Knapp}
+Anthony~W. Knapp.
+\newblock {\em Lie groups beyond an introduction}.
+\newblock Birkh\"auser Boston Inc., Boston, MA, 1996.
+
 \bibitem{kohler2011eta}
 G{\"u}nter K{\"o}hler.
 \newblock {\em Eta products and theta series identities}.
 \newblock Springer Science \& Business Media, 2011.
+
+\bibitem{Kuznetsov}
+Alexander Kuznetsov.
+\newblock Quiver varieties and {H}ilbert schemes.
+\newblock {\em Mosc. Math. J.}, 7(4):673--697, 767, 2007.
 
 \bibitem{mukai1988finite}
 Shigeru Mukai.
@@ -40,10 +60,15 @@ H.~Nakajima.
 \newblock In {\em Proceedings of the International Congress of Mathematicians
   (Beijing, 2002)}, volume~1, pages 423--438. IMU, Higher Ed, 2002.
 
+\bibitem{Nakajima1994Duke}
+Hiraku Nakajima.
+\newblock Instantons on {ALE} spaces, quiver varieties, and {K}ac-{M}oody
+  algebras.
+\newblock {\em Duke Math. J.}, 76(2):365--416, 1994.
+
 \bibitem{xiao1996galois}
 Gang Xiao.
-\newblock {Galois covers between K3 surfaces}.
-\newblock In {\em Annales de l'institut Fourier}, volume~46, pages 73--88.
-  Chartres: L'Institut, 1950-, 1996.
+\newblock Galois covers between {$K3$} surfaces.
+\newblock {\em Ann. Inst. Fourier (Grenoble)}, 46(1):73--88, 1996.
 
 \end{thebibliography}

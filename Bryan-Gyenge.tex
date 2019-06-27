@@ -1,6 +1,7 @@
 \documentclass{article}
 
-\title{$G$-fixed Hilbert schemes on $K3$ surfaces and modular forms}
+\title{$G$-fixed Hilbert schemes on $K3$ surfaces, modular forms, and
+eta products}
 \author{Jim Bryan and \'{A}d\'{a}m~Gyenge} 
 \date{\today}
 
@@ -62,6 +63,7 @@
 
 \newcommand{\mvec}{\bm{m}}
 \newcommand{\zetavec}{\bm{\zeta }}
+\newcommand{\rhovec}{\bm{\rho }}
 \newcommand{\dvec}{\bm{d }}
 \newcommand{\uvec}{\bm{u }}
 \newcommand{\vvec}{\bm{v }}
@@ -98,12 +100,12 @@ Z_{X,G}(q) = \sum_{n=0}^{\infty} e(\Hilb^{n}(X)^{G})q^{n-1}
 be the generating function for the Euler characteristics of Hilbert
 scheme of $G$-invariant length $n$ subschemes. We show that its
 reciprocal, $Z_{X,G}(q)^{-1}$ is the Fourier expansion of a modular
-cusp form of weight $\half e(X/G)$ and index $|G|$. We give an
-explicit formula for $Z_{X,G}$ in terms of the Dedekind eta function
-for all 82 possible $(X,G)$. The key intermediate result we prove is
-of independent interest: it establishes an eta product identity for a
-certain shifted theta function associated to the root lattice of a
-simply laced root system.
+cusp form of weight $\half e(X/G)$ for the congruence subgroup
+$\Gamma_{0}(|G|)$. We give an explicit formula for $Z_{X,G}$ in terms
+of the Dedekind eta function for all 82 possible $(X,G)$. The key
+intermediate result we prove is of independent interest: it
+establishes an eta product identity for a certain shifted theta
+function of the root lattice of a simply laced root system.
 \end{abstract}
 
 
@@ -151,10 +153,11 @@ $\HH$ is the upper half-plane.
 Our main result is the following:
 
 \begin{theorem}
-\label{thm:main}
-The function $Z_{X,G}(q)^{-1}$ is a modular cusp form\footnote{See
-Section \S~\ref{sec: modular forms}  for notation and definitions regarding modular
-forms.} of weight $\half e(X/G)$ for the congruence subgroup
+\label{thm:main} The function $Z_{X,G}(q)^{-1}$ is a modular cusp
+form\footnote{By cusp form, we mean that the order of vanishing at
+$q=0$ is 1. Modular forms of half integral weight transform with
+respect to a multiplier system. We refer to \cite{kohler2011eta} for
+definitions.} of weight $\half e(X/G)$ for the congruence subgroup
 $\Gamma_{0}(|G|)$.
 \end{theorem}
    
@@ -164,15 +167,6 @@ a famous result of G\"ottsche \cite{gottsche1990betti}. The case where
 $G$ is a cyclic group was proved in \cite{bryan2018chl}. One can
 interpret our result as an instance of the Vafa-Witten S-duality
 conjecture for the orbifold $[X/G]$.
-
-\begin{comment}
-The partition function $Z_{X,G}(q)$ also has an interpretation in
-enumerative geometry: its coefficients count $G$-invariant rational
-curves on $X$ (see \S~\ref{subsec: enumerative applications}),
-generalizing the famous Yau-Zaslow formula.
-\end{comment}
-
-
 
 We give an explicit formula for $Z_{X,G}(q)$ in terms of the
 Dedekind eta function
@@ -218,6 +212,41 @@ are the number of edges, faces, and vertices of the polyhedron.}:
 \end{theorem}
 
 
+We will prove in Lemma~\ref{lem: local series as theta/eta}  that
+\[
+Z_{\Delta}(q) =\frac{\theta_{\Delta}(\tau)}{\eta (k\tau )^{n+1}}
+\]
+where 
+\[
+\theta_{\Delta}(\tau ) = \sum_{\mvec \in M_{\Delta}}
+q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec
++\frac{1}{k}\zetavec \right)}
+\]
+is a shifted theta function for $M_{\Delta} $ the root lattice of
+$\Delta$, $n$ is the rank of the root system, $k=|G_{\Delta}|$, and
+$\zetavec$ is dual to the longest root (see section~\ref{sec: local
+partition functions} for details).
+
+Theorem~\ref{thm: formula for local series (in intro)} then yields an
+eta product identity for the theta function $\theta_{\Delta}(\tau )$
+reminiscent of the MacDonald identities, namely
+\begin{theorem}\label{thm: eta product for theta function}
+The shifted theta function $\theta _{\Delta}(\tau )$ is given by an eta
+product as follows:
+
+For $\Delta$ of type $A_{n}$
+\[
+\theta_{A_{n}} (\tau ) = \frac{\eta^{n+1} ((n+1)\tau )}{\eta (\tau )}
+\]
+and for $\Delta$ of type $D_{n}$ or $E_{n}$ 
+\[
+\theta_{\Delta}(\tau ) = \frac{\eta^{2}(2\tau )\,\eta ^{n+2}(4E\tau
+)}{\eta (\tau )\, \eta (2E\tau )\,\eta (2F\tau )\,\eta (2V\tau )}
+\]
+where $E,F,V$ are as in Theorem~\ref{thm: formula for local series (in intro)}.
+\end{theorem}
+
+
 
 The 82 possible collections of ADE root systems $\Delta_{1},\dots
 ,\Delta_{r}$ associated to $(X,G)$ a $K3$ surface with a symplectic
@@ -227,9 +256,10 @@ $k_{i}=|G_{i}|$, and
 \[
 a = e(X/G) - r=\frac{24}{k}-\sum_{i=1}^{r} \frac{1}{k_{i}}.
 \]
-Our method to prove Theorem~\ref{thm:main} is based on the next
-result, which expresses the global series $Z_{X,G}(q)$ as an eta
-product.
+
+The global series $Z_{X,G}(q)$ can be expressed as a product of local
+contributions (and thus via Theorem~\ref{thm: formula for local series
+(in intro)} as an explicit eta product) by our next result:
 \begin{theorem}\label{thm: eta product formula for Z}
 With the above notation we have
 \[
@@ -238,55 +268,26 @@ Z_{\Delta_{i}}\left(\frac{k\tau}{k_{i}} \right).
 \]
 \end{theorem}
 
+Theorem~\ref{thm:main} then immediately follows from Theorem~\ref{thm:
+eta product formula for Z} and Theorem~\ref{thm: Zorbifold formula}
+using the formulas for the weight and level of an eta product given in
+\cite[\S~2.1]{kohler2011eta}.
+
 
 
 In Appendix~\ref{app:tableeta}, Table~\ref{table: list of eta
 products} we have listed explictly the eta product of the modular form
-$(Z_{X,G})^{-1}$ for all 82 possible cases of $(X,G)$.
-
-
-We will prove in Lemma~\ref{lem: local series as theta/eta}  that
-\[
-Z_{\Delta}(q) =\frac{\theta_{\Delta}(\tau)}{\eta (k\tau )^{N+1}}
-\]
-where 
-\[
-\theta_{\Delta}(\tau ) = \sum_{\mvec \in M_{\Delta}}
-q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec
-+\frac{1}{k}\zetavec \right)}
-\]
-is a shifted theta function for $M_{\Delta} $ the root lattice of
-$\Delta$, $N$ is the rank of the root system, $k=|G_{\Delta}|$, and
-$\zetavec$ is dual to the longest root (see section~\ref{sec: local
-partition functions} for a precise definition).
-
-Theorem~\ref{thm: formula for local series (in intro)} then yields an
-eta product identity for the theta function $\theta_{\Delta}(\tau )$
-reminiscent of the MacDonald identities (???), namely
-\begin{corollary}\label{cor: eta product for theta function}
-For $\Delta$ of type $A_{n}$
-\[
-\theta_{A_{n}} (\tau ) = \frac{\eta^{n+1} ((n+1)\tau )}{\eta (\tau )}
-\]
-and for $\Delta$ of type $D_{n}$ or $E_{n}$ 
-\[
-\theta_{\Delta}(\tau ) = \frac{\eta^{2}(2\tau )\,\eta ^{N+2}(4E\tau
-)}{\eta (\tau )\, \eta (2E\tau )\,\eta (2F\tau )\,\eta (2V\tau )}.
-\]
-\end{corollary}
-
-
-Having obtained explicit eta product expressions for $Z_{X,G}(q)$ in all 82 possible
-cases allows us to make several observational corollaries:
+$Z_{X,G}(q)^{-1}$ for all 82 possible cases of $(X,G)$.  Having
+obtained such expressions allows us to make several observational
+corollaries:
 
 \begin{corollary}\label{cor: if G is a subgp of E then Zinv is a Hecke
 eigenform} If $G$ is a finite subgroup of an elliptic curve $E$,
 i.e. $G$ is isomorphic to a product of one or two cyclic groups, then
-$Z_{X,G}(q)^{-1}$ is a Hecke eigenform. Appendix~\ref{app:tableeta},
-Table~\ref{table: list of eta products} these are the 13 cases having
-Xiao number in the set $\{0,1,2,3,4,5,7,8,11,14,15,19,25
-\}$. Moreover, in each of these cases, the dimension of the Hecke
-eigenspace is one.
+$Z_{X,G}(q)^{-1}$ is a Hecke eigenform. In Table~\ref{table: list of
+eta products} these are the 13 cases having Xiao number in the set
+$\{0,1,2,3,4,5,7,8,11,14,15,19,25 \}$. Moreover, in each of these
+cases, the dimension of the Hecke eigenspace is one.
 \end{corollary}
 
 We remark that in these cases, we may form a Calabi-Yau threefold
@@ -318,31 +319,8 @@ singularities of type $E_{6}$.
 %\end{itemize}
 \end{corollary}
 
-%In fact, the first statement of Corollary \ref{cor: vanishing at cusps} can be proven without computer.
 
 
-\begin{comment}
-\subsection{Enumerative applications}\label{subsec: enumerative applications}
-
-We have already mentioned above the enumerative application to the CHL
-Calabi-Yau threefold $(X\times E)/G$ in the case where $G\subset E$ is
-a finite subgroup of an elliptic curve. Another application is the
-following generalization of the Yau-Zaslow formula counting rational
-curves on $X$.
-
-Let $X\subset \PP^{g}$ be an embedding obtained from a $G$-equivariant
-ample line bundle $L$ with $c_{1}(L)$ a primitive class of square
-$2g-2$. Then the coefficient of $q^{g-1}$ in $Z_{X,G}(q)$ is the
-number of hyperplane sections which are $G$-invariant rational curves,
-counted with multiplicity.
-
-\dots add discussion of the above. Formulate as proposition?
-
-
-\subsection{Structure of the paper}
-
-I'm not sure we really need to outline the paper here, but we could.
-\end{comment}
 
 \section{The local partition functions}\label{sec: local partition functions}
 
@@ -377,15 +355,15 @@ of $G_{\Delta}$ as follows
 \rho $} \right\}.
 \end{equation*}
 
-Let $\{\rho_{0},\dotsc ,\rho_{N} \}$ be the irreducible
+Let $\{\rho_{0},\dotsc ,\rho_{n} \}$ be the irreducible
 representations of $G_{\Delta}$ where $\rho_{0}$ is the trivial
-representation. We note that $N$ is also the rank of $\Delta$. We
+representation. We note that $n$ is also the rank of $\Delta$. We
 define
 \[
-Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{N}) = \sum_{m_{0},\dotsc
-,m_{N}=0}^{\infty} e\left(\Hilb^{m_{0}\rho_{0}+\dotsb
-+m_{N}\rho_{M}}([\CC^{2}/G_{\Delta}]) \right) q_{0}^{m_{0}}\dotsb
-q_{N}^{m_{N}} .
+Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{n}) = \sum_{m_{0},\dotsc
+,m_{n}=0}^{\infty} e\left(\Hilb^{m_{0}\rho_{0}+\dotsb
++m_{n}\rho_{M}}([\CC^{2}/G_{\Delta}]) \right) q_{0}^{m_{0}}\dotsb
+q_{n}^{m_{n}} .
 \]
 
 Recall that our local partition function $Z_{\Delta}(q)$ is defined by
@@ -396,7 +374,7 @@ e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) q^{n-\frac{1}{24}}.
 We then readily see that
 \[
 Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot  Z_{[\CC^{2}/G_{\Delta}]}
-(q_{0},\dotsc ,q_{N})|_{q_{i}=q^{d_{i}}}
+(q_{0},\dotsc ,q_{n})|_{q_{i}=q^{d_{i}}}
 \]
 where
 \[
@@ -408,28 +386,28 @@ The following formula is given explicitly in \cite[Thm~1.3]{gyenge2015euler}, bu
 Let $C_{\Delta}$ be the Cartan matrix of the root system $\Delta$,
 then 
 \[
-Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{N}) = \prod_{m=1}^{\infty}
-(1-Q^{m})^{-N-1} \cdot \sum_{\mvec \in \ZZ^{N}} q_{1}^{m_{1}}\dotsb
-q_{N}^{m_{N}} \cdot Q^{\half \mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
+Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{n}) = \prod_{m=1}^{\infty}
+(1-Q^{m})^{-n-1} \cdot \sum_{\mvec \in \ZZ^{n}} q_{1}^{m_{1}}\dotsb
+q_{n}^{m_{n}} \cdot Q^{\half \mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
 \]
-where $Q=q_{0}^{d_{0}}q_{1}^{d_{1}}\dotsb q_{N}^{d_{N}}$.
+where $Q=q_{0}^{d_{0}}q_{1}^{d_{1}}\dotsb q_{n}^{d_{n}}$.
 \end{theorem}
 We note that under the specialization $q_{i}=q^{d_{i}}$, 
 \[
-Q=q^{d_{0}^{2}+\dotsb +d_{N}^{2}} = q^{k}
+Q=q^{d_{0}^{2}+\dotsb +d_{n}^{2}} = q^{k}
 \]
 where $k=|G|$ is the order of the group $G$.
 
 We then obtain
 \[
 Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot
-\prod_{m=1}^{\infty}(1-q^{km})^{-N-1} \cdot \sum_{\mvec \in \ZZ^{N}}
+\prod_{m=1}^{\infty}(1-q^{km})^{-n-1} \cdot \sum_{\mvec \in \ZZ^{n}}
 q^{\mvec^{\top}\cdot \dvec} \cdot q^{\frac{k}{2}\mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
 \]
-where $\dvec =(d_{1},\dotsc ,d_{N})$.
+where $\dvec =(d_{1},\dotsc ,d_{n})$.
 
 Let $M_{\Delta}$ be the root lattice of $\Delta$ which we identify
-with $\ZZ^{N}$ via the basis given by $\alpha_{1},\dotsc ,\alpha_{N}$,
+with $\ZZ^{n}$ via the basis given by $\alpha_{1},\dotsc ,\alpha_{n}$,
 the simple positive roots of $\Delta$. Under this identification, the
 standard Weyl invariant bilinear form is given by
 \[
@@ -448,16 +426,15 @@ so that
 We may then write
 \begin{align*}
 Z_{\Delta}(q)& = q^{\frac{-1}{24}}\cdot
-\prod_{m=1}^{\infty}(1-q^{km})^{-N-1}\cdot \sum _{\mvec \in M_{\Delta}} q^{(\mvec |\zetavec )+\frac{k}{2}(\mvec |\mvec)}\\
+\prod_{m=1}^{\infty}(1-q^{km})^{-n-1}\cdot \sum _{\mvec \in M_{\Delta}} q^{(\mvec |\zetavec )+\frac{k}{2}(\mvec |\mvec)}\\
 &= q^{A} \cdot \left(q^{\frac{k}{24}}\prod_{m=1}^{\infty}(1-q^{km})
-\right)^{-N-1} \cdot \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}\\
-& = q^{A}\cdot  \eta (k\tau )^{-N-1}\cdot  \theta_{\Delta} (\tau )
+\right)^{-n-1} \cdot \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}\\
+& = q^{A}\cdot  \eta (k\tau )^{-n-1}\cdot  \theta_{\Delta} (\tau )
 \end{align*}
 where 
 \[
-A \quad = \quad \frac{-1}{24} + \frac{k(N+1)}{24} - \frac{1}{2k}(\zetavec
-|\zetavec ) \quad = \quad \frac{k(N+1)-1}{24} - \frac{1}{2k}\dvec^{\top}\cdot
-C_{\Delta}^{-1} \cdot \dvec 
+A \quad = \quad \frac{-1}{24} + \frac{k(n+1)}{24} - \frac{1}{2k}(\zetavec
+|\zetavec )
 \]
 and $\theta_{\Delta}(\tau )$ is the shifted theta function:
 \[
@@ -465,20 +442,20 @@ and $\theta_{\Delta}(\tau )$ is the shifted theta function:
 \]
 where as throughout this paper we have identified $q=\exp\left(2\pi i\tau  \right)$.
 
-In Section~\ref{sec: modular forms}, Proposition~\ref{prop:locmod} we will prove that the identity $A=0$ holds
-for all $\Delta$. Hence we obtain the following:
+In Section~\ref{sec: another strange formula}, we will prove the
+following formula which for $\Delta =A_{n}$ coincides with the
+``strange formula'' of Freudenthal and de Vries
+\cite{freudenthal1969linear}:
+\[
+ \frac{k(n+1)-1}{24}  = \frac{(\zetavec |\zetavec )}{2k}.
+\]
+It follows that $A=0$ and we obtain the following:
 \begin{lemma}\label{lem: local series as theta/eta} The local series
 $Z_{\Delta}(q)$ is given by
 \[
-Z_{\Delta}(q) = \frac{\theta_{\Delta}(\tau )}{\eta (k\tau )^{N+1}}. 
+Z_{\Delta}(q) = \frac{\theta_{\Delta}(\tau )}{\eta (k\tau )^{n+1}}. 
 \]
-%Moreover, $Z_{\Delta}(q)$  is a (possibly meromorphic) modular form of weight $-1/2$.
 \end{lemma}
-%The particular congruence subgroup and more precise modularity
-%properties of $Z_{\Delta}(q)$ will be calculated in Section~\ref{sec:
-%modular forms}. In general, theta functions are more difficult to
-%calculate with than eta functions.
-
 
 
 \section{The global series}\label{sec: the global series}
@@ -790,7 +767,7 @@ is well known to take
 where $\O_{0}$ is the skyscraper sheaf of the origin in $\CC^{2}$,
 $\rho_{0}$ and $\rho_{1}$ are the trivial and non-trivial irreducible
 representations of $\{\pm 1 \}$, and $C\subset Y$ is the exceptional
-curve.
+curve (see for example \cite{Gonzalez-Sprinberg-Verdier}).
 
 Let $\M^{m_{0},m_{1}}(\X )$ be the moduli stack of objects $F_{\bullet }$ in
 $D^{b}(\X )$ having numerical $K$-theory class given by
@@ -820,37 +797,37 @@ ch([\O_{C}(-1)]) &= (0,C,0)
 \end{align*}
 we have
 \[
-ch( [\O_{Y}] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]) = (1,(m_{0}-m_{1})C,-m_{1}).
+ch( [\O_{Y}] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]) = (1,(m_{1}-m_{0})C,-m_{0}).
 \]
 We switch notation so that $\M_{(a,b,c)}(Y)$ denotes the moduli stack
 of objects in $D^{b}(Y)$ having Chern character $(a,b,c)\in
 H^{*}(Y)$. Then we can rewrite the Fourier-Mukai equivalence as
 \[
-\M^{m_{0},m_{1}}(\X ) \cong \M_{(1,(m_{0}-m_{1})C,m_{1})}(Y). 
+\M^{m_{0},m_{1}}(\X ) \cong \M_{(1,(m_{1}-m_{0})C,-m_{0})}(Y). 
 \]
 Tensoring by the line bundle
 \[
-L = \O_{Y}((m_{1}-m_{0})C)
+L = \O_{Y}((m_{0}-m_{1})C)
 \]
 induces an equivalence
 \[
-\M_{(1,(m_{0}-m_{1})C,m_{1})}(Y) \cong \M_{(1,0,-n)}(Y)
+\M_{(1,(m_{1}-m_{0})C,-m_{0})}(Y) \cong \M_{(1,0,-n)}(Y)
 \]
 where
 \[
-n=m_{1} -(m_{0}-m_{1})^{2}. 
+n=m_{0} -(m_{1}-m_{0})^{2}. 
 \]
 Indeed, this follows from
 \[
-ch(L) = \left(1,(m_{1}-m_{0})C,\tfrac{1}{2} (m_{1}-m_{0})^{2}C^{2} \right)
+ch(L) = \left(1,(m_{0}-m_{1})C,\tfrac{1}{2} (m_{0}-m_{1})^{2}C^{2} \right)
 \]
 and 
 \begin{align*}
-(1,(m_{0}-m_{1})C,&-m_{1}) \cdot  (1,(m_{1}-m_{0})C,\tfrac{1}{2}
-(m_{1}-m_{0})^{2}C^{2})\\
- &= (1,0, - (m_{1}-m_{0})^{2}C^{2} +\tfrac{1}{2}
-(m_{1}-m_{0})^{2}C^{2} -m_{1})\\
-&= (1,0,(m_{1}-m_{0})^{2}-m_{1})
+(1,(m_{1}-m_{0})C,&-m_{0}) \cdot  (1,(m_{0}-m_{1})C,\tfrac{1}{2}
+(m_{0}-m_{1})^{2}C^{2})\\
+ &= (1,0, - (m_{0}-m_{1})^{2}C^{2} +\tfrac{1}{2}
+(m_{0}-m_{1})^{2}C^{2} -m_{0})\\
+&= (1,0,(m_{0}-m_{1})^{2}-m_{0})
 \end{align*}
 where we have used $C^{2}=-2$.
 
@@ -859,25 +836,132 @@ Thus we have an equivalence of stacks
 \M^{m_{0},m_{1}}(\X ) \cong \M_{(1,0,-n)}(Y)
 \]
 which takes the open stack $\Hilb^{m_{0},m_{1}}(\X )$ isomorphically
-onto an open substack of $\M_{(1,0-n)} (Y)$. Noting that
-$\Hilb^{n}(Y)$ is also an open substack of $\M_{(1,0-n)} (Y)$ which
-intersects the image of $\Hilb^{m_{0},m_{1}}(\X )$ non-trivially, we
+onto an open substack of $\M_{(1,0,-n)} (Y)$. Noting that
+$\Hilb^{n}(Y)$ is also an open substack of $\M_{(1,0,-n)} (Y)$ which
+intersects the image of $\Hilb^{m_{1},m_{1}}(\X )$ non-trivially, we
 find the equivalence induces a birational map
 \[
 \Hilb^{m_{0},m_{1}}(\X ) \dashrightarrow \Hilb^{n}(Y).
 \]
-Since both sides of the above birational equivalence are smooth,
-holomorphic symplectic varieties, and they are both projective over
-$\Sym (X)$, birational equivalence implies they are in fact
-deformation equivalent \cite{}\footnote{Concretely, both are given by
-a moduli space of quiver representations of the $A_{1}$ Nakajima
-quiver having the same dimension vector but using different stability
-conditions.}.
+Both sides of the above birational equivalence are smooth, holomorphic
+symplectic varieties, and they are both symplectic resolutions of the
+singular affine symplectic variety $\Sym^{n} (\CC^{2}/\{\pm 1
+\})$. Consequently, $\Hilb^{m_{0},m_{1}}(\X )$ is deformation
+equivalent to, and hence diffeomorphic to $\Hilb^{n}(Y)$. This
+assertion follows from Nakajima \cite[Cor~4.2]{Nakajima1994Duke} by
+viewing both Hilbert schemes as moduli spaces of quiver
+representations of the $A_{1}$ Nakajima quiver variety having the same
+dimension vector but using different stability conditions. Writing
+these Hilbert schemes as Nakajima quiver varieties is discussed in
+detail in \cite{Kuznetsov}.
+
+One can also directly use the result of 
 
 Every step in the above constructed deformation equivalence is
 compatible with the $H$ action and so the proof of
 Proposition~\ref{prop: Hilb(X,m0,m1) = Hilb(Y,m0-(m0-m1)^2)} is
 complete. \qed 
+
+
+
+\section{Another Strange Formula}\label{sec: another strange
+formula}
+
+We recall the notation from Section~\ref{sec: local partition
+functions}. Let $\Delta$ be an ADE root system of rank $n$. Let
+$\alpha_{1},\dotsc \alpha_{n}$ be a system of positive simple roots
+and let
+\[
+\dvec  = \sum_{i=1}^{n} d_{i} \alpha_{i}
+\]
+be the largest root. Let $(\cdot |\cdot )$ be the Weyl invariant
+bilinear form with $(\alpha_{i}|\alpha_{i})=2$ and let $\zetavec$ be
+the dual vector to $\dvec$ in the sense that
+\begin{equation}\label{eqn: d = sum (zeta|ai)ai}
+\sum_{i=1}^{n} (\zetavec |\alpha_{i}) \alpha_{i} = \dvec .
+\end{equation}
+Let 
+\begin{equation}\label{eqn: k=1+(zeta|d)}
+k=1+\sum_{i=1}^{n}d_{i}^{2} =  1+(\zetavec |\dvec ). 
+\end{equation}
+
+The identity of the following lemma coincides with Freudenthal and de Vries's
+``strange formula'' when $\Delta$ is $A_{n}$. 
+\begin{lemma}\label{lem: another strange formula}
+Let $k$, $n$, and $\zetavec$ be as above. Then,
+\[
+\frac{k(n+1)-1}{24} =\frac{(\zetavec |\zetavec )}{2k} . 
+\]
+\end{lemma}
+\begin{proof}
+\textbf{The case of $\Delta =A_{n}$:}
+For any ADE root system we have $(\rhovec |\alpha )=1$ for all positive
+roots where $\rhovec =\half \sum_{\alpha \in R^{+}}\alpha$ is half the
+sum of the positive roots. Since for $A_{n}$, $d_{i}=1$, it follows
+from equation~\eqref{eqn: d = sum (zeta|ai)ai} that $\zetavec
+=\rhovec$, and it follows from equation~\eqref{eqn: k=1+(zeta|d)}
+that $k=n+1=h$ is the Coxeter number. The lemma is then
+\[
+\frac{(n+1)^{2}-1}{24} = \frac{(\rhovec |\rhovec )}{2h}.
+\]
+Since the Lie algebra associated to $A_{n}$, namely $\frak{sl}_{n+1}$,
+has dimension $(n+1)^{2}-1$ and the Killing form satisfies $\kappa
+(\cdot ,\cdot )=\frac{1}{2h}(\cdot |\cdot )$, the lemma may be
+rewritten as
+\[
+\frac{\dim \frak{sl}_{n+1}}{24} =\kappa (\rhovec ,\rhovec )
+\]
+which is Freudenthal and de Vries's ``strange formula''
+\cite[47.11]{freudenthal1969linear}.
+
+\bigskip
+\textbf{The case of $\Delta =D_{n}$:} Let $e_{1},\dotsc ,e_{n}$ be the
+standard orthonormal basis of $\RR^{n}$. Then the collection $\{\pm
+e_{i} \pm e_{j}, i<j \}$ is a $D_{n}$ root system and we may take 
+\[
+\alpha_{i} = \begin{cases}
+e_{i}-e_{i+1},& i=1,\dotsc ,n-1\\
+e_{n-1}+e_{n},&i=n
+\end{cases}
+\]
+as a system of simple positive roots. Then the fundamental weights
+$\omega_{i}$, which are defined by the condition $(\omega_{i}
+|\alpha_{j}) = \delta_{ij} $, are given by \cite[Appendix C]{Knapp}
+\[
+\omega_{i} = \begin{cases}
+e_{1}+\dotsb +e_{i},& i\leq n-2\\
+\half (e_{1}+\dotsb +e_{n-1}-e_{n}),& i=n-1\\
+\half (e_{1}+\dotsb +e_{n-1}+e_{n}),& i=n.
+\end{cases}
+\]
+Then since
+\[
+d_{i}=\begin{cases}
+1&i=1,n-1,n,\\
+2&i=2,\dotsc , n-2,
+\end{cases}
+\]
+we have
+\begin{align*}
+\zetavec & = \omega_{1}+2\omega_{2}+2\omega_{3}+\dotsb +2\omega_{n-2}+\omega_{n-1}+\omega_{n}\\
+&= 2(n-2) e_{1} + \sum_{i=2}^{n-2}\left(2(n-1-i)+1 \right)\, e_{i}  +e_{n-1}
+\end{align*}
+and so
+\begin{align*}
+(\zetavec |\zetavec ) &= 4(n-2)^{2} + 1 + \sum_{i=2}^{n-2} \left(2(n-1-i)+1 \right)^{2}\\
+&= \frac{4}{3}n^{3}-4n^{2}-\frac{1}{3}n+6.
+\end{align*}
+Finally since $k=1+\sum_{i=1}^{n}d_{i} = 4(n-2)$ the lemma becomes
+\[
+\frac{4(n-2)(n+1)-1}{24} = \frac{ \frac{4}{3}n^{3}-4n^{2}-\frac{1}{3}n+6}{8(n-2)}
+\]
+which is readily verified.
+
+\textbf{The case of $\Delta =E_{6},E_{7},E_{8}$:} These three
+individual cases are easily checked one by one.
+
+    
+\end{proof}
 
 
 
@@ -985,897 +1069,7 @@ $G$ actions.} \label{table: list of eta products}
 \end{longtable}
 
 
-\bibliography{k3hilb}
+\bibliography{Bryan-Gyenge}
 \bibliographystyle{plain}
 
 \end{document}
-
-
-\section{Modular forms I: Theta functions}\label{sec: modular forms}
-
-\subsection{Modular forms with multiplier systems and congruence subgroups}
-
-%In our discussion we will need to work with modular forms of half-integer weight. 
-Fix a
-subgroup $\Gamma$ of finite index in $\mathrm{SL_2}( \ZZ)$, a function $\vartheta \colon
-\Gamma \to  \CC^{\ast}$ with $|\vartheta(A)|=1$ for $A \in \Gamma$, and a half-integer $k$.
-Then a holomorphic function $f \colon \mathbb{H} \to  \CC$ is said to transform as a modular
-form of weight $k$ with the multiplier system $\vartheta$ for $\Gamma$ if
-\[ f\left( \frac{a\tau+b}{c\tau+d}\right)=\vartheta(A)(c\tau+d)^k f(\tau) \quad 
-\textrm{ for all } A=\begin{pmatrix}
-a & b \\ c & d
-\end{pmatrix} \in \Gamma. \]
-When $k$ is not an integer, $(c\tau+d)^k$ is understood to be a principal value. If moreover
-$f$ is holomorphic at all the cusps of $\Gamma$ on $ \QQ \cup \{i \infty\}$, then $f$ is said
-to be a modular form. We will denote the space of modular forms of weight $k$ and multiplier
-systems $\chi$ for $\Gamma$ by $M_k(\Gamma, \vartheta)$.
-
-We will need the following congruence subgroups:
-\[  \Gamma_0(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in 
-\mathrm{SL_2}( \ZZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv 
-\begin{pmatrix} \ast & \ast \\ 0 & \ast \end{pmatrix} \;(\mathrm{mod}\;N) \right\}, \]
-\[  \Gamma_1(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in 
-\mathrm{SL_2}( \ZZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv 
-\begin{pmatrix} 1 & \ast \\ 0 & 1 \end{pmatrix} \;(\mathrm{mod}\;N) \right\}, \]
-\[  \Gamma^0(N) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in 
-\mathrm{SL_2}( \ZZ) : \begin{pmatrix} a & b \\ c & d \end{pmatrix} \equiv 
-\begin{pmatrix} \ast & 0 \\ \ast & \ast \end{pmatrix} \;(\mathrm{mod}\;N) \right\}. \]
-%It is automatic, that there is the following containment of subgroups:
-%\[ \Gamma(N) \subset \Gamma_1(N) \subset \Gamma_0(N). \]
-Moreover, for a divisor $m|N$ let us introduce the following subset of $\mathrm{SL_2}( \ZZ)$:
-\[  \Gamma(N,m) = \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix}: 
-a \equiv \pm 1 \;(\mathrm{mod}\;N/m), b \equiv 0 \;(\mathrm{mod}\;N/m), 
-c \equiv 0 \;(\mathrm{mod}\;N) \right\}. \]
-
-\begin{lemma} $\Gamma(N,m)$ is a congruence subgroup of $\mathrm{SL_2}( \ZZ)$.
-\end{lemma}
-\begin{proof}
-Since $ad-bc=1$ and $c\equiv 0  \;(\mathrm{mod}\;N/m)$, we have that 
-$ad\equiv 1  \;(\mathrm{mod}\;N/m)$. This and $a \equiv \pm 1 \;(\mathrm{mod}\;N/m)$ 
-implies that $a\equiv d  \;(\mathrm{mod}\;N/m)$. Hence the inverse
-\[\begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \textrm{ of }
- \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \Gamma(N,m)\]
-belongs to $\Gamma(N,m)$ as well. 
-Similarly, the product
-\[ 
-\begin{pmatrix} a_1a_2+b_1c_2 & a_1b_2+b_1d_2 \\ a_2c_1+c_2d_1 & b_2c_1+d_1d_2 \end{pmatrix}
-\]
- of two matrices 
-\[\begin{pmatrix} a_1 & b_1 \\ c_1 & d_1 \end{pmatrix}, 
-\begin{pmatrix} a_2 & b_2 \\ c_2 & d_2 \end{pmatrix} \in \Gamma(N,m) \]
-is contained in $\Gamma(N,m)$. Finally, it follows from the definition of 
-$\Gamma(N,m)$ that it contains $\Gamma(N)$.
-\end{proof}
-\begin{lemma}
-	\label{lem:indgNmsl2}
-	The index of $\Gamma(N,m)$ inside $\mathrm{SL}_2( \ZZ)$ is
-	\begin{equation*} [\mathrm{SL}_2( \ZZ) \, : \, \Gamma(N,m) ] = \begin{cases} 
-	2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right),\textrm{ if } N/m =2 \\
-	2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right) 
-	\prod_{p \mid N/m }\left(\frac{p}{p-1} \right),\textrm{ if } N/m >2.
-	\end{cases}
-	\end{equation*}
-\end{lemma}
-The proof of this statement will be given in Appendix \ref{sec:app0}.
-
-%For a congruence subgroup $\Gamma$ we will denote by $ M_k(\Gamma, \vartheta)$ 
-%the space of modular forms with respect to the multiplier system $\vartheta$. 
-
-
-\subsection{Theta functions}
-
-%\subsubsection{Theta functions of lattices}
-
-As mentioned in Section \ref{sec: local partition functions} the numerator of the partition function in Theorem \ref{thm: Zorbifold formula}
-is (up to a rational exponent factor of $q$) a shifted theta function of the root lattice of the corresponding 
-finite type Lie algebra. We now investigate the modularity properties of such shifted theta functions. For the notations and many results  we will refer to
-\cite[Chapter 14]{cohen2017modular}.
-
-Let $L\cong  \ZZ^n$ be an $n$ dimensional lattice equipped with a real quadratic 
-form $Q$, which we suppose to be integral and positive definite. That is $Q(L) \in  \ZZ^+$. 
-The associated symmetric bilinear form is obtained as
-\[ B(\mathbf{a},\mathbf{b})= Q(\mathbf{a}+\mathbf{b})-Q(\mathbf{a})-Q(\mathbf{b}). \]
-Then
-\[ Q(\mathbf{a})=\frac{1}{2}B(\mathbf{a},\mathbf{a}). \]
-Let moreover 
-\[ L^{\ast} = \{ \mathbf{b}\in  \RR^n : B(\mathbf{a},\mathbf{b}) \in  
-\ZZ \textrm{ for all } \mathbf{a} \in L \}\] 
-be the dual lattice to $L$ in $L\otimes  \RR \cong  \RR^n$ with respect to $Q$.
-
-Let $\mathbf{a} \in L^{\ast}$. The theta function associated with the lattice $L$ and 
-shifted by $\mathbf{a}$ is defined as
-\begin{equation}
-\Theta_{\mathbf{a}}(\tau)= \sum_{m \in L+\mathbf{a}} q^{Q(\mathbf{m})} .
-\label{eq:thetadef}
-\end{equation}
-\begin{remark} 
-In \cite[Definition 14.3.3]{cohen2017modular} a much more general class of theta functions 
-is introduced. We will use the conventions of \cite[Example 14.2.5]{cohen2017modular}. In 
-our case the spherical polynomial $P(X)$ which appears in \cite[14.2.5]{cohen2017modular} is 
-equal to the constant function 1. Moreover, the number $k$ appearing in  \cite[Example 
-14.2.5 and Definition 14.3.3]{cohen2017modular} is equal to $n$ in our case. In particular, 
-$k \equiv n \;(\mathrm{mod}\;2)$.
-\end{remark}
-
-
-Recall that $L^{\ast}$ is the dual lattice to $L$ with respect to $B$. 
-Then $L \subset L^{\ast}$ always, and there is a smallest positive integer $N$ for which   
-\begin{equation} 
-\label{eq:Ndef}
-NL^{\ast} \subset L \textrm{ and }NQ(\mathbf{a}) \in  \ZZ \textrm{ for all } 
-\mathbf{a} \in L^{\ast}.\end{equation} 
-This number $N$ is called the level in \cite[Definition 14.3.15]{cohen2017modular}.
-
-
-Elements of a matrix $A \in \mathrm{SL}_2( \ZZ)$ will be denoted from now on as follows:
-\begin{equation}
-\label{eq:matrix}
-A=\begin{pmatrix}
-a & b \\ c & d
-\end{pmatrix}.\end{equation}
-Then $A \in \Gamma_0(N)$ if and only if
-\[  cL^{\ast} \subset L \textrm{ and } cQ(\mathbf{a}) \in  
-\ZZ \textrm{ for all } \mathbf{a} \in L^{\ast}. \]
-We also introduce the symbol 
-\begin{equation}
-\label{eq:epsilondef}
-\epsilon_d  = \begin{cases}
-1 \quad \textrm{if } d\equiv 1 \; (\textrm{mod } 4) \\
-i \quad \textrm{if } d\equiv -1 \; (\textrm{mod } 4). \\
-\end{cases}
-\end{equation}
-
-\begin{theorem} 
-	\label{thm:modthm}
-	Let $A \in \Gamma_0(N)$ and  $D = \mathrm{det}(B)$.
-	%Define $\varepsilon_M(0,1)=1, \varepsilon_M(0,-1)=(-i)^{p-q}$ and for $c\neq0$ set
-	%\[ \varepsilon_L(c,d)=(d,(-1)^qD)_{\infty \varepsilon_d^{-n} \left(\frac{2c}{d})^n\right)\left(\frac{D}{d})\right) } \]
-	%if $d$ is odd and $\varepsilon_L(c,d)=\varepsilon_L(c,d-c)$ if $d$ is even. %Here $\varepsilon_d=1$ if $d\cong 1 \; \mathrm(mod 4)$ and  
-	Then
-	\[ \Theta_{\mathbf{a}}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{a\mathbf{a}}(\tau) \]
-	for a multiplier system $\vartheta$ such that
-	\[ \vartheta(A)=e^{2 \pi i ab Q(\mathbf{a})}
-	 \left(\frac{D}{d}\right)\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n \]
-	when $c \neq 0$ and $d$ is odd.
-\end{theorem}
-\begin{proof}
-Corollary 14.3.8 and Theorem 14.3.11 from \cite{cohen2017modular} implies that
-\[ \Theta_{\mathbf{a}}(A\tau)= (d,-1^{q}D)_{\infty}\vartheta(A)(c\tau+d)^{n/2}
-\Theta_{a\mathbf{a}}(\tau), \]
-where $q$ is the number of negative eigenvalues of $Q$, $(d,(-1)^{q}D)_{\infty}= -1$ if 
-$d<0$ and $(-1)^{q}D < 0$, and $(d,(-1)^{q}D)_{\infty}= 1$ otherwise. The form $Q$ is 
-positive definite. Hence $q=0$ and $D>0$. In turn $(d,(-1)^{q}D)_{\infty}= 1$ always.
-\end{proof}
-
-
-Let $s$ be the smallest integer, such $s\mathbf{a} \in L$. This is, in general, not the same
-as $N$, but $s|N$ always. 
-\begin{corollary}
-\label{cor:mult} 
-Suppose that in \eqref{eq:matrix} the element $a \equiv \pm 1 \; \mathrm(mod\; s)$.
-Then 
-\[ \Theta_{\mathbf{a}}(A\tau)= \vartheta(A)(c\tau+d)^{n/2} \Theta_{\mathbf{a}}(\tau) \]
-where $\vartheta$ is as in Theorem \ref{thm:modthm}.
-\end{corollary}
-\begin{proof}
-Since $a \equiv \pm 1 \; \mathrm(mod\; s)$, $a \mathbf{a} \equiv \pm\mathbf{a} \; 
-\mathrm(mod\; L)$. It follows from the definition \eqref{eq:thetadef} that 
-$\Theta_{\mathbf{a}}(\tau)$ depends only on the class of $\mathbf{a}$ modulo $L$. 
-Furthermore, since
-\[ Q(\mathbf{m}-\mathbf{a})=Q(-\mathbf{m}+\mathbf{a}), \]
-$\Theta_{-\mathbf{a}}(\tau)= \Theta_{\mathbf{a}}(\tau)$.
-\end{proof}
-\begin{lemma} 
-\label{lem:mult2}
-Let $\Gamma \subset \Gamma_0(N)$ be a subgroup such that $a \equiv \pm 1 \; \mathrm(mod\; s)$ for all $A \in \Gamma$. Then $\Theta_{\mathbf{a}}(\tau) \in M_{n/2}(\Gamma, \vartheta)$, where $\vartheta$ is as in Theorem \ref{thm:modthm}.
-\end{lemma}
-\begin{proof} Due to Corollary \ref{cor:mult}, $\Theta_{\mathbf{a}}(\tau)$ 
-transforms as a modular form with the multiplier system $\vartheta$ for the elements of $\Gamma$. 
-	
-Showing that it is holomorphic at the cusps is analogous to the proof of 
-\cite[Corollary 14.3.16]{cohen2017modular}. By \cite[Theorem 14.3.7]{cohen2017modular} when 
-an element $A \in \textrm{SL}_2( \ZZ)$ acts on the upper half plane, 
-$\Theta_{\mathbf{a}}(A\tau)$ decomposes into a finite linear combination:
-\[ \Theta_{\mathbf{a}}(A\tau)=\sum_{\mathbf{b} \in 
-L^{\ast}/L}c_{\mathbf{b}}(c\tau+d)^{n/2}\Theta_{\mathbf{b},k}(\tau). \]
-It is known that the group $\textrm{SL}_2( \ZZ)$ acts transitively on the cusps of 
-$\Gamma$.  Hence, to prove that $\Theta_{\mathbf{a}}(\tau)$ is holomorphic at all the cusps 
-of $\Gamma$ it is enough to show that $\Theta_{\mathbf{b}}(\tau)$ is holomorphic as $\tau 
-\to i\infty$ for any $\mathbf{b} \in L^{\ast}/L$. Since the bilinear form is positive 
-definite, $Q(\mathbf{b})>0$ for any $\mathbf{b} \neq 0$. Therefore the only term in
-\[\Theta_{\mathbf{b}}(\tau)= \sum_{\mathbf{m} \in L+\mathbf{b}}
- e^{\pi i \tau k Q(\mathbf{m})}\]
-which could not tend to 0  as $\tau \to i\infty$ is the one with $\mathbf{m}=-\mathbf{b}$. 
-This term exists only if $\mathbf{b} \in L$, and in this case the limit is 1. The theorem 
-follows.
-\end{proof}
-
-\begin{corollary}
-\label{cor:mult3} 
-$\Theta_{\mathbf{a}}(\tau) \in M_{n/2}(\Gamma(N,s), \vartheta)$
-for a multiplier system $\vartheta$ such that
-\[ \vartheta(A)= \left(\frac{D}{d}\right)\left(\epsilon^{-1}_d 
-\left(\frac{2c}{d}\right)\right)^n \]
-when $c \neq 0$ and $d$ is odd.
-\end{corollary}
-\begin{proof}
-For the elements of $\Gamma(N,s)$, $a \equiv \pm 1 \; \mathrm(mod\; s)$. Thus the conditions 
-of Lemma \ref{lem:mult2} are satisfied. Moreover, since $b \equiv 0 \; \mathrm(mod\; s)$, 
-$ab Q(\mathbf{a})$ is an integer. This implies that the term 
-\[ e^{2 \pi i ab Q(\mathbf{a})} \]
-in Theorem \ref{thm:modthm} is equal to 1.
-\end{proof}
-
-\begin{remark} 
-\label{rmk:multsyseven}	
-Suppose that the rank $n$ of the lattice $L$ is even.
-Then the multiplier system in Corollary \ref{cor:mult3} simplifies as
-\[ \vartheta(A)= \left( \frac{(-1)^{n/2} D}{d} \right), \]
-because	$\epsilon_d^{-2}=-1$ and $\left( \frac{2c}{d}\right)^2=1$.
-\end{remark}
-
-\begin{lemma} Let $\mathbf{a} \in L^{\ast}$. Then
-	\[
-	\Theta_{\mathbf{a}}(\tau)= {(q^{k/2})^{\mathbf{a}^{t} \cdot C_\Delta \cdot \mathbf{a}}}
-	\cdot \sum_{ \mathbf{m} \in  \ZZ^n } {q^{ k({\mathbf{m}^ {\top}} \cdot 
-			\mathbf{a})
-	}} {(q^{k/2})^{{\mathbf{m}^ {\top}} \cdot C_\Delta \cdot \mathbf{m}}}.\]
-	\label{lem:thetadef2}
-\end{lemma}
-\begin{proof}
-	Since $L \cong  \ZZ^n $, one can rewrite \eqref{eq:thetadef}
-	as
-	\[ \sum_{\mathbf{m} \in  \ZZ^n} (q^{k/2})^{(\mathbf{m+\mathbf{a}} | 
-		\mathbf{m+\mathbf{a}})} =
-	\sum_{\mathbf{m} \in  \ZZ^n} (q^{k/2})^{(\mathbf{m}|
-		\mathbf{m})+2(\mathbf{m}|\mathbf{a})+(\mathbf{a}|\mathbf{a})} 
-	.
-	\]
-	The pairing between $\mathbf{a} \in L^{\ast}$ and $\mathbf{m} \in L$ is just
-	\[(\mathbf{m}|\mathbf{a})=\sum_{i=1}^n a_i m_i = \mathbf{m}^ {\top} \cdot \mathbf{a}.\]
-\end{proof}
-
-\subsection{Theta functions of root systems}
-
-%Let $\Delta$  be a root system of finite type, and let $L$ be its root lattice. 
-
-Let $\Delta$ be an irreducible root system of finite type, and let $L$ be its root lattice. If $B=(|)$, the standard Weyl invariant bilinear form on $L$, then the level $N$ of the lattice, which was defined in \eqref{eq:Ndef}, is equal to
-the number $m$ listed in Table \ref{table:congorder} \cite[page 261]{kac1994infinite}. 
-\begin{table}
-	\begin{center}
-	\begin{tabular}{ |c|c|c| }
-		\hline
-		$\Delta$ & $n$ & $m$ \\
-		\hline
-		$A_n$ & odd & $2(n+1)$ \\
-		& even & $n+1$ \\
-		$D_n$ & odd & 8 \\
-		& $n \equiv 2\;(\mathrm{mod}\;4)$ & 4 \\
-		& $n \equiv 0\;(\mathrm{mod}\;4)$ & 2 \\
-		$E_6$ & & 3 \\
-		$E_7$ & & 4 \\
-		$E_8$ & & 1 \\
-		\hline
-	\end{tabular}
-	\vspace{0.2in}
-	\caption{The numbers $m$.}
-		\label{table:congorder}
-\end{center}
-\end{table}
-In this case in the
-standard basis given by the roots $\alpha_1,\dots,\alpha_n$, $L\cong  \ZZ^n$,
-\[ B(\mathbf{a},\mathbf{b})=\mathbf{a}^{\top}\cdot C_{\Delta} \cdot \mathbf{b}, 
-\quad Q(\mathbf{a})=\frac{1}{2}\mathbf{a}^{\top}\cdot C_{\Delta} \cdot \mathbf{a} \]
-and $D=\det(B)=|C_{\Delta}|$.
-
-
-We now set instead $B=k(|)$, where $k=|G_{\Delta}|$. 
-Then the level $N$ of $L$ becomes $km$,
-\[ B(\mathbf{a},\mathbf{b})=\mathbf{a}^{\top}\cdot kC_{\Delta} \cdot \mathbf{b}, 
-\quad Q(\mathbf{a})=\frac{1}{2}\mathbf{a}^{\top}\cdot kC_{\Delta} \cdot \mathbf{a} \]
-and $D=\det(B)=k^n|C_{\Delta}|$.
-
-Furthermore, we fix a particular shift vector $\mathbf{a}$. Let us denote the standard basis of $L$ 
-by $\{\alpha_1, \dots, \alpha_n\}$ and the corresponding dual basis of $L^{\ast}$ by 
-$\{\omega_1, \dots, \omega_n\}$.
-Let
-\begin{equation} 
-\label{eq:thetadef}
-\theta=( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n) = \sum_{i=1}^n 
-(\mathrm{dim} \rho_i) \alpha_i \in L.\end{equation}
-Our $\mathbf{a} \in L^{\ast}$ will be the dual of $\theta$ with respect to $k(|)$. 
-Explicitely, this means that
-\begin{equation}
-\mathbf{a}= \frac{1}{k}\sum_{i=1}^n (\mathrm{dim} \rho_i) 
-\omega_i=\sum_{i=1}^n a_i \alpha_i 
-\label{eq:zetasub}
-\end{equation}
-where $(a_1,\dots,a_n)=(kC_\Delta)^{-1} \cdot \theta$.
-Finally, we introduce the notation
-\[ \Theta_{\Delta}(\tau)=\Theta_{\mathbf{a}}(\tau). \]
-
-The next statement follows immediately from Corollary \ref{cor:mult3}.
-\begin{corollary}
-\label{cor:thetazetamult} 
-The function $\Theta_{\Delta}(\tau)$ is a modular form of weight $n/2$ for 
-$\Gamma(km,m)$ with a multiplier system $\vartheta$ such that
-\[ \vartheta(A)=\left(\frac{k^n|C_{\Delta}|}{d}\right)
-\left(\epsilon^{-1}_d \left(\frac{2c}{d}\right)\right)^n \]
-when $c\neq 0$ and $d$ is odd.
-\end{corollary}
-
-
-\begin{proposition}
-	\label{prop:locmod}
-	Let $[\CC^2/G_\Delta]$ be a simple singularity orbifold with $\Delta$ of rank $n$, $k=|G_\Delta|$, and
-let $m$ be is as in Table \ref{table:congorder}. 
-	Then 
-\[q^{-\frac{1}{24}}Z_{[\CC^2/G_\Delta]}(q)=\frac{\Theta_{\Delta}(\tau)}{(\eta(k\tau))^{n+1}}.\] 
-In particular, $q^{\frac{1}{24}}(Z_{[\CC^2/G_\Delta]}(q))^{-1}$ is a (possibly meromorphic) modular form of weight $1/2$ in the variable $\tau$ for the congruence subgroup $\Gamma(km,m)$.
-\end{proposition}
-\begin{proof}
-Let
-\begin{equation}\mathbf{\zeta}= k\mathbf{a}=\sum_{i=1}^n (\mathrm{dim} \rho_i) 
-\omega_i=\sum_{i=1}^n b_i \alpha_i
-\label{eq:zetasub}
-\end{equation}
-where $(b_1,\dots,b_n)=(C_\Delta)^{-1} \cdot \theta$.
-Then
-\[ Q(\mathbf{a})=\frac{k}{2}\left(\mathbf{a}^ {\top} \cdot C_\Delta 
-\cdot \mathbf{a}\right)=  \frac{\zeta^ {\top} \cdot C_\Delta \cdot \zeta}{2k}. \]
-Substituting this into Lemma \ref{lem:thetadef2} yields
-\begin{equation*} 
-\Theta_{ \Delta }(\tau )= q^{\frac{\zeta^ {\top} \cdot C_\Delta \cdot \zeta}{2k}}
-\sum_{ \mathbf{m} \in  \ZZ^n } q^{\mathbf{m}^ {\top} \cdot 
-( \mathrm{dim} \rho_1 ,\dots, \mathrm{dim} \rho_n) } 
-(q^{k/2})^{\mathbf{m}^ {\top} \cdot C_\Delta \cdot \mathbf{m}}
-. 
-\end{equation*}
-Up to the factor $q^{ \frac{\zeta^ {\top} \cdot C_\Delta \cdot \zeta}{2k}}$ this is exactly 
-the numerator of $Z_{[ \CC^2/G_\Delta]}(q_0,\dots,q_n)$ appearing in Theorem 
-\ref{thm: Zorbifold formula} when we substitute $q_i=q^{\mathrm{dim} \rho_i}$, $0 \leq i \leq n$. In 
-the denominator of $Z_{[ \CC^2/G_\Delta]}(q_0,\dots,q_n)$, after the same substitution, a 
-product of $n+1$ terms of 
-\[\prod_{m=1}^{\infty}(1-q^{km})\] 
-appears. As a consequence,
-\[ q^{\frac{\zeta^ {\top} \cdot C_\Delta \cdot \zeta}{2k} - \frac{k(n+1)}{24}}
-Z_{[ \CC^2/G_\Delta]}(q)  = 
-\frac{\Theta_{\Delta}(\tau )}{(\eta(k\tau))^{n+1}}. \]
-The Dedeking eta function $\eta(\tau)$ is a modular form of weight $1/2$ for $\Gamma(1)$. 
-Hence, $\eta(k\tau)$ is a modular form of weight $1/2$ for $\Gamma(k)$.
-By Lemma \ref{lem:betalength} below
-\[ \frac{k(n+1)}{24} - \frac{\zeta^ {\top} \cdot C_\Delta \cdot \zeta}{2k}=\frac{1}{24}. \]
-Hence,
-\[ Z_{\Delta}(\tau)=q^{-\frac{1}{24}}Z_{[ \CC^2/G_\Delta]}(q)
- \]
-is the quotient of two holomorphic modular forms. It transforms as a modular form for 
-$\Gamma(km,m)\cap \Gamma(k)=\Gamma(km,m)$ with weight 
-\[\frac{n}{2}- \frac{n+1}{2}=-\frac{1}{2}. \]
-\end{proof}
-\begin{lemma} Let $\Delta$ be a simply laced root system, and let $\zeta$ be 
-defined as in \eqref{eq:zetasub}. Then
-\[ \frac{(\zeta|\zeta)}{2k}=\frac{\zeta^ {\top} \cdot C_\Delta 
-\cdot \zeta}{2k}=\frac{(n+1)k-1}{24}. \]
-\label{lem:betalength}
-\end{lemma}
-\begin{remark}Lemma \ref{lem:betalength} expresses the \emph{modular anomaly} of the 
-numerator of $Z_{[ \CC^2/G_\Delta]}(q)$ (see \cite[12.7.5]{kac1994infinite}). It is proved 
-in Appendix \ref{sec:app1} below. We have not found it in this generality in the literature, 
-but in type $A$ it turns out to be another form of the ``strange formula'' of 
-Freudenthal--de Vries \cite{freudenthal1969linear}:
-\[ \frac{(\rho|\rho)}{2h}=\frac{\rho^ {\top} \cdot C_\Delta 
-\cdot \rho}{2h}=\frac{\mathrm{dim} \mathfrak{g}_{\Delta}}{24} \]
-where $\rho$ is the sum of the positive roots of $\Delta$, $h$ is the (dual) Coxeter number, 
-and $\mathfrak{g}_{\Delta}$ is the corresponding Lie algebra.
-See Appendix \ref{sec:app11} for the details. We expect that the identity of Lemma 
-\ref{lem:betalength} holds in the non-simply laced cases as well.
-\end{remark}
-%From now 
-%\[ Z_{\Delta}(\tau)=q^{-\frac{1}{24}}Z_{[ \CC^2/G_\Delta]}(q)
-%\]
-
-Let $\Delta_1$ (resp. $\Delta_2$) be a root system of rank $n_1$ (resp. $n_2$). Denote by 
-$G_{\Delta_1}$ $(resp. G_{\Delta_2})$ the corresponding finite group, whose order is 
-$k_1=|G_{\Delta_1}|$ (resp. $k_2=|G_{\Delta_2}|$). Let 
-$\theta_1$ (resp. $\theta_2$) be as in \eqref{eq:thetadef}.
-Let
-$\mathbf{a}_1$ (resp.  $\mathbf{a}_2$) be the vector dual to $\theta_1$ (resp. $\theta_2$) 
-with respect to the form
-$k_1(|)_1$ (resp. $k_2(|)_2$). We define
-\[ \Theta_{\Delta_1 \oplus \Delta_2}(\tau)=\Theta_{\mathbf{a}_1 \oplus \mathbf{a}_2}(\tau)\]
-where the right side is the theta function of the lattice $L_1 \oplus L_2$ equipped with the 
-form $k_1(|)_1 \oplus k_2(|)_2$. The next statement is a straightforward calculation.
-
-\begin{lemma}
-\[ \Theta_{\Delta_1 \oplus \Delta_2}(\tau)=\Theta_{\Delta_1}(\tau)
-\cdot \Theta_{\Delta_2}(\tau).\]
-\end{lemma}
-
-\begin{corollary} Let $\Delta$ be an irreducible, finite type root system.
-\begin{enumerate}
-\item If the rank of $\Delta$ is even, then 
-$\Theta_{\Delta}(\tau) \in M_{n/2}(\Gamma(N,k), \vartheta)$, where $N=km$, and 
-\[ \vartheta(A)= \left( \frac{(-1)^{n/2} k^n |C_{\Delta}|}{d} \right). \]
-\item If the rank of $\Delta$ is odd and $\Delta$ is not of type A, then 
-$\Theta_{\Delta\oplus A_1}(\tau) \in M_{(n+1)/2}(\Gamma(N,k), \vartheta)$, 
-where $N=km$, and the multiplier system is
-\[ \vartheta(A)= \left( \frac{(-1)^{(n+1)/2} 4k^n|C_{\Delta}|}{d} \right). \]
-\end{enumerate}
-\end{corollary}
-\begin{proof} Part (1) follows from Remark \ref{rmk:multsyseven} and Corollary \ref{cor:thetazetamult}.
-	
-If $\Delta$ is not of type $A$, then $2|k$ and $8|km$. By Corollary \ref{cor:thetazetamult}, 
-$\Theta_{\Delta}(\tau) $ is a modular form for $\Gamma(km,k)$, and  $\Theta_{A_1}(\tau)$ is 
-a modular form for $\Gamma(8,2)$. Hence, their product is a modular form for $\Gamma(km,k)$. 
-The formula of the multiplier system follows from Part (1) and from that $2|C_{A_1}|=4$.
-\end{proof}
-
-\begin{remark}
-In Section \ref{sec:locetaprod} below we perform computer calculations. In the odd rank 
-cases we found it better to work with $\Theta_{\Delta}(\tau)\cdot 
-\Theta_{A_1}(\frac{k}{2}\tau)$. With the same reasoning as above, 
-$\Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(4k,k)$. Since in all non-type 
-A, odd rank cases $4|m$, we have that $\Theta_{\Delta}(\tau)\cdot 
-\Theta_{A_1}(\frac{k}{2}\tau)$ is a modular form for $\Gamma(km,k)$. Moreover, as the 
-determinant of $kC_{\Delta} \oplus k C_{A_1}$ is $2k^{n+1}|C_{\Delta}|$, the multiplier 
-system is
-	\[ \vartheta(A)= \left( \frac{(-1)^{(n+1)/2} 2k^{n+1}|C_{\Delta}|}{d} \right). \]
-\end{remark}
-
-\section{Modular forms II: Eta products}
-\label{sec:modformIIetaprod}
-
-\subsection{Eta products}
-An eta products is a finite product
-\begin{equation} f(\tau)=\prod_m \eta(m \tau )^{a_m} 
-\label{eq:etaproddef}
-\end{equation}
-where $m$ runs through a finite set of positive integers and the exponents
-$a_m$ may take values from $\ZZ$. The least common multiple of all $m$ such that $a_m\neq 0$ will be denoted by $N$; it is called the minimum level of $f(\tau)$.
-
-For a general eta quotient $f(\tau)$ as in \eqref{eq:etaproddef}, let $k=\sum_m{a_m}$. The expression $f(\tau)(\mathrm{d}\tau)^{k/2}$ transforms as a $k/2$-differential due to the transformation law of the Dedekind eta function. Since $\eta(\tau)$ is nonzero on $\mathbb{H}$, (quotients of) eta products never has finite poles. The only issue for an eta product to be a (possibly half-integral weight) modular form is whether the numerator vanishes to at least the same order as the denominator at each cusp. 
-
-\begin{theorem}[{\cite[Theorem 3]{gordon1993multiplicative}}] 
-	\label{thm:etaprodmodeven}	
-	Let $f$ be an eta product as in \eqref{eq:etaproddef} such that $n=\sum_{m \mid N} a_m$ is even. Let $s=\prod_{m \mid N} m^{a_m}$,  $\frac{1}{24}\sum_{m \mid N} ma_m=c/e$ and $\frac{1}{24}\sum_{m \mid N} \frac{N}{m}a_m=c_0/e_0$, both in lowest terms. Then $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
-	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
-	for $a>0$, $gcd(a,6)=1$.
-	%Then:
-	%\begin{enumerate}
-	%	\item $f(\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0)\cap\Gamma^0(e)$ with the multiplier system defined by the Dirichlet character (mod $Ne_0$)
-	%	\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{a} \right) \]
-	%	for $a>0$, $gcd(a,6)=1$.
-	%	\item $F(\tau)=f(e\tau)$ is a modular form of weight $n/2$ for $\Gamma_0(Ne_0e)$ with a multiplier system defined by the Dirichlet character (mod $Ne_0e$) $\gamma(A)$ as in (1).
-	%\end{enumerate}
-\end{theorem}
-\begin{remark}
-	\label{rem:multsyst}
-	\begin{enumerate}
-		\item The fact that the $\gamma(A)$ values for $a>0$, $gcd(a,6)=1$ are enough to define a multiplier system follows from \cite[Lemma 3]{newman1959construction}, and the multiplier system was calculated originally in \cite[Theorem 1]{newman1959construction}.
-		\item\label{it:multsyst2} Since $N|c$ and $ad-bc=1$, we have that $ad \equiv 1  \;(\textrm{mod }m)$ for all $m|N$. This means that
-		\[ \left(\frac{a}{m}\right)=\left(\frac{d}{m}\right),\]
-		or equivalently, that 
-		\[ \left(\frac{m}{a}\right)=\left(\frac{m}{d}\right).\]
-		Hence, the multiplier system in Theorem \ref{thm:etaprodmodeven} can also be written as 
-		\[ \gamma(A)=\left( \frac{(-1)^{n/2} s}{d} \right). \]
-		In this case $d>0$, $gcd(d,6)=1$ is required.
-	\end{enumerate}
-\end{remark}
-
-% It was not stated there explicitely but it also assumed in the background of the proof that $gcd(a,m)=1$ for all $m$ with nonzero exponent. But again, due to \cite[Lemma 3]{newman1959construction} this is enough.
-
-The content of Theorem \ref{thm:etaprodmodeven} is explained in \cite[Section 1]{gordon1989multiplicative}. 
-In the case when $\sum_{m \mid N} \frac{N}{m}a_m \equiv 0 \;(\textrm{mod }24)$, $f(\tau)$ has an integral order at 0. If this condition is not satisfied for $N$, it can be guaranteed by replacing $N$ with $Ne_0$. In effect this \emph{widens} the cusp of $\Gamma_0(N)$ at 0 by a factor of $e_0$. Similarly,  $\sum_{m \mid N} ma_m \equiv 0 \;(\textrm{mod }24)$ if and only if $f(\tau)$ has an integral order at the cusp at $i\infty$. If this is not the case, widening the cusp $\Gamma_0(Ne_0)$ at $i\infty$ can be achieved by passing to the subgroup $\Gamma_0^0(Ne_0,e)=\Gamma_0(Ne_0) \cap \Gamma^0(e)$. The numbers $e_0$ and $e$ are called the ramification numbers of $f(\tau)$ at $0$ and $i\infty$ respectively. We will say that $f(\tau)$ is unramified if $e=e_0=1$.
-
-
-
-
-%\subsection{The local partitions functions as eta products}
-
-\subsection{Sturm bounds and the proof of Theorem~\ref{thm: eta product formula for Z}}
-
-Let $\Delta$ be a simply laced root system. We introduce the notations
-\[ Z_{\Delta}(\tau)=q^{-\frac{1}{24}}Z_{[\CC^2/G_\Delta]}(q)=\frac{\Theta_{\Delta}(\tau)}{\eta(k\tau)^n}.  \]
-We will show that in the cases when $\Delta=A_n$, $n\geq 1$, $D_4, D_6, D_7$ or $E_6$ the functions $\Theta_{\Delta}(\tau)$, and hence $Z_{\Delta}(\tau)$, can be expressed as eta products. Conjecturally the same statement holds for all ADE types.
-
-
-%\begin{example} In the case of $\Delta=A_1$, $\Theta_{A_1}(\tau)=\frac{\eta^2(2\tau)}{\eta(\tau)}$ which is a noncuspidal holomorphic modular form of weight $1/2$ and level 2 \cite[Example 3.12 (1)]{kohler2011eta}.\end{example}
-We will denote the eta products on the right hand sides of Conjecture~\ref{conj: eta product for theta function} by $\eta_{\Delta}(\tau)$. Then Theorem~\ref{thm: eta product formula for Z} boils down to showing that $\Theta_{\Delta}(\tau)=\eta_{\Delta}(\tau)$. To do this we want to show that both of them are holomorphic modular forms for the same congruence subgroup and with the same multiplier system.
-
-Theorem \ref{thm:etaprodmodeven} provides the multiplier system of $\eta_{\Delta}(\tau)$ only for root systems of even rank. It is possible to obtain an analogue of Theorem \ref{thm:etaprodmodeven} for root systems of odd rank. Since these calculations would be too circuitous, we reduce instead to the case of root systems of even rank by taking a direct sum with $A_1$. We can do this because the identity $\Theta_{A_1}(\tau)=\eta_{A_1}(\tau)$ holds by Theorem \ref{thm: conjecture holds for An}. More precisely, for computational reasons in the odd rank cases we will show that
-\[\Theta_{\Delta}(\tau)\cdot \Theta_{A_1}\left(\frac{k}{2}\tau\right)=\eta_{\Delta}(\tau)\cdot \eta_{A_1}\left(\frac{k}{2}\tau\right).\]	
-%For $n$ odd we will in fact show that 
-%\[ \Theta_{\Delta}(\tau)\theta(\tau)=\eta_{\Delta}(\tau)\frac{\eta^5(2\tau)}{\eta^2(\tau)\eta^2(4\tau)}.\]
-\begin{lemma}
-	\label{lem:ee0s}
-	If $\Delta$ is an irreducible simply laced root system of rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven}	 are as follows:
-	\[ e=\frac{24}{gcd(24, k(n+1)-1)}; \quad e_0=1; \quad s=k^n|C_{\Delta}|; \quad N=k. \]
-\end{lemma}
-\begin{proof} Direct calculation shows that in each case $\sum_{m \mid N} ma_m=k(n+1)-1$, and $\sum_{m \mid N} \frac{N}{m}a_m=0$. The third identity is also straightforward.
-\end{proof}
-\begin{lemma}
-	\label{lem:ee0sa1}
-	If $\Delta$ is an irreducible simply laced root system of odd rank $n$ with $|G_{\Delta}|=k$, then for $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau)$ the numbers appearing in Theorem \ref{thm:etaprodmodeven} are as follows:
-	\[ e=\frac{24}{gcd(24, k(n+\frac{5}{2})-1)}; \quad e_0=1; \quad s=2k^{n+1}|C_{\Delta}|; \quad N=k. \]
-\end{lemma}
-\begin{proof} For $\eta_{A_1}(\frac{k}{2}\tau)=\eta^2(k\tau)\eta^{-1}(\frac{k}{2}\tau)$, $\sum_{m \mid N} ma_m=\frac{3k}{2}$ and $\prod_{m \mid N} m^{a_m}=2k$. \end{proof}
-\begin{corollary}  Let $\Delta$ be a simply laced root system. 
-	\begin{enumerate}
-		\item If $n$ is even, let $e$ be as Lemma \ref{lem:ee0s}. Then the function $\eta_{\Delta}(\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
-		\[ \gamma(A)=\left( \frac{(-1)^{n/2}k^n|C_{\Delta}|}{d} \right). \]
-		%\[ \gamma(A)=\left( \frac{k^n|C_{\Delta}|}{d} \right) \left( \overline{\epsilon}_d \left(\frac{2c}{d}\right) \right)^n. \]
-		\item If $n$ is odd, let $e$ be as Lemma \ref{lem:ee0sa1}. Then the function $\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau)$ if a modular form of weight $\frac{n+1}{2}$ for $\Gamma_0(k)\cap\Gamma^0(e)$ with the multiplier system defined by
-		\[ \gamma(A)=\left( \frac{(-1)^{(n+1)/2}2k^{n+1}|C_{\Delta}|}{d} \right). \]
-	\end{enumerate}
-	%The function $\eta_{\Delta}(e\tau)$ is a modular form of weight $\frac{n}{2}$ for $\Gamma_0(ke)$ with the multiplier system defined by
-	%\[ \gamma(A)=\left( \frac{k^n|C_{\Delta}|}{d} \right) \left( \overline{\epsilon}_d \left(\frac{2c}{d}\right) \right)^n. \]
-	\label{cor:etamultsyscalc}
-\end{corollary}
-\begin{proof} Follows from Theorem \ref{thm:etaprodmodeven}.
-\end{proof}
-
-
-\begin{lemma} 
-	\label{lem:grpint}
-	Let $\Delta$ be an irreducible simply laced root system. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
-	\begin{enumerate}
-		\item If $\Delta$ is either of type D and even rank or of type E, then $e|k$. As a consequence, $\Gamma(km,m) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,m)$.
-		\item If $\Delta$ is of type D and odd rank, then $e|2k$. As a consequence, $\Gamma(km,m) \cap \Gamma_0(k) \cap \Gamma^0(e)=\Gamma(km,m/2)$.
-	\end{enumerate}
-\end{lemma}
-\begin{proof}
-	We will show that $\Gamma(km,m)$ (resp. $\Gamma(km,m/2)$) is contained in $\Gamma_0(k) \cap \Gamma^0(e)$. For this we only need that $e|k$ (resp. $e|2k$). In the type $E$ case this is automatic, since $e|24$ always and $24|k$ in all three cases.
-	
-	Let $\Delta$ be of type $D$ whose rank $n$ is even. Then $k(n+1)-1=(4n-8)(n+1)-1=4n^2-4n-9$, which is always an odd number. The divisors of 24 are 2 and 3. So the only possibilities for $e$ are 8 and 24 depending on whether $4n^2-4n-9$ is divisible by 3 or not. Now $4n^2-4n-9=4n(n-1)-9$, so it is not divisible by 3 if and only if $n \equiv -1 (\; \mathrm{mod}\; 3)$. Hence $e=24$ if and only if $n=6l+2$ for some integer $l$. But this means that $k=4n-8=4(6l+2)-8=24l$, so $24|k$. In the cases when $n=6l$ (resp. $n=6l+4$) the order $k=24l-8$ (resp. $k=24l+8$). So in both cases $8|k$. 
-	
-	Suppose now that $\Delta$ is of type $D$ whose rank $n$ is odd. Then $k(n+\frac{5}{2})-1)=(4n-8)(n+\frac{5}{2})-1=4n^2+2n-21$, which is again always an odd number. Similarly as above, it is not divisible by 3 if and only if $n \equiv -1 (\; \mathrm{mod}\; 3)$.
-	If this is the case, then $e=24$ and $n=6l+5$ for some integer $l$. Then, $k=4n-8=4(6l+5)-8=24l-12$, so $e|2k$.
-	The other case is when $e=8$ . Then either $n=6l+1$ for some integer $l$ and hence $k=4n-8=4(6l+1)-8=24l-4$, or $n=6l+3$ and hence $k=4n-8=4(6l+3)-8=24l-12$. In both cases $e|2k$.
-\end{proof}
-
-\begin{corollary} Let $\Delta$ be an irreducible simply laced root system of rank $n$. Let $k=|G_{\Delta}|$, and let $e$ be as in Corollary \ref{cor:etamultsyscalc}. 
-	Let \[\Gamma=\begin{cases}
-	\Gamma(km,m), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is even, or } \Delta \textrm{ is of type E} \\
-	\Gamma(km,m/2), \textrm{ if } \Delta \textrm{ is of type D and } n \textrm{ is odd}.
-	\end{cases}\]
-	Then both
-	\[
-	\begin{cases}
-	\eta_{\Delta}(\tau) \textrm{ and }\Theta_{\Delta}(\tau), \textrm{ if } n \textrm{ is even}, \\
-	\eta_{\Delta}(\tau) \cdot \eta_{A_1}(\frac{k}{2}\tau) \textrm{ and }\Theta_{\Delta}(h\tau) \cdot \Theta_{A_1}(\frac{k}{2}\tau), \textrm{ if } n \textrm{ is odd},
-	\end{cases}
-	\]
-	are modular forms for $\Gamma$ of the same weight and they have the same multiplier system.
-	\label{cor:etathetamod}
-\end{corollary}
-\begin{proof}
-	Follows from Corollary \ref{cor:thetazetamult}, Corollary \ref{cor:etamultsyscalc} and Lemma \ref{lem:grpint}.
-\end{proof}
-
-
-
-%Write 
-%\[ \frac{1}{24} \sum_m \frac{N}{m}a_m = \frac{c_0}{e_0} \]
-%and 
-%\[ \frac{1}{24} \sum_m ma_m = \frac{c}{e}. \]
-%Then 
-
-
-%In each cases of Conjecture \ref{conj:zloceta}, $Z_{\Delta}^{-1}(\tau)$ transforms as a weight $1/2$-modular form, and they are automatically holomorphic on $\mathbb{H}$.
-The next result gives a limit up to which the vanishing of the Fourier coefficients of a modular form guarantees the vanishing of the modular form. It is generally known as the Sturm bound. %We have not found this formulation of the Lemma \ref{lem:sturmbound} in the literature, only an analogous one where $\Gamma(N)$ is replaced with $\Gamma_0(N)$ \cite[Lemma 3.1]{kumar2014note}.
-\begin{theorem}[{\cite[Theorem 1]{sturm1987congruence}}]
-	\label{thm:sturmbound}
-	Let $\Gamma$ be a congruence subgroup of $\mathrm{SL}_2(\ZZ)$, $n$ be a positive even integer, and $\vartheta$ be a multiplier system for $\Gamma$. Let $f=\sum_{m=0}^{\infty} a(m)q^m \in M_{n/2}(\Gamma,\vartheta)$. If $a(m)=0$ for all $m \leq \frac{n}{24} [\mathrm{SL}_2(\ZZ) \, : \, \Gamma ]$, then $f=0$. As a consequence, if the Fourier coefficients of two modular forms in $M_{n/2}(\Gamma,\vartheta)$ agree at least up to degree $\frac{n}{24} [\mathrm{SL}_2(\ZZ) \, : \, \Gamma ]$, then the two modular forms are equal.
-\end{theorem}
-\begin{corollary}
-	For every fixed $\Delta$ Conjecture~\ref{conj: eta product for theta function} can be checked numerically.
-\end{corollary}
-\begin{proof}
-	%One need to check two things about the holomorphic modular form $\Theta_{\Delta}(\tau)$ and the corresponding eta product. First, whether $\Theta_{\Delta}(\tau)$ tranforms accoding to the same Dirichlet character as the eta product. This is true by comparing Corollary \ref{cor:thetazetamult} with Corollary \ref{cor:etaprodmultalt}. Second,
-	Because of Theorem~\ref{thm:sturmbound}
-	one only has to check whether the $q$-expansions of the two functions from Corollay \ref{cor:etathetamod} agree at least up to order $\frac{n}{24} [\mathrm{SL}_2(\ZZ) \, : \, \Gamma(N,m) ]$.
-\end{proof}
-
-
-%\subsection{Proof of Conjecture \ref{conj:zloceta} in certain cases}
-\begin{proposition}
-	\label{prop:zlocetacheck}
-	Conjecture~\ref{conj: eta product for theta function}, and hence the local expressions in Theorem~\ref{thm: eta product formula for Z} are true in the cases when $\Delta=D_4, D_5, D_6$ or $E_6$.
-\end{proposition}
-
-\begin{proof}	
-Taking into account the index formula from Lemma \ref{lem:indgNmsl2}, the groups 
-$\Gamma(km,m)$ (resp. $\Gamma(km,m/2)$) and the corresponding Sturm bounds are calculated in 
-Table \ref{table:sturm}. We performed a computer check in each case and found that the 
-Fourier coefficients agree at least up to the appropriate bound.
-	
-	\begin{table}
-	\begin{center}
-		\begin{tabular}{ |c|c|c|c|c|c| }
-			\hline
-			$\Delta$ & $k$ & $m$ & $\Gamma$ & $[\mathrm{SL}_2(\ZZ) \, : \, \Gamma]$ & Sturm bound \\
-			\hline
-			$D_4$ & 8 & 2 & $\Gamma(16,2)$ & 768 & 128 \\
-			%		$D_5$ & 12 & 24 & 288 & 2034 & 2034 & 960 & 24 \\
-			%		$D_5\oplus A_1$ & 24 & 12 & 288 & 1152 & 1152 & 576 & 24 \\
-			$D_5\oplus A_1$ & 12 & 8 & $\Gamma(96,4)$ & 36864 & 9216 \\
-			$D_6$ & 16 & 4 & $\Gamma(64,4)$ & 12288 & 3072 \\
-			$E_6$ & 24 & 3 & $\Gamma(72,3)$ & 20736 & 5184 \\
-			%		& $n \equiv 2\;\mathrm{mod}\;4$ & 4 \\
-			%		& $n \equiv 0\;\mathrm{mod}\;4$ & 2 \\
-			%		$E_6$ & & 3 \\
-			%		$E_7$ & & 4 \\
-			%		$E_8$ & & 1 \\
-			\hline
-		\end{tabular}
-		\vspace{0.2in}
-		\caption{Sturm bounds}
-				\label{table:sturm}
-\end{center}
-	\end{table}
-\end{proof}
-
-
-
-%\subsection{Miscellany}
-
-%\pagebreak
-
-
-\appendix
-\section{Some proofs}
-\subsection{Proof of Lemma \ref{lem:indgNmsl2}}
-\label{sec:app0}
-
-The following indices are known \cite[Section 1.2]{diamond2005first}:
-\begin{gather}
-\label{eq:GGind} [\mathrm{Sl}_2(\ZZ) \, : \, \Gamma(N)] = N^3 \prod_{p \mid N}\left(1-\frac{1}{p^2} \right), \\
-\label{eq:G0G1ind} [\Gamma_0(N) \, : \, \Gamma_1(N) ]= \phi(N), \\
-\label{eq:GGind} [\Gamma_1(N) \, : \, \Gamma(N) ]= N.
-\end{gather}
-The index \eqref{eq:G0G1ind} is because of the following. Due to $c \equiv 0 \;( \mathrm{mod}\;N)$ we must have $ad\equiv 1 \;( \mathrm{mod}\;N)$. This equation has $\phi(N)$ solutions, but we only allow one of these in $\Gamma_1(N)$: the one with $a\equiv d\equiv 1 \;(\mathrm{mod}\;N)$. The $\phi(N)$ residue classes modulo $N$ are distributed uniformly into the $\phi(N/m)$ relative prime residue classes modulo $N/m$. Hence, the congruence $a \equiv 1 \;( \mathrm{mod}\;N/m)$ has $\phi(N)/\phi(N/m)$ residue classes as solutions. If $N/m=2$, this is all the solutions of $a \equiv \pm 1 \;( \mathrm{mod}\;N/m)$. If $N/m>2$, then the number of solutions of $a \equiv \pm 1 \;( \mathrm{mod}\;N/m)$ is $2\phi(N)/\phi(N/m)$. As a consequence, the congruence subgroup
-\begin{equation}  \left\{ \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL}_2(\ZZ): a \equiv \pm 1 \;(\mathrm{mod}\;N/m), c \equiv 0 \;(\mathrm{mod}\;N) \right\} 
-\label{eq:auxcong}
-\end{equation}
-in $\Gamma_0(N)$ has index $\phi(N)/\phi(N/m)=\phi(N)$ if $N/m=2$, and $2\phi(N)/\phi(N/m)$ if $N/m>2$.
-
-Second, the index \eqref{eq:GGind} comes from requireing $b \equiv 1 \;( \mathrm{mod}\;N)$. Similarly the index of $\Gamma(N,m)$ inside the group defined in \eqref{eq:auxcong} is $N/m$. Combining all these we obtain that 
-\[ [\Gamma_0(N) \, : \, \Gamma(N,m) ]= \begin{cases}
-2N \phi(N), \textrm{ if } N/m =2 \\
-\frac{2N \phi(N)}{m \phi(N/m)}, \textrm{ if } N/m >2.
-\end{cases} \]
-
-The index of $\Gamma_0(N)$ inside $\mathrm{SL}_2(\ZZ)$ turns out to be
-\[  [\mathrm{SL}_2(\ZZ) \, : \, \Gamma_0(N) ]=\frac{N^2}{\phi(N)}\prod_{p \mid N}\left(1-\frac{1}{p^2} \right). \]
-Hence,
-\begin{multline*} [\mathrm{SL}_2(\ZZ) \, : \, \Gamma(N,m) ] = [\mathrm{SL}_2(\ZZ) \, : \, \Gamma_0(N) ] \cdot [\Gamma_0(N) \, : \, \Gamma(N,m) ] \\
-=\begin{cases} 
-2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right),\textrm{ if } N/m =2 \\
-2N^2\prod_{p \mid N}\left(1-\frac{1}{p^2} \right) \prod_{p \mid N/m }\left(\frac{p}{p-1} \right),\textrm{ if } N/m >2
-\end{cases}
-\end{multline*}
-where we have used the following expression for the $\phi$ function:
-\[ \phi(N)=N \prod_{p \mid  N}\left(1-\frac{1}{p} \right). \]
-
-\subsection{Proof of Lemma \ref{lem:betalength}}
-\label{sec:app1}
-We follow the notations of \cite{bourbaki2002lie}. %Bourbaki Chapter 6, Section 4.
-\begin{proof}[Type $A_n$, $n \geq 1$]
-	\label{sec:app11}
-	In this case $\mathrm{dim} \rho_i = 1$, $0 \leq i \leq n$. This implies that 
-	\begin{itemize}
-		\item $k=n+1=h$, the (dual) Coxeter number of the root system,
-		\item and $\zeta = C_{\Delta}^{-1} \cdot (1,\dots,1)= \rho$, the sum of the positive roots.
-		% \item and as a consequence, $\beta=\rho/h$.
-	\end{itemize}
-	The ``strange formula'' of Freudenthal-de Vries \cite{freudenthal1969linear} says that for any simple Lie algebra:
-	\[ \frac{(\rho|\rho)}{2h}=\frac{\rho^{\top} \cdot C_\Delta \cdot \rho}{2h}=\frac{\mathrm{dim} \mathfrak{g}_{\Delta}}{24}. \]
-	It is known that $\mathrm{dim} \mathfrak{g}_{A_n}= n(n+2)$. Hence,
-	\[ \frac{(\zeta|\zeta)}{2k}=\frac{\rho^{\top} \cdot C_\Delta \cdot \rho}{2h}=\frac{n(n+2)}{24}=\frac{(n+1)^2-1}{24} \]
-	as claimed.
-\end{proof}
-
-\begin{proof}[Type $D_n$, $n \geq 4$]
-	In this and the remaining cases we will do direct calculation. 
-	
-	Let $V=\mathbb{R}^n$ and let $\varepsilon_1, \dots, \varepsilon_n$ be the canonical basis of $V$. Put
-	\[
-	\begin{array}{rcl}
-	\alpha_1 & = &\varepsilon_1- \varepsilon_2 \\
-	\alpha_2 & = &\varepsilon_2- \varepsilon_3 \\
-	& \vdots &  \\
-	\alpha_{n-1} & = &\varepsilon_{n-1} - \varepsilon_n \\
-	\alpha_{n} & =  & \varepsilon_{n-1} + \varepsilon_n.
-	\end{array}
-	\]
-	Then $\alpha_1,\dots,\alpha_n$ is the set of simple positive roots for $\Delta$ of type $D_n$. The fundamental weights are
-	\[ 
-	\begin{aligned}
-	\omega_i & = \varepsilon_1 + \varepsilon_2 + \dots + \varepsilon_i\\
-	& = \alpha_1 +2 \alpha_2 + \dots + (i-1)\alpha_{i-1} +i(\alpha_i+\alpha_{i+1}\dots+\alpha_{n-2})+\frac{1}{2}i(\alpha_{n-1}+\alpha_{n}) 
-	\end{aligned}
-	\]
-	for $i < n-1$, and
-	\[
-	\begin{aligned}
-	\omega_{n-1} & = \frac{1}{2}(\varepsilon_1 + \varepsilon_2 + \dots + \varepsilon_{n-2} +\varepsilon_{n-1}-\varepsilon_{n}) \\
-	& = \frac{1}{2}(\alpha_1 + 2 \alpha_2 + \dots + (n-2)\alpha_{n-2}+\frac{1}{2}n\alpha_{n-1}+\frac{1}{2}(n-2)\alpha_n), \\
-	\omega_{n} & = \frac{1}{2}(\varepsilon_1 + \varepsilon_2 + \dots + \varepsilon_{n-2} +\varepsilon_{n-1}+\varepsilon_{n}) \\
-	& = \frac{1}{2}(\alpha_1 + 2 \alpha_2 + \dots + (n-2)\alpha_{n-2}+\frac{1}{2}(n-2)\alpha_{n-1}+\frac{1}{2}n\alpha_n). \\
-	\end{aligned}
-	\]
-	Moreover,
-	\[ \zeta = C_{\Delta}^{-1} \cdot (1,2,\dots,2,1,1) = \omega_1 + 2\omega_{2} + \dots + 2 \omega_{n-2}+ \omega_{n-1} + \omega_{n-2}. \]
-	A quick computation shows that in terms of the roots $\alpha_1,\dots,\alpha_n$
-	\[ \zeta= \sum_{i=1}^{n-2} 2\left(in - \frac{(i+1)(i+1)}{2}\right)\alpha_i+ \frac{n^2-2n}{2}(\alpha_{n-1}+\alpha_{n}). \]
-	Hence,
-	\[ 
-	\begin{aligned}
-	(\zeta|\zeta) & = (1,2,\dots,2,1,1)^{\top} \cdot C_{\Delta}^{-1} \cdot (1,2,\dots,2,1,1)  \\
-	& = -(2n-4)+4 \left((n-1)\sum_{i=1}^{n-2}i -\frac{1}{2}\sum_{i=1}^{n-2}i^2 - \frac{n-2}{2}\right)+n^2-2n \\
-	& = \frac{4(n-1)(n-2)(n-1)}{2}-\frac{4(n-2)(n-1)(2n-3)}{12}+n^2-6n+8 \\
-	& = \frac{4 n^3 - 12n^2  -n+ 8}{3}=\frac{(n-2)(4n^2-4n-9)}{3}.
-	\end{aligned}
-	\]
-	This implies that
-	\[ \frac{(\zeta|\zeta)}{2k}=\frac{(n-2)(4n^2-4n-9)}{24(n-2)}=\frac{4n^2-4n-9}{24}. \]
-	This is equal to 
-	\[ \frac{(n+1)k-1}{24}=\frac{(n+1)(4n-8)-1}{24}\]
-	as claimed.
-\end{proof}
-
-\begin{proof}[Type $E_6$]
-In this case $\mathbf{d}=(1,2, 3,2,2,1)^{\top}$, and
-\[ \frac{\mathbf{d}^{\top}\cdot C_{E_6}^{-1}\cdot \mathbf{d}}{2\cdot 24}=\frac{7\cdot 24-1}{24}. \]
-\begin{comment}	
-	\[
-	\frac{1}{2\cdot 24}
-	\begin{pmatrix}
-	1 \\ 2 \\ 3 \\ 2 \\ 2 \\ 1
-	\end{pmatrix}^{\top}
-	\cdot
-	\begin{pmatrix}
-	2 & -1 & 0 & 0 & 0 & 0 \\
-	-1 & 2 & -1 & 0 & 0 & 0\\
-	0 & -1 & 2 & -1 & -1 & 0 \\
-	0 & 0 & -1 & 2 & 0 & 0 \\
-	0 & 0 & -1 & 0 & 2 & -1 \\
-	0 & 0 & 0 & 0 & -1 & 2
-	\end{pmatrix}^{-1}
-	\cdot
-	\begin{pmatrix}
-	1 \\ 2 \\ 3 \\ 2 \\ 2 \\ 1
-	\end{pmatrix}
-	=\frac{7\cdot 24-1}{24}.
-	\]
-\end{comment}
-\end{proof}
-
-\begin{proof}[Type $E_7$]
-In this case $\mathbf{d}=(1,2,3,4,2, 3,2)^{\top}$, and
-\[ \frac{\mathbf{d}^{\top}\cdot C_{E_7}^{-1}\cdot \mathbf{d}}{2\cdot 48}=\frac{8\cdot 48-1}{24}. \]
-\begin{comment}
-	\[ 
-	\frac{1}{2\cdot 48}
-	\begin{pmatrix}
-	1 \\ 2 \\ 3 \\ 4 \\2  \\ 3 \\ 2
-	\end{pmatrix}^{\top}
-	\cdot
-	\begin{pmatrix}
-	2 & -1 & 0 & 0 & 0 & 0 & 0 \\
-	-1 & 2 & -1 & 0 & 0 & 0 & 0\\
-	0 & -1 & 2 & -1 & 0 & 0 & 0 \\
-	0 & 0 & -1 & 2 & -1 & -1 & 0 \\
-	0 & 0 & 0 & -1 & 2 & 0 & 0 \\
-	0 & 0 & 0 & -1 & 0 & 2 & -1 \\
-	0 & 0 & 0 & 0  & 0 & -1 & 2
-	\end{pmatrix}^{-1}
-	\cdot
-	\begin{pmatrix}
-	1 \\ 2 \\ 3 \\ 4 \\2  \\ 3 \\ 2
-	\end{pmatrix}
-	=\frac{8\cdot 48-1}{24}.
-	\]
-\end{comment}
-\end{proof}
-
-\begin{proof}[Type $E_8$]
-	In this case $\mathbf{d}=(	2,3,4,5,6,3,4,2)^{\top}$, and
-	\[ \frac{\mathbf{d}^{\top}\cdot C_{E_8}^{-1}\cdot \mathbf{d}}{2\cdot 120}=\frac{9\cdot 120-1}{24}. \]
-	\begin{comment}
-	\[ 
-	\frac{1}{2\cdot 120}
-	\begin{pmatrix}
-	2 \\ 3 \\ 4 \\5  \\ 6 \\ 3 \\ 4 \\ 2
-	\end{pmatrix}^{\top}
-	\cdot
-	\begin{pmatrix}
-	2 & -1 & 0 & 0 & 0 & 0 & 0 & 0\\
-	-1 & 2 & -1 & 0 & 0 & 0 & 0 & 0\\
-	0 & -1 & 2 & -1 & 0 & 0 & 0 & 0 \\
-	0 & 0 & -1 & 2 & -1 & 0 & 0 & 0 \\
-	0 & 0 & 0 & -1 & 2 & -1 & -1 & 0 \\
-	0 & 0 & 0 & 0 & -1 & 2 & 0 & 0 \\
-	0 & 0 & 0 & 0  & -1 & 0 & 2 & -1 \\
-	0 & 0 & 0 & 0 & 0  & 0 & -1 & 2
-	\end{pmatrix}^{-1} 
-	\cdot
-	\begin{pmatrix}
-	2 \\ 3 \\ 4 \\5  \\ 6 \\ 3 \\ 4 \\ 2
-	\end{pmatrix}
-	=\frac{9\cdot 120-1}{24}.
-	\]
-	\end{comment}
-\end{proof}
-
-
-
-
-\section{Formulations of the conjecture}
-
-This section is temporary, just to record this somewhere.
-\smallskip
-
-\subsection{Number theoretic formulation}
-
-The natural number solutions $(E,F,V,M)$ to the equation
-\[
-E+F+V=M+2
-\]
-where $E$, $F$, and $V$ each divide $M$
-have an ADE classification. For a given $ADE$ root system $\Delta $ and
-corresponding solution $ (E,F,V,M)$, our conjecture is then equivalent to
-\[
-Z_{\Delta } (q)= \frac{\eta^{2}(2\tau )}{\eta (\tau )} \cdot \left\{\frac{\eta
-(2M\tau ) }{\eta (2E\tau )\eta (2F\tau )\eta (2V\tau )} \right\} .
-\]
-
-\subsection{Group theoretic formulation}
-
-Solutions to the number theoretic formulation have a group theory
-interpretation: Let $H\subset SO(3)$ be a finite subgroup. Then $H$
-has a presentation of the form
-\[
-H=\{\left\langle \alpha ,\beta ,\gamma \right\rangle :\quad \alpha \beta \gamma =\alpha^{p}=\beta^{q}=\gamma^{r}=1 \}
-\]
-where 
-\[
-\frac{1}{p} + \frac{1}{q} + \frac{1}{r} =1+\frac{2}{M}, \quad p,q,r|
-M 
-\]
-and $M=|H|$.
-
-The above equation is equivalent to the previous formulation with 
-\[
-p E=q F= r V = M.
-\]
-The classification of solutions is given by the following table. 
-
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Type &	$H$ &	$M$&	$(p,q,r)$ &	$(E,F,V)$\\ \hline \hline 
-$A_{n}$     & cyclic & $n+1$ & $(1,n+1,n+1)$& $(n+1,1,1)$	\\ \hline
-$D_{n}$     & dihedral & $2n-2$ & $(2,2,n-2)$& $(n-1,n-1,2)$	\\ \hline
-$E_{6}$     & tetrahedral & $12$ & $(2,3,3)$& $(6,4,4)$	\\ \hline
-$E_{7}$     & octahedral & $24$ & $(2,3,4)$& $(12,8,6)$	\\ \hline
-$E_{8}$     & icosohedral & $60$ & $(2,3,5)$& $(30,20,12)$	\\ \hline
-\end{tabular}
-\end{center}
-
-
-Note that in $D_{n}$ and $E_{n}$ cases, the numbers $(E,F,V)$ can be
-interpreted as the number of edges, faces, and vertices of the regular
-polyhedron with the corresponding symmetry group. For $E_{n}$ these
-are the platonic solids; for $D_{n}$ these are the degenerate regular
-polyhedrons obtained from gluing two regular $(n-1)$-gons to each
-other.
-
-The groups $H\subset SO(3)$ are closely related to the groups
-$G\subset SU(2)$ also classified by $ADE$ root systems. For the
-$A_{n}$ case, both are isomorphic to $\ZZ_{n+1}$. For the $D_{n}$ and
-$E_{n}$ cases, the group $G$ is the double cover of the group $H$
-induced by the degree 2 map $SU(2)\to SO(3)$. 
-
-
-
