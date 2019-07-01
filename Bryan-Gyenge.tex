@@ -155,7 +155,7 @@ Our main result is the following:
 \begin{theorem}
 \label{thm:main} The function $Z_{X,G}(q)^{-1}$ is a modular cusp
 form\footnote{By cusp form, we mean that the order of vanishing at
-$q=0$ is 1. Modular forms of half integral weight transform with
+$q=0$ is at least 1. Modular forms of half integral weight transform with
 respect to a multiplier system. We refer to \cite{kohler2011eta} for
 definitions.} of weight $\half e(X/G)$ for the congruence subgroup
 $\Gamma_{0}(|G|)$.
@@ -672,9 +672,8 @@ We will prove in section~\ref{sec: McKay correspondence} that as a
 consequence of the derived McKay correspondence between $\X$ and $Y$,
 we have the following:
 \begin{proposition}\label{prop: Hilb(X,m0,m1) = Hilb(Y,m0-(m0-m1)^2)}
-$\Hilb^{m_{0},m_{1}}(\X )$ is deformation equivalent to and hence
-diffeomorphic to $\Hilb^{m_{0}-(m_{0}-m_{1})^{2}}(Y)$. Moreover, this
-deformation and diffeomorphism are $H$-equivariant and so in
+$\Hilb^{m_{0},m_{1}}(\X )^{H}$ is deformation equivalent to and hence
+diffeomorphic to $\Hilb^{m_{0}-(m_{0}-m_{1})^{2}}(Y)^{H}$. In
 particular
 \[
 e\left(\Hilb^{m_{0},m_{1}}(\X )^{H} \right)
@@ -865,10 +864,22 @@ these Hilbert schemes as Nakajima quiver varieties is discussed in
 detail in \cite{Kuznetsov}.
 
 
-Every step in the above constructed deformation equivalence is
-compatible with the $H$ action and so the proof of
-Proposition~\ref{prop: Hilb(X,m0,m1) = Hilb(Y,m0-(m0-m1)^2)} is
-complete. \qed 
+The above constructions are compatible with the $H$ action. Indeed,
+the Fourier-Mukai equivalence and tensoring with the line bundle $L$
+both commute with the $H$ action and so we have an equivalence of
+stacks: 
+\[
+\M^{m_{0},m_{1}}(\X )^{H} \cong \M_{(1,0,-n)}(Y)^{H}
+\]
+and a birational equivalence of holomorphic symplectic varieties:
+\[
+\Hilb^{m_{0},m_{1}}(\X )^{H} \dashrightarrow \Hilb^{n}(Y)^{H}.
+\]
+As before, both sides of the above birational equivalence can be
+viewed as Nakajima quiver varieties (in this case for the $\Delta$
+Nakajima quiver), and so by \cite[Cor~4.2]{Nakajima1994Duke} are
+deformation equivalent. This then completes the proof of
+Proposition~\ref{prop: Hilb(X,m0,m1) = Hilb(Y,m0-(m0-m1)^2)}. \qed 
 
 
 
