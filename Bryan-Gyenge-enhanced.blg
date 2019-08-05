@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Bryan-Gyenge-enhanced.aux
+The style file: plain.bst
+Database file #1: Bryan-Gyenge.bib
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            624 strings with 6816 characters,
+and the built_in function-call counts, 5755 in all, are:
+= -- 583
+> -- 196
+< -- 2
++ -- 81
+- -- 60
+* -- 381
+:= -- 943
+add.period$ -- 58
+call.type$ -- 19
+change.case$ -- 84
+chr.to.int$ -- 0
+cite$ -- 19
+duplicate$ -- 208
+empty$ -- 513
+format.name$ -- 60
+if$ -- 1205
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 18
+newline$ -- 98
+num.names$ -- 38
+pop$ -- 105
+preamble$ -- 1
+purify$ -- 68
+quote$ -- 0
+skip$ -- 142
+stack$ -- 0
+substring$ -- 464
+swap$ -- 30
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 70
+warning$ -- 0
+while$ -- 63
+width$ -- 21
+write$ -- 204

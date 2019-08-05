@@ -36,6 +36,7 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \usepackage{amssymb}
 \usepackage{times}
 \usepackage{longtable}
+\usepackage{tikz-cd}
 %\usepackage{amstex}
 
 
@@ -67,6 +68,14 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newcommand{\LL}{\mathbb{L}}
 \newcommand{\X}{\frak{X}}
 \newcommand{\M}{\frak{M}}
+\newcommand{\bir}{\mathsf{bir}}
+\newcommand{\reg}{\mathsf{reg}}
+\newcommand{\Ell}{\mathsf{Ell}}
+\newcommand{\Ellqy}{\operatorname{Ell}_{q,y}}
+\newcommand{\chibar}{\overline{\chi}}
+%\newcommand{\mdata}{\left\{m_{j}(i) \right\}}
+\newcommand{\mdata}{\mathfrak{m}}
+\newcommand{\FM}{\mathsf{FM}}
 
 \renewcommand{\O}{\mathcal{O}}
 %\renewcommand{\top}{\mathrm{t}}
@@ -77,7 +86,7 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newcommand{\vara}{\mathsf{a}}
 
 
-
+\newcommand{\Zcal}{\mathcal{Z}}
 \newcommand{\mvec}{\bm{m}}
 \newcommand{\zetavec}{\bm{\zeta }}
 \newcommand{\rhovec}{\bm{\rho }}
@@ -112,17 +121,19 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 Let $X$ be a complex $K3$ surface with an effective action of a group
 $G$ which preserves the holomorphic symplectic form. Let 
 \[
-Z_{X,G}(q) = \sum_{n=0}^{\infty} e(\Hilb^{n}(X)^{G})\, q^{n-1}
+Z_{X,G}(q) = \sum_{n=0}^{\infty} e\left(\Hilb^{n}(X)^{G} \right)\, q^{n-1}
 \]
-be the generating function for the Euler characteristics of Hilbert
-scheme of $G$-invariant length $n$ subschemes. We show that its
-reciprocal, $Z_{X,G}(q)^{-1}$ is the Fourier expansion of a modular
-cusp form of weight $\half e(X/G)$ for the congruence subgroup
+be the generating function for the Euler characteristics of the
+Hilbert schemes of $G$-invariant length $n$ subschemes. We show that
+its reciprocal, $Z_{X,G}(q)^{-1}$ is the Fourier expansion of a
+modular cusp form of weight $\half e(X/G)$ for the congruence subgroup
 $\Gamma_{0}(|G|)$. We give an explicit formula for $Z_{X,G}$ in terms
 of the Dedekind eta function for all 82 possible $(X,G)$. The key
 intermediate result we prove is of independent interest: it
 establishes an eta product identity for a certain shifted theta
-function of the root lattice of a simply laced root system.
+function of the root lattice of a simply laced root system. We extend
+our results to various refinements of the Euler characteristic, namely
+the Elliptic genus, the Chi-$y$ genus, and the motivic class.
 \end{abstract}
 
 
@@ -238,7 +249,7 @@ formula for local series} and \ref{sec: McKay correspondence}).
 
 
 
-We will prove in Lemma~\ref{lem: local series as theta/eta}  that
+We will also prove in Lemma~\ref{lem: local series as theta/eta}  that
 \[
 Z_{\Delta}(q) =\frac{\theta_{\Delta}(\tau)}{\eta (k\tau )^{n+1}}
 \]
@@ -248,8 +259,8 @@ where
 q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec
 +\frac{1}{k}\zetavec \right)}
 \]
-is a shifted theta function for $M_{\Delta} $ the root lattice of
-$\Delta$, $n$ is the rank of the root system, $k=|G_{\Delta}|$, and
+is a shifted theta function for $M_{\Delta} $, the root lattice of
+$\Delta$. Here $n$ is the rank of the root system, $k=|G_{\Delta}|$, and
 $\zetavec$ is dual to the longest root (see section~\ref{sec: local
 partition functions} for details).
 
@@ -257,8 +268,9 @@ Theorem~\ref{thm: formula for local series (in intro)} then yields an
 eta product identity for the theta function $\theta_{\Delta}(\tau )$
 reminiscent of the MacDonald identities:
 \begin{theorem}\label{thm: eta product for theta function}
-The shifted theta function $\theta _{\Delta}(\tau )$ defined above is
-given by an eta product as follows:
+The shifted theta function $\theta _{\Delta}(\tau )$ defined above
+(c.f. \S~\ref{sec: local partition functions}) is given by an eta
+product as follows:
 
 For $\Delta$ of type $A_{n}$
 \[
@@ -345,6 +357,134 @@ singularities of type $E_{6}$.
 %\end{itemize}
 \end{corollary}
 
+\begin{remark}\label{rem: enumerative interpretation}
+The integers $e\left(\Hilb^{n}(X)^{G} \right)$ should have enumerative
+significance: they can be interpreted as a virtual counts of
+$G$-invariant rational curves in a complete linear series of dimension
+$n$ on $X$. This generalizes the famous Yau-Zaslow formula in the case
+where $G$ is the trivial group. The precise nature between the virtual
+count and the actual count is expected to be subtle for the case of
+general $G$. This has been recently explored in
+\cite{Zhan-2019-counting-curves-on-K3}.
+\end{remark}
+
+
+We can extend our results to various refinements of the Euler
+characteristic, namely the elliptic genus, the $\chi_{y}$ genus, and
+the motivic class. These refinements all stem from the following
+theorem which we prove in Section~\ref{sec: proof of thm about Zbir}.
+
+\begin{theorem}\label{thm: Formula for Zbir}
+Let 
+\[
+Z^{\bir}_{X,G}(q) = \sum_{n=0}^{\infty} [\Hilb^{n}(X)^{G}]_{\bir} \,
+\, q^{n-1}
+\]
+be a formal series whose coefficients we regard as birational
+equivalence classes of compact hyperkahler manifolds. Such equivalence
+classes form a semi-ring under disjoint union and Cartesian
+product. Let $Y$ be the minimal resolution of $X/G$, then
+\[
+Z^{\bir}_{X,G} (q) = Z^{\bir}_{Y}(q^{k})\cdot Z_{X,G}(q)\cdot \Delta (k\tau )
+\]
+where $k=|G|$, $\Delta (\tau ) = \eta (\tau )^{24}$, and we have
+suppressed the trivial group from the notation in the series
+$Z^{\bir}_{Y}(q^{k})$.
+\end{theorem}
+
+A famous theorem of Huybrechts \cite[Thm~4.6]{Huybrechts} asserts that
+birational compact hyperkahler manifolds are deformation
+equivalent. Moreover, combining Huybrecht's theorem with
+\cite[Prop~3.21]{Nicaise-Shinder} it follows that birational compact
+hyperkahler manifolds are equal in $K_{0}(\operatorname{Var}_{\CC})$,
+the Grothendieck group of varieties.
+
+Thus we may specialize the series $Z^{\bir}_{X,G}(q)$ to Elliptic
+genus, motivic class, and Chi-$y$ genus since these are all well
+defined on birational equivalence classes of compact hyperkahler
+manifolds. These specializations are all well known for the series
+$Z^{\bir}_{Y}$ and hence we easily get the following corollaries.
+
+\begin{corollary}\label{cor: Zell formula}
+Let $Q=\exp\left(2\pi i\sigma \right)$ and let
+\[
+Z^{\Ell}_{X,G}(Q,q,y) = \sum_{n=0}^{\infty} \Ellqy
+\left(\Hilb^{n}(X)^{G} \right) Q^{n-1}
+\]
+where $\Ellqy (-)$ is elliptic genus. Then
+\[
+Z^{\Ell}_{X,G}(Q,q,y) = \frac{\phi_{10,1}(q ,y)}{\chi_{10}(k\sigma
+,\tau ,z)} \cdot Z_{X,G}(q)\cdot \Delta (k\tau )
+\]
+where $\phi_{10,1}(q ,y)$ is the Fourier expansion of the unique Jacobi cusp form of weight
+10 and index 1 and $\chi_{10}(\sigma ,\tau ,z)$ is Igusa's genus 2
+Siegel cusp form of weight 10. 
+\end{corollary}
+We refer the reader to \cite{Pietromonaco_2018} (\S 5, \S 6, and
+eqn~6.9.8) for definitions of $\Ellqy$, $\phi_{10,1}$, $\chi_{10}$,
+and the formula for the elliptic genera of $\Hilb^{n}(Y)$.
+
+A further specialization of particular interest is the (normalized)
+$\chi_{y}$ genus. Let 
+\[
+\chibar_{-y}(M) = y^{-\half \dim
+M}\chi_{-y}(M)
+\]
+and we note that $\chibar_{-y}(M) = \Ellqy
+(M)|_{q=0}$.
+
+\begin{corollary}\label{cor: Zchiy formula}
+Let
+\[
+Z^{\chibar}_{X,G}(q,y) = \sum_{n=0}^{\infty}
+\chibar_{y}\left(\Hilb^{n}(X)^{G} \right) q^{n-1} .
+\]
+Then
+\[
+Z^{\chibar}_{X,G}(q,y) = y^{-1}(1-y)^{2} \frac{Z_{X,G}(q)}{\phi_{-2,1}(q^{k},y)}
+\]
+where $\phi_{-2,1}$ is the unique weak Jacobi form of weight -2
+and index 1. In particular,
+\[
+y^{-1}(1-y)^{2} Z^{\chibar}_{X,G}(q,y)^{-1} =\frac{
+\phi_{-2,1}(q^{k},y)}{Z_{X,G}(q)} 
+\]
+is a Jacobi form of index 1 and weight 
+\[
+\half e(X/G)-2 = 10-\half \sum_{i=1}^{r} \operatorname{rank} \Delta_{i}
+\]
+for the congruence subgroup $\Gamma_{1}(k)$. 
+\end{corollary}
+
+We note that for $G$ cyclic, the series
+$Z_{X,G}(q)/\phi_{-2,1}(q^{k},y) $ is the leading coefficient in the
+expansion of the Donaldson-Thomas partition function of $(X\times
+E)/G$ in the variable tracking the curve class in $X$ (see
+\cite[Thm~0.1]{bryan2018chl}).
+
+We also get a formula for the motivic classes of the $G$-fixed Hilbert schemes:
+
+
+\begin{corollary}\label{cor: ZK0 formula}
+Let 
+\[
+Z^{K_{0}}_{X,G}(q) = \sum_{n=0}^{\infty} [\Hilb^{n}(X)^{G}]_{K_{0}}\,\, q^{n-1}
+\]
+where $ [\Hilb^{n}(X)^{G}]_{K_{0}}\in K_{0}(\operatorname{Var}_{\CC})$
+denotes the motivic class of the $G$-fixed Hilbert scheme. Then
+\[
+Z^{K_{0}}_{X,G}(q) = q^{-1}\cdot \prod_{m=1}^{\infty} \left(1-\LL^{m-1}
+q^{km} \right)^{-[Y]}  \cdot Z_{X,G}(q)\cdot \Delta (k\tau )
+\]
+where $\LL  = [\mathbb{A}^{1}_{\CC}]\in
+K_{0}(\operatorname{Var}_{\CC})$.
+\end{corollary}
+We refer the reader to \cite{GZ-L-MH-power} for the meaning
+of $[Y]$ in the exponent and the formula for the motivic class of
+$\Hilb^{n}(Y)$.
+
+The above series has further specializations giving formulas for the  Hodge polynomials and
+Poincare polynomials of the $G$-fixed Hilbert schemes.
 
 
 
@@ -468,7 +608,7 @@ and $\theta_{\Delta}(\tau )$ is the shifted theta function:
 \]
 where as throughout this paper we have identified $q=\exp\left(2\pi i\tau  \right)$.
 
-In Section~\ref{sec: another strange formula}, we will prove the
+In Appendix~\ref{sec: another strange formula}, we will prove the
 following formula which for $\Delta =A_{n}$ coincides with the
 ``strange formula'' of Freudenthal and de Vries
 \cite{freudenthal1969linear}:
@@ -777,7 +917,7 @@ Hilb(Y,m0-(m0-m1)^2)}}\label{sec: McKay correspondence}
 The derived McKay correspondence uses a Fourier-Mukai transform to
 give an equivalence of derived categories \cite{BKR, Kapranov-Vasserot}:
 \[
-FM:D^{b}(\X )\to D^{b}(Y).
+\FM :D^{b}(\X )\to D^{b}(Y).
 \]
 The induced map on the numerical $K$-groups
 \[
@@ -899,7 +1039,249 @@ deformation equivalent. This then completes the proof of
 Proposition~\ref{prop: Hilb(X,m0,m1) = Hilb(Y,m0-(m0-m1)^2)}. \qed 
 
 
+\section{Proof of Theorem~\ref{thm: Formula for Zbir}}
+\label{sec: proof of thm about Zbir}
 
+Let $\Zcal  =[X/G]$ be the stack quotient of $X$ by $G$ and let $Y\to
+X/G$ be the minimal resolution. Our approach to proving
+theorem~\ref{thm: Formula for Zbir} follows a similar idea as our
+proof of theorem~\ref{thm: formula for local series (in intro)} in
+Section~\ref{sec: proof of formula for local series} . We exploit the
+derived McKay equivalence:
+\[
+\FM :D^{b}(\Zcal) \to D^{b}(Y).
+\]
+
+
+The Hilbert scheme of zero dimensional substacks of $\Zcal$ is
+naturally identified with the $G$-fixed Hilbert scheme of $X$:
+\[
+\Hilb (\Zcal )\cong \Hilb (X)^{G}.
+\]
+Components of $\Hilb (\Zcal )$ are indexed by the numerical $K$-theory
+class of $\O_{Z}$ for $Z\subset \Zcal$. The $K$-theory class of
+$\O_{Z}$ can be written in a basis for $K$-theory as follows:
+\[
+[\O_{Z}] = n[\O_{p}] + \sum_{i=1}^{r} \sum_{j=1}^{n(i)}
+m_{j}(i)[\O_{p_{i}}\otimes \rho_{j}(i)] 
+\]
+where $p\in \Zcal$ is a generic point and $p_{1},\dotsc ,p_{r}\in \Zcal$
+are the orbifold points. The local group of $\Zcal$ at $p_{i}$ is
+$G_{\Delta (i)}\subset SL_{2}\CC$  and has corresponding root system
+$\Delta (i)$ of rank $n(i)$, and has irreducible representations
+$\rho_{0}(i),\rho_{1}(i),\dotsc ,\rho_{n(i)}(i)$ where $\rho_{0}(i)$
+is the trivial representation. We note that we have the $K$-theory relation
+\[
+[\O_{p}] = [\O_{p_{i}}\otimes \rho_{\reg}(i)]
+\]
+where $\rho_{\reg}(i)$ is the regular representation of $G_{\Delta
+(i)}$, which explains why we do not need to include $ [\O_{p_{i}}\otimes
+\rho_{0}(i)]$ in our basis for $K$-theory.
+
+We appreviate the data $\left\{m_{j}(i) \right\}$ by the symbol
+$\mdata$ and we denote by 
+\[
+\Hilb^{n,\mdata}(\Zcal ) \subset \Hilb (\Zcal )
+\]
+the component corresponding to the $K$-theory class given above. We
+may also regard $\Hilb^{n,\mdata}(\Zcal )$ as parameterizing ideal
+sheaves and as such, it is given as an open substack
+\[
+\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal ) 
+\]
+of the moduli stack of objects in $D^{b}(\Zcal )$ having $K$-theory
+class
+\[
+\alpha = [\O_{\Zcal}] - n[\O_{p}] - \sum_{i=1}^{r} \sum_{j=1}^{n(i)}
+m_{j}(i)[\O_{p_{i}}\otimes \rho_{j}(i)] .
+\]
+
+The derived McKay equivalence then induces a stack equivalence
+\[
+\M^{\alpha} (\Zcal )\cong \M^{\FM (\alpha )}(Y).
+\]
+We identify numerical $K$-theory on $Y$ with cohomology via the Chern
+character and index the moduli stack of objects on $Y$ by their Chern
+character so that our equivalence reads
+\[
+\M^{\alpha}(\Zcal )\cong  \M_{\beta}(Y)
+\]
+where $\beta =ch(\FM (\alpha ))$. The Mukai equivalence induces the
+following map in $K$-theory:
+\begin{align*}
+[\O_{\Zcal }] & \quad \longmapsto \quad  [\O_{Y}]\\
+[\O_{p }] & \quad \longmapsto \quad  [\O_{p}]\\
+[\O_{p_{i}}\otimes \rho_{j}(i)] & \quad \longmapsto \quad  -[\O_{E_{j}(i)}(-1)],\quad j=1,\dotsc, n(i) \\
+[\O_{p_{i}}\otimes \rho_{0}(i)] & \quad \longmapsto \quad  \sum_{j=1}^{\infty }d_{j}(i)[\O_{E_{j}(i)}]\\
+\end{align*}
+where $p\in Y$ is a generic point, $E_{1}(i),\dotsc ,E_{n(i)}(i)$ are
+the exceptional curves over $p_{i}$, and 
+\[
+d_{j}(i) = \dim \rho_{j}(i).
+\]
+The Chern characters are given by
+\begin{align*}
+ch(\O_{p}) & = (0,0,1) \\
+ch(\O_{Y}) & = (1,0,0) \\
+ch(\O_{E_{j}(i)}(-1)) & = (0,E_{j}(i),0)
+\end{align*}
+where the right hand side is in $H^{0}(Y)\oplus H^{2}(Y)\oplus
+H^{4}(Y)$. The fact that $ch_{2}(\O_{E_{j}(i)}(-1)) = 0$ follows from
+Hirzebruch-Riemann-Roch and the fact that $\chi
+(\O_{E_{j}(i)}(-1))=0$.
+
+We then see that 
+\[
+\beta  = ch(\FM (\alpha )) = (1, D_{\mdata},-n)
+\]
+where
+\[
+D_{\mdata} = \sum_{i=1}^{r} \sum_{j=1}^{n(i)} \, m_{j}(i)\, E_{j}(i).
+\]
+
+Tensoring by $L_{\mdata} = \O (-D_{\mdata})$ induces an equivalence of categories and
+thus the composition
+\[
+\begin{tikzcd}[column sep = large]
+\M^{\alpha}(\Zcal ) \arrow[r,"{\FM }"]&
+\M_{\beta}(Y) \arrow[r,"{L_{\mdata}\otimes -}"] &
+\M_{\beta \cdot (1,-D_{\mdata},\half D_{\mdata}^{2})}(Y)
+\end{tikzcd}
+\] 
+induces an equivalence
+\[
+\M^{\alpha}(\Zcal )\cong \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y).
+\]
+As a consequence of the above equivalence, we get the following
+\begin{proposition}\label{prop: Hilb(Z) is birational to Hilb(Y)}
+$\Hilb^{n,\mdata}(\Zcal)$ is birational to $\Hilb^{n+\half
+D_{\mdata}^{2}}(Y)$. 
+\end{proposition}
+\begin{proof}
+Since 
+\[
+\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
+\]
+are open substacks, we need only show that the image of
+$\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
+(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$
+non-trivially. To this end, let $l=n+\half D_{\mdata}^{2}$, let
+$q_{1},\dotsc ,q_{l}\in Y$ be distinct points disjoint from the
+exceptional curves $E_{j}(i)$, and let ${r}_{1},\dotsc ,r_{l}\in
+\Zcal$ denote the corresponding (non-stacky) points in $\Zcal$. We
+show that $\FM ^{-1}(I_{\{q_{1},\dotsc ,q_{l} \}}\otimes
+L_{\mdata}^{-1})$ is the ideal sheaf of a substack $Z\subset \Zcal$
+where $Z=\{r_{1},\dotsc ,r_{l} \}\cup Z_{\mdata}$ where is a certain
+rigid substack supported at the stacky points of $\Zcal$.
+
+\bigskip
+
+PROOF NEEDS TO BE FINISHED!
+
+\bigskip
+
+\end{proof}
+
+With the proposition, we can now prove Theorem~\ref{thm: Formula for
+Zbir}.  Using the identification $\Hilb(X)^{G} = \Hilb (\Zcal )$
+and identifying discrete parameters we get
+\begin{align*}
+Z^{\bir}_{X,G}(q)& = \sum_{a=0}^{\infty} \left[\Hilb^{a}(X)^{G}
+\right]_{\bir} \, \, q^{a-1} \\
+& = \sum_{n,\mdata} \Hilb^{n,\mdata}(\Zcal )\,  q^{D(n,\mdata )-1}
+\end{align*}
+where
+\[
+D(n,\mdata ) = kn +\sum_{i=1}^{r}\frac{k}{k_{i}}\sum_{j=1}^{n(i)}
+m_{j}(i) d_{j}(i).  
+\]
+We can organize the data $\mdata = \left\{m_{j}(i) \right\}$ into
+$\mvec (i)\in M_{\Delta (i)}$, i.e.  the vectors in the root lattice
+of $\Delta (i)$ having components $ m_{1}(i),\dotsc
+,m_{n(i)}(i)$. Under this identification, we see that
+\[
+D_{\mdata}^{2} = -\sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
+\right)_{\Delta (i)} 
+\]
+since the intersection form of the exceptional curves over $p_{i}$ is
+the negative of the corresponding Cartan matrix $C_{\Delta (i)}$. Let
+\[
+d=n+\half D_{\mdata}^{2} = n-\half \sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
+\right)_{\Delta (i)} .
+\]
+Then
+\[
+Z^{\bir}_{X,G}(q) = \sum_{d=0}\left[\Hilb^{d}(Y) \right]_{\bir}
+\prod_{i=1}^{r}\sum_{\mvec (i)\in M_{\Delta (i)}} q^{D(n,\mdata )-1} 
+\]
+with
+\begin{align*}
+D(n,\mdata )-1& = -1 + k\left(d+\half \sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
+\right)_{\Delta (i)}  \right)
++\sum_{i=1}^{r}\frac{k}{k_{i}}\sum_{j=1}^{n(i)} m_{j}(i) d_{j}(i) \\
+&=kd-1 +\frac{k}{2}\sum_{i=1}^{r} \left\{  \left(\mvec (i)|\mvec (i)
+\right)_{\Delta (i)} +\frac{2}{k_{i}}  \left(\mvec (i)|\zetavec (i)
+\right)_{\Delta (i)} \right\}
+\end{align*}
+where $\zetavec (i) \in M_{\Delta (i)}\otimes \QQ $ is as in
+Section~\ref{sec: local partition functions}. 
+
+Completing the square and using the formula
+\[
+\frac{1}{k_{i}^{2}}  \left(\zetavec (i)|\zetavec (i)
+\right)_{\Delta (i)} = \frac{2}{k_{i}}\left(\frac{k_{i}(n(i)+1)-1}{24} \right),
+\]
+which follows from Lemma~\ref{lem: another strange formula}, we get 
+\[
+D(n,\mdata )-1 = kd-1 - \sum_{i=1}^{r}
+\frac{k}{k_{i}}\left(\frac{k_{i}(n(i)+1)-1}{24} \right)
++\frac{k}{2}\sum_{i=1}^{r} \left(\mvec (i)+\frac{1}{k_{i}}\zetavec
+(i)\,\,\Big{|}\,\,\mvec (i)+\frac{1}{k_{i}}\zetavec (i) \right)_{\Delta (i)} . 
+\]
+It then follows that
+\[
+Z^{\bir}_{X,G}(q) = q^{A} \sum_{d=0}^{\infty} \left[\Hilb^{d}(Y)
+\right]_{\bir} \,\, q^{kd-k} \,\, \prod_{i=1}^{r} \sum_{\mvec (i)\in
+M_{\Delta (i)}} q^{\frac{k}{2} \left(\mvec (i)+\frac{1}{k_{i}}\zetavec
+(i)\,\,\Big{|}\,\,\mvec (i)+\frac{1}{k_{i}}\zetavec (i) \right)_{\Delta (i)} } 
+\]
+where
+\[
+A = k-1 -\frac{k}{24} \sum_{i=1}^{r} \left(n(i) + 1 - \frac{1}{k_{i}}
+\right). 
+\]
+Since 
+\begin{align*}
+24 = e(Y) &= e\left(X/G - \{p_{1},\dotsc ,p_{r} \} \right) +
+\sum_{i=1}^{r} (n(i)+1)\\
+&=\frac{1}{k} \left(24 - \sum_{i=1}^{r} \frac{k}{k_{i}} \right)
++\sum_{i=1}^{r} (n(i)+1)\\
+&= \frac{24}{k} + \sum_{i=1}^{r} \left(n(i)+1 -\frac{1}{k_{i}} \right)
+\end{align*}
+we see that $A=0$.
+
+Thus we have
+\begin{align*}
+Z^{\bir}_{X,G} (q) &= Z^{\bir}_{Y}(q^{k}) \prod_{i=1}^{r}
+\theta_{\Delta (i)} \left(\frac{k\tau}{k_{i}} \right) \\
+&= Z^{\bir}_{Y}(q^{k}) \prod_{i=1}^{r}
+Z_{\Delta (i)} \left(\frac{k\tau}{k_{i}} \right)\eta (k\tau )^{n(i)+1} \\
+&=Z_{Y}^{\bir} (q^{k})\cdot  \eta (k\tau )^{B}\cdot  Z_{X,G}(q) 
+\end{align*}
+where we've used Theorem~\ref{thm: eta product for theta function},
+Theorem~\ref{thm: eta product formula for Z}, and we've set
+\[
+B=\frac{24}{k} + \sum_{i=1}^{r} \left(n(i)+1 -\frac{1}{k_{i}}
+\right). 
+\]
+The previous equation which showed that $A=0$ also shows that
+$B=24$. Then since $\Delta (\tau ) = \eta (\tau )^{24}$, we see that
+Theorem~\ref{thm: Formula for Zbir} follows. \qed
+
+
+
+
+\appendix
 \section{Another Strange Formula}\label{sec: another strange
 formula}
 
@@ -1002,7 +1384,7 @@ individual cases are easily checked one by one.
 
 
 \clearpage
-\appendix
+
 \section{Table of eta products}\label{app:tableeta}
 \renewcommand{\arraystretch}{1.5}
 

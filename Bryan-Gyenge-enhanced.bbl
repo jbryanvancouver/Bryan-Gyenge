@@ -27,11 +27,21 @@ L.~G{\"o}ttsche.
   projective surface}.
 \newblock {\em Math. Ann.}, 286(1):193--207, 1990.
 
+\bibitem{GZ-L-MH-power}
+S.~M. Gusein-Zade, I.~Luengo, and A.~Melle-Hern{\'a}ndez.
+\newblock A power structure over the {G}rothendieck ring of varieties.
+\newblock {\em Math. Res. Lett.}, 11(1):49--57, 2004.
+
 \bibitem{gyenge2015euler}
 \'{A}d\'{a}m Gyenge, Andr\'{a}s N\'{e}methi, and Bal\'{a}zs Szendr\H{o}i.
 \newblock Euler characteristics of {H}ilbert schemes of points on simple
   surface singularities.
 \newblock {\em Eur. J. Math.}, 4(2):439--524, 2018.
+
+\bibitem{Huybrechts}
+Daniel Huybrechts.
+\newblock Compact hyper-{K}\"ahler manifolds: basic results.
+\newblock {\em Invent. Math.}, 135(1):63--113, 1999.
 
 \bibitem{Kapranov-Vasserot}
 M.~Kapranov and E.~Vasserot.
@@ -71,9 +81,26 @@ Hiraku Nakajima.
   algebras.
 \newblock {\em Duke Math. J.}, 76(2):365--416, 1994.
 
+\bibitem{Nicaise-Shinder}
+Johannes Nicaise and Evgeny Shinder.
+\newblock {The Motivic Nearby Fiber And Degeneration Of Stable Rationality}.
+\newblock arXiv:math/1708.02790.
+
+\bibitem{Pietromonaco_2018}
+Stephen Pietromonaco.
+\newblock {An introduction to modern enumerative geometry with applications to
+  the banana manifold}.
+\newblock 2018 UBC masters thesis. arXiv:1905.07085.
+
 \bibitem{xiao1996galois}
 Gang Xiao.
 \newblock Galois covers between {$K3$} surfaces.
 \newblock {\em Ann. Inst. Fourier (Grenoble)}, 46(1):73--88, 1996.
+
+\bibitem{Zhan-2019-counting-curves-on-K3}
+Sailun Zhan.
+\newblock {Counting Rational Curves On $K3$ Surfaces With Finite Group
+  Actions}.
+\newblock arXiv:math/1907.03330.
 
 \end{thebibliography}
