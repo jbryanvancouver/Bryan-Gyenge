@@ -156,10 +156,11 @@ $\{1,\dots ,24 \}$ has at least five orbits
 \cite{mukai1988finite}. Xiao classified all possible actions into
 82 possible topological types of the quotient $X/G$ \cite{xiao1996galois}.
 
-The \emph{$G$-fixed Hilbert scheme} of $X$ parameterizes
-$G$-invariant length $n$ subschemes $Z\subset X$. It can be
-identified with the $G$-fixed point locus in the Hilbert scheme of
-points: 
+The \emph{$G$-fixed Hilbert scheme}\footnote{Some authors call this
+the $G$-equivariant Hilbert scheme or the $G$-invariant Hilbert
+scheme.} of $X$ parameterizes $G$-invariant length $n$ subschemes
+$Z\subset X$. It can be identified with the $G$-fixed point locus in
+the Hilbert scheme of points:
 \[
 \Hilb^{n}(X)^{G} \subset \Hilb^{n}(X)
 \]
@@ -307,7 +308,7 @@ Z_{\Delta_{i}}\left(\frac{k\tau}{k_{i}} \right).
 \end{theorem}
 
 Theorem~\ref{thm:main} then immediately follows from Theorem~\ref{thm:
-eta product formula for Z} and Theorem~\ref{thm: Zorbifold formula}
+Zorbifold formula} and Theorem~\ref{thm: eta product formula for Z}
 using the formulas for the weight and level of an eta product given in
 \cite[\S~2.1]{kohler2011eta}.
 
@@ -359,12 +360,12 @@ singularities of type $E_{6}$.
 
 \begin{remark}\label{rem: enumerative interpretation}
 The integers $e\left(\Hilb^{n}(X)^{G} \right)$ should have enumerative
-significance: they can be interpreted as a virtual counts of
-$G$-invariant rational curves in a complete linear series of dimension
-$n$ on $X$. This generalizes the famous Yau-Zaslow formula in the case
-where $G$ is the trivial group. The precise nature between the virtual
-count and the actual count is expected to be subtle for the case of
-general $G$. This has been recently explored in
+significance: they can be interpreted as virtual counts of
+$G$-invariant curves, whose quotient is rational, in a complete linear
+series of dimension $n$ on $X$. This generalizes the famous Yau-Zaslow
+formula in the case where $G$ is the trivial group. The precise nature
+between the virtual count and the actual count is expected to be
+subtle for the case of general $G$. This has been recently explored in
 \cite{Zhan-2019-counting-curves-on-K3}.
 \end{remark}
 
@@ -487,6 +488,10 @@ The above series has further specializations giving formulas for the  Hodge poly
 Poincare polynomials of the $G$-fixed Hilbert schemes.
 
 
+
+\subsection{Acknowledgements.} The authors warmly thank Federico
+Amadio Guidi, Georg Oberdieck, Ken Ono, and Bal\'azs Szendr\H{o}i for
+helpful comments.
 
 \section{The local partition functions}\label{sec: local partition functions}
 
@@ -631,7 +636,7 @@ $X/G$ with corresponding stabilizer subgroups $G_{i}\subset G$ of
 order $k_{i}$ and ADE type $\Delta_{i}$. Let $\{x_{i}^{1},\dotsc
 ,x_{i}^{k/k_{i}} \}$ be the orbit of $G$ in $X$ corresponding to the
 point $p_{i}$ (recall that $k=|G|$).  We may stratify $\Hilb (X)^{G}$
-according to the orbit types of subscheme as follows:
+according to the orbit types of subscheme as follows.
 
 Let $Z\subset X$ be a $G$-invariant subscheme of length $nk$ whose
 support lies on free orbits. Then $Z$ determines and is determined by
@@ -702,8 +707,7 @@ Z_{X,G}(q) = q^{-1 +\frac{ak}{24} + \sum \frac{k}{24k_{i}} } \cdot
 \prod_{i=1}^{r}Z_{\Delta_{i}}\left(\frac{k\tau}{k_{i}} \right) .
 \]
 
-The exponent of $q$ in the above equation is zero as is readily seen
-from the following Euler characteristic calculation:
+From the following Euler characteristic calculation, we see that the exponent of $q$ in the above equation is zero:
 \begin{align*}
 24 = e(X) &= e\left(X-\cup_{i=1}^{r} \{x_{i}^{1},\dotsc
 ,x_{i}^{k/k_{i}} \} \right) + \sum_{i=1}^{r} \frac{k}{k_{i}} \\
@@ -1033,10 +1037,11 @@ and a birational equivalence of holomorphic symplectic varieties:
 \Hilb^{m_{0},m_{1}}(\X )^{H} \dashrightarrow \Hilb^{n}(Y)^{H}.
 \]
 As before, both sides of the above birational equivalence can be
-viewed as Nakajima quiver varieties (in this case for the $\Delta$
-Nakajima quiver), and so by \cite[Cor~4.2]{Nakajima1994Duke} are
-deformation equivalent. This then completes the proof of
-Proposition~\ref{prop: Hilb(X,m0,m1) = Hilb(Y,m0-(m0-m1)^2)}. \qed 
+viewed as Nakajima quiver varieties (in this case for the Nakajima
+quiver associated to the Dynkin diagram corresponding to $G$), and so
+by \cite[Cor~4.2]{Nakajima1994Duke} are deformation equivalent. This
+then completes the proof of Proposition~\ref{prop: Hilb(X,m0,m1) =
+Hilb(Y,m0-(m0-m1)^2)}. \qed
 
 
 \section{Proof of Theorem~\ref{thm: Formula for Zbir}}
@@ -1078,7 +1083,7 @@ where $\rho_{\reg}(i)$ is the regular representation of $G_{\Delta
 (i)}$, which explains why we do not need to include $ [\O_{p_{i}}\otimes
 \rho_{0}(i)]$ in our basis for $K$-theory.
 
-We appreviate the data $\left\{m_{j}(i) \right\}$ by the symbol
+We abreviate the data $\left\{m_{j}(i) \right\}$ by the symbol
 $\mdata$ and we denote by 
 \[
 \Hilb^{n,\mdata}(\Zcal ) \subset \Hilb (\Zcal )
