@@ -1,46 +1,52 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Bryan-Gyenge-enhanced.aux
 The style file: plain.bst
 Database file #1: Bryan-Gyenge.bib
-You've used 19 entries,
+I was expecting a `,' or a `}'---line 7 of file Bryan-Gyenge.bib
+ : 
+ : @misc{Zhan-2019-counting-curves-on-K3,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            624 strings with 6816 characters,
-and the built_in function-call counts, 5755 in all, are:
-= -- 583
-> -- 196
+            629 strings with 6972 characters,
+and the built_in function-call counts, 5957 in all, are:
+= -- 601
+> -- 203
 < -- 2
-+ -- 81
-- -- 60
-* -- 381
-:= -- 943
-add.period$ -- 58
-call.type$ -- 19
-change.case$ -- 84
++ -- 84
+- -- 62
+* -- 386
+:= -- 976
+add.period$ -- 61
+call.type$ -- 20
+change.case$ -- 88
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 208
-empty$ -- 513
-format.name$ -- 60
-if$ -- 1205
+cite$ -- 20
+duplicate$ -- 215
+empty$ -- 535
+format.name$ -- 62
+if$ -- 1249
 int.to.chr$ -- 0
-int.to.str$ -- 19
+int.to.str$ -- 20
 missing$ -- 18
-newline$ -- 98
-num.names$ -- 38
-pop$ -- 105
+newline$ -- 103
+num.names$ -- 40
+pop$ -- 116
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 71
 quote$ -- 0
-skip$ -- 142
+skip$ -- 148
 stack$ -- 0
-substring$ -- 464
-swap$ -- 30
+substring$ -- 469
+swap$ -- 31
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 70
+type$ -- 74
 warning$ -- 0
-while$ -- 63
-width$ -- 21
-write$ -- 204
+while$ -- 65
+width$ -- 22
+write$ -- 213
+(There was 1 error message)
