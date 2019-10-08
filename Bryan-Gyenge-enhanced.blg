@@ -3,50 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Bryan-Gyenge-enhanced.aux
 The style file: plain.bst
 Database file #1: Bryan-Gyenge.bib
-I was expecting a `,' or a `}'---line 7 of file Bryan-Gyenge.bib
- : 
- : @misc{Zhan-2019-counting-curves-on-K3,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 You've used 20 entries,
             2118 wiz_defined-function locations,
-            629 strings with 6972 characters,
-and the built_in function-call counts, 5957 in all, are:
-= -- 601
+            628 strings with 6950 characters,
+and the built_in function-call counts, 6052 in all, are:
+= -- 615
 > -- 203
 < -- 2
 + -- 84
 - -- 62
-* -- 386
-:= -- 976
+* -- 403
+:= -- 992
 add.period$ -- 61
 call.type$ -- 20
 change.case$ -- 88
 chr.to.int$ -- 0
 cite$ -- 20
-duplicate$ -- 215
-empty$ -- 535
+duplicate$ -- 219
+empty$ -- 540
 format.name$ -- 62
-if$ -- 1249
+if$ -- 1266
 int.to.chr$ -- 0
 int.to.str$ -- 20
-missing$ -- 18
+missing$ -- 19
 newline$ -- 103
 num.names$ -- 40
-pop$ -- 116
+pop$ -- 107
 preamble$ -- 1
 purify$ -- 71
 quote$ -- 0
-skip$ -- 148
+skip$ -- 149
 stack$ -- 0
-substring$ -- 469
+substring$ -- 494
 swap$ -- 31
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 74
 warning$ -- 0
-while$ -- 65
+while$ -- 67
 width$ -- 22
-write$ -- 213
-(There was 1 error message)
+write$ -- 215

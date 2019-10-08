@@ -63,16 +63,16 @@ Alexander Kuznetsov.
 \newblock Quiver varieties and {H}ilbert schemes.
 \newblock {\em Mosc. Math. J.}, 7(4):673--697, 767, 2007.
 
-\bibitem{Losev-Nakajima-quiver-varieties}
-Ivan Losev.
-\newblock {Nakajima quiver varieties}.
-\newblock {https://web.northeastern.edu/iloseu/nak\_quiv\_var2.pdf}.
-
 \bibitem{mukai1988finite}
 Shigeru Mukai.
 \newblock {Finite groups of automorphisms of K3 surfaces and the Mathieu
   group}.
 \newblock {\em Inventiones mathematicae}, 94(1):183--221, 1988.
+
+\bibitem{nakajima1994instantons}
+H.~Nakajima.
+\newblock Instantons on ale spaces, quiver varieties, and kac-moody algebras.
+\newblock {\em Duke Mathematical Journal}, 76(2):365--416, 1994.
 
 \bibitem{nakajima2002geometric}
 H.~Nakajima.

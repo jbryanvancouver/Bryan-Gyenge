@@ -1164,6 +1164,18 @@ $\Hilb^{n,\mdata}(\Zcal)$ is birational to $\Hilb^{n+\half
 D_{\mdata}^{2}}(Y)$. 
 \end{proposition}
 \begin{proof}
+	
+Since 
+\[
+\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
+\]
+are open substacks, we need only show that the image of
+$\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
+(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$
+non-trivially. We can even suppose that $n=0$, because of the motivic property of the Hilbert scheme.
+Let $\mathcal{I}$ be the ideal sheaf of the rigid substack supported at the stacky points of $\Zcal$ whose K-theory class is $0,\mdata$.
+	
+\begin{comment}
 Since 
 \[
 \Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
@@ -1185,29 +1197,34 @@ rigid substack supported at the stacky points of $\Zcal$.
 PROOF NEEDS TO BE FINISHED!
 
 \bigskip
+\end{comment}
 
 \end{proof}
 
 \begin{lemma}
 \begin{enumerate}
-	\item To any element $\mathbf{m} \in M$ in the root lattice  there is a rigid G invariant subscheme of $\mathbb{C}^2$ associated with $\mathbf{m}$.
-	\item For every datum $n, \mdata$ there is a rigid ideal sheaf
+	\item Let $M$ be an ADE root lattice. To any element $\mathbf{m} \in M$ there is a rigid G invariant subscheme of $\mathbb{C}^2$ with $K$-theory class corresponding to $\mathbf{m}$.
+	\item For every datum $\mdata$ there is a rigid subscheme of $\mathcal{Z}$ with $K$-theory class $0,\mdata$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-It is due to Nakajima that 
-$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v},\mathbf{w}} \mathcal{M}(\mathbf{v},\mathbf{w})$ where $\mathbf{w}=(1,0,\dots,0)$.
-Due to Theorem \ref{thm: Zorbifold formula} a sheaf associated with $\mathbf{m}$ is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
+Part (2) is implied by Part (1) since we can take the union of the rigid subschemes supported at the orbifold points $p_1,\dots,p_r \in \mathcal{Z}$. So we only need to prove the local case.
+
+Nakajima has shown in \cite[Section 2]{nakajima2002geometric} that the $G$-fixed Hilbert scheme decomposes into quiver varieties
+$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v}} \mathcal{M}(\mathbf{v},\mathbf{w})$ with fixed framing vector $\mathbf{w}=(1,0,\dots,0)$.
+Due to Theorem \ref{thm: Zorbifold formula} a sheaf with $K$-theory class described by the root $\mathbf{m} \in M$ is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
 \[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right)= \left(\frac{a_0\langle \mathbf{m}, \mathbf{m} \rangle }{2},m_1+\frac{a_1\langle \mathbf{m}, \mathbf{m} \rangle }{2},\dots,m_n+\frac{a_n\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right). \]
 By 
-\cite[Proposition 3.4]{Losev-Nakajima-quiver-varieties}
-the dimension of a component with dimension vector $\mathbf{v}$ and framing vector $\mathbf{w}$ is
+\cite[(2.6)]{nakajima1994instantons}
+the dimension of $\mathcal{M}(\mathbf{v},\mathbf{w})$ in general is
 \[ 2\mathbf{w} \cdot \mathbf{v} - \langle \mathbf{v}, \mathbf{v} \rangle.  \]
 In our case this reads as
 \begin{align*} 2v_0 - \langle \mathbf{v}, \mathbf{v} \rangle & = \langle \mathbf{m}, \mathbf{m} \rangle - \left\langle \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right), \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right) \right\rangle \\
 & =\langle \mathbf{m}, \mathbf{m} \rangle - \langle \mathbf{m}, \mathbf{m} \rangle -  \langle \mathbf{m}, \delta \rangle \langle \mathbf{m}, \mathbf{m} \rangle -\frac{1}{2} \langle \mathbf{m}, \mathbf{m} \rangle\langle \delta, \delta \rangle =
 0  \end{align*}
-where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$.
+where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$. Hence, any sheaf in such a component is rigid.
+
+Theorem \ref{thm: Zorbifold formula} also implies that any such component has a positive Euler characteristic. This is because both the numerator and the expansion of the denominator have positive coefficients.
 
 %I think this can be read-off again from the formula of the generating
 %series (Theorem 2.1). Suppose first that the denominators are all 1.
