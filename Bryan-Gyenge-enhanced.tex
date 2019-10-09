@@ -1049,15 +1049,11 @@ Hilb(Y,m0-(m0-m1)^2)}. \qed
 \label{sec: proof of thm about Zbir}
 
 Let $\Zcal  =[X/G]$ be the stack quotient of $X$ by $G$ and let $Y\to
-X/G$ be the minimal resolution. Our approach to proving
-theorem~\ref{thm: Formula for Zbir} follows a similar idea as our
-proof of theorem~\ref{thm: formula for local series (in intro)} in
-Section~\ref{sec: proof of formula for local series} . We exploit the
-derived McKay equivalence:
-\[
-\FM :D^{b}(\Zcal) \to D^{b}(Y).
-\]
-
+X/G$ be the minimal resolution. Let $p_{1},\dotsc ,p_{r}\in \Zcal$
+be the orbifold points, and let $U\subset \Zcal \setminus \{p_{1},\dotsc ,p_{r} \}$ be
+the  Zariski open part with trivial stabilizers. %This stack is equivalent to the scheme $W$.
+Let furthermore $V \subset Y$ be the complement of the exceptional divisors.
+Then $U$ and $V$ are canonically isomorphic.
 
 The Hilbert scheme of zero dimensional substacks of $\Zcal$ is
 naturally identified with the $G$-fixed Hilbert scheme of $X$:
@@ -1081,16 +1077,104 @@ is the trivial representation. We note that we have the $K$-theory relation
 [\O_{p}] = [\O_{p_{i}}\otimes \rho_{\reg}(i)]
 \]
 where $\rho_{\reg}(i)$ is the regular representation of $G_{\Delta
-(i)}$, which explains why we do not need to include $ [\O_{p_{i}}\otimes
+	(i)}$, which explains why we do not need to include $ [\O_{p_{i}}\otimes
 \rho_{0}(i)]$ in our basis for $K$-theory.
 
-We abreviate the data $\left\{m_{j}(i) \right\}$ by the symbol
+We abbreviate the data $\left\{m_{j}(i) \right\}$ by the symbol
 $\mdata$ and we denote by 
 \[
 \Hilb^{n,\mdata}(\Zcal ) \subset \Hilb (\Zcal )
 \]
-the component corresponding to the $K$-theory class given above. We
-may also regard $\Hilb^{n,\mdata}(\Zcal )$ as parameterizing ideal
+the component corresponding to the $K$-theory class given above.
+
+Let
+\[
+D_{\mdata} = \sum_{i=1}^{r} \sum_{j=1}^{n(i)} \, m_{j}(i)\, E_{j}(i)
+\]
+where
+$E_{1}(i),\dotsc ,E_{n(i)}(i)$ are
+the exceptional curves over $p_{i}$. We can organize the data $\mdata = \left\{m_{j}(i) \right\}$ into
+$\mvec (i)\in M_{\Delta (i)}$, i.e.  the vectors in the root lattice
+of $\Delta (i)$ having components $ m_{1}(i),\dotsc
+,m_{n(i)}(i)$. Under this identification
+\[
+D_{\mdata}^{2} = -\sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
+\right)_{\Delta (i)} 
+\]
+since the intersection form of the exceptional curves over $p_{i}$ is
+the negative of the corresponding Cartan matrix $C_{\Delta (i)}$. 
+
+%Let
+%\[
+%d=n+\half D_{\mdata}^{2} = n-\half \sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
+%\right)_{\Delta (i)} .
+%\]
+
+\begin{proposition}\label{prop: Hilb(Z) is birational to Hilb(Y)}
+	$\Hilb^{n,\mdata}(\Zcal)$ is birational to $\Hilb^{n+\half
+		D_{\mdata}^{2}}(Y)$. 
+\end{proposition}
+
+\begin{lemma}
+\label{lem:rigidsh}
+	\begin{enumerate}
+		\item Let $M$ be an ADE root lattice. To any element $\mathbf{m} \in M$ there is a rigid G invariant subscheme of $\mathbb{C}^2$ with $K$-theory class corresponding to $\mathbf{m}$. The (graded) colength of the ideal of this subscheme is $\mathbf{m}+\half \delta( \mathbf{m}| \mathbf{m})$.
+		\item For every datum $\mdata$ there is a rigid subscheme $Z_{\mdata} \subset \mathcal{Z}$ with $K$-theory class $\mdata$.
+This subscheme has $\mathrm{colength}(\mathcal{I}_{Z_{\mdata}} \subset \mathcal{O}_{\Zcal})=\mdata -\half |G| D_{\mdata}^{2}$.
+	\end{enumerate}
+\end{lemma}
+\begin{proof}
+	Part (2) is implied by Part (1) since we can take the union of the rigid subschemes supported at the orbifold points $p_1,\dots,p_r \in \mathcal{Z}$. So we only need to prove the local case.
+	
+	Nakajima has shown in \cite[Section 2]{nakajima2002geometric} that the $G$-fixed Hilbert scheme decomposes into smooth quiver varieties
+	$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v}} \mathcal{M}(\mathbf{v},\mathbf{w})$ with fixed framing vector $\mathbf{w}=(1,0,\dots,0)$.
+	Due to Theorem \ref{thm: Zorbifold formula} a sheaf with $K$-theory class described by the root $\mathbf{m} \in M$ is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
+	\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right)= \left(\frac{a_0\langle \mathbf{m}, \mathbf{m} \rangle }{2},m_1+\frac{a_1\langle \mathbf{m}, \mathbf{m} \rangle }{2},\dots,m_n+\frac{a_n\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right). \]
+	By 
+	\cite[(2.6)]{nakajima1994instantons}
+	the dimension of $\mathcal{M}(\mathbf{v},\mathbf{w})$ in general is
+	\[ 2\mathbf{w} \cdot \mathbf{v} - \langle \mathbf{v}, \mathbf{v} \rangle.  \]
+	In our case this reads as
+	\begin{align*} 2v_0 - \langle \mathbf{v}, \mathbf{v} \rangle & = \langle \mathbf{m}, \mathbf{m} \rangle - \left\langle \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right), \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right) \right\rangle \\
+	& =\langle \mathbf{m}, \mathbf{m} \rangle - \langle \mathbf{m}, \mathbf{m} \rangle -  \langle \mathbf{m}, \delta \rangle \langle \mathbf{m}, \mathbf{m} \rangle -\frac{1}{2} \langle \mathbf{m}, \mathbf{m} \rangle\langle \delta, \delta \rangle =
+	0  \end{align*}
+	where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$. Hence, any sheaf in such a component is rigid.
+	
+	Theorem \ref{thm: Zorbifold formula} also implies that any such component has a positive Euler characteristic. This is because both the numerator and the expansion of the denominator have positive coefficients. Part (3) \[
+	D_{\mdata}^{2} = -\sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
+	\right)_{\Delta (i)} 
+	\]
+	
+	%I think this can be read-off again from the formula of the generating
+	%series (Theorem 2.1). Suppose first that the denominators are all 1.
+	%Then the numerator counts the Euler characteristic of the required
+	%cell, which is 1. If we take into account the denominators, they, when
+	%expanded, can only increase the content coming from the numerator. So
+	%for each root the appropriate component has Euler characteristic at
+	%least 1. More mathematically, the generating series has only
+	%nonnegative integer coefficients and the component corresponding to
+	%each root appears with coefficient at least 1.
+\end{proof}
+\begin{proof}[Proof of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)}]
+	
+Let $Z_{\mdata} \subset \mathcal{Z}$ be the rigid substack of $Z$ corresponding to the $K$-theory data $0,\mdata$ provided by Lemma \ref{lem:rigidsh}. 
+The Zariski open substack of $\mathrm{Hilb}^{n,\mdata}(\Zcal)$ parameterizing substacks of $\Zcal$ of the form $P \cup Z_{\mdata}$ where $P$ is a colength $n+\half
+D_{\mdata}^{2}$ subscheme of $U$ is isomorphic to $\mathrm{Hilb}^{n+\half
+D_{\mdata}^{2}}(U)$. This is because  $Z_{\mdata}$ was rigid and the colength of $\mathcal{I}_{Z_{\mdata}}$ is $\mdata -\half|G|
+D_{\mdata}^{2}$. On the other hand, the Zariski open subset of $\mathrm{Hilb}^{n+\half
+D_{\mdata}^{2}}(Y)$ parameterizing subschemes supported on $V\subset Y$ is isomorphic to $\mathrm{Hilb}^{n+\half
+D_{\mdata}^{2}}(V)$. Finally, $\mathrm{Hilb}^{n+\half
+D_{\mdata}^{2}}(U)\cong \mathrm{Hilb}^{n+\half
+D_{\mdata}^{2}}(V)$.
+\end{proof}
+
+\begin{remark}
+It is not needed in our proof, but it is possible to show that the birational equivalence of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)} is realized by the derived McKay equivalence:
+\[
+\FM :D^{b}(\Zcal) \to D^{b}(Y).
+\]
+We
+may regard $\Hilb^{n,\mdata}(\Zcal )$ as parameterizing ideal
 sheaves and as such, it is given as an open substack
 \[
 \Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal ) 
@@ -1101,7 +1185,6 @@ class
 \alpha = [\O_{\Zcal}] - n[\O_{p}] - \sum_{i=1}^{r} \sum_{j=1}^{n(i)}
 m_{j}(i)[\O_{p_{i}}\otimes \rho_{j}(i)] .
 \]
-
 The derived McKay equivalence then induces a stack equivalence
 \[
 \M^{\alpha} (\Zcal )\cong \M^{\FM (\alpha )}(Y).
@@ -1135,7 +1218,6 @@ where the right hand side is in $H^{0}(Y)\oplus H^{2}(Y)\oplus
 H^{4}(Y)$. The fact that $ch_{2}(\O_{E_{j}(i)}(-1)) = 0$ follows from
 Hirzebruch-Riemann-Roch and the fact that $\chi
 (\O_{E_{j}(i)}(-1))=0$.
-
 We then see that 
 \[
 \beta  = ch(\FM (\alpha )) = (1, D_{\mdata},-n)
@@ -1144,7 +1226,6 @@ where
 \[
 D_{\mdata} = \sum_{i=1}^{r} \sum_{j=1}^{n(i)} \, m_{j}(i)\, E_{j}(i).
 \]
-
 Tensoring by $L_{\mdata} = \O (-D_{\mdata})$ induces an equivalence of categories and
 thus the composition
 \[
@@ -1158,6 +1239,30 @@ induces an equivalence
 \[
 \M^{\alpha}(\Zcal )\cong \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y).
 \]
+Since our moduli spaces
+\[
+\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
+\]
+are open substacks, the image of
+$\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
+(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$ nontrivially. Hence, $\FM \circ
+(L_{\mdata}\otimes -)$ induces an isomorphism on open subsets of the two Hilbert schemes. 
+\end{remark}
+
+
+
+\begin{comment}
+Our approach to proving
+theorem~\ref{thm: Formula for Zbir} follows a similar idea as our
+proof of theorem~\ref{thm: formula for local series (in intro)} in
+Section~\ref{sec: proof of formula for local series} . We exploit the
+derived McKay equivalence:
+\[
+\FM :D^{b}(\Zcal) \to D^{b}(Y).
+\]
+
+
+
 As a consequence of the above equivalence, we get the following
 \begin{proposition}\label{prop: Hilb(Z) is birational to Hilb(Y)}
 $\Hilb^{n,\mdata}(\Zcal)$ is birational to $\Hilb^{n+\half
@@ -1175,7 +1280,7 @@ $\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
 non-trivially. We can even suppose that $n=0$, because of the motivic property of the Hilbert scheme.
 Let $\mathcal{I}$ be the ideal sheaf of the rigid substack supported at the stacky points of $\Zcal$ whose K-theory class is $0,\mdata$.
 	
-\begin{comment}
+
 Since 
 \[
 \Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
@@ -1197,47 +1302,13 @@ rigid substack supported at the stacky points of $\Zcal$.
 PROOF NEEDS TO BE FINISHED!
 
 \bigskip
+
+
+\end{proof}
 \end{comment}
 
-\end{proof}
 
-\begin{lemma}
-\begin{enumerate}
-	\item Let $M$ be an ADE root lattice. To any element $\mathbf{m} \in M$ there is a rigid G invariant subscheme of $\mathbb{C}^2$ with $K$-theory class corresponding to $\mathbf{m}$.
-	\item For every datum $\mdata$ there is a rigid subscheme of $\mathcal{Z}$ with $K$-theory class $0,\mdata$.
-\end{enumerate}
-\end{lemma}
-\begin{proof}
-Part (2) is implied by Part (1) since we can take the union of the rigid subschemes supported at the orbifold points $p_1,\dots,p_r \in \mathcal{Z}$. So we only need to prove the local case.
-
-Nakajima has shown in \cite[Section 2]{nakajima2002geometric} that the $G$-fixed Hilbert scheme decomposes into quiver varieties
-$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v}} \mathcal{M}(\mathbf{v},\mathbf{w})$ with fixed framing vector $\mathbf{w}=(1,0,\dots,0)$.
-Due to Theorem \ref{thm: Zorbifold formula} a sheaf with $K$-theory class described by the root $\mathbf{m} \in M$ is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
-\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right)= \left(\frac{a_0\langle \mathbf{m}, \mathbf{m} \rangle }{2},m_1+\frac{a_1\langle \mathbf{m}, \mathbf{m} \rangle }{2},\dots,m_n+\frac{a_n\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right). \]
-By 
-\cite[(2.6)]{nakajima1994instantons}
-the dimension of $\mathcal{M}(\mathbf{v},\mathbf{w})$ in general is
-\[ 2\mathbf{w} \cdot \mathbf{v} - \langle \mathbf{v}, \mathbf{v} \rangle.  \]
-In our case this reads as
-\begin{align*} 2v_0 - \langle \mathbf{v}, \mathbf{v} \rangle & = \langle \mathbf{m}, \mathbf{m} \rangle - \left\langle \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right), \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right) \right\rangle \\
-& =\langle \mathbf{m}, \mathbf{m} \rangle - \langle \mathbf{m}, \mathbf{m} \rangle -  \langle \mathbf{m}, \delta \rangle \langle \mathbf{m}, \mathbf{m} \rangle -\frac{1}{2} \langle \mathbf{m}, \mathbf{m} \rangle\langle \delta, \delta \rangle =
-0  \end{align*}
-where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$. Hence, any sheaf in such a component is rigid.
-
-Theorem \ref{thm: Zorbifold formula} also implies that any such component has a positive Euler characteristic. This is because both the numerator and the expansion of the denominator have positive coefficients.
-
-%I think this can be read-off again from the formula of the generating
-%series (Theorem 2.1). Suppose first that the denominators are all 1.
-%Then the numerator counts the Euler characteristic of the required
-%cell, which is 1. If we take into account the denominators, they, when
-%expanded, can only increase the content coming from the numerator. So
-%for each root the appropriate component has Euler characteristic at
-%least 1. More mathematically, the generating series has only
-%nonnegative integer coefficients and the component corresponding to
-%each root appears with coefficient at least 1.
-\end{proof}
-
-With the proposition, we can now prove Theorem~\ref{thm: Formula for
+With Proposition~\ref{prop: Hilb(Z) is birational to Hilb(Y)}, we can now prove Theorem~\ref{thm: Formula for
 Zbir}.  Using the identification $\Hilb(X)^{G} = \Hilb (\Zcal )$
 and identifying discrete parameters we get
 \begin{align*}
@@ -1250,6 +1321,7 @@ where
 D(n,\mdata ) = kn +\sum_{i=1}^{r}\frac{k}{k_{i}}\sum_{j=1}^{n(i)}
 m_{j}(i) d_{j}(i).  
 \]
+\begin{comment}
 We can organize the data $\mdata = \left\{m_{j}(i) \right\}$ into
 $\mvec (i)\in M_{\Delta (i)}$, i.e.  the vectors in the root lattice
 of $\Delta (i)$ having components $ m_{1}(i),\dotsc
@@ -1259,7 +1331,9 @@ D_{\mdata}^{2} = -\sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
 \right)_{\Delta (i)} 
 \]
 since the intersection form of the exceptional curves over $p_{i}$ is
-the negative of the corresponding Cartan matrix $C_{\Delta (i)}$. Let
+the negative of the corresponding Cartan matrix $C_{\Delta (i)}$. 
+\end{comment}
+Let
 \[
 d=n+\half D_{\mdata}^{2} = n-\half \sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
 \right)_{\Delta (i)} .
