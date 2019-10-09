@@ -1129,20 +1129,22 @@ This subscheme has $\mathrm{colength}(\mathcal{I}_{Z_{\mdata}} \subset \mathcal{
 	Nakajima has shown in \cite[Section 2]{nakajima2002geometric} that the $G$-fixed Hilbert scheme decomposes into smooth quiver varieties
 	$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v}} \mathcal{M}(\mathbf{v},\mathbf{w})$ with fixed framing vector $\mathbf{w}=(1,0,\dots,0)$.
 	Due to Theorem \ref{thm: Zorbifold formula} a sheaf with $K$-theory class described by the root $\mathbf{m} \in M$ is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
-	\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right)= \left(\frac{a_0\langle \mathbf{m}, \mathbf{m} \rangle }{2},m_1+\frac{a_1\langle \mathbf{m}, \mathbf{m} \rangle }{2},\dots,m_n+\frac{a_n\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right). \]
+	\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)= \left(\frac{a_0 (\mathbf{m}| \mathbf{m}) }{2},m_1+\frac{a_1 ( \mathbf{m}| \mathbf{m} ) }{2},\dots,m_n+\frac{a_n( \mathbf{m}| \mathbf{m} ) }{2} \right) \]
+	where $\delta=\sum_i\alpha_i$.
 	By 
 	\cite[(2.6)]{nakajima1994instantons}
 	the dimension of $\mathcal{M}(\mathbf{v},\mathbf{w})$ in general is
 	\[ 2\mathbf{w} \cdot \mathbf{v} - \langle \mathbf{v}, \mathbf{v} \rangle.  \]
+	Here $\langle \cdot, \cdot \rangle$ is the inner product with respect to the affine invariant form.
 	In our case this reads as
 	\begin{align*} 2v_0 - \langle \mathbf{v}, \mathbf{v} \rangle & = \langle \mathbf{m}, \mathbf{m} \rangle - \left\langle \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right), \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right) \right\rangle \\
 	& =\langle \mathbf{m}, \mathbf{m} \rangle - \langle \mathbf{m}, \mathbf{m} \rangle -  \langle \mathbf{m}, \delta \rangle \langle \mathbf{m}, \mathbf{m} \rangle -\frac{1}{2} \langle \mathbf{m}, \mathbf{m} \rangle\langle \delta, \delta \rangle =
 	0  \end{align*}
 	where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$. Hence, any sheaf in such a component is rigid.
 	
-	Theorem \ref{thm: Zorbifold formula} also implies that any such component has a positive Euler characteristic. This is because both the numerator and the expansion of the denominator have positive coefficients. Part (3) \[
+	Theorem \ref{thm: Zorbifold formula} also implies that any such component has a positive Euler characteristic. This is because both the numerator and the expansion of the denominator have positive coefficients. The statement about the colengths follows from the equation $\mathbf{v}=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2}\right)$ and the decomposition \[
 	D_{\mdata}^{2} = -\sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
-	\right)_{\Delta (i)} 
+	\right)_{\Delta (i)}.
 	\]
 	
 	%I think this can be read-off again from the formula of the generating
