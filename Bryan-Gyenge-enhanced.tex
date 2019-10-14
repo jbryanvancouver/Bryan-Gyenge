@@ -66,8 +66,8 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newcommand{\PP}{\mathbb{P}}
 \newcommand{\HH}{\mathbb{H}}
 \newcommand{\LL}{\mathbb{L}}
-\newcommand{\X}{\frak{X}}
-\newcommand{\M}{\frak{M}}
+\newcommand{\X}{\mathfrak{X}}
+\newcommand{\M}{\mathfrak{M}}
 \newcommand{\bir}{\mathsf{bir}}
 \newcommand{\reg}{\mathsf{reg}}
 \newcommand{\Ell}{\mathsf{Ell}}
@@ -93,6 +93,7 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newcommand{\dvec}{\bm{d }}
 \newcommand{\uvec}{\bm{u }}
 \newcommand{\vvec}{\bm{v }}
+\newcommand{\wvec}{\bm{w }}
 
 %\newcommand{\mvec}{\vec{m}}
 %\newcommand{\zetavec}{\vec{\zeta }}
@@ -111,9 +112,12 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newcommand{\im}{\operatorname{Im}}
 \newcommand{\Hilb}{\operatorname{Hilb}}
 
+\sloppy
+\allowdisplaybreaks
+
 \begin{document}
 
-\maketitle
+
 
 %\tableofcontents
 
@@ -137,7 +141,7 @@ the Elliptic genus, the Chi-$y$ genus, and the motivic class.
 \end{abstract}
 
 
-
+\maketitle
 %\markboth{???}  {???}
 
 
@@ -372,11 +376,8 @@ subtle for the case of general $G$. This has been recently explored in
 
 We can extend our results to various refinements of the Euler
 characteristic, namely the elliptic genus, the $\chi_{y}$ genus, and
-the motivic class. These refinements all stem from the following
-theorem which we prove in Section~\ref{sec: proof of thm about Zbir}.
-
-\begin{theorem}\label{thm: Formula for Zbir}
-Let 
+the motivic class. These refinements all stem from the next
+result which we prove in Section~\ref{sec: proof of thm about Zbir}. Let 
 \[
 Z^{\bir}_{X,G}(q) = \sum_{n=0}^{\infty} [\Hilb^{n}(X)^{G}]_{\bir} \,
 \, q^{n-1}
@@ -384,7 +385,10 @@ Z^{\bir}_{X,G}(q) = \sum_{n=0}^{\infty} [\Hilb^{n}(X)^{G}]_{\bir} \,
 be a formal series whose coefficients we regard as birational
 equivalence classes of compact hyperkahler manifolds. Such equivalence
 classes form a semi-ring under disjoint union and Cartesian
-product. Let $Y$ be the minimal resolution of $X/G$, then
+product.
+
+\begin{theorem}\label{thm: Formula for Zbir}
+Let $Y$ be the minimal resolution of $X/G$, then
 \[
 Z^{\bir}_{X,G} (q) = Z^{\bir}_{Y}(q^{k})\cdot Z_{X,G}(q)\cdot \Delta (k\tau )
 \]
@@ -1049,12 +1053,8 @@ Hilb(Y,m0-(m0-m1)^2)}. \qed
 \label{sec: proof of thm about Zbir}
 
 Let $\Zcal  =[X/G]$ be the stack quotient of $X$ by $G$ and let $Y\to
-X/G$ be the minimal resolution. Let $p_{1},\dotsc ,p_{r}\in \Zcal$
-be the orbifold points, and let $U\subset \Zcal \setminus \{p_{1},\dotsc ,p_{r} \}$ be
-the  Zariski open part with trivial stabilizers. %This stack is equivalent to the scheme $W$.
-Let furthermore $V \subset Y$ be the complement of the exceptional divisors.
-Then $U$ and $V$ are canonically isomorphic.
-
+X/G$ be the minimal resolution. %Let furthermore $p_{1},\dotsc ,p_{r}\in \Zcal$
+%be the orbifold points with nontrivial stabilizers.
 The Hilbert scheme of zero dimensional substacks of $\Zcal$ is
 naturally identified with the $G$-fixed Hilbert scheme of $X$:
 \[
@@ -1072,22 +1072,23 @@ are the orbifold points. The local group of $\Zcal$ at $p_{i}$ is
 $G_{\Delta (i)}\subset SL_{2}\CC$  and has corresponding root system
 $\Delta (i)$ of rank $n(i)$, and has irreducible representations
 $\rho_{0}(i),\rho_{1}(i),\dotsc ,\rho_{n(i)}(i)$ where $\rho_{0}(i)$
-is the trivial representation. We note that we have the $K$-theory relation
+is the trivial representation. 
+We note that we do not need to include $ [\O_{p_{i}}\otimes
+\rho_{0}(i)]$ in our basis for $K$-theory because of the following observation.
+\begin{lemma} We have the $K$-theory relation
 \[
 [\O_{p}] = [\O_{p_{i}}\otimes \rho_{\reg}(i)]
 \]
 where $\rho_{\reg}(i)$ is the regular representation of $G_{\Delta
-	(i)}$, which explains why we do not need to include $ [\O_{p_{i}}\otimes
-\rho_{0}(i)]$ in our basis for $K$-theory.
+	(i)}$.\end{lemma}
+%which explains why 
 
-We abbreviate the data $\left\{m_{j}(i) \right\}$ by the symbol
+We abbreviate the data $\left\{m_{j}(i) \right\}$ appearing in the $K$-theory class above  by the symbol
 $\mdata$ and we denote by 
 \[
 \Hilb^{n,\mdata}(\Zcal ) \subset \Hilb (\Zcal )
 \]
-the component corresponding to the $K$-theory class given above.
-
-Let
+the corresponding component. Let
 \[
 D_{\mdata} = \sum_{i=1}^{r} \sum_{j=1}^{n(i)} \, m_{j}(i)\, E_{j}(i)
 \]
@@ -1115,37 +1116,52 @@ the negative of the corresponding Cartan matrix $C_{\Delta (i)}$.
 		D_{\mdata}^{2}}(Y)$. 
 \end{proposition}
 
+%\begin{lemma}
+%A sheaf with $K$-theory $n,\mdata$
+%\end{lemma}
 \begin{lemma}
 \label{lem:rigidsh}
 	\begin{enumerate}
-		\item Let $M$ be an ADE root lattice. To any element $\mathbf{m} \in M$ there is a rigid G invariant subscheme of $\mathbb{C}^2$ with $K$-theory class corresponding to $\mathbf{m}$. The (graded) colength of the ideal of this subscheme is $\mathbf{m}+\half \delta( \mathbf{m}| \mathbf{m})$.
-		\item For every datum $\mdata$ there is a rigid subscheme $Z_{\mdata} \subset \mathcal{Z}$ with $K$-theory class $\mdata$.
-This subscheme has $\mathrm{colength}(\mathcal{I}_{Z_{\mdata}} \subset \mathcal{O}_{\Zcal})=\mdata -\half |G| D_{\mdata}^{2}$.
+		\item Let $M$ be a finite ADE type root lattice and $G \subset SL_{2}\CC$ the corresponding finite subgroup. To any element $\mvec \in M$ there is a unique rigid $G$-invariant subscheme of $\mathbb{C}^2$ with $K$-theory class 
+		$\half (\mvec|\mvec)[\O_{p}] + \sum_{j=1}^{n}
+		m_{j}[\O_{0}\otimes \rho_{j}]$ where $p \in [\mathbb{C}^2/G]$ is a generic point.
+		%The (graded) colength of the ideal of this subscheme is $\mathbf{m}+\half \delta( \mathbf{m}| \mathbf{m})$.
+		\item For every datum $\mdata$ there is a unique rigid substack $Z_{\mdata} \subset \mathcal{Z}$ with $K$-theory class \begin{gather*}\sum_{i=1}^r\frac{(\mvec(i)|\mvec(i))_{\Delta (i)}}{2}[\O_{p}] + \sum_{j=1}^{n}
+		m_{j}(i)[\O_{p_i}\otimes \rho_{j}(i)]\\=-\frac{
+		D_{\mdata}^{2}}{2}[\O_{p}] + \sum_{j=1}^{n}
+		m_{j}(i)[\O_{p_i}\otimes \rho_{j}(i)]
+		\end{gather*} where $p \in \Zcal$ is a generic point.
+%This subscheme has $\mathrm{colength}(\mathcal{I}_{Z_{\mdata}} \subset \mathcal{O}_{\Zcal})=\mdata -\half |G| D_{\mdata}^{2}$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
-	Part (2) is implied by Part (1) since we can take the union of the rigid subschemes supported at the orbifold points $p_1,\dots,p_r \in \mathcal{Z}$. So we only need to prove the local case.
+	Part (2) is implied by Part (1) since we can take the union of the rigid subschemes supported at the orbifold points $p_1,\dots,p_r \in \mathcal{Z}$. So we need only prove the local case.
 	
 	Nakajima has shown in \cite[Section 2]{nakajima2002geometric} that the $G$-fixed Hilbert scheme decomposes into smooth quiver varieties
-	$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v}} \mathcal{M}(\mathbf{v},\mathbf{w})$ with fixed framing vector $\mathbf{w}=(1,0,\dots,0)$.
-	Due to Theorem \ref{thm: Zorbifold formula} a sheaf with $K$-theory class described by the root $\mathbf{m} \in M$ is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
-	\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)= \left(\frac{a_0 (\mathbf{m}| \mathbf{m}) }{2},m_1+\frac{a_1 ( \mathbf{m}| \mathbf{m} ) }{2},\dots,m_n+\frac{a_n( \mathbf{m}| \mathbf{m} ) }{2} \right) \]
-	where $\delta=\sum_i\alpha_i$.
+	$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v}} \mathcal{M}(\vvec,\wvec)$ associated with the corresponding affine Dynkin quiver equipped with a fixed framing vector $\wvec=(1,0,\dots,0)$.
+	Due to Theorem \ref{thm: Zorbifold formula} a sheaf whose $K$-theory class has $\{\rho_1,\dots, \rho_n\}$-part equal to $\mvec$ can only have
+	a total class of the form
+	$\mvec+\left( \frac{( \mvec| \mvec) }{2}+l \right)\delta $
+	where $\mvec$ is interpreted as $\sum_{j=1}^{n}
+	m_{j}[\O_{0}\otimes \rho_{j}]$, $\delta=[\O_{p}]$ and $l$ is a nonnegative integer. The particular case with $l=0$ contains the sheaves with the required class $\mvec+\half( \mvec| \mvec)\delta $.
+	
+	%is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
+	%=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)
+	
+	%\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)= \left(\frac{a_0 (\mathbf{m}| \mathbf{m}) }{2},m_1+\frac{a_1 ( \mathbf{m}| \mathbf{m} ) }{2},\dots,m_n+\frac{a_n( \mathbf{m}| \mathbf{m} ) }{2} \right) \]
+	%where $\delta=\sum_i\alpha_i$.
 	By 
 	\cite[(2.6)]{nakajima1994instantons}
-	the dimension of $\mathcal{M}(\mathbf{v},\mathbf{w})$ in general is
-	\[ 2\mathbf{w} \cdot \mathbf{v} - \langle \mathbf{v}, \mathbf{v} \rangle.  \]
-	Here $\langle \cdot, \cdot \rangle$ is the inner product with respect to the affine invariant form.
+	the dimension of $\mathcal{M}(\vvec,\wvec)$ in general is
+	\[ 2\wvec \cdot \vvec - \langle \vvec, \vvec \rangle.  \]
+	Here $\langle \cdot, \cdot \rangle$ is the inner product with respect to the affine invariant form and $\vvec,\wvec$ are elements in the affine root lattice.
 	In our case this reads as
-	\begin{align*} 2v_0 - \langle \mathbf{v}, \mathbf{v} \rangle & = \langle \mathbf{m}, \mathbf{m} \rangle - \left\langle \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right), \mathbf{m}+\delta \left( \frac{\langle \mathbf{m}, \mathbf{m} \rangle }{2} \right) \right\rangle \\
-	& =\langle \mathbf{m}, \mathbf{m} \rangle - \langle \mathbf{m}, \mathbf{m} \rangle -  \langle \mathbf{m}, \delta \rangle \langle \mathbf{m}, \mathbf{m} \rangle -\frac{1}{2} \langle \mathbf{m}, \mathbf{m} \rangle\langle \delta, \delta \rangle =
+	\begin{align*} 2v_0 - \langle \vvec, \vvec \rangle & = \langle \mvec, \mvec \rangle - \left\langle \mvec+\frac{( \mvec| \mvec )\delta}{2}, \mvec+\frac{( \mvec| \mvec )\delta}{2} \right\rangle \\
+	& =\langle \mvec, \mvec \rangle - \langle \mvec, \mvec \rangle - ( \mvec| \mvec) \langle \mvec, \delta \rangle  -\frac{1}{4} ( \mvec| \mvec)\langle \delta, \delta \rangle =
 	0  \end{align*}
-	where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$. Hence, any sheaf in such a component is rigid.
+	where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$. Hence, any sheaf in the component with $\vvec=\mvec+\half( \mvec| \mvec)\delta$ is rigid.
 	
-	Theorem \ref{thm: Zorbifold formula} also implies that any such component has a positive Euler characteristic. This is because both the numerator and the expansion of the denominator have positive coefficients. The statement about the colengths follows from the equation $\mathbf{v}=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2}\right)$ and the decomposition \[
-	D_{\mdata}^{2} = -\sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
-	\right)_{\Delta (i)}.
-	\]
+	The formula in Theorem \ref{thm: Zorbifold formula} also implies that the above components with $l=0$ have Euler characteristic 1. This is because the numerator is a series with coefficient 1, and the expansion of the denominator always increases $l$ except for the starting term 1.
 	
 	%I think this can be read-off again from the formula of the generating
 	%series (Theorem 2.1). Suppose first that the denominators are all 1.
@@ -1158,98 +1174,22 @@ This subscheme has $\mathrm{colength}(\mathcal{I}_{Z_{\mdata}} \subset \mathcal{
 	%each root appears with coefficient at least 1.
 \end{proof}
 \begin{proof}[Proof of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)}]
-	
-Let $Z_{\mdata} \subset \mathcal{Z}$ be the rigid substack of $Z$ corresponding to the $K$-theory data $0,\mdata$ provided by Lemma \ref{lem:rigidsh}. 
+Let $U\subset \Zcal \setminus \{p_{1},\dotsc ,p_{r} \}$ be
+the  Zariski open part with trivial stabilizers. %This stack is equivalent to the scheme $W$.
+Let $V \subset Y$ be the complement of the exceptional divisors.
+Let furthermore $Z_{\mdata} \subset \mathcal{Z}$ be the rigid substack corresponding to the $K$-theory datum $\mdata$ provided by Lemma \ref{lem:rigidsh}. 
 The Zariski open substack of $\mathrm{Hilb}^{n,\mdata}(\Zcal)$ parameterizing substacks of $\Zcal$ of the form $P \cup Z_{\mdata}$ where $P$ is a colength $n+\half
 D_{\mdata}^{2}$ subscheme of $U$ is isomorphic to $\mathrm{Hilb}^{n+\half
-D_{\mdata}^{2}}(U)$. This is because  $Z_{\mdata}$ was rigid and the colength of $\mathcal{I}_{Z_{\mdata}}$ is $\mdata -\half|G|
-D_{\mdata}^{2}$. On the other hand, the Zariski open subset of $\mathrm{Hilb}^{n+\half
+D_{\mdata}^{2}}(U)$. This is because  $Z_{\mdata}$ was rigid and it had the $K$-theory class $-\half
+D_{\mdata}^{2}[\O_{p}] + \sum_{j=1}^{n}
+m_{j}(i)[\O_{p_i}\otimes \rho_{j}(i)]$. On the other hand, the Zariski open subset of $\mathrm{Hilb}^{n+\half
 D_{\mdata}^{2}}(Y)$ parameterizing subschemes supported on $V\subset Y$ is isomorphic to $\mathrm{Hilb}^{n+\half
 D_{\mdata}^{2}}(V)$. Finally, $\mathrm{Hilb}^{n+\half
 D_{\mdata}^{2}}(U)\cong \mathrm{Hilb}^{n+\half
-D_{\mdata}^{2}}(V)$.
+D_{\mdata}^{2}}(V)$ since $U$ and $V$ are canonically isomorphic.
 \end{proof}
 
-\begin{remark}
-It is not needed in our proof, but it is possible to show that the birational equivalence of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)} is realized by the derived McKay equivalence:
-\[
-\FM :D^{b}(\Zcal) \to D^{b}(Y).
-\]
-We
-may regard $\Hilb^{n,\mdata}(\Zcal )$ as parameterizing ideal
-sheaves and as such, it is given as an open substack
-\[
-\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal ) 
-\]
-of the moduli stack of objects in $D^{b}(\Zcal )$ having $K$-theory
-class
-\[
-\alpha = [\O_{\Zcal}] - n[\O_{p}] - \sum_{i=1}^{r} \sum_{j=1}^{n(i)}
-m_{j}(i)[\O_{p_{i}}\otimes \rho_{j}(i)] .
-\]
-The derived McKay equivalence then induces a stack equivalence
-\[
-\M^{\alpha} (\Zcal )\cong \M^{\FM (\alpha )}(Y).
-\]
-We identify numerical $K$-theory on $Y$ with cohomology via the Chern
-character and index the moduli stack of objects on $Y$ by their Chern
-character so that our equivalence reads
-\[
-\M^{\alpha}(\Zcal )\cong  \M_{\beta}(Y)
-\]
-where $\beta =ch(\FM (\alpha ))$. The derived McKay equivalence induces the
-following map in $K$-theory:
-\begin{align*}
-[\O_{\Zcal }] & \quad \longmapsto \quad  [\O_{Y}]\\
-[\O_{p }] & \quad \longmapsto \quad  [\O_{p}]\\
-[\O_{p_{i}}\otimes \rho_{j}(i)] & \quad \longmapsto \quad  -[\O_{E_{j}(i)}(-1)],\quad j=1,\dotsc, n(i) \\
-[\O_{p_{i}}\otimes \rho_{0}(i)] & \quad \longmapsto \quad  \sum_{j=1}^{\infty }d_{j}(i)[\O_{E_{j}(i)}]\\
-\end{align*}
-where $p\in Y$ is a generic point, $E_{1}(i),\dotsc ,E_{n(i)}(i)$ are
-the exceptional curves over $p_{i}$, and 
-\[
-d_{j}(i) = \dim \rho_{j}(i).
-\]
-The Chern characters are given by
-\begin{align*}
-ch(\O_{p}) & = (0,0,1) \\
-ch(\O_{Y}) & = (1,0,0) \\
-ch(\O_{E_{j}(i)}(-1)) & = (0,E_{j}(i),0)
-\end{align*}
-where the right hand side is in $H^{0}(Y)\oplus H^{2}(Y)\oplus
-H^{4}(Y)$. The fact that $ch_{2}(\O_{E_{j}(i)}(-1)) = 0$ follows from
-Hirzebruch-Riemann-Roch and the fact that $\chi
-(\O_{E_{j}(i)}(-1))=0$.
-We then see that 
-\[
-\beta  = ch(\FM (\alpha )) = (1, D_{\mdata},-n)
-\]
-where
-\[
-D_{\mdata} = \sum_{i=1}^{r} \sum_{j=1}^{n(i)} \, m_{j}(i)\, E_{j}(i).
-\]
-Tensoring by $L_{\mdata} = \O (-D_{\mdata})$ induces an equivalence of categories and
-thus the composition
-\[
-\begin{tikzcd}[column sep = large]
-\M^{\alpha}(\Zcal ) \arrow[r,"{\FM }"]&
-\M_{\beta}(Y) \arrow[r,"{L_{\mdata}\otimes -}"] &
-\M_{\beta \cdot (1,-D_{\mdata},\half D_{\mdata}^{2})}(Y)
-\end{tikzcd}
-\] 
-induces an equivalence
-\[
-\M^{\alpha}(\Zcal )\cong \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y).
-\]
-Since our moduli spaces
-\[
-\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
-\]
-are open substacks, the image of
-$\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
-(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$ nontrivially. Hence, $\FM \circ
-(L_{\mdata}\otimes -)$ induces an isomorphism on open subsets of the two Hilbert schemes. 
-\end{remark}
+
 
 
 
@@ -1311,7 +1251,7 @@ PROOF NEEDS TO BE FINISHED!
 
 
 With Proposition~\ref{prop: Hilb(Z) is birational to Hilb(Y)}, we can now prove Theorem~\ref{thm: Formula for
-Zbir}.  Using the identification $\Hilb(X)^{G} = \Hilb (\Zcal )$
+Zbir}.  Using the identification \[\Hilb(X)^{G} = \Hilb (\Zcal )\]
 and identifying discrete parameters we get
 \begin{align*}
 Z^{\bir}_{X,G}(q)& = \sum_{a=0}^{\infty} \left[\Hilb^{a}(X)^{G}
@@ -1363,19 +1303,19 @@ Completing the square and using the formula
 \right)_{\Delta (i)} = \frac{2}{k_{i}}\left(\frac{k_{i}(n(i)+1)-1}{24} \right),
 \]
 which follows from Lemma~\ref{lem: another strange formula}, we get 
-\[
-D(n,\mdata )-1 = kd-1 - \sum_{i=1}^{r}
+\begin{gather*}
+D(n,\mdata )-1 = kd-1 \\  - \sum_{i=1}^{r}
 \frac{k}{k_{i}}\left(\frac{k_{i}(n(i)+1)-1}{24} \right)
 +\frac{k}{2}\sum_{i=1}^{r} \left(\mvec (i)+\frac{1}{k_{i}}\zetavec
 (i)\,\,\Big{|}\,\,\mvec (i)+\frac{1}{k_{i}}\zetavec (i) \right)_{\Delta (i)} . 
-\]
+\end{gather*}
 It then follows that
-\[
-Z^{\bir}_{X,G}(q) = q^{A} \sum_{d=0}^{\infty} \left[\Hilb^{d}(Y)
+\begin{gather*}
+Z^{\bir}_{X,G}(q) = \\ q^{A} \sum_{d=0}^{\infty} \left[\Hilb^{d}(Y)
 \right]_{\bir} \,\, q^{kd-k} \,\, \prod_{i=1}^{r} \sum_{\mvec (i)\in
 M_{\Delta (i)}} q^{\frac{k}{2} \left(\mvec (i)+\frac{1}{k_{i}}\zetavec
 (i)\,\,\Big{|}\,\,\mvec (i)+\frac{1}{k_{i}}\zetavec (i) \right)_{\Delta (i)} } 
-\]
+\end{gather*}
 where
 \[
 A = k-1 -\frac{k}{24} \sum_{i=1}^{r} \left(n(i) + 1 - \frac{1}{k_{i}}
@@ -1409,6 +1349,86 @@ The previous equation which showed that $A=0$ also shows that
 $B=24$. Then since $\Delta (\tau ) = \eta (\tau )^{24}$, we see that
 Theorem~\ref{thm: Formula for Zbir} follows. \qed
 
+\begin{remark}
+	It is not needed in our proof, but it is possible to show that the birational equivalence of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)} is realized by the derived McKay equivalence:
+	\[
+	\FM :D^{b}(\Zcal) \to D^{b}(Y).
+	\]
+	We
+	may regard $\Hilb^{n,\mdata}(\Zcal )$ as parameterizing ideal
+	sheaves and as such, it is given as an open substack
+	\[
+	\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal ) 
+	\]
+	of the moduli stack of objects in $D^{b}(\Zcal )$ having $K$-theory
+	class
+	\[
+	\alpha = [\O_{\Zcal}] - n[\O_{p}] - \sum_{i=1}^{r} \sum_{j=1}^{n(i)}
+	m_{j}(i)[\O_{p_{i}}\otimes \rho_{j}(i)] .
+	\]
+	The derived McKay equivalence then induces a stack equivalence
+	\[
+	\M^{\alpha} (\Zcal )\cong \M^{\FM (\alpha )}(Y).
+	\]
+	We identify numerical $K$-theory on $Y$ with cohomology via the Chern
+	character and index the moduli stack of objects on $Y$ by their Chern
+	character so that our equivalence reads
+	\[
+	\M^{\alpha}(\Zcal )\cong  \M_{\beta}(Y)
+	\]
+	where $\beta =ch(\FM (\alpha ))$. The derived McKay equivalence induces the
+	following map in $K$-theory:
+	\begin{align*}
+	[\O_{\Zcal }] & \quad \longmapsto \quad  [\O_{Y}]\\
+	[\O_{p }] & \quad \longmapsto \quad  [\O_{p}]\\
+	[\O_{p_{i}}\otimes \rho_{j}(i)] & \quad \longmapsto \quad  -[\O_{E_{j}(i)}(-1)],\quad j=1,\dotsc, n(i) \\
+	[\O_{p_{i}}\otimes \rho_{0}(i)] & \quad \longmapsto \quad  \sum_{j=1}^{\infty }d_{j}(i)[\O_{E_{j}(i)}]\\
+	\end{align*}
+	where $p\in Y$ is a generic point, $E_{1}(i),\dotsc ,E_{n(i)}(i)$ are
+	the exceptional curves over $p_{i}$, and 
+	\[
+	d_{j}(i) = \dim \rho_{j}(i).
+	\]
+	The Chern characters are given by
+	\begin{align*}
+	ch(\O_{p}) & = (0,0,1) \\
+	ch(\O_{Y}) & = (1,0,0) \\
+	ch(\O_{E_{j}(i)}(-1)) & = (0,E_{j}(i),0)
+	\end{align*}
+	where the right hand side is in $H^{0}(Y)\oplus H^{2}(Y)\oplus
+	H^{4}(Y)$. The fact that $ch_{2}(\O_{E_{j}(i)}(-1)) = 0$ follows from
+	Hirzebruch-Riemann-Roch and the fact that $\chi
+	(\O_{E_{j}(i)}(-1))=0$.
+	We then see that 
+	\[
+	\beta  = ch(\FM (\alpha )) = (1, D_{\mdata},-n)
+	\]
+	where
+	\[
+	D_{\mdata} = \sum_{i=1}^{r} \sum_{j=1}^{n(i)} \, m_{j}(i)\, E_{j}(i).
+	\]
+	Tensoring by $L_{\mdata} = \O (-D_{\mdata})$ induces an equivalence of categories and
+	thus the composition
+	\[
+	\begin{tikzcd}[column sep = large]
+	\M^{\alpha}(\Zcal ) \arrow[r,"{\FM }"]&
+	\M_{\beta}(Y) \arrow[r,"{L_{\mdata}\otimes -}"] &
+	\M_{\beta \cdot (1,-D_{\mdata},\half D_{\mdata}^{2})}(Y)
+	\end{tikzcd}
+	\] 
+	induces an equivalence
+	\[
+	\M^{\alpha}(\Zcal )\cong \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y).
+	\]
+	Since our moduli spaces
+	\[
+	\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
+	\]
+	are open substacks, the image of
+	$\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
+	(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$ nontrivially. Hence, $\FM \circ
+	(L_{\mdata}\otimes -)$ induces an isomorphism on open subsets of the two Hilbert schemes. 
+\end{remark}
 
 
 
@@ -1453,12 +1473,12 @@ that $k=n+1=h$ is the Coxeter number. The lemma is then
 \[
 \frac{(n+1)^{2}-1}{24} = \frac{(\rhovec |\rhovec )}{2h}.
 \]
-Since the Lie algebra associated to $A_{n}$, namely $\frak{sl}_{n+1}$,
+Since the Lie algebra associated to $A_{n}$, namely $\mathfrak{sl}_{n+1}$,
 has dimension $(n+1)^{2}-1$ and the Killing form satisfies $\kappa
 (\cdot ,\cdot )=\frac{1}{2h}(\cdot |\cdot )$, the lemma may be
 rewritten as
 \[
-\frac{\dim \frak{sl}_{n+1}}{24} =\kappa (\rhovec ,\rhovec )
+\frac{\dim \mathfrak{sl}_{n+1}}{24} =\kappa (\rhovec ,\rhovec )
 \]
 which is Freudenthal and de Vries's ``strange formula''
 \cite[47.11]{freudenthal1969linear}.
