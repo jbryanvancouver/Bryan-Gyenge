@@ -12,12 +12,12 @@ Jim Bryan and Georg Oberdieck.
 \newblock arXiv:1811.06102.
 
 \bibitem{freudenthal1969linear}
-Hans Freudenthal and H.~de~Vries.
+Hand Freudenthal and H.~de~Vries.
 \newblock {\em {Linear Lie groups}}.
 \newblock Academic Press, 1969.
 
 \bibitem{Gonzalez-Sprinberg-Verdier}
-Gerardo Gonzalez-Sprinberg and Jean-Louis Verdier.
+G.~Gonzalez-Sprinberg and J.-L. Verdier.
 \newblock Construction g\'eom\'etrique de la correspondance de {M}c{K}ay.
 \newblock {\em Ann. Sci. \'Ecole Norm. Sup. (4)}, 16(3):409--449 (1984), 1983.
 
@@ -44,7 +44,7 @@ Daniel Huybrechts.
 \newblock {\em Invent. Math.}, 135(1):63--113, 1999.
 
 \bibitem{Kapranov-Vasserot}
-Mikhail Kapranov and Eric Vasserot.
+M.~Kapranov and E.~Vasserot.
 \newblock Kleinian singularities, derived categories and {H}all algebras.
 \newblock {\em Math. Ann.}, 316(3):565--576, 2000.
 
@@ -69,6 +69,12 @@ Shigeru Mukai.
   group}.
 \newblock {\em Inventiones mathematicae}, 94(1):183--221, 1988.
 
+\bibitem{Nakajima1994Duke}
+Hiraku Nakajima.
+\newblock Instantons on {ALE} spaces, quiver varieties, and {K}ac-{M}oody
+  algebras.
+\newblock {\em Duke Math. J.}, 76(2):365--416, 1994.
+
 \bibitem{nakajima1994instantons}
 Hiraku Nakajima.
 \newblock Instantons on ale spaces, quiver varieties, and kac-moody algebras.
@@ -79,12 +85,6 @@ Hiraku Nakajima.
 \newblock {Geometric construction of representations of affine algebras}.
 \newblock In {\em Proceedings of the International Congress of Mathematicians
   (Beijing, 2002)}, volume~1, pages 423--438. IMU, Higher Ed, 2002.
-
-\bibitem{Nakajima1994Duke}
-Hiraku Nakajima.
-\newblock Instantons on {ALE} spaces, quiver varieties, and {K}ac-{M}oody
-  algebras.
-\newblock {\em Duke Math. J.}, 76(2):365--416, 1994.
 
 \bibitem{Nicaise-Shinder}
 Johannes Nicaise and Evgeny Shinder.

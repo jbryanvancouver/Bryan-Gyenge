@@ -1073,7 +1073,9 @@ $\rho_{0}(i),\rho_{1}(i),\dotsc ,\rho_{n(i)}(i)$ where $\rho_{0}(i)$
 is the trivial representation. 
 We note that we do not need to include $ [\O_{p_{i}}\otimes
 \rho_{0}(i)]$ in our basis for $K$-theory because of the following observation.
-\begin{lemma} We have the $K$-theory relation
+\begin{lemma} 
+\label{ref:kthbasis}	
+We have the $K$-theory relation
 \[
 [\O_{p}] = [\O_{p_{i}}\otimes \rho_{\reg}(i)]
 \]
@@ -1120,7 +1122,7 @@ the negative of the corresponding Cartan matrix $C_{\Delta (i)}$.
 \begin{lemma}
 \label{lem:rigidsh}
 	\begin{enumerate}
-		\item Let $M$ be a finite ADE type root lattice and $G \subset SL_{2}\CC$ the corresponding finite subgroup. To any element $\mvec \in M$ there is a unique rigid $G$-invariant subscheme of $\mathbb{C}^2$ with $K$-theory class 
+		\item Let $M$ be a finite ADE type root lattice of rank $n$ and $G \subset SL_{2}\CC$ the corresponding finite subgroup. To any element $\mvec \in M$ there is a unique rigid $G$-invariant subscheme of $\mathbb{C}^2$ with $K$-theory class 
 		$\half (\mvec|\mvec)[\O_{p}] + \sum_{j=1}^{n}
 		m_{j}[\O_{0}\otimes \rho_{j}]$ where $p \in [\mathbb{C}^2/G]$ is a generic point.
 		%The (graded) colength of the ideal of this subscheme is $\mathbf{m}+\half \delta( \mathbf{m}| \mathbf{m})$.
@@ -1136,30 +1138,29 @@ the negative of the corresponding Cartan matrix $C_{\Delta (i)}$.
 	Part (2) is implied by Part (1) since we can take the union of the rigid subschemes supported at the orbifold points $p_1,\dots,p_r \in \mathcal{Z}$. So we need only prove the local case.
 	
 	Nakajima has shown in \cite[Section 2]{nakajima2002geometric} that the $G$-fixed Hilbert scheme decomposes into smooth quiver varieties
-	$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\mathbf{v}} \mathcal{M}(\vvec,\wvec)$ associated with the corresponding affine Dynkin quiver equipped with a fixed framing vector $\wvec=(1,0,\dots,0)$.
-	Due to Theorem \ref{thm: Zorbifold formula} a sheaf whose $K$-theory class has $\{\rho_1,\dots, \rho_n\}$-part equal to $\mvec$ can only have
-	a total class of the form
+	$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\vvec} \mathcal{M}(\vvec,\wvec)$ associated with the corresponding affine Dynkin quiver equipped with a fixed framing vector $\wvec=(1,0,\dots,0)$ and dimension vector $\vvec=(v_0,\dots,v_{n})$.
+	The $K$-theory class of a sheaf in  $\mathcal{M}(\vvec,\wvec)$ is  $\sum_{j=0}^{n}
+	v_{j}[\O_{0}\otimes \rho_{j}]$  \cite[page 426]{nakajima2002geometric}. By Lemma \ref{ref:kthbasis} we can rewrite any such class in the basis $\{[\O_{p}],[\O_{0}\otimes \rho_{1}],\dots,[\O_{0}\otimes \rho_{n}]\}$. Theorem \ref{thm: Zorbifold formula} shows that the possible classes that can appear in this latter basis have the form
 	$\mvec+\left( \frac{( \mvec| \mvec) }{2}+l \right)\delta $
-	where $\mvec$ is interpreted as $\sum_{j=1}^{n}
-	m_{j}[\O_{0}\otimes \rho_{j}]$, $\delta=[\O_{p}]$ and $l$ is a nonnegative integer. The particular case with $l=0$ contains the sheaves with the required class $\mvec+\half( \mvec| \mvec)\delta $.
+	where $\mvec \in M$ is interpreted as $\sum_{j=1}^{n}
+	m_{j}[\O_{0}\otimes \rho_{j}]$, $\delta=[\O_{p}]$ and $l$ is a nonnegative integer. The particular case with $l=0$ contains the sheaves with the required class $\mvec+\half( \mvec| \mvec)\delta $. Equivalently, such a sheaf is in the component with dimension vector $\vvec = \mvec+\half( \mvec| \mvec)\delta $ where $\delta$ is now a vector collecting the multiplicities of the irreducible representations $\rho_0,\dots,\rho_n$ in the regular representation $\rho_{\reg}$.
 	
 	%is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
 	%=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)
 	
 	%\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)= \left(\frac{a_0 (\mathbf{m}| \mathbf{m}) }{2},m_1+\frac{a_1 ( \mathbf{m}| \mathbf{m} ) }{2},\dots,m_n+\frac{a_n( \mathbf{m}| \mathbf{m} ) }{2} \right) \]
 	%where $\delta=\sum_i\alpha_i$.
-	By 
-	\cite[(2.6)]{nakajima1994instantons}
-	the dimension of $\mathcal{M}(\vvec,\wvec)$ in general is
+	Let $A$ be the adjacency matrix of the affine Dynkin quiver and let $\langle \cdot, \cdot \rangle$ be the inner product with respect to the generalized Cartan matrix $2I-A$.
+	By \cite[(2.6)]{nakajima1994instantons}
+	the dimension of $\mathcal{M}(\vvec,\wvec)$  for $\vvec,\wvec$ arbitrary is
 	\[ 2\wvec \cdot \vvec - \langle \vvec, \vvec \rangle.  \]
-	Here $\langle \cdot, \cdot \rangle$ is the inner product with respect to the affine invariant form and $\vvec,\wvec$ are elements in the affine root lattice.
-	In our case this reads as
-	\begin{align*} 2v_0 - \langle \vvec, \vvec \rangle & = \langle \mvec, \mvec \rangle - \left\langle \mvec+\frac{( \mvec| \mvec )\delta}{2}, \mvec+\frac{( \mvec| \mvec )\delta}{2} \right\rangle \\
-	& =\langle \mvec, \mvec \rangle - \langle \mvec, \mvec \rangle - ( \mvec| \mvec) \langle \mvec, \delta \rangle  -\frac{1}{4} ( \mvec| \mvec)\langle \delta, \delta \rangle =
-	0  \end{align*}
-	where we have used that $\langle M, \delta \rangle = 0$ and $\langle \delta, \delta \rangle = 0$. Hence, any sheaf in the component with $\vvec=\mvec+\half( \mvec| \mvec)\delta$ is rigid.
+	Since the multiplicity of $\rho_0$ in $\rho_{\reg}$ is always 1 the dimension of the component with $\vvec=\mvec+\half( \mvec| \mvec)\delta$ is
+	\begin{align*} 2v_0 - \langle \vvec, \vvec \rangle & = (\mvec| \mvec ) - \left\langle \mvec+\frac{( \mvec| \mvec )\delta}{2}, \mvec+\frac{( \mvec| \mvec )\delta}{2} \right\rangle \\
+	& = (\mvec| \mvec ) - \langle \mvec, \mvec \rangle - ( \mvec| \mvec) \langle \mvec, \delta \rangle  -\frac{1}{4} ( \mvec| \mvec)\langle \delta, \delta \rangle =
+	0.  \end{align*}
+	Here we have also used the easily verifiable facts that $\langle M, \delta \rangle = 0$, $\langle \delta, \delta \rangle = 0$ and $(\mvec| \mvec ) = \langle \mvec, \mvec \rangle$ for $\mvec \in M$. Hence, any sheaf in this component is rigid.
 	
-	The formula in Theorem \ref{thm: Zorbifold formula} also implies that the above components with $l=0$ have Euler characteristic 1. This is because the numerator is a series with coefficient 1, and the expansion of the denominator always increases $l$ except for the starting term 1.
+	The formula in Theorem \ref{thm: Zorbifold formula} also implies that the above components with $l=0$ have Euler characteristic 1. This is because the numerator is a series with coefficient 1, and the expansion of the denominator always increases $l$ except for the starting term 1. This shows existence and uniqueness.
 	
 	%I think this can be read-off again from the formula of the generating
 	%series (Theorem 2.1). Suppose first that the denominators are all 1.
