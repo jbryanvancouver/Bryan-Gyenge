@@ -1,46 +1,46 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Bryan-Gyenge-enhanced.aux
 The style file: plain.bst
 Database file #1: Bryan-Gyenge.bib
-You've used 20 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            627 strings with 6961 characters,
-and the built_in function-call counts, 6052 in all, are:
-= -- 615
-> -- 203
-< -- 2
-+ -- 84
-- -- 62
-* -- 403
-:= -- 992
-add.period$ -- 61
-call.type$ -- 20
-change.case$ -- 88
+            632 strings with 7052 characters,
+and the built_in function-call counts, 6278 in all, are:
+= -- 635
+> -- 210
+< -- 3
++ -- 87
+- -- 64
+* -- 414
+:= -- 1031
+add.period$ -- 64
+call.type$ -- 21
+change.case$ -- 91
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 219
-empty$ -- 540
-format.name$ -- 62
-if$ -- 1266
+cite$ -- 21
+duplicate$ -- 231
+empty$ -- 562
+format.name$ -- 64
+if$ -- 1314
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 19
-newline$ -- 103
-num.names$ -- 40
-pop$ -- 107
+int.to.str$ -- 21
+missing$ -- 21
+newline$ -- 108
+num.names$ -- 42
+pop$ -- 114
 preamble$ -- 1
-purify$ -- 71
+purify$ -- 74
 quote$ -- 0
-skip$ -- 149
+skip$ -- 156
 stack$ -- 0
-substring$ -- 494
-swap$ -- 31
-text.length$ -- 2
+substring$ -- 499
+swap$ -- 33
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 74
+type$ -- 76
 warning$ -- 0
-while$ -- 67
-width$ -- 22
-write$ -- 215
+while$ -- 69
+width$ -- 23
+write$ -- 226
