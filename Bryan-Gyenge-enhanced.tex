@@ -265,17 +265,18 @@ q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec
 +\frac{1}{k}\zetavec \right)}
 \]
 is a shifted theta function for $M_{\Delta} $, the root lattice of
-$\Delta$. Here $n$ is the rank of the root system, $k=|G_{\Delta}|$, and
-$\zetavec$ is dual to the longest root (see section~\ref{sec: local
-partition functions} for details).
+$\Delta$. Here $n$ is the rank of the root system, $k=|G_{\Delta}|$,
+and $\zetavec$ is dual to the longest root (see section~\ref{sec:
+local partition functions}, eqn~\eqref{eqn: defn of shifted theta
+function} for details).
 
 Theorem~\ref{thm: formula for local series (in intro)} then yields an
 eta product identity for the theta function $\theta_{\Delta}(\tau )$
 reminiscent of the MacDonald identities:
 \begin{theorem}\label{thm: eta product for theta function}
 The shifted theta function $\theta _{\Delta}(\tau )$ defined above
-(c.f. \S~\ref{sec: local partition functions}) is given by an eta
-product as follows:
+(c.f. \S~\ref{sec: local partition functions}, eqn~\eqref{eqn: defn of
+shifted theta function}) is given by an eta product as follows:
 
 For $\Delta$ of type $A_{n}$
 \[
@@ -503,143 +504,8 @@ Federico Amadio Guidi, Georg Oberdieck, Ken Ono, Stephen Pietromonaco,
 Bal\'azs Szendr\H{o}i, and Alex Weekes for helpful comments and/or
 technical help.
 
-\section{The local partition functions}\label{sec: local partition functions}
 
-The classical McKay correspondence associates an ADE root system
-$\Delta$ to any finite subgroup $ G_{\Delta}\subset SU(2)$. Using
-the work of Nakajima \cite{nakajima2002geometric}, the partition function of the
-Euler characteristics of the Hilbert scheme of points on the stack
-quotient $[\CC^{2}/G_{\Delta}]$ was computed explicitly in
-\cite{gyenge2015euler} in terms of the root data of $\Delta$.
-
-The local partition functions $Z_{\Delta}(q)$ considered in this paper
-are obtained from a specialization of the partition functions of the
-stack $[\CC^{2} /G_{\Delta}]$ and in this section, we use this to express
-$Z_{\Delta}(q)$ in terms of a shifted theta function for the root
-lattice of $\Delta$.
-
-A zero-dimensional substack $Z\subset [\CC^{2}/G_{\Delta}]$ may be
-regarded as a $G_{\Delta}$ invariant, zero-dimensional subscheme of
-$\CC^{2}$. Consequently, we may identify the Hilbert scheme of points
-on the stack $[\CC^{2}/G_{\Delta}]$ with the $G_{\Delta}$ fixed locus
-of the Hilbert scheme of points on $\CC^{2}$: 
-\[
-\Hilb \left([\CC^{2}/G_{\Delta}] \right) = \Hilb
-(\CC^{2})^{G_{\Delta}} .
-\]
-
-This Hilbert scheme has components indexed by representations $\rho$
-of $G_{\Delta}$ as follows
-\begin{equation*}
-\Hilb^{\rho} \left([\CC^{2}/G_{\Delta}] \right) = \left\{ Z\subset
-\CC^{2}, \text{ $Z$ is $G_{\Delta}$ invariant and $H^{0}(\O_{Z})\cong
-\rho $} \right\}.
-\end{equation*}
-
-Let $\{\rho_{0},\dotsc ,\rho_{n} \}$ be the irreducible
-representations of $G_{\Delta}$ where $\rho_{0}$ is the trivial
-representation. We note that $n$ is also the rank of $\Delta$. We
-define
-\[
-Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{n}) = \sum_{m_{0},\dotsc
-,m_{n}=0}^{\infty} e\left(\Hilb^{m_{0}\rho_{0}+\dotsb
-+m_{n}\rho_{n}}([\CC^{2}/G_{\Delta}]) \right) q_{0}^{m_{0}}\dotsb
-q_{n}^{m_{n}} .
-\]
-
-Recall that our local partition function $Z_{\Delta}(q)$ is defined by
-\[
-Z_{\Delta}(q) = \sum_{n=0}^{\infty}
-e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) q^{n-\frac{1}{24}}. 
-\]
-We then readily see that
-\[
-Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot  Z_{[\CC^{2}/G_{\Delta}]}
-(q_{0},\dotsc ,q_{n})|_{q_{i}=q^{d_{i}}}
-\]
-where
-\[
-d_{i} =\dim \rho_{i}.
-\]
-
-The following formula is given explicitly in \cite[Thm~1.3]{gyenge2015euler}, but its content is already present in the work of Nakajima \cite{nakajima2002geometric}:
-\begin{theorem} \label{thm: Zorbifold formula}
-Let $C_{\Delta}$ be the Cartan matrix of the root system $\Delta$,
-then 
-\[
-Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{n}) = \prod_{m=1}^{\infty}
-(1-Q^{m})^{-n-1} \cdot \sum_{\mvec \in \ZZ^{n}} q_{1}^{m_{1}}\dotsb
-q_{n}^{m_{n}} \cdot Q^{\half \mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
-\]
-where $Q=q_{0}^{d_{0}}q_{1}^{d_{1}}\dotsb q_{n}^{d_{n}}$.
-\end{theorem}
-We note that under the specialization $q_{i}=q^{d_{i}}$, 
-\[
-Q=q^{d_{0}^{2}+\dotsb +d_{n}^{2}} = q^{k}
-\]
-where $k=|G|$ is the order of the group $G$.
-
-We then obtain
-\[
-Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot
-\prod_{m=1}^{\infty}(1-q^{km})^{-n-1} \cdot \sum_{\mvec \in \ZZ^{n}}
-q^{\mvec^{\top}\cdot \dvec} \cdot q^{\frac{k}{2}\mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
-\]
-where $\dvec =(d_{1},\dotsc ,d_{n})$.
-
-Let $M_{\Delta}$ be the root lattice of $\Delta$ which we identify
-with $\ZZ^{n}$ via the basis given by $\alpha_{1},\dotsc ,\alpha_{n}$,
-the simple positive roots of $\Delta$. Under this identification, the
-standard Weyl invariant bilinear form is given by
-\[
-(\uvec |\vvec ) = \uvec^{\top}\cdot C_{\Delta}\cdot \vvec 
-\]
-and $\dvec$ is identified with the longest root. 
-We define
-\[
-\zetavec = C_{\Delta}^{-1} \cdot \dvec 
-\]
-so that 
-\[
-\mvec^{\top}\cdot \dvec = \mvec^{\top}\cdot C_{\Delta} \cdot \zetavec
-= (\mvec |\zetavec ).
-\]
-We may then write
-\begin{align*}
-Z_{\Delta}(q)& = q^{\frac{-1}{24}}\cdot
-\prod_{m=1}^{\infty}(1-q^{km})^{-n-1}\cdot \sum _{\mvec \in M_{\Delta}} q^{(\mvec |\zetavec )+\frac{k}{2}(\mvec |\mvec)}\\
-&= q^{A} \cdot \left(q^{\frac{k}{24}}\prod_{m=1}^{\infty}(1-q^{km})
-\right)^{-n-1} \cdot \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}\\
-& = q^{A}\cdot  \eta (k\tau )^{-n-1}\cdot  \theta_{\Delta} (\tau )
-\end{align*}
-where 
-\[
-A \quad = \quad \frac{-1}{24} + \frac{k(n+1)}{24} - \frac{1}{2k}(\zetavec
-|\zetavec )
-\]
-and $\theta_{\Delta}(\tau )$ is the shifted theta function:
-\[
-\theta_{\Delta}(\tau ) = \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}
-\]
-where as throughout this paper we have identified $q=\exp\left(2\pi i\tau  \right)$.
-
-In Appendix~\ref{sec: another strange formula}, we will prove the
-following formula which for $\Delta =A_{n}$ coincides with the
-``strange formula'' of Freudenthal and de Vries
-\cite{freudenthal1969linear}:
-\[
- \frac{k(n+1)-1}{24}  = \frac{(\zetavec |\zetavec )}{2k}.
-\]
-It follows that $A=0$ and we obtain the following:
-\begin{lemma}\label{lem: local series as theta/eta} The local series
-$Z_{\Delta}(q)$ is given by
-\[
-Z_{\Delta}(q) = \frac{\theta_{\Delta}(\tau )}{\eta (k\tau )^{n+1}}. 
-\]
-\end{lemma}
-
-
-\section{The global series}\label{sec: the global series}
+\section{The global partition function}\label{sec: the global series}
 
 Recall that $p_{1},\dotsc ,p_{r}\in X/G$ are the singular points of
 $X/G$ with corresponding stabilizer subgroups $G_{i}\subset G$ of
@@ -729,8 +595,20 @@ This completes the proof of Theorem~\ref{thm: eta product formula for
 Z}.  \qed
 
 
-\section{Proof of Theorem \ref{thm: formula for local series (in
-intro)}}\label{sec: proof of formula for local series}
+\section{The local partition function}\label{sec: proof of formula for local series}
+
+
+Recall that the local partition function is defined by
+\[
+Z_{\Delta} (q) = \sum_{n=0}^{\infty}
+e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) \, q^{n-\frac{1}{24}} 
+\]
+where $G_{\Delta}\subset SU(2)$ is the finite subgroup corresponding
+the the ADE root system $\Delta$. In this section, we prove
+Theorem~\ref{thm: formula for local series (in intro)} which provides
+an explicit formula for $Z_{\Delta}(q)$ in terms of the Dedekind eta
+function. 
+ 
 
 \subsection{Proof of Theorem~\ref{thm: formula for local series (in
 intro)} in the $A_{n}$ case.}\label{subsec: proof of An case of
@@ -867,18 +745,17 @@ e\left(\Hilb^{m_{0},m_{1}}(\X )^{H} \right) \, q^{m_{0}+m_{1}} \\
 &= \sum_{j\in \ZZ}\,  \sum_{n=0}^{\infty} e\left(\Hilb^{n}(Y)^{H}
 \right)\, q^{2n+j+2j^{2}}.
 \end{align*}
-For the root lattice of $A_{1}$, we have $M_{A_{1}}\cong \ZZ$,  $C_{A_{1}}=(2)$, and $k=2$,
-$\zetavec =\frac{1}{2}$ so by definition
-\begin{align*}
-\theta_{A_{1}}(\tau ) &= \sum_{m\in \ZZ}
-q^{\frac{2}{2}\left(m+\frac{1}{4}|m+\frac{1}{4} \right)} \\
-&=\sum_{m\in \ZZ} q^{2(m+\frac{1}{4})^{2}} \\
-&=q^{\frac{1}{8}} \sum_{j\in \ZZ} q^{2j^{2}+j}
-\end{align*}
-Substituting into the previous equation multiplied by
+
+The following identity follows easily from the Jacobi triple product
+formula:
+\[
+\sum_{j\in \ZZ} q^{2j^{2}+j+\frac{1}{8}} = \frac{\eta^{2}(2\tau )}{\eta (\tau )}.
+\]
+
+Substituting this into the previous equation multiplied by
 $q^{\frac{1}{8}}$ we find
 \[
-q^{\frac{1}{6}} Z_{\Delta}(q) = \theta_{A_{1}}(\tau ) \cdot
+q^{\frac{1}{6}} Z_{\Delta}(q) =  \frac{\eta^{2}(2\tau )}{\eta (\tau )} \cdot
 \sum_{n=0}^{\infty}  e\left(\Hilb^{n}(Y)^{H}
 \right)\, q^{2n}.
 \]
@@ -909,18 +786,11 @@ stratification formula for sum e(hilb(X)G)}, we get
 Substituting into the previous equation and cancelling the factors of
 $q^{\frac{1}{6}}$, we have thus proved
 \[
-Z_{\Delta}(q) = \theta_{A_{1}}(\tau )\cdot \frac{\eta (4E\tau )}{\eta
-(2E\tau )\eta (2F\tau )\eta (2V\tau )}.
+Z_{\Delta}(q) =  \frac{\eta^{2}(2\tau )}{\eta (\tau )}\cdot \frac{\eta (4E\tau )}{\eta
+(2E\tau )\eta (2F\tau )\eta (2V\tau )},
 \]
-Finally, by Lemma~\ref{lem: local series as theta/eta} and the $A_{1}$
-case of Theorem~\ref{thm: formula for local series (in intro)} (which
-we've already proved), we have that 
-\[
-\theta_{A_{1}}(\tau ) =\frac{\eta^{2}(2\tau )}{\eta (\tau )}
-\]
-which, when substituted into the above, completes the proof of
-Theorem~\ref{thm: formula for local series (in intro)} in the general
-case. \qed 
+which completes the proof of Theorem~\ref{thm: formula for local
+series (in intro)} in the general case. \qed
 
 
 
@@ -1052,6 +922,144 @@ quiver associated to the Dynkin diagram corresponding to $G$), and so
 by \cite[Cor~4.2]{Nakajima1994Duke} are deformation equivalent. This
 then completes the proof of Proposition~\ref{prop: Hilb(X,m0,m1) =
 Hilb(Y,m0-(m0-m1)^2)}. \qed
+
+
+\section{The local partition function as a theta function via Nakajima}\label{sec: local partition functions}
+
+
+The local partition functions $Z_{\Delta}(q)$ considered in this paper
+are obtained from a specialization of the partition functions of the
+stack $[\CC^{2} /G_{\Delta}]$.  Using the work of Nakajima
+\cite{nakajima2002geometric}, the partition function of the Euler
+characteristics of the Hilbert scheme of points on the stack quotient
+$[\CC^{2}/G_{\Delta}]$ was computed explicitly in
+\cite{gyenge2015euler} in terms of the root data of $\Delta$.  We use
+this to express $Z_{\Delta}(q)$ in terms of $\theta_{\Delta}(\tau )$,
+a shifted theta function for the root lattice of $\Delta$. As a
+byproduct we obtain an eta product formula for the associated shifted
+theta function (Theorem~\ref{thm: eta product for theta function}).
+
+
+
+A zero-dimensional substack $Z\subset [\CC^{2}/G_{\Delta}]$ may be
+regarded as a $G_{\Delta}$ invariant, zero-dimensional subscheme of
+$\CC^{2}$. Consequently, we may identify the Hilbert scheme of points
+on the stack $[\CC^{2}/G_{\Delta}]$ with the $G_{\Delta}$ fixed locus
+of the Hilbert scheme of points on $\CC^{2}$: 
+\[
+\Hilb \left([\CC^{2}/G_{\Delta}] \right) = \Hilb
+(\CC^{2})^{G_{\Delta}} .
+\]
+
+This Hilbert scheme has components indexed by representations $\rho$
+of $G_{\Delta}$ as follows
+\begin{equation*}
+\Hilb^{\rho} \left([\CC^{2}/G_{\Delta}] \right) = \left\{ Z\subset
+\CC^{2}, \text{ $Z$ is $G_{\Delta}$ invariant and $H^{0}(\O_{Z})\cong
+\rho $} \right\}.
+\end{equation*}
+
+Let $\{\rho_{0},\dotsc ,\rho_{n} \}$ be the irreducible
+representations of $G_{\Delta}$ where $\rho_{0}$ is the trivial
+representation. We note that $n$ is also the rank of $\Delta$. We
+define
+\[
+Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{n}) = \sum_{m_{0},\dotsc
+,m_{n}=0}^{\infty} e\left(\Hilb^{m_{0}\rho_{0}+\dotsb
++m_{n}\rho_{n}}([\CC^{2}/G_{\Delta}]) \right) q_{0}^{m_{0}}\dotsb
+q_{n}^{m_{n}} .
+\]
+
+Recall that our local partition function $Z_{\Delta}(q)$ is defined by
+\[
+Z_{\Delta}(q) = \sum_{n=0}^{\infty}
+e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) q^{n-\frac{1}{24}}. 
+\]
+We then readily see that
+\[
+Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot  Z_{[\CC^{2}/G_{\Delta}]}
+(q_{0},\dotsc ,q_{n})|_{q_{i}=q^{d_{i}}}
+\]
+where
+\[
+d_{i} =\dim \rho_{i}.
+\]
+
+The following formula is given explicitly in \cite[Thm~1.3]{gyenge2015euler}, but its content is already present in the work of Nakajima \cite{nakajima2002geometric}:
+\begin{theorem} \label{thm: Zorbifold formula}
+Let $C_{\Delta}$ be the Cartan matrix of the root system $\Delta$,
+then 
+\[
+Z_{[\CC^{2}/G_{\Delta}]} (q_{0},\dotsc ,q_{n}) = \prod_{m=1}^{\infty}
+(1-Q^{m})^{-n-1} \cdot \sum_{\mvec \in \ZZ^{n}} q_{1}^{m_{1}}\dotsb
+q_{n}^{m_{n}} \cdot Q^{\half \mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
+\]
+where $Q=q_{0}^{d_{0}}q_{1}^{d_{1}}\dotsb q_{n}^{d_{n}}$.
+\end{theorem}
+We note that under the specialization $q_{i}=q^{d_{i}}$, 
+\[
+Q=q^{d_{0}^{2}+\dotsb +d_{n}^{2}} = q^{k}
+\]
+where $k=|G|$ is the order of the group $G$.
+
+We then obtain
+\[
+Z_{\Delta}(q) = q^{\frac{-1}{24}}\cdot
+\prod_{m=1}^{\infty}(1-q^{km})^{-n-1} \cdot \sum_{\mvec \in \ZZ^{n}}
+q^{\mvec^{\top}\cdot \dvec} \cdot q^{\frac{k}{2}\mvec^{\top}\cdot C_{\Delta}\cdot \mvec}
+\]
+where $\dvec =(d_{1},\dotsc ,d_{n})$.
+
+Let $M_{\Delta}$ be the root lattice of $\Delta$ which we identify
+with $\ZZ^{n}$ via the basis given by $\alpha_{1},\dotsc ,\alpha_{n}$,
+the simple positive roots of $\Delta$. Under this identification, the
+standard Weyl invariant bilinear form is given by
+\[
+(\uvec |\vvec ) = \uvec^{\top}\cdot C_{\Delta}\cdot \vvec 
+\]
+and $\dvec$ is identified with the longest root. 
+We define
+\[
+\zetavec = C_{\Delta}^{-1} \cdot \dvec 
+\]
+so that 
+\[
+\mvec^{\top}\cdot \dvec = \mvec^{\top}\cdot C_{\Delta} \cdot \zetavec
+= (\mvec |\zetavec ).
+\]
+We may then write
+\begin{align*}
+Z_{\Delta}(q)& = q^{\frac{-1}{24}}\cdot
+\prod_{m=1}^{\infty}(1-q^{km})^{-n-1}\cdot \sum _{\mvec \in M_{\Delta}} q^{(\mvec |\zetavec )+\frac{k}{2}(\mvec |\mvec)}\\
+&= q^{A} \cdot \left(q^{\frac{k}{24}}\prod_{m=1}^{\infty}(1-q^{km})
+\right)^{-n-1} \cdot \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}\\
+& = q^{A}\cdot  \eta (k\tau )^{-n-1}\cdot  \theta_{\Delta} (\tau )
+\end{align*}
+where 
+\[
+A \quad = \quad \frac{-1}{24} + \frac{k(n+1)}{24} - \frac{1}{2k}(\zetavec
+|\zetavec )
+\]
+and $\theta_{\Delta}(\tau )$ is the shifted theta function:
+\begin{equation}\label{eqn: defn of shifted theta function}
+\theta_{\Delta}(\tau ) = \sum_{\mvec \in M_{\Delta}} q^{\frac{k}{2}\left(\mvec +\frac{1}{k}\zetavec |\mvec +\frac{1}{k}\zetavec  \right)}
+\end{equation}
+where as throughout this paper we have identified $q=\exp\left(2\pi i\tau  \right)$.
+
+In Appendix~\ref{sec: another strange formula}, we will prove the
+following formula which for $\Delta =A_{n}$ coincides with the
+``strange formula'' of Freudenthal and de Vries
+\cite{freudenthal1969linear}:
+\[
+ \frac{k(n+1)-1}{24}  = \frac{(\zetavec |\zetavec )}{2k}.
+\]
+It follows that $A=0$ and we obtain the following:
+\begin{lemma}\label{lem: local series as theta/eta} The local series
+$Z_{\Delta}(q)$ is given by
+\[
+Z_{\Delta}(q) = \frac{\theta_{\Delta}(\tau )}{\eta (k\tau )^{n+1}}. 
+\]
+\end{lemma}
 
 
 \section{Proof of Theorem~\ref{thm: Formula for Zbir}}
