@@ -132,12 +132,12 @@ Hilbert schemes of $G$-invariant length $n$ subschemes. We show that
 its reciprocal, $Z_{X,G}(q)^{-1}$ is the Fourier expansion of a
 modular cusp form of weight $\half e(X/G)$ for the congruence subgroup
 $\Gamma_{0}(|G|)$. We give an explicit formula for $Z_{X,G}$ in terms
-of the Dedekind eta function for all 82 possible $(X,G)$. The key
-intermediate result we prove is of independent interest: it
-establishes an eta product identity for a certain shifted theta
-function of the root lattice of a simply laced root system. We extend
+of the Dedekind eta function for all 82 possible $(X,G)$.  We extend
 our results to various refinements of the Euler characteristic, namely
-the Elliptic genus, the Chi-$y$ genus, and the motivic class.
+the Elliptic genus, the Chi-$y$ genus, and the motivic class. As a
+biproduct of our method, we prove a result which is of independent
+interest: it establishes an eta product identity for a certain shifted
+theta function of the root lattice of a simply laced root system.
 \end{abstract}
 
 
@@ -249,12 +249,13 @@ number of edges, faces, and vertices of the polyhedron.}:
 Our proof of the above Theorem uses a trick exploiting the derived
 McKay correspondence between $\X =[\CC^{2}/\{\pm 1 \}]$ and
 $Y=\operatorname{Tot}(K_{\PP^{1}})$, (see sections \ref{sec: proof of
-formula for local series} and \ref{sec: McKay correspondence}).
+formula for local series}).
 
 
 
 
-We will also prove in Lemma~\ref{lem: local series as theta/eta}  that
+Using work of Nakajima, we will also prove in Lemma~\ref{lem: local
+series as theta/eta} that
 \[
 Z_{\Delta}(q) =\frac{\theta_{\Delta}(\tau)}{\eta (k\tau )^{n+1}}
 \]
@@ -710,12 +711,12 @@ and consequently
 \[
 \Hilb^{n}(\CC^{2})^{G}  \cong \Hilb^{n}(\X )^{H} .
 \]
-Recall from section \ref{sec: local partition functions} that $
-\Hilb^{n}(\X )$ decomposes into components $\Hilb^{m_{0},m_{1}}(\X )$
-with $n=m_{0}+m_{1}$ where the corresponding $\{\pm 1 \}$ invariant
-subschemes $Z\subset \CC^{2}$ have the property that as a $\{\pm 1
-\}$-representation, $H^{0}(\O_{Z})$ has $m_{0}$ copies of the trivial
-representation and $m_{1}$ copies of the non-trivial representation.
+The scheme $ \Hilb^{n}(\X )$ decomposes into components
+$\Hilb^{m_{0},m_{1}}(\X )$ with $n=m_{0}+m_{1}$ where the
+corresponding $\{\pm 1 \}$ invariant subschemes $Z\subset \CC^{2}$
+have the property that as a $\{\pm 1 \}$-representation,
+$H^{0}(\O_{Z})$ has $m_{0}$ copies of the trivial representation and
+$m_{1}$ copies of the non-trivial representation.
 
 We will prove in section~\ref{sec: McKay correspondence} that as a
 consequence of the derived McKay correspondence between $\X$ and $Y$,
@@ -794,7 +795,7 @@ series (in intro)} in the general case. \qed
 
 
 
-\section{The derived McKay correspondence and the proof of
+\subsection{The derived McKay correspondence and the proof of
 Proposition~\ref{prop: Hilb(X,m0,m1) =
 Hilb(Y,m0-(m0-m1)^2)}}\label{sec: McKay correspondence}
 
@@ -818,10 +819,10 @@ $\rho_{0}$ and $\rho_{1}$ are the trivial and non-trivial irreducible
 representations of $\{\pm 1 \}$, and $C\subset Y$ is the exceptional
 curve (see for example \cite{Gonzalez-Sprinberg-Verdier} or \cite{Kapranov-Vasserot}).
 
-Let $\M^{m_{0},m_{1}}(\X )$ be the moduli stack of objects $F_{\bullet }$ in
+Let $\M^{m_{0},m_{1}}(\X )$ be the moduli stack of objects $F^{\bullet }$ in
 $D^{b}(\X )$ having numerical $K$-theory class given by
 \[
-[F_{\bullet}] = [\O_{\X}] - m_{0}[\O_{0}\otimes \rho_{0}]  - m_{1}[\O_{0}\otimes \rho_{1}] .
+[F^{\bullet}] = [\O_{\X}] - m_{0}[\O_{0}\otimes \rho_{0}]  - m_{1}[\O_{0}\otimes \rho_{1}] .
 \]
 
 Then $\Hilb^{m_{0},m_{1}}(\X )$ may be regarded as the  open substack
@@ -833,9 +834,9 @@ The derived McKay equivalence then induces an equivalence of stacks
 \M^{m_{0},m_{1}}(\X ) \cong  \M^{m_{0},m_{1}}(Y)
 \]
 where $ \M^{m_{0},m_{1}}(Y)$ is the moduli space of objects
-$F_{\bullet}$ in $D^{b}(Y)$ having numerical $K$-theory class given by
+$F^{\bullet}$ in $D^{b}(Y)$ having numerical $K$-theory class given by
 \[
-[F_{\bullet}] = [\O_{Y}] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]. 
+[F^{\bullet}] = [\O_{Y}] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]. 
 \]
 Numerical $K$-theory on $Y$ is isomorphic to $H^{*}(Y)$ via the Chern
 character. Then since
