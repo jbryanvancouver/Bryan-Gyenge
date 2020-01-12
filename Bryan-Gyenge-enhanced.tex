@@ -134,8 +134,8 @@ modular cusp form of weight $\half e(X/G)$ for the congruence subgroup
 $\Gamma_{0}(|G|)$. We give an explicit formula for $Z_{X,G}$ in terms
 of the Dedekind eta function for all 82 possible $(X,G)$.  We extend
 our results to various refinements of the Euler characteristic, namely
-the Elliptic genus, the Chi-$y$ genus, and the motivic class. As a
-biproduct of our method, we prove a result which is of independent
+the Elliptic genus, the $\chi_{y}$ genus, and the motivic class. As a
+byproduct of our method, we prove a result which is of independent
 interest: it establishes an eta product identity for a certain shifted
 theta function of the root lattice of a simply laced root system.
 \end{abstract}
@@ -183,6 +183,7 @@ q=\exp\left(2\pi i \tau  \right)
 so that we may regard $Z_{X,G}$ as a function of $\tau \in \HH$ where
 $\HH$ is the upper half-plane.
 
+\subsection{The Main Results.}
 Our main result is the following:
 
 \begin{theorem}
@@ -248,7 +249,7 @@ number of edges, faces, and vertices of the polyhedron.}:
 \end{theorem}
 Our proof of the above Theorem uses a trick exploiting the derived
 McKay correspondence between $\X =[\CC^{2}/\{\pm 1 \}]$ and
-$Y=\operatorname{Tot}(K_{\PP^{1}})$, (see sections \ref{sec: proof of
+$Y=\operatorname{Tot}(K_{\PP^{1}})$, (see section \ref{sec: proof of
 formula for local series}).
 
 
@@ -329,9 +330,11 @@ using the formulas for the weight and level of an eta product given in
 
 In Appendix~\ref{app:tableeta}, Table~\ref{table: list of eta
 products} we have listed explictly the eta product of the modular form
-$Z_{X,G}(q)^{-1}$ for all 82 possible cases of $(X,G)$.  Having
-obtained such expressions allows us to make several observational
-corollaries:
+$Z_{X,G}(q)^{-1}$ for all 82 possible cases of $(X,G)$.
+
+\subsection{Consequences of the Main Results.}  Having obtained
+explicit eta product expressions for $Z_{X,G}(q)$ allows us to make
+several observational corollaries:
 
 \begin{corollary}\label{cor: if G is a subgp of E then Zinv is a Hecke
 eigenform} If $G$ is a finite subgroup of an elliptic curve $E$,
@@ -383,6 +386,7 @@ subtle for the case of general $G$. This has been recently explored in
 \end{remark}
 
 
+\subsection{Refinements of the Euler Characteristic.}
 We can extend our results to various refinements of the Euler
 characteristic, namely the elliptic genus, the $\chi_{y}$ genus, and
 the motivic class. These refinements all stem from the next
@@ -1132,13 +1136,19 @@ the negative of the corresponding Cartan matrix $C_{\Delta (i)}$.
 		D_{\mdata}^{2}}(Y)$. 
 \end{proposition}
 
-%\begin{lemma}
-%A sheaf with $K$-theory $n,\mdata$
-%\end{lemma}
+To prove this we will first need the following lemma:
+
 \begin{lemma}
 \label{lem:rigidsh}
 	\begin{enumerate}
-		\item Let $M$ be a finite ADE type root lattice of rank $n$ and $G \subset SL_{2}\CC$ the corresponding finite subgroup. To any element $\mvec \in M$ there is a unique rigid $G$-invariant subscheme of $\mathbb{C}^2$ with $K$-theory class 
+		\item Let $M$ be a finite ADE type root lattice of
+		rank $n$ and $G \subset SL_{2}\CC$ the corresponding
+		finite subgroup. To any element $\mvec \in M$ there is
+		a unique rigid\footnote{By definition, a $G$-invariant
+		subscheme $Z$ is \emph{rigid} if it is an isolated
+		point in the $G$-fixed Hilbert scheme. Equivalently,
+		the space of $G$-invariant deformations of $Z$ is zero
+		dimensional. } $G$-invariant subscheme of $\mathbb{C}^2$ with $K$-theory class 
 		$\half (\mvec|\mvec)[\O_{p}] + \sum_{j=1}^{n}
 		m_{j}[\O_{0}\otimes \rho_{j}]$ where $p \in [\mathbb{C}^2/G]$ is a generic point.
 		%The (graded) colength of the ideal of this subscheme is $\mathbf{m}+\half \delta( \mathbf{m}| \mathbf{m})$.
@@ -1189,7 +1199,7 @@ the negative of the corresponding Cartan matrix $C_{\Delta (i)}$.
 	%each root appears with coefficient at least 1.
 \end{proof}
 \begin{proof}[Proof of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)}]
-Let $U\subset \Zcal \setminus \{p_{1},\dotsc ,p_{r} \}$ be
+Let $U= \Zcal \setminus \{p_{1},\dotsc ,p_{r} \}$ be
 the  Zariski open part with trivial stabilizers. %This stack is equivalent to the scheme $W$.
 Let $V \subset Y$ be the complement of the exceptional divisors.
 Let furthermore $Z_{\mdata} \subset \mathcal{Z}$ be the rigid substack corresponding to the $K$-theory datum $\mdata$ provided by Lemma \ref{lem:rigidsh}. 
@@ -1208,76 +1218,27 @@ D_{\mdata}^{2}}(V)$ since $U$ and $V$ are canonically isomorphic.
 
 
 
-\begin{comment}
-Our approach to proving
-theorem~\ref{thm: Formula for Zbir} follows a similar idea as our
-proof of theorem~\ref{thm: formula for local series (in intro)} in
-Section~\ref{sec: proof of formula for local series} . We exploit the
-derived McKay equivalence:
+With Proposition~\ref{prop: Hilb(Z) is birational to Hilb(Y)}, we can
+now prove Theorem~\ref{thm: Formula for Zbir}.  Using the
+identification
+
 \[
-\FM :D^{b}(\Zcal) \to D^{b}(Y).
+\Hilb(X)^{G} \cong  \Hilb (\Zcal )
 \]
-
-
-
-As a consequence of the above equivalence, we get the following
-\begin{proposition}\label{prop: Hilb(Z) is birational to Hilb(Y)}
-$\Hilb^{n,\mdata}(\Zcal)$ is birational to $\Hilb^{n+\half
-D_{\mdata}^{2}}(Y)$. 
-\end{proposition}
-\begin{proof}
-	
-Since 
-\[
-\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
-\]
-are open substacks, we need only show that the image of
-$\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
-(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$
-non-trivially. We can even suppose that $n=0$, because of the motivic property of the Hilbert scheme.
-Let $\mathcal{I}$ be the ideal sheaf of the rigid substack supported at the stacky points of $\Zcal$ whose K-theory class is $0,\mdata$.
-	
-
-Since 
-\[
-\Hilb^{n,\mdata}(\Zcal )\subset \M^{\alpha}(\Zcal)\quad \text{ and } \quad \Hilb^{n+\half D_{\mdata}^{2}}(Y)\subset \M_{(1,0,-n-\half D_{\mdata}^{2})}(Y)
-\]
-are open substacks, we need only show that the image of
-$\Hilb^{n,\mdata}(\Zcal )$ under the equivalence $\FM \circ
-(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$
-non-trivially. To this end, let $l=n+\half D_{\mdata}^{2}$, let
-$q_{1},\dotsc ,q_{l}\in Y$ be distinct points disjoint from the
-exceptional curves $E_{j}(i)$, and let ${r}_{1},\dotsc ,r_{l}\in
-\Zcal$ denote the corresponding (non-stacky) points in $\Zcal$. We
-show that $\FM ^{-1}(I_{\{q_{1},\dotsc ,q_{l} \}}\otimes
-L_{\mdata}^{-1})$ is the ideal sheaf of a substack $Z\subset \Zcal$
-where $Z=\{r_{1},\dotsc ,r_{l} \}\cup Z_{\mdata}$ where is a certain
-rigid substack supported at the stacky points of $\Zcal$.
-
-\bigskip
-
-PROOF NEEDS TO BE FINISHED!
-
-\bigskip
-
-
-\end{proof}
-\end{comment}
-
-
-With Proposition~\ref{prop: Hilb(Z) is birational to Hilb(Y)}, we can now prove Theorem~\ref{thm: Formula for
-Zbir}.  Using the identification \[\Hilb(X)^{G} = \Hilb (\Zcal )\]
-and identifying discrete parameters we get
+and identifying
+discrete parameters we get
 \begin{align*}
 Z^{\bir}_{X,G}(q)& = \sum_{a=0}^{\infty} \left[\Hilb^{a}(X)^{G}
 \right]_{\bir} \, \, q^{a-1} \\
-& = \sum_{n,\mdata} \Hilb^{n,\mdata}(\Zcal )\,  q^{D(n,\mdata )-1}
+& = \sum_{n,\mdata} \left[\Hilb^{n,\mdata}(\Zcal ) \right]_{\bir } \,  q^{D(n,\mdata )-1}
 \end{align*}
-where
+where (recalling that $d_{j}(i) =\dim \rho_{j}(i)$),
 \[
 D(n,\mdata ) = kn +\sum_{i=1}^{r}\frac{k}{k_{i}}\sum_{j=1}^{n(i)}
-m_{j}(i) d_{j}(i).  
+m_{j}(i) d_{j}(i).
 \]
+
+
 \begin{comment}
 We can organize the data $\mdata = \left\{m_{j}(i) \right\}$ into
 $\mvec (i)\in M_{\Delta (i)}$, i.e.  the vectors in the root lattice
