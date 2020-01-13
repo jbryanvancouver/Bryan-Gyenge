@@ -255,7 +255,7 @@ formula for local series}).
 
 
 
-Using work of Nakajima, we will also prove in Lemma~\ref{lem: local
+Using the work of Nakajima, we will also prove in Lemma~\ref{lem: local
 series as theta/eta} that
 \[
 Z_{\Delta}(q) =\frac{\theta_{\Delta}(\tau)}{\eta (k\tau )^{n+1}}
@@ -296,7 +296,7 @@ where $E,F,V$ are as in Theorem~\ref{thm: formula for local series (in intro)}.
 Kac found that the Macdonald identities could be interpreted in terms
 of the character formula for highest weight representations of
 Kac-Moody algebras (c.f. \cite[\S~10]{kac1994infinite}). It would be
-very interesting to find such an interpretation of the identities in
+very interesting to find such an interpretation of the new identities in
 Theorem~\ref{thm: eta product for theta function}.
 \end{remark}
 
@@ -329,7 +329,7 @@ using the formulas for the weight and level of an eta product given in
 
 
 In Appendix~\ref{app:tableeta}, Table~\ref{table: list of eta
-products} we have listed explictly the eta product of the modular form
+products} we have listed explicitly the eta product of the modular form
 $Z_{X,G}(q)^{-1}$ for all 82 possible cases of $(X,G)$.
 
 \subsection{Consequences of the Main Results.}  Having obtained
@@ -503,6 +503,24 @@ $\Hilb^{n}(Y)$. The above series has further specializations giving formulas for
 Poincare polynomials of the $G$-fixed Hilbert schemes.
 
 
+\subsection{Structure of paper. }  In Section~\ref{sec: the global
+series} we express the global partition function from the local ones
+and deduce Theorem~\ref{thm: eta product formula for Z}. In
+Section~\ref{sec: proof of formula for local series} we prove
+Theorem~\ref{thm: formula for local series (in intro)} which gives the
+eta product expression of the local partition functions. In
+Section~\ref{sec: local partition functions} we express the local
+partition functions in terms of certain theta functions and thus prove
+our Theorem~\ref{thm: eta product for theta function} which gives us
+the new theta function identities. In Section~\ref{sec: proof of thm
+about Zbir} we obtain the enhanced result of Theorem~\ref{thm: Formula
+for Zbir} on the partition function birational equivalence class of
+the $G$-fixed Hilbert schemes. Appendix~\ref{sec: another strange
+formula} contains a proof of a root theoretic identity we need and
+Appendix~\ref{app:tableeta} contains a table listing the modular form
+$Z^{-1}_{X,G}$ in all 82 topological types of symplectic actions on a
+$K3$ surface.
+
 
 \subsection{Acknowledgements.} The authors warmly thank Jenny Bryan,
 Federico Amadio Guidi, Georg Oberdieck, Ken Ono, Stephen Pietromonaco,
@@ -512,12 +530,14 @@ technical help.
 
 \section{The global partition function}\label{sec: the global series}
 
-Recall that $p_{1},\dotsc ,p_{r}\in X/G$ are the singular points of
-$X/G$ with corresponding stabilizer subgroups $G_{i}\subset G$ of
-order $k_{i}$ and ADE type $\Delta_{i}$. Let $\{x_{i}^{1},\dotsc
-,x_{i}^{k/k_{i}} \}$ be the orbit of $G$ in $X$ corresponding to the
-point $p_{i}$ (recall that $k=|G|$).  We may stratify $\Hilb (X)^{G}$
-according to the orbit types of subscheme as follows.
+As in the introduction, let $X$ be a $K3$ surface with a symplectic
+action of a finite group $G$.  Recall that $p_{1},\dotsc ,p_{r}\in
+X/G$ are the singular points of $X/G$ with corresponding stabilizer
+subgroups $G_{i}\subset G$ of order $k_{i}$ and ADE type
+$\Delta_{i}$. Let $\{x_{i}^{1},\dotsc ,x_{i}^{k/k_{i}} \}$ be the
+orbit of $G$ in $X$ corresponding to the point $p_{i}$ (recall that
+$k=|G|$).  We may stratify $\Hilb (X)^{G}$ according to the orbit
+types of subscheme as follows.
 
 Let $Z\subset X$ be a $G$-invariant subscheme of length $nk$ whose
 support lies on free orbits. Then $Z$ determines and is determined by
@@ -609,7 +629,7 @@ Z_{\Delta} (q) = \sum_{n=0}^{\infty}
 e\left(\Hilb^{n}(\CC^{2})^{G_{\Delta}} \right) \, q^{n-\frac{1}{24}} 
 \]
 where $G_{\Delta}\subset SU(2)$ is the finite subgroup corresponding
-the the ADE root system $\Delta$. In this section, we prove
+to the ADE root system $\Delta$. In this section, we prove
 Theorem~\ref{thm: formula for local series (in intro)} which provides
 an explicit formula for $Z_{\Delta}(q)$ in terms of the Dedekind eta
 function. 
@@ -893,7 +913,7 @@ which takes the open stack $\Hilb^{m_{0},m_{1}}(\X )$ isomorphically
 onto an open substack of $\M_{(1,0,-n)} (Y)$. Noting that
 $\Hilb^{n}(Y)$ is also an open substack of $\M_{(1,0,-n)} (Y)$ which
 intersects the image of $\Hilb^{m_{1},m_{1}}(\X )$ non-trivially, we
-find the equivalence induces a birational map
+find that the equivalence induces a birational map
 \[
 \Hilb^{m_{0},m_{1}}(\X ) \dashrightarrow \Hilb^{n}(Y).
 \]
