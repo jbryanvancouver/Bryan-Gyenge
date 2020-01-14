@@ -67,6 +67,8 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newcommand{\HH}{\mathbb{H}}
 \newcommand{\LL}{\mathbb{L}}
 \newcommand{\X}{\mathfrak{X}}
+\newcommand{\Xbar}{\overline{\mathfrak{X}}}
+\newcommand{\Ybar}{\overline{Y}}
 \newcommand{\M}{\mathfrak{M}}
 \newcommand{\bir}{\mathsf{bir}}
 \newcommand{\reg}{\mathsf{reg}}
@@ -828,64 +830,78 @@ give an equivalence of derived categories \cite{BKR, Kapranov-Vasserot}:
 \[
 \FM :D^{b}(\X )\to D^{b}(Y).
 \]
+
+We will want to track discrete parameters through the above
+equivalence and to do so it will be convenient to compactify $\X$ and
+$Y$. Let $\Ybar$ be the Hirzebruch surface $\PP (\O_{\PP^{1}}\oplus
+K_{\PP^{1}})$ which then contains $Y$ as a Zariski open set. Let
+$\Xbar$ be the corresponding compactification of $\X$. The derived
+Fourier-Mukai correspondence extends to the compactifications:
+\[
+\FM : D^{b}(\Xbar )\to D^{b}(\Ybar ).
+\]
+
 The induced map on the numerical $K$-groups
 \[
-K_{0}(\X ) \to K_{0}(Y)
+K_{0}(\Xbar ) \to K_{0}(\Ybar )
 \]
 is well known to take
 \begin{align*}
-[\O_{\X}]& \longmapsto \quad [\O_{Y}] \\
+[\O_{\Xbar}]& \longmapsto \quad [\O_{\Ybar }] \\
 [\O_{0}\otimes \rho_{0}] &\longmapsto  \quad [\O_{C}]\\
 [\O_{0}\otimes \rho_{1}] &\longmapsto \, -[\O_{C}(-1)]
 \end{align*}
-where $\O_{0}$ is the skyscraper sheaf of the origin in $\CC^{2}$,
+where $\O_{0}$ is the skyscraper sheaf of the origin in
+$[\CC^{2}/\left\{\pm 1 \right\}]\subset \Xbar $,
 $\rho_{0}$ and $\rho_{1}$ are the trivial and non-trivial irreducible
-representations of $\{\pm 1 \}$, and $C\subset Y$ is the exceptional
+representations of $\{\pm 1 \}$, and $C\subset Y\subset \Ybar $ is the exceptional
 curve (see for example \cite{Gonzalez-Sprinberg-Verdier} or \cite{Kapranov-Vasserot}).
 
-Let $\M^{m_{0},m_{1}}(\X )$ be the moduli stack of objects $F^{\bullet }$ in
-$D^{b}(\X )$ having numerical $K$-theory class given by
+Let $\M^{m_{0},m_{1}}(\Xbar )$ be the moduli stack of objects $F^{\bullet }$ in
+$D^{b}(\Xbar )$ having numerical $K$-theory class given by
 \[
-[F^{\bullet}] = [\O_{\X}] - m_{0}[\O_{0}\otimes \rho_{0}]  - m_{1}[\O_{0}\otimes \rho_{1}] .
+[F^{\bullet}] = [\O_{\Xbar}] - m_{0}[\O_{0}\otimes \rho_{0}]  - m_{1}[\O_{0}\otimes \rho_{1}] .
 \]
 
-Then $\Hilb^{m_{0},m_{1}}(\X )$ may be regarded as the  open substack
-of $\M^{m_{0},m_{1}}(\X )$ parameterizing ideal sheaves $I_{Z}$ viewed
-as objects in $D^{b}(\X )$ supported in degree 0.
+Then $\Hilb^{m_{0},m_{1}}(\X )$ may be regarded as the open substack
+of $\M^{m_{0},m_{1}}(\Xbar )$ parameterizing ideal sheaves $I_{Z}$,
+$Z\subset \X \subset \Xbar$, viewed as objects in $D^{b}(\Xbar )$
+supported in degree 0.
 
 The derived McKay equivalence then induces an equivalence of stacks
 \[
-\M^{m_{0},m_{1}}(\X ) \cong  \M^{m_{0},m_{1}}(Y)
+\M^{m_{0},m_{1}}(\Xbar ) \cong  \M^{m_{0},m_{1}}(\Ybar )
 \]
-where $ \M^{m_{0},m_{1}}(Y)$ is the moduli space of objects
-$F^{\bullet}$ in $D^{b}(Y)$ having numerical $K$-theory class given by
+where $ \M^{m_{0},m_{1}}(\Ybar )$ is the moduli space of objects
+$F^{\bullet}$ in $D^{b}(\Ybar )$ having numerical $K$-theory class given by
 \[
-[F^{\bullet}] = [\O_{Y}] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]. 
+[F^{\bullet}] = [\O_{\Ybar }] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]. 
 \]
-Numerical $K$-theory on $Y$ is isomorphic to $H^{*}(Y)$ via the Chern
+Numerical $K$-theory on $\Ybar $ is isomorphic to $H^{*}(\Ybar )\cong
+H^{0}(\Ybar )\oplus H^{2}(\Ybar )\oplus H^{4}(\Ybar )$ via the Chern
 character. Then since
 \begin{align*}
-ch([\O_{Y}]) &= (1,0,0)\\
+ch([\O_{\Ybar }]) &= (1,0,0)\\
 ch([\O_{C}]) &= (0,C,1)\\
 ch([\O_{C}(-1)]) &= (0,C,0)
 \end{align*}
 we have
 \[
-ch( [\O_{Y}] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]) = (1,(m_{1}-m_{0})C,-m_{0}).
+ch( [\O_{\Ybar }] - m_{0} [\O_{C}]+ m_{1} [\O_{C}(-1)]) = (1,(m_{1}-m_{0})C,-m_{0}).
 \]
-We switch notation so that $\M_{(a,b,c)}(Y)$ denotes the moduli stack
-of objects in $D^{b}(Y)$ having Chern character $(a,b,c)\in
-H^{*}(Y)$. Then we can rewrite the derived McKay equivalence as
+We switch notation so that $\M_{(a,b,c)}(\Ybar )$ denotes the moduli
+stack of objects in $D^{b}(\Ybar )$ having Chern character $(a,b,c)\in
+H^{*}(\Ybar )$. Then we can rewrite the derived McKay equivalence as
 \[
-\M^{m_{0},m_{1}}(\X ) \cong \M_{(1,(m_{1}-m_{0})C,-m_{0})}(Y). 
+\M^{m_{0},m_{1}}(\Xbar ) \cong \M_{(1,(m_{1}-m_{0})C,-m_{0})}(\Ybar ). 
 \]
 Tensoring by the line bundle
 \[
-L = \O_{Y}((m_{0}-m_{1})C)
+L = \O_{\Ybar }((m_{0}-m_{1})C)
 \]
 induces an equivalence
 \[
-\M_{(1,(m_{1}-m_{0})C,-m_{0})}(Y) \cong \M_{(1,0,-n)}(Y)
+\M_{(1,(m_{1}-m_{0})C,-m_{0})}(\Ybar ) \cong \M_{(1,0,-n)}(\Ybar )
 \]
 where
 \[
@@ -907,13 +923,13 @@ where we have used $C^{2}=-2$.
 
 Thus we have an equivalence of stacks
 \[
-\M^{m_{0},m_{1}}(\X ) \cong \M_{(1,0,-n)}(Y)
+\M^{m_{0},m_{1}}(\Xbar ) \cong \M_{(1,0,-n)}(\Ybar )
 \]
 which takes the open stack $\Hilb^{m_{0},m_{1}}(\X )$ isomorphically
-onto an open substack of $\M_{(1,0,-n)} (Y)$. Noting that
-$\Hilb^{n}(Y)$ is also an open substack of $\M_{(1,0,-n)} (Y)$ which
-intersects the image of $\Hilb^{m_{1},m_{1}}(\X )$ non-trivially, we
-find that the equivalence induces a birational map
+onto an open substack of $\M_{(1,0,-n)} (\Ybar )$. Noting that
+$\Hilb^{n}(Y)$ is also an open substack of $\M_{(1,0,-n)} (\Ybar )$
+which intersects the image of $\Hilb^{m_{1},m_{1}}(\X )$
+non-trivially, we find that the equivalence induces a birational map
 \[
 \Hilb^{m_{0},m_{1}}(\X ) \dashrightarrow \Hilb^{n}(Y).
 \]
@@ -935,7 +951,7 @@ the derived McKay equivalence and tensoring with the line bundle $L$
 both commute with the $H$ action and so we have an equivalence of
 stacks: 
 \[
-\M^{m_{0},m_{1}}(\X )^{H} \cong \M_{(1,0,-n)}(Y)^{H}
+\M^{m_{0},m_{1}}(\Xbar )^{H} \cong \M_{(1,0,-n)}(\Ybar )^{H}
 \]
 and a birational equivalence of holomorphic symplectic varieties:
 \[
@@ -1345,6 +1361,9 @@ The previous equation which showed that $A=0$ also shows that
 $B=24$. Then since $\Delta (\tau ) = \eta (\tau )^{24}$, we see that
 Theorem~\ref{thm: Formula for Zbir} follows. \qed
 
+\begin{comment}
+
+
 \begin{remark}
 	It is not needed in our proof, but it is possible to show that the birational equivalence of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)} is realized by the derived McKay equivalence:
 	\[
@@ -1425,7 +1444,7 @@ Theorem~\ref{thm: Formula for Zbir} follows. \qed
 	(L_{\mdata}\otimes -)$ intersects $\Hilb^{n+\half D_{\mdata}^{2}}(Y)$ nontrivially. Hence, $\FM \circ
 	(L_{\mdata}\otimes -)$ induces an isomorphism on open subsets of the two Hilbert schemes. 
 \end{remark}
-
+\end{comment}
 
 
 \appendix
