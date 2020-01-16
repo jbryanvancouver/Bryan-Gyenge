@@ -92,6 +92,8 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newcommand{\mvec}{\bm{m}}
 \newcommand{\zetavec}{\bm{\zeta }}
 \newcommand{\rhovec}{\bm{\rho }}
+\newcommand{\deltavec}{\bm{\delta  }}
+\newcommand{\muvec}{\bm{\mu  }}
 \newcommand{\dvec}{\bm{d }}
 \newcommand{\uvec}{\bm{u }}
 \newcommand{\vvec}{\bm{v }}
@@ -420,7 +422,7 @@ hyperkahler manifolds are equal in $K_{0}(\operatorname{Var}_{\CC})$,
 the Grothendieck group of varieties.
 
 Thus we may specialize the series $Z^{\bir}_{X,G}(q)$ to Elliptic
-genus, motivic class, and Chi-$y$ genus since these are all well
+genus, motivic class, and $\chi_{y}$ genus since these are all well
 defined on birational equivalence classes of compact hyperkahler
 manifolds. These specializations are all well known for the series
 $Z^{\bir}_{Y}$ and hence we easily get the following corollaries.
@@ -506,22 +508,22 @@ Poincare polynomials of the $G$-fixed Hilbert schemes.
 
 
 \subsection{Structure of paper. }  In Section~\ref{sec: the global
-series} we express the global partition function from the local ones
-and deduce Theorem~\ref{thm: eta product formula for Z}. In
-Section~\ref{sec: proof of formula for local series} we prove
-Theorem~\ref{thm: formula for local series (in intro)} which gives the
-eta product expression of the local partition functions. In
-Section~\ref{sec: local partition functions} we express the local
-partition functions in terms of certain theta functions and thus prove
-our Theorem~\ref{thm: eta product for theta function} which gives us
-the new theta function identities. In Section~\ref{sec: proof of thm
-about Zbir} we obtain the enhanced result of Theorem~\ref{thm: Formula
-for Zbir} on the partition function birational equivalence class of
-the $G$-fixed Hilbert schemes. Appendix~\ref{sec: another strange
-formula} contains a proof of a root theoretic identity we need and
-Appendix~\ref{app:tableeta} contains a table listing the modular form
-$Z^{-1}_{X,G}$ in all 82 topological types of symplectic actions on a
-$K3$ surface.
+series} we express the global partition function in terms of the local
+partition functions and deduce Theorem~\ref{thm: eta product formula
+for Z}. In Section~\ref{sec: proof of formula for local series} we
+prove our main geometric result Theorem~\ref{thm: formula for local
+series (in intro)} which gives the eta product expression of the local
+partition functions. In Section~\ref{sec: local partition functions}
+we express the local partition functions in terms of certain theta
+functions and thus prove our Theorem~\ref{thm: eta product for theta
+function} which gives us the new theta function identities. In
+Section~\ref{sec: proof of thm about Zbir} we obtain the enhanced
+result of Theorem~\ref{thm: Formula for Zbir} on the partition
+function birational equivalence class of the $G$-fixed Hilbert
+schemes. Appendix~\ref{sec: another strange formula} contains a proof
+of a root theoretic identity we need and Appendix~\ref{app:tableeta}
+contains a table listing the modular form $Z^{-1}_{X,G}$ in all 82
+topological types of symplectic actions on a $K3$ surface.
 
 
 \subsection{Acknowledgements.} The authors warmly thank Jenny Bryan,
@@ -634,7 +636,7 @@ where $G_{\Delta}\subset SU(2)$ is the finite subgroup corresponding
 to the ADE root system $\Delta$. In this section, we prove
 Theorem~\ref{thm: formula for local series (in intro)} which provides
 an explicit formula for $Z_{\Delta}(q)$ in terms of the Dedekind eta
-function. 
+function.  We regard this as the main geometric result of this paper. 
  
 
 \subsection{Proof of Theorem~\ref{thm: formula for local series (in
@@ -1123,24 +1125,23 @@ m_{j}(i)[\O_{p_{i}}\otimes \rho_{j}(i)]
 \]
 where $p\in \Zcal$ is a generic point and $p_{1},\dotsc ,p_{r}\in \Zcal$
 are the orbifold points. The local group of $\Zcal$ at $p_{i}$ is
-$G_{\Delta (i)}\subset SL_{2}\CC$  and has corresponding root system
+$G_{\Delta (i)}\subset SU(2)$  and has corresponding root system
 $\Delta (i)$ of rank $n(i)$, and has irreducible representations
 $\rho_{0}(i),\rho_{1}(i),\dotsc ,\rho_{n(i)}(i)$ where $\rho_{0}(i)$
 is the trivial representation. 
 We note that we do not need to include $ [\O_{p_{i}}\otimes
-\rho_{0}(i)]$ in our basis for $K$-theory because of the following observation.
-\begin{lemma} 
-\label{ref:kthbasis}	
-We have the $K$-theory relation
-\[
-[\O_{p}] = [\O_{p_{i}}\otimes \rho_{\reg}(i)]
-\]
-where $\rho_{\reg}(i)$ is the regular representation of $G_{\Delta
-	(i)}$.\end{lemma}
-%which explains why 
+\rho_{0}(i)]$ in our basis for $K$-theory because of the following
+relation in  $K$-theory which holds for all $i$:
 
-We abbreviate the data $\left\{m_{j}(i) \right\}$ appearing in the $K$-theory class above  by the symbol
-$\mdata$ and we denote by 
+\begin{equation}\label{eqn: Op = O0timesrhoreg}
+[\O_{p}] = [\O_{p_{i}}\otimes \rho_{\reg}(i)]
+\end{equation}
+where $\rho_{\reg}(i)$ is the regular representation of
+$G_{\Delta(i)}$.
+
+
+We abbreviate the data $\left\{m_{j}(i) \right\}$ appearing in the
+$K$-theory class above by the symbol $\mdata$ and we denote by
 \[
 \Hilb^{n,\mdata}(\Zcal ) \subset \Hilb (\Zcal )
 \]
@@ -1161,11 +1162,6 @@ D_{\mdata}^{2} = -\sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
 since the intersection form of the exceptional curves over $p_{i}$ is
 the negative of the corresponding Cartan matrix $C_{\Delta (i)}$. 
 
-%Let
-%\[
-%d=n+\half D_{\mdata}^{2} = n-\half \sum_{i=1}^{r} \left(\mvec (i)|\mvec (i)
-%\right)_{\Delta (i)} .
-%\]
 
 \begin{proposition}\label{prop: Hilb(Z) is birational to Hilb(Y)}
 	$\Hilb^{n,\mdata}(\Zcal)$ is birational to $\Hilb^{n+\half
@@ -1175,79 +1171,141 @@ the negative of the corresponding Cartan matrix $C_{\Delta (i)}$.
 To prove this we will first need the following lemma:
 
 \begin{lemma}
-\label{lem:rigidsh}
-	\begin{enumerate}
-		\item Let $M$ be a finite ADE type root lattice of
-		rank $n$ and $G \subset SL_{2}\CC$ the corresponding
-		finite subgroup. To any element $\mvec \in M$ there is
-		a unique rigid\footnote{By definition, a $G$-invariant
-		subscheme $Z$ is \emph{rigid} if it is an isolated
-		point in the $G$-fixed Hilbert scheme. Equivalently,
-		the space of $G$-invariant deformations of $Z$ is zero
-		dimensional. } $G$-invariant subscheme of $\mathbb{C}^2$ with $K$-theory class 
-		$\half (\mvec|\mvec)[\O_{p}] + \sum_{j=1}^{n}
-		m_{j}[\O_{0}\otimes \rho_{j}]$ where $p \in [\mathbb{C}^2/G]$ is a generic point.
-		%The (graded) colength of the ideal of this subscheme is $\mathbf{m}+\half \delta( \mathbf{m}| \mathbf{m})$.
-		\item For every datum $\mdata$ there is a unique rigid substack $Z_{\mdata} \subset \mathcal{Z}$ with $K$-theory class \begin{gather*}\sum_{i=1}^r\frac{(\mvec(i)|\mvec(i))_{\Delta (i)}}{2}[\O_{p}] + \sum_{j=1}^{n}
-		m_{j}(i)[\O_{p_i}\otimes \rho_{j}(i)]\\=-\frac{
-		D_{\mdata}^{2}}{2}[\O_{p}] + \sum_{j=1}^{n}
-		m_{j}(i)[\O_{p_i}\otimes \rho_{j}(i)]
-		\end{gather*} where $p \in \Zcal$ is a generic point.
+\label{lem:rigidsh} $\quad$
+
+	\begin{enumerate} \item Let $\Delta$ be a rank $n$ ADE root
+system, let $M_{\Delta }$ be the corresponding root lattice, and let
+$G_{\Delta } \subset SU(2)$ the corresponding finite subgroup. To any
+element $\mvec \in M_{\Delta }$ there is a unique rigid
+\footnote{By
+definition, a substack $Z$ is \emph{rigid} if it corresponds to an
+isolated point in the Hilbert scheme. }
+substack $Z_{\mvec}\subset [\mathbb{C}^2/G_{\Delta}]$ with $K$-theory
+class
+\[
+\half (\mvec|\mvec)[\O_{p}] + \sum_{j=1}^{n}
+m_{j}[\O_{0}\otimes \rho_{j}]
+\]
+where $p \in [\mathbb{C}^2/G]$ is a generic point.
+	
+		\item For every datum $\mdata$ there is a unique rigid
+substack $Z_{\mdata} \subset \mathcal{Z}$ with $K$-theory
+class \begin{gather*}\sum_{i=1}^r
+\left(
+\frac{1}{2}(\mvec(i)|\mvec(i))_{\Delta (i)}[\O_{p}] + \sum_{j=1}^{n(i)}
+m_{j}(i)[\O_{p_i}\otimes \rho_{j}(i)]
+ \right)\\
+=-\frac{
+D_{\mdata}^{2}}{2}[\O_{p}] +\sum_{j=1}^{r} \sum_{j=1}^{n(i)} m_{j}(i)[\O_{p_i}\otimes
+\rho_{j}(i)] \end{gather*} where $p \in \Zcal$ is a generic point.
 %This subscheme has $\mathrm{colength}(\mathcal{I}_{Z_{\mdata}} \subset \mathcal{O}_{\Zcal})=\mdata -\half |G| D_{\mdata}^{2}$.
 	\end{enumerate}
 \end{lemma}
 \begin{proof}
 	Part (2) is implied by Part (1) since we can take the union of the rigid subschemes supported at the orbifold points $p_1,\dots,p_r \in \mathcal{Z}$. So we need only prove the local case.
 	
-	Nakajima has shown in \cite[Section 2]{nakajima2002geometric} that the $G$-fixed Hilbert scheme decomposes into smooth quiver varieties
-	$\mathrm{Hilb}(\mathbb{C}^2)^G = \bigsqcup_{\vvec} \mathcal{M}(\vvec,\wvec)$ associated with the corresponding affine Dynkin quiver equipped with a fixed framing vector $\wvec=(1,0,\dots,0)$ and dimension vector $\vvec=(v_0,\dots,v_{n})$.
-	The $K$-theory class of a sheaf in  $\mathcal{M}(\vvec,\wvec)$ is  $\sum_{j=0}^{n}
-	v_{j}[\O_{0}\otimes \rho_{j}]$  \cite[page 426]{nakajima2002geometric}. By Lemma \ref{ref:kthbasis} we can rewrite any such class in the basis $\{[\O_{p}],[\O_{0}\otimes \rho_{1}],\dots,[\O_{0}\otimes \rho_{n}]\}$. Theorem \ref{thm: Zorbifold formula} shows that the possible classes that can appear in this latter basis have the form
-	$\mvec+\left( \frac{( \mvec| \mvec) }{2}+l \right)\delta $
-	where $\mvec \in M$ is interpreted as $\sum_{j=1}^{n}
-	m_{j}[\O_{0}\otimes \rho_{j}]$, $\delta=[\O_{p}]$ and $l$ is a nonnegative integer. The particular case with $l=0$ contains the sheaves with the required class $\mvec+\half( \mvec| \mvec)\delta $. Equivalently, such a sheaf is in the component with dimension vector $\vvec = \mvec+\half( \mvec| \mvec)\delta $ where $\delta$ is now a vector collecting the multiplicities of the irreducible representations $\rho_0,\dots,\rho_n$ in the regular representation $\rho_{\reg}$.
-	
-	%is in the component of $\mathrm{Hilb}(\mathbb{C}^2)^G$ whose dimension vector is
-	%=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)
-	
-	%\[ \mathbf{v}=\mathbf{m}+\delta \left( \frac{( \mathbf{m}| \mathbf{m}) }{2} \right)= \left(\frac{a_0 (\mathbf{m}| \mathbf{m}) }{2},m_1+\frac{a_1 ( \mathbf{m}| \mathbf{m} ) }{2},\dots,m_n+\frac{a_n( \mathbf{m}| \mathbf{m} ) }{2} \right) \]
-	%where $\delta=\sum_i\alpha_i$.
-	Let $A$ be the adjacency matrix of the affine Dynkin quiver and let $\langle \cdot, \cdot \rangle$ be the inner product with respect to the generalized Cartan matrix $2I-A$.
-	By \cite[(2.6)]{nakajima1994instantons}
-	the dimension of $\mathcal{M}(\vvec,\wvec)$  for $\vvec,\wvec$ arbitrary is
-	\[ 2\wvec \cdot \vvec - \langle \vvec, \vvec \rangle.  \]
-	Since the multiplicity of $\rho_0$ in $\rho_{\reg}$ is always 1 the dimension of the component with $\vvec=\mvec+\half( \mvec| \mvec)\delta$ is
-	\begin{align*} 2v_0 - \langle \vvec, \vvec \rangle & = (\mvec| \mvec ) - \left\langle \mvec+\frac{( \mvec| \mvec )\delta}{2}, \mvec+\frac{( \mvec| \mvec )\delta}{2} \right\rangle \\
-	& = (\mvec| \mvec ) - \langle \mvec, \mvec \rangle - ( \mvec| \mvec) \langle \mvec, \delta \rangle  -\frac{1}{4} ( \mvec| \mvec)\langle \delta, \delta \rangle =
-	0.  \end{align*}
-	Here we have also used the easily verifiable facts that $\langle M, \delta \rangle = 0$, $\langle \delta, \delta \rangle = 0$ and $(\mvec| \mvec ) = \langle \mvec, \mvec \rangle$ for $\mvec \in M$. Hence, any sheaf in this component is rigid.
-	
-	The formula in Theorem \ref{thm: Zorbifold formula} also implies that the above components with $l=0$ have Euler characteristic 1. This is because the numerator is a series with coefficient 1, and the expansion of the denominator always increases $l$ except for the starting term 1. This shows existence and uniqueness.
-	
-	%I think this can be read-off again from the formula of the generating
-	%series (Theorem 2.1). Suppose first that the denominators are all 1.
-	%Then the numerator counts the Euler characteristic of the required
-	%cell, which is 1. If we take into account the denominators, they, when
-	%expanded, can only increase the content coming from the numerator. So
-	%for each root the appropriate component has Euler characteristic at
-	%least 1. More mathematically, the generating series has only
-	%nonnegative integer coefficients and the component corresponding to
-	%each root appears with coefficient at least 1.
+To prove Part (1) we need to show that component of $\Hilb
+([\CC^{2}/G_{\Delta}])$ corresponding to substacks with $K$-theory
+class
+\[
+\half (\mvec|\mvec)[\O_{p}] + \sum_{j=1}^{n}
+m_{j}[\O_{0}\otimes \rho_{j}]
+\]
+is a single isolated point. This component corresponds to the
+coefficient of 
+\[
+Q^{\half(\mvec |\mvec )}\cdot  q_{1}^{m_{1}}\dotsb q_{n}^{m_{n}}
+\]
+in Theorem~\ref{thm: Zorbifold formula}. It follows immediately from
+the formula in Theorem~\ref{thm: Zorbifold formula} that this
+coefficient is 1, and thus to prove this component is a single point,
+we need only prove that it has dimension 0.
+
+By equation \eqref{eqn: Op
+= O0timesrhoreg}, we have
+\[
+\half (\mvec|\mvec)[\O_{p}] + \sum_{j=1}^{n}
+m_{j}[\O_{0}\otimes \rho_{j}] = 
+\half (\mvec|\mvec)[\O_{0}\otimes \rho_{0}] + \sum_{j=1}^{n}
+\left(\half (\mvec |\mvec )d_{j}+m_{j} \right)[\O_{0}\otimes \rho_{j}]
+\]
+and so the component in question is 
+\[
+\Hilb^{v_{0}\rho_{0}+\dotsb +v_{n}\rho_{n}}([\CC /G_{\Delta}])
+\]
+where
+\[
+\vvec =(v_{0},v_{1},\dotsc ,v_{n}) = \left(\half (\mvec |\mvec ),\half (\mvec |\mvec )d_{1}+m_{1},\dotsc ,\half (\mvec |\mvec )d_{n}+m_{n} \right).
+\]
+We define
+\begin{align*}
+\deltavec& = (1,d_{1},\dotsc ,d_{n}),\text{ and}\\
+\muvec &= (0,m_{1},\dotsc ,m_{n})
+\end{align*}
+so that our $\vvec$ of interest may be written
+\[
+\vvec =\half (\mvec |\mvec )\deltavec +\muvec .
+\]
+Nakajima has shown \cite[\S~2]{nakajima2002geometric} that 
+\[
+\Hilb^{v_{0}\rho_{0}+\dotsb +v_{n}\rho_{n}}([\CC /G_{\Delta}]) = M(\vvec ,\wvec )
+\]
+where $\wvec = (1,0,\dotsc ,0)$ and $M(\vvec ,\wvec )$ is the Nakajima
+quiver variety associated to the affine Dynkin diagram of $\Delta$
+with framing vector $\wvec$ and dimension vector $\vvec$. By
+\cite[(2.6)]{nakajima1994instantons} we have 
+\begin{align*}
+\dim M(\vvec ,\wvec )& = 2\vvec \cdot \wvec -\left\langle \vvec ,\vvec \right\rangle\\
+&= 2v_{0} - \left\langle \vvec ,\vvec \right\rangle\\
+&=(\mvec |\mvec ) - \left\langle \vvec ,\vvec\right\rangle
+\end{align*}
+where $\left\langle \cdot , \cdot  \right\rangle$ is the inner product
+given by the Cartan matrix associated to the affine Dynkin diagram.
+
+We also have
+\[
+\left\langle \muvec ,\muvec \right\rangle = (\mvec |\mvec ),\quad
+\quad \left\langle \deltavec ,\deltavec \right\rangle = 0, \quad \quad
+\left\langle \muvec ,\deltavec \right\rangle = 0.
+\]
+The first follows directly from our definitions, and the later two are
+well known properties of the vector $\deltavec$.  Using the above we
+compute the dimension of the Hilbert scheme of interest:
+\begin{align*}
+\dim M(\vvec ,\wvec ) &=
+(\mvec| \mvec ) - \left\langle
+\half ( \mvec| \mvec )\deltavec+\muvec ,\half ( \mvec| \mvec )\deltavec+\muvec  \right\rangle \\
+& = (\mvec| \mvec )  -\frac{1}{4} ( \mvec|
+\mvec)\langle \deltavec, \deltavec \rangle  - ( \mvec|
+\mvec) \langle \muvec, \deltavec \rangle  - \langle \muvec, \muvec \rangle\\
+& = 0.
+\end{align*}
+We thus can conclude that $\Hilb^{v_{0}\rho_{0}+\dotsb
++v_{n}\rho_{n}}([\CC /G_{\Delta}]) = M(\vvec ,\wvec )$ is a single
+point which finishes the proof of the lemma.
 \end{proof}
-\begin{proof}[Proof of Proposition \ref{prop: Hilb(Z) is birational to Hilb(Y)}]
-Let $U= \Zcal \setminus \{p_{1},\dotsc ,p_{r} \}$ be
-the  Zariski open part with trivial stabilizers. %This stack is equivalent to the scheme $W$.
-Let $V \subset Y$ be the complement of the exceptional divisors.
-Let furthermore $Z_{\mdata} \subset \mathcal{Z}$ be the rigid substack corresponding to the $K$-theory datum $\mdata$ provided by Lemma \ref{lem:rigidsh}. 
-The Zariski open substack of $\mathrm{Hilb}^{n,\mdata}(\Zcal)$ parameterizing substacks of $\Zcal$ of the form $P \cup Z_{\mdata}$ where $P$ is a colength $n+\half
-D_{\mdata}^{2}$ subscheme of $U$ is isomorphic to $\mathrm{Hilb}^{n+\half
-D_{\mdata}^{2}}(U)$. This is because  $Z_{\mdata}$ was rigid and it had the $K$-theory class $-\half
-D_{\mdata}^{2}[\O_{p}] + \sum_{j=1}^{n}
-m_{j}(i)[\O_{p_i}\otimes \rho_{j}(i)]$. On the other hand, the Zariski open subset of $\mathrm{Hilb}^{n+\half
-D_{\mdata}^{2}}(Y)$ parameterizing subschemes supported on $V\subset Y$ is isomorphic to $\mathrm{Hilb}^{n+\half
+
+
+
+\begin{proof}[Proof of Proposition \ref{prop: Hilb(Z) is birational to
+Hilb(Y)}] Let $U= \Zcal \setminus \{p_{1},\dotsc ,p_{r} \}$ be the
+Zariski open part with trivial stabilizers. %This stack is equivalent
+to the scheme $W$.  Let $V \subset Y$ be the complement of the
+exceptional divisors.  Let furthermore $Z_{\mdata} \subset
+\mathcal{Z}$ be the rigid substack corresponding to the $K$-theory
+datum $\mdata$ provided by Lemma \ref{lem:rigidsh}.  The Zariski open
+substack of $\mathrm{Hilb}^{n,\mdata}(\Zcal)$ parameterizing substacks
+of $\Zcal$ of the form $P \cup Z_{\mdata}$ where $P$ is a colength
+$n+\half D_{\mdata}^{2}$ subscheme of $U$ is isomorphic to
+$\mathrm{Hilb}^{n+\half D_{\mdata}^{2}}(U)$. This is because
+$Z_{\mdata}$ was rigid and it had the $K$-theory class $-\half
+D_{\mdata}^{2}[\O_{p}] + \sum_{j=1}^{n} m_{j}(i)[\O_{p_i}\otimes
+\rho_{j}(i)]$. On the other hand, the Zariski open subset of
+$\mathrm{Hilb}^{n+\half D_{\mdata}^{2}}(Y)$ parameterizing subschemes
+supported on $V\subset Y$ is isomorphic to $\mathrm{Hilb}^{n+\half
 D_{\mdata}^{2}}(V)$. Finally, $\mathrm{Hilb}^{n+\half
-D_{\mdata}^{2}}(U)\cong \mathrm{Hilb}^{n+\half
-D_{\mdata}^{2}}(V)$ since $U$ and $V$ are canonically isomorphic.
+D_{\mdata}^{2}}(U)\cong \mathrm{Hilb}^{n+\half D_{\mdata}^{2}}(V)$
+since $U$ and $V$ are canonically isomorphic.
 \end{proof}
 
 
