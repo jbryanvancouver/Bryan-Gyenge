@@ -49,10 +49,13 @@ Woodstock Road, Oxford, OX2 6GG, United Kingdom\\
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{convention}{Convention}[theorem]
 
+
+
+
 \theoremstyle{definition}
 
-\newtheorem{def-theorem}[theorem]{Definition-Theorem}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{def-theorem}[theorem]{Definition-Theorem}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
 
@@ -357,6 +360,34 @@ called a CHL model by taking the free group quotient
 Then the partition function $Z_{X,G}(q)$ gives the Donaldson-Thomas
 invariants of $(X\times E)/G$ in curve classes which are degree zero
 over $X/G$ (c.f. \cite{bryan2018chl}).
+
+
+\begin{remark}\label{rem: weight 3 Hecke case corresponds to arithmetic}
+Hecke eigenforms of weight 3 arise in the arithmetic of $K3$ surfaces:
+if $X$ is a $K3$ surface defined over $\QQ$ and has 
+$\rho (X)=\operatorname{rk}(NS(X))=20$, then there is a weight 3 Hecke
+eigenform
+\[
+f_{X}(q) = \sum_{n=1}^{\infty} a_{n}q^{n}
+\]
+such that for almost all primes $p$, $a_{p}$ is the trace of the
+$p$-th Frobenius morphism acting on $H^{2}(X)/NS(X)$. There are four
+cases where $Z_{X,G}^{-1}(q)$ is a weight three Hecke eigenform and
+they correspond to the cases where $G$ is $\ZZ _7$,  $\ZZ _8$,  $\ZZ
+_2\times \ZZ _6$, or  $\ZZ _4\times \ZZ _4$  (numbered 8, 14, 19, 25
+on Table~\ref{table: list of eta products}). If $X$ admits a
+symplectic $G$ action for one of these four groups, $X$ is necessarily
+defined over $\QQ$, has $\rho (X)=20$, and remarkably
+\[
+Z_{X,G}^{-1}(q) = f_{X}(q).
+\]
+Indeed, in each of these cases, $X$ is elliptically fibered over
+$\PP^{1}$ and has $G$ as its group of sections (thus giving rise to
+the symplectic $G$ action). Moreover, $X$ is the universal curve over
+the modular curve parameterizing $(E,G)$, an elliptic curve $E$ with a
+subgroup $G\subset E$. We thank Shuai Wang and Noam Elkies for
+noticing and ellucidating this phenomenon. 
+\end{remark}
 
 
 For any eta product expression of a modular form, one may easily
