@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Bryan-Gyenge-enhanced.aux
 The style file: plain.bst
 Database file #1: Bryan-Gyenge.bib
-You've used 21 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            632 strings with 7052 characters,
-and the built_in function-call counts, 6278 in all, are:
-= -- 635
-> -- 210
+            640 strings with 7199 characters,
+and the built_in function-call counts, 6620 in all, are:
+= -- 672
+> -- 223
 < -- 3
-+ -- 87
-- -- 64
-* -- 414
-:= -- 1031
-add.period$ -- 64
-call.type$ -- 21
-change.case$ -- 91
++ -- 92
+- -- 68
+* -- 440
+:= -- 1088
+add.period$ -- 68
+call.type$ -- 22
+change.case$ -- 96
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 231
-empty$ -- 562
-format.name$ -- 64
-if$ -- 1314
+cite$ -- 22
+duplicate$ -- 242
+empty$ -- 589
+format.name$ -- 68
+if$ -- 1384
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 21
-newline$ -- 108
-num.names$ -- 42
-pop$ -- 114
+int.to.str$ -- 22
+missing$ -- 22
+newline$ -- 114
+num.names$ -- 44
+pop$ -- 116
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 78
 quote$ -- 0
-skip$ -- 156
+skip$ -- 164
 stack$ -- 0
-substring$ -- 499
-swap$ -- 33
+substring$ -- 529
+swap$ -- 34
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 80
 warning$ -- 0
-while$ -- 69
-width$ -- 23
-write$ -- 226
+while$ -- 73
+width$ -- 24
+write$ -- 239
