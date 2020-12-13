@@ -5,11 +5,22 @@ Tom Bridgeland, Alastair King, and Miles Reid.
 \newblock The {M}c{K}ay correspondence as an equivalence of derived categories.
 \newblock {\em J. Amer. Math. Soc.}, 14(3):535--554 (electronic), 2001.
 
+\bibitem{Bryan-Cadman-Young}
+Jim Bryan, Charles Cadman, and Ben Young.
+\newblock The orbifold topological vertex.
+\newblock {\em Adv. Math.}, 229(1):531--595, 2012.
+\newblock arXiv:math/1008.4205.
+
 \bibitem{bryan2018chl}
 Jim Bryan and Georg Oberdieck.
 \newblock {CHL Calabi-Yau threefolds: Curve counting, Mathieu moonshine and
   Siegel modular forms}.
 \newblock arXiv:1811.06102.
+
+\bibitem{Chen-Tseng-BKRnon-global}
+Jiun-Cheng Chen and Hsian-Hua Tseng.
+\newblock A note on derived {M}c{K}ay correspondence.
+\newblock {\em Math. Res. Lett.}, 15(3):435--445, 2008.
 
 \bibitem{freudenthal1969linear}
 Hand Freudenthal and H.~de~Vries.
@@ -80,11 +91,6 @@ Hiraku Nakajima.
   algebras.
 \newblock {\em Duke Math. J.}, 76(2):365--416, 1994.
 
-\bibitem{nakajima1994instantons}
-Hiraku Nakajima.
-\newblock Instantons on ale spaces, quiver varieties, and kac-moody algebras.
-\newblock {\em Duke Mathematical Journal}, 76(2):365--416, 1994.
-
 \bibitem{nakajima2002geometric}
 Hiraku Nakajima.
 \newblock {Geometric construction of representations of affine algebras}.
@@ -96,11 +102,23 @@ Johannes Nicaise and Evgeny Shinder.
 \newblock {The Motivic Nearby Fiber And Degeneration Of Stable Rationality}.
 \newblock arXiv:math/1708.02790.
 
+\bibitem{Olsson-Starr}
+Martin Olsson and Jason Starr.
+\newblock Quot functors for {D}eligne-{M}umford stacks.
+\newblock {\em Comm. Algebra}, 31(8):4069--4096, 2003.
+\newblock Special issue in honor of Steven L. Kleiman.
+
 \bibitem{Pietromonaco_2018}
 Stephen Pietromonaco.
 \newblock {An introduction to modern enumerative geometry with applications to
   the banana manifold}.
 \newblock 2018 UBC masters thesis. arXiv:1905.07085.
+
+\bibitem{Pietromonaco-GHilbA}
+Stephen Pietromonaco.
+\newblock {$G$-invariant Hilbert Schemes on Abelian Surfaces and Enumerative
+  Geometry of the Orbifold Kummer Surface}.
+\newblock arXiv:math/2011.14020.
 
 \bibitem{xiao1996galois}
 Gang Xiao.

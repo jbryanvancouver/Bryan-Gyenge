@@ -205,7 +205,10 @@ $\Gamma_{0}(|G|)$.
 
 Our theorem specializes in the case where $G$ is the trivial group to
 a famous result of G\"ottsche \cite{gottsche1990betti}. The case where
-$G$ is a cyclic group was proved in \cite{bryan2018chl}.
+$G$ is a cyclic group was proved in \cite{bryan2018chl}. An analogous
+result for the case where $X$ is an Abelian surface acted on
+symplectically by a finite group $G$ has been recently proven by
+Pietromonaco \cite{Pietromonaco-GHilbA}.
 
 % One can interpret our result as an instance of the Vafa-Witten
 % S-duality conjecture for the orbifold $[X/G]$.
@@ -417,7 +420,9 @@ series of dimension $n$ on $X$. This generalizes the famous Yau-Zaslow
 formula \cite{Yau-Zaslow} in the case where $G$ is the trivial
 group. The precise nature between the virtual count and the actual
 count is expected to be subtle for the case of general $G$. This has
-been recently explored in \cite{Zhan-2019-counting-curves-on-K3}.
+been recently explored in \cite{Zhan-2019-counting-curves-on-K3} and
+also in the case of $G$ acting on an Abelian surface in
+\cite{Pietromonaco-GHilbA}.
 \end{remark}
 
 
@@ -459,17 +464,19 @@ manifolds. These specializations are all well known for the series
 $Z^{\bir}_{Y}$ and hence we easily get the following corollaries.
 
 \begin{corollary}\label{cor: Zell formula}
-Let $Q=\exp\left(2\pi i\sigma \right)$ and let
+Let $Q=\exp\left(2\pi i\sigma \right)$, $q=\exp\left(2\pi i \tau 
+\right)$, $y=\exp\left(2\pi i z
+\right)$, and let
 \[
 Z^{\Ell}_{X,G}(Q,q,y) = \sum_{n=0}^{\infty} \Ellqy
 \left(\Hilb^{n}(X)^{G} \right) Q^{n-1}
 \]
 where $\Ellqy (-)$ is elliptic genus. Then
 \[
-Z^{\Ell}_{X,G}(Q,q,y) = \frac{\phi_{10,1}(q ,y)}{\chi_{10}(k\sigma
+Z^{\Ell}_{X,G}(Q,q,y) = \frac{\phi_{10,1}(\tau  ,z)}{\chi_{10}(k\sigma
 ,\tau ,z)} \cdot Z_{X,G}(q)\cdot \Delta (k\tau )
 \]
-where $\phi_{10,1}(q ,y)$ is the Fourier expansion of the unique Jacobi cusp form of weight
+where $\phi_{10,1}(q ,y)$ is the unique Jacobi cusp form of weight
 10 and index 1 and $\chi_{10}(\sigma ,\tau ,z)$ is Igusa's genus 2
 Siegel cusp form of weight 10. 
 \end{corollary}
@@ -479,10 +486,12 @@ and the formula for the elliptic genera of $\Hilb^{n}(Y)$.
 
 A further specialization of particular interest is the (normalized)
 $\chi_{y}$ genus. Let 
-\[
-\chibar_{-y}(M) = y^{-\half \dim
-M}\chi_{-y}(M)
-\]
+\begin{align*}
+\chibar_{-y}(M) &= y^{-\half \dim
+M}\,\, \chi_{-y}(M)\\
+& =  y^{-\half \dim
+M} \,\sum_{p,q} (-1)^{p+q} y^{q} \, \dim H^{p,q}(M)
+\end{align*}
 and we note that $\chibar_{-y}(M) = \Ellqy
 (M)|_{q=0}$.
 
@@ -490,7 +499,7 @@ and we note that $\chibar_{-y}(M) = \Ellqy
 Let
 \[
 Z^{\chibar}_{X,G}(q,y) = \sum_{n=0}^{\infty}
-\chibar_{y}\left(\Hilb^{n}(X)^{G} \right) q^{n-1} .
+\chibar_{-y}\left(\Hilb^{n}(X)^{G} \right) q^{n-1} .
 \]
 Then
 \[
@@ -868,8 +877,9 @@ We will want to track discrete parameters through the above
 equivalence and to do so it will be convenient to compactify $\X$ and
 $Y$. Let $\Ybar$ be the Hirzebruch surface $\PP (\O_{\PP^{1}}\oplus
 K_{\PP^{1}})$ which then contains $Y$ as a Zariski open set. Let
-$\Xbar$ be the corresponding compactification of $\X$. The derived
-Fourier-Mukai correspondence extends to the compactifications:
+$\Xbar$ be the corresponding compactification of $\X$, namely $\X$ is
+given by the weighted projective space $\PP (2,1,1)$. The derived
+Fourier-Mukai correspondence extends to the compactifications \cite{Chen-Tseng-BKRnon-global}:
 \[
 \FM : D^{b}(\Xbar )\to D^{b}(\Ybar ).
 \]
@@ -976,7 +986,10 @@ viewing both Hilbert schemes as moduli spaces of quiver
 representations of the $A_{1}$ Nakajima quiver variety having the same
 dimension vector but using different stability conditions. Writing
 these Hilbert schemes as Nakajima quiver varieties is discussed in
-detail in \cite{Kuznetsov}.
+detail in \cite{Kuznetsov}, specifically the identification of $\Hilb
+(\X )$ and $\Hilb (Y)$ with Nakajima quiver varieties for specific
+stability conditions is given in \cite{Kuznetsov} at the bottom of
+page 2.
 
 
 The above constructions are compatible with the $H$ action. Indeed,
@@ -1147,9 +1160,13 @@ naturally identified with the $G$-fixed Hilbert scheme of $X$:
 \[
 \Hilb (\Zcal )\cong \Hilb (X)^{G}.
 \]
-Components of $\Hilb (\Zcal )$ are indexed by the numerical $K$-theory
-class of $\O_{Z}$ for $Z\subset \Zcal$. The $K$-theory class of
-$\O_{Z}$ can be written in a basis for $K$-theory as follows:
+We emphasize that $\Hilb (\Zcal )$ is itself a scheme, not just a
+stack, as the objects it parameterizes (substacks $V\subset \Zcal $)
+do not have automorphisms (see \cite{Olsson-Starr} or
+\cite[\S~2.3]{Bryan-Cadman-Young}). Components of $\Hilb (\Zcal )$ are
+indexed by the numerical $K$-theory class of $\O_{Z}$ for $Z\subset
+\Zcal$. The $K$-theory class of $\O_{Z}$ can be written in a basis for
+$K$-theory as follows:
 \[
 [\O_{Z}] = n[\O_{p}] + \sum_{i=1}^{r} \sum_{j=1}^{n(i)}
 m_{j}(i)[\O_{p_{i}}\otimes \rho_{j}(i)] 
@@ -1262,7 +1279,7 @@ m_{j}[\O_{0}\otimes \rho_{j}] =
 \]
 and so the component in question is 
 \[
-\Hilb^{v_{0}\rho_{0}+\dotsb +v_{n}\rho_{n}}([\CC /G_{\Delta}])
+\Hilb^{v_{0}\rho_{0}+\dotsb +v_{n}\rho_{n}}([\CC^{2} /G_{\Delta}])
 \]
 where
 \[
@@ -1279,12 +1296,12 @@ so that our $\vvec$ of interest may be written
 \]
 Nakajima has shown \cite[\S~2]{nakajima2002geometric} that 
 \[
-\Hilb^{v_{0}\rho_{0}+\dotsb +v_{n}\rho_{n}}([\CC /G_{\Delta}]) = M(\vvec ,\wvec )
+\Hilb^{v_{0}\rho_{0}+\dotsb +v_{n}\rho_{n}}([\CC^{2} /G_{\Delta}]) = M(\vvec ,\wvec )
 \]
 where $\wvec = (1,0,\dotsc ,0)$ and $M(\vvec ,\wvec )$ is the Nakajima
 quiver variety associated to the affine Dynkin diagram of $\Delta$
 with framing vector $\wvec$ and dimension vector $\vvec$. By
-\cite[(2.6)]{nakajima1994instantons} we have 
+\cite[(2.6)]{Nakajima1994Duke} we have 
 \begin{align*}
 \dim M(\vvec ,\wvec )& = 2\vvec \cdot \wvec -\left\langle \vvec ,\vvec \right\rangle\\
 &= 2v_{0} - \left\langle \vvec ,\vvec \right\rangle\\
@@ -1312,7 +1329,7 @@ compute the dimension of the Hilbert scheme of interest:
 & = 0.
 \end{align*}
 We thus can conclude that $\Hilb^{v_{0}\rho_{0}+\dotsb
-+v_{n}\rho_{n}}([\CC /G_{\Delta}]) = M(\vvec ,\wvec )$ is a single
++v_{n}\rho_{n}}([\CC^{2} /G_{\Delta}]) = M(\vvec ,\wvec )$ is a single
 point which finishes the proof of the lemma.
 \end{proof}
 
