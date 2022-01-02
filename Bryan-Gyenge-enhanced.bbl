@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{bellamy2020birational}
+Gwyn Bellamy and Alastair Craw.
+\newblock Birational geometry of symplectic quotient singularities.
+\newblock {\em Inventiones mathematicae}, 222(2):399--468, 2020.
+
 \bibitem{BKR}
 Tom Bridgeland, Alastair King, and Miles Reid.
 \newblock The {M}c{K}ay correspondence as an equivalence of derived categories.
@@ -22,16 +27,23 @@ Jiun-Cheng Chen and Hsian-Hua Tseng.
 \newblock A note on derived {M}c{K}ay correspondence.
 \newblock {\em Math. Res. Lett.}, 15(3):435--445, 2008.
 
-\bibitem{dehority2020affinizations}
-Samuel DeHority.
-\newblock Affinizations of lorentzian kac-moody algebras and hilbert schemes of
-  points on k3 surfaces.
-\newblock {\em arXiv preprint arXiv:2007.04953}, 2020.
+\bibitem{craw2021quot}
+Alastair Craw, S{\o}ren Gammelgaard, {\'A}d{\'a}m Gyenge, and Bal{\'a}zs
+  Szendr{\H{o}}i.
+\newblock Quot schemes for kleinian orbifolds.
+\newblock {\em Symmetry, Integrability and Geometry: Methods and Applications
+  (SIGMA)}, 17(099), 2021.
 
 \bibitem{freudenthal1969linear}
 Hand Freudenthal and H.~de~Vries.
 \newblock {\em {Linear Lie groups}}.
 \newblock Academic Press, 1969.
+
+\bibitem{fujii2017combinatorial}
+Shigeyuki Fujii, Satoshi Minabe, et~al.
+\newblock A combinatorial study on quiver varieties.
+\newblock {\em SIGMA. Symmetry, Integrability and Geometry: Methods and
+  Applications}, 13:052, 2017.
 
 \bibitem{Gonzalez-Sprinberg-Verdier}
 G.~Gonzalez-Sprinberg and J.-L. Verdier.
