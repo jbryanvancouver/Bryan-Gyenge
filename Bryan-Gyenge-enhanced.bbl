@@ -5,11 +5,6 @@ Gwyn Bellamy and Alastair Craw.
 \newblock Birational geometry of symplectic quotient singularities.
 \newblock {\em Inventiones mathematicae}, 222(2):399--468, 2020.
 
-\bibitem{BKR}
-Tom Bridgeland, Alastair King, and Miles Reid.
-\newblock The {M}c{K}ay correspondence as an equivalence of derived categories.
-\newblock {\em J. Amer. Math. Soc.}, 14(3):535--554 (electronic), 2001.
-
 \bibitem{Bryan-Cadman-Young}
 Jim Bryan, Charles Cadman, and Ben Young.
 \newblock The orbifold topological vertex.
@@ -22,11 +17,6 @@ Jim Bryan and Georg Oberdieck.
   Siegel modular forms}.
 \newblock arXiv:1811.06102.
 
-\bibitem{Chen-Tseng-BKRnon-global}
-Jiun-Cheng Chen and Hsian-Hua Tseng.
-\newblock A note on derived {M}c{K}ay correspondence.
-\newblock {\em Math. Res. Lett.}, 15(3):435--445, 2008.
-
 \bibitem{craw2021quot}
 Alastair Craw, S{\o}ren Gammelgaard, {\'A}d{\'a}m Gyenge, and Bal{\'a}zs
   Szendr{\H{o}}i.
@@ -38,17 +28,6 @@ Alastair Craw, S{\o}ren Gammelgaard, {\'A}d{\'a}m Gyenge, and Bal{\'a}zs
 Hand Freudenthal and H.~de~Vries.
 \newblock {\em {Linear Lie groups}}.
 \newblock Academic Press, 1969.
-
-\bibitem{fujii2017combinatorial}
-Shigeyuki Fujii, Satoshi Minabe, et~al.
-\newblock A combinatorial study on quiver varieties.
-\newblock {\em SIGMA. Symmetry, Integrability and Geometry: Methods and
-  Applications}, 13:052, 2017.
-
-\bibitem{Gonzalez-Sprinberg-Verdier}
-G.~Gonzalez-Sprinberg and J.-L. Verdier.
-\newblock Construction g\'eom\'etrique de la correspondance de {M}c{K}ay.
-\newblock {\em Ann. Sci. \'Ecole Norm. Sup. (4)}, 16(3):409--449 (1984), 1983.
 
 \bibitem{gottsche1990betti}
 Lothar G{\"o}ttsche.
@@ -76,11 +55,6 @@ Daniel Huybrechts.
 Victor~G Kac.
 \newblock {\em {Infinite-dimensional Lie algebras}}, volume~44.
 \newblock Cambridge University Press, 1994.
-
-\bibitem{Kapranov-Vasserot}
-M.~Kapranov and E.~Vasserot.
-\newblock Kleinian singularities, derived categories and {H}all algebras.
-\newblock {\em Math. Ann.}, 316(3):565--576, 2000.
 
 \bibitem{Knapp}
 Anthony~W. Knapp.

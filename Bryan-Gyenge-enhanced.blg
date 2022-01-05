@@ -3,49 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Bryan-Gyenge-enhanced.aux
 The style file: plain.bst
 Database file #1: Bryan-Gyenge.bib
-Repeated entry---line 410 of file Bryan-Gyenge.bib
- : @article{fujii2017combinatorial
- :                                ,
-I'm skipping whatever remains of this entry
-You've used 28 entries,
+You've used 23 entries,
             2118 wiz_defined-function locations,
-            687 strings with 8255 characters,
-and the built_in function-call counts, 8548 in all, are:
-= -- 863
-> -- 321
+            650 strings with 7408 characters,
+and the built_in function-call counts, 6692 in all, are:
+= -- 672
+> -- 246
 < -- 3
-+ -- 133
-- -- 100
-* -- 581
-:= -- 1418
-add.period$ -- 88
-call.type$ -- 28
-change.case$ -- 129
++ -- 101
+- -- 76
+* -- 430
+:= -- 1116
+add.period$ -- 73
+call.type$ -- 23
+change.case$ -- 103
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 303
-empty$ -- 734
-format.name$ -- 100
-if$ -- 1774
+cite$ -- 23
+duplicate$ -- 248
+empty$ -- 584
+format.name$ -- 76
+if$ -- 1395
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 27
-newline$ -- 146
-num.names$ -- 56
-pop$ -- 144
+int.to.str$ -- 23
+missing$ -- 22
+newline$ -- 121
+num.names$ -- 46
+pop$ -- 128
 preamble$ -- 1
-purify$ -- 105
+purify$ -- 84
 quote$ -- 0
-skip$ -- 210
+skip$ -- 171
 stack$ -- 0
-substring$ -- 652
-swap$ -- 40
+substring$ -- 455
+swap$ -- 35
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 104
+type$ -- 84
 warning$ -- 0
-while$ -- 92
-width$ -- 30
-write$ -- 307
-(There was 1 error message)
+while$ -- 73
+width$ -- 25
+write$ -- 252
