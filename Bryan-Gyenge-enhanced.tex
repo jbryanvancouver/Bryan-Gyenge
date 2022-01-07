@@ -244,13 +244,10 @@ Z_{A_{n}}(q) = \frac{1}{\eta (\tau )}
 \]
 and for type $D_{n}$ and $E_{n}$ by
 \[
-Z_{\Delta}(q) = \frac{\eta^{2}(2\tau )\eta (4E\tau )}{\eta (\tau )\eta (2E\tau )\eta (2F\tau )\eta (2V\tau )}
+Z_{\Delta}(q) = \frac{\eta^{2}(2\tau )\eta (4E\tau )}{\eta (\tau )\eta
+(2E\tau )\eta (2F\tau )\eta (2V\tau )}
 \]
-where $(E,F,V)$ are given by\footnote{For $\Delta$ of type
-$D_{n}$ or $E_{n}$, the group $H = G_{\Delta}/\{\pm 1 \}\subset SO(3)$
-is the symmetry group of a polyhedral decomposition of $S^{2}$ into
-isomorphic regular spherical polygons. Then $E$, $F$, and $V$ are the
-number of edges, faces, and vertices of the polyhedron.}:
+where $(E,F,V)$ are given by:
 \[
 (E,F,V) = \begin{cases}
 (n-2,2,n-2), & \Delta =D_{n}\\
@@ -260,12 +257,21 @@ number of edges, faces, and vertices of the polyhedron.}:
 \end{cases}
 \]
 \end{theorem}
-Our proof of the above Theorem uses a trick exploiting the {\jim fact
-that the stack quotient $\X =[\CC^{2}/\{\pm 1 \}]$ is birational to
-the space $Y=\operatorname{Tot}(K_{\PP^{1}})$ (see section \ref{sec:
-proof of formula for local series}).}
 
-
+{\jim
+\begin{remark}
+For $\Delta$ of type $D_{n}$ or $E_{n}$, the group $H =
+G_{\Delta}/\{\pm 1 \}\subset SO(3)$ is the symmetry group of a
+polyhedral decomposition of $S^{2}\cong \PP^{1}$ into isomorphic
+regular spherical polygons. Then $E$, $F$, and $V$ are the number of
+edges, faces, and vertices of the polyhedron.  The key idea in proving
+the above theorem is to show that $\Hilb (\CC^{2})^{G_{\Delta}}$ is
+deformation equivalent to $\Hilb (Y)^{H}$ where
+$Y=\operatorname{Tot}(K_{\PP^{1}})$ is the minimal resolution of
+$\CC^{2}/\{\pm 1 \}$ (see section \ref{sec: proof of formula for local
+series}).
+\end{remark}
+}
 
 
 Using the work of Nakajima, we will also prove in Lemma~\ref{lem: local
@@ -571,8 +577,11 @@ topological types of symplectic actions on a $K3$ surface.
 
 \subsection{Acknowledgements.} The authors warmly thank Jenny Bryan,
 Noam Elkies, Federico Amadio Guidi, Georg Oberdieck, Ken Ono, Stephen
-Pietromonaco, Bal\'azs Szendr\H{o}i, Shuai Wang, Alex Weekes, and {\jim the
-referee} for helpful comments and/or technical help.
+Pietromonaco, Bal\'azs Szendr\H{o}i, Shuai Wang, and Alex Weekes for
+helpful comments and/or technical help.  {\jim We would also like to
+thank the anonymous referee for helping us fix and greatly simplify
+the proof of Proposition~\ref{prop: Hilb(X,m0,m1) =
+Hilb(Y,m0-(m0-m1)^2)}. }
 
 
 \section{The global partition function}\label{sec: the global series}
@@ -813,7 +822,10 @@ same: the trivial representation has multiplicity one and the
 nontrivial representation has multiplicity zero.  By \cite[Sections~2
 and 3]{nakajima2002geometric}, $\Hilb^{n}(Y)$ is a resolution of
 $\Sym^{n} (\CC^{2}/\{\pm 1\} )$ while $\Hilb^{m_{0},m_{1}}(\X )$ is a
-resolution of $\Sym^{m_{0}-(m_{1}-m_{0})^{2}} (\CC^{2}/\{\pm 1\})$.
+resolution of $\Sym^{r} (\CC^{2}/\{\pm 1\})$ where
+$r=m_{0}-(m_{1}-m_{0})^{2}$ by the dimension formula for quiver
+varieties \cite[(2.6)]{Nakajima1994Duke} (see also
+Equation~\eqref{eqn: dimension formula for quiver varieties}).
 
 Then by Nakajima \cite[Cor~4.2]{Nakajima1994Duke},
 $\Hilb^{m_{0},m_{1}}(\X )$ is deformation equivalent to, and hence
@@ -1184,11 +1196,11 @@ where $\wvec = (1,0,\dotsc ,0)$ and $M(\vvec ,\wvec )$ is the Nakajima
 quiver variety associated to the affine Dynkin diagram of $\Delta$
 with framing vector $\wvec$ and dimension vector $\vvec$. By
 \cite[(2.6)]{Nakajima1994Duke} we have 
-\begin{align*}
-\dim M(\vvec ,\wvec )& = 2\vvec \cdot \wvec -\left\langle \vvec ,\vvec \right\rangle\\
-&= 2v_{0} - \left\langle \vvec ,\vvec \right\rangle\\
+\begin{align}\label{eqn: dimension formula for quiver varieties}
+\dim M(\vvec ,\wvec )& = 2\vvec \cdot \wvec -\left\langle \vvec ,\vvec \right\rangle\\ \nonumber
+&= 2v_{0} - \left\langle \vvec ,\vvec \right\rangle\\ \nonumber
 &=(\mvec |\mvec ) - \left\langle \vvec ,\vvec\right\rangle
-\end{align*}
+\end{align}
 where $\left\langle \cdot , \cdot  \right\rangle$ is the inner product
 given by the Cartan matrix associated to the affine Dynkin diagram.
 
